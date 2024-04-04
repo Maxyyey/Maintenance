@@ -1,0 +1,80 @@
+<!-- ICONS SOURCE -->
+<link href="https://icon-sets.iconify.design/" rel="stylesheet"/>
+<link rel="stylesheet" href="https://icon-sets.iconify.design/">
+
+
+
+<div class="content">
+    <!-- HEADER -->
+    <div class="header">
+        <br>
+        <h1>GCLIMS-MAINTENANCE</h1>
+    </div>
+    
+
+    <!-- BODY CONTENT -->
+    <div class="body-content">
+        <div class="admin-container"> <router-outlet></router-outlet> </div>
+    </div>
+
+    <nav class="sidebar-content">
+        <!-- LOGO AND SUBSYSTEM TITLE -->
+        <div class="logo-title">
+            <div class="logo">
+                <img src="assets/images/GCLIBRARY.png">
+            </div>
+            <div class="systemname">
+                <br>
+                <h1> Marlon A. Atencio </h1>
+                <h2>ADMIN</h2>
+            </div>
+        </div>
+
+        <!-- SIDEBAR TABS -->
+        <div class="sidebar-tabs">
+            <ul class="admin-tabs">
+                <li class="admin-tab">
+                    <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <span class="tab-link-icon"> <i class='bx bx-user'></i> </span>
+                    <span class="tab-link-name"> Personnel Setup </span>
+                    </a>
+                </li>
+
+                <li class="admin-tab">
+                    <a class="tab-link" routerLink="circulation" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <span class="tab-link-icon"> <i class='bx bx-circle'></i> </span>
+                    <span class="tab-link-name"> Circulation </span>
+                    </a>
+                </li>
+                
+                <li class="admin-tab">
+                    <a class="tab-link" routerLink="announcement" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <span class="tab-link-icon"> <i class='bx bx-announcement'></i> </span>
+                    <span class="tab-link-name"> Announcement </span>
+                    </a>
+                </li>
+
+            <li class="admin-tab">
+                <a class="tab-link" routerLink="inventory" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                <span class="tab-link-icon"> <i class='bx bx-cabinet' ></i> </span>
+                <span class="tab-link-name"> Inventory </span>
+                </a>
+            </li>
+            <li class="admin-tab">
+                <a class="tab-link" routerLink="addlocker" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                <span class="tab-link-icon"> <i class='bx bx-cabinet' ></i> </span>
+                <span class="tab-link-name"> Add Locker </span>
+                </a>
+            </li>
+            </ul>
+
+            <!-- LOGOUT BUTTON -->
+            <div class="logoutbtn">
+            <div class="logout" routerLink="/login">
+                <span> <i class='bx bx-log-out bx-rotate-180' ></i> </span>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
