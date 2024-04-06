@@ -35,34 +35,38 @@
             <ul class="admin-tabs">
                 <li class="admin-tab">
                     <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class='bx bx-user'></i> </span>
+                    <span class="tab-link-icon"><i class="fa-solid fa-user-gear"></i></span>
                     <span class="tab-link-name"> Personnel Setup </span>
                     </a>
                 </li>
 
                 <li class="admin-tab">
                     <a class="tab-link" routerLink="circulation" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class='bx bx-circle'></i> </span>
+                    <span class="tab-link-icon">  <i class="fa-solid fa-arrows-spin"></i> </span>
                     <span class="tab-link-name"> Circulation </span>
                     </a>
                 </li>
                 
                 <li class="admin-tab">
                     <a class="tab-link" routerLink="announcement" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class='bx bx-announcement'></i> </span>
+                    <span class="tab-link-icon"> <i class="fa-solid fa-bullhorn"></i> </span>
                     <span class="tab-link-name"> Announcement </span>
                     </a>
                 </li>
 
             <li class="admin-tab">
                 <a class="tab-link" routerLink="inventory" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                <span class="tab-link-icon"> <i class='bx bx-cabinet' ></i> </span>
+                    <span class="material-symbols-outlined">
+                        inventory
+                        </span>
                 <span class="tab-link-name"> Inventory </span>
                 </a>
             </li>
             <li class="admin-tab">
                 <a class="tab-link" routerLink="addlocker" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                <span class="tab-link-icon"> <i class='bx bx-cabinet' ></i> </span>
+                    <span class="material-symbols-outlined">
+                        library_add
+                        </span>
                 <span class="tab-link-name"> Add Locker </span>
                 </a>
             </li>
@@ -71,7 +75,7 @@
             <!-- LOGOUT BUTTON -->
             <div class="logoutbtn">
             <div class="logout" routerLink="/login">
-                <span> <i class='bx bx-log-out bx-rotate-180' ></i> </span>
+                <span> <i class="fa-solid fa-right-from-bracket"></i> </span>
             </div>
             </div>
         </div>
