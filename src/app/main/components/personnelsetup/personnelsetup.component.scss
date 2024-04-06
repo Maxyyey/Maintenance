@@ -27,7 +27,7 @@ body {
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -52,12 +52,23 @@ th {
     font-weight: bold;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn {
     padding: 5px 10px;
     margin-right: 5px;
     cursor: pointer;
     border: none;
-    background-color: #007bff;
+    background-color: #31A463;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.delete-btn{
+
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #AB0E0E;
     color: #fff;
     border-radius: 3px;
 }

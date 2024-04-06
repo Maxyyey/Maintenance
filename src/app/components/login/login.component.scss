@@ -1,4 +1,52 @@
-button {
-    width: 100px;
-    height: 100px;
-}
+.background-container {
+    .background-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100px;
+      background-color: white;
+    }
+    
+    .content {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo-container {
+      align-self: stretch;
+      margin-right: 50px;
+      max-width: 400px; 
+      align-self: flex-start; /* Aligns the logo to the start (right) */
+      margin-left: 1300px;
+      margin-top: p0px; /* Adjust the margin as needed */
+      
+      
+    }
+    
+    .school-container {
+      position: absolute;
+      bottom: 100;
+      left: 50;
+      align-self: stretch;
+      max-width: 100000000px;
+    }
+    
+    .logo, .school {
+      max-width: 100%;
+    }
+    
+    .mainte {
+      align-self: stretch;
+      position: absolute;
+      bottom: 1000;
+      left: 50;
+      align-self: flex-start;
+      margin-right: 1000px;
+      margin-top: -400px;
+    }
+    
+  
+  
+  
+  }
