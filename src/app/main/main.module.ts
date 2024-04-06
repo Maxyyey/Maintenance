@@ -7,13 +7,17 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { AnnouncementComponent } from './components/announcement/announcement.component';
 import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
 import { CirculationComponent } from './components/circulation/circulation.component';
+import { HistoryComponent  } from './components/addlocker/history/history.component';
+import { UserComponent } from './components/addlocker/user/user.component';
 
 @NgModule({
   declarations: [
     InventoryComponent,
     AnnouncementComponent,
     PersonnelSetupComponent,
-    CirculationComponent
+    CirculationComponent,
+    HistoryComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,
