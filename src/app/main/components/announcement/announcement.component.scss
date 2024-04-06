@@ -1,0 +1,83 @@
+.container-AddNewButton{
+    float: right;
+    text-align: center;
+
+}
+  
+
+.container-header{
+    background-color: #31A463;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-right: 1000px;
+    background-color: #EEEEEE;
+}
+
+.container {
+    max-width: 1610px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #EEEEEE;
+    border-radius: 0px;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+    margin-top: 20px;
+    margin-left: -10;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.edit-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #31A463;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.delete-btn{
+
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #AB0E0E;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background-color: #0056b3;
+}
+
+.upload-btn:hover {
+    background-color: #218838;
+}
+
