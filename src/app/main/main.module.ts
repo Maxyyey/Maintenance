@@ -10,6 +10,7 @@ import { CirculationComponent } from './components/circulation/circulation.compo
 import { HistoryComponent  } from './components/addlocker/history/history.component';
 import { UserComponent } from './components/addlocker/user/user.component';
 import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
+import { UploadComponent } from './components/circulation/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddUserComponent } from './components/personnelsetup/adduser/adduser.co
     CirculationComponent,
     HistoryComponent,
     UserComponent,
-    AddUserComponent
+    AddUserComponent,
+    UploadComponent
   ],
   imports: [
     CommonModule,
