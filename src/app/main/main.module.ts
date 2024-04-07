@@ -9,6 +9,7 @@ import { PersonnelSetupComponent } from './components/personnelsetup/personnelse
 import { CirculationComponent } from './components/circulation/circulation.component';
 import { HistoryComponent  } from './components/addlocker/history/history.component';
 import { UserComponent } from './components/addlocker/user/user.component';
+import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserComponent } from './components/addlocker/user/user.component';
     PersonnelSetupComponent,
     CirculationComponent,
     HistoryComponent,
-    UserComponent
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     CommonModule,
