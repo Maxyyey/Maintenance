@@ -23,12 +23,12 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
 }
 
 h1 {
@@ -44,11 +44,11 @@ table {
 th, td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #EEEEEE;
     font-weight: bold;
 }
 

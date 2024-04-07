@@ -11,6 +11,7 @@ import { HistoryComponent  } from './components/addlocker/history/history.compon
 import { UserComponent } from './components/addlocker/user/user.component';
 import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
 import { UploadComponent } from './components/circulation/upload/upload.component';
+import { AddComponent } from './components/announcement/add/add.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UploadComponent } from './components/circulation/upload/upload.componen
     HistoryComponent,
     UserComponent,
     AddUserComponent,
-    UploadComponent
+    UploadComponent,
+    AddComponent
   ],
   imports: [
     CommonModule,

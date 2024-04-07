@@ -11,6 +11,7 @@ import { HistoryComponent } from './components/addlocker/history/history.compone
 import { UserComponent } from  './components/addlocker/user/user.component';
 import { AddUserComponent } from  './components/personnelsetup/adduser/adduser.component';
 import { UploadComponent } from  './components/circulation/upload/upload.component';
+import { AddComponent } from  './components/announcement/add/add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'addmaterials', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'history',  component: HistoryComponent},
   { path: 'user', component: UserComponent},
   { path: 'adduser', component: AddUserComponent},
-  { path: 'upload', component: UploadComponent}
+  { path: 'upload', component: UploadComponent},
+  { path: 'add', component: AddComponent},
 ];
 
 @NgModule({
