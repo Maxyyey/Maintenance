@@ -1,6 +1,13 @@
 .container-AddNewButton{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    padding-right: 30px;
+    margin-right: auto;
     float: right;
-    text-align: left;
+    font-weight: bold;
+    margin-top: 5px; 
 
 }
   
@@ -80,5 +87,8 @@ th {
 .upload-btn:hover {
     background-color: #218838;
 }
+.add {  
+    
+}
 
- 
+    
