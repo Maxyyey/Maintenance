@@ -4,24 +4,26 @@
     color: black;
     border-radius: 10px;
     padding: 10px;
-    padding-right: 30px;
+    padding-right: 10px;
     margin-right: auto;
     float: right;
     font-weight: bold;
     margin-top: 5px;
+    text-align: center;
     
 
 }
 .container-addUserButton:hover{
     background-color:green($color: #000000);
-    color: white;
+    color: rgb(46, 44, 44);
 }
 .search-bar{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    padding-right: 30px;
-    margin-left: auto;
+    padding-right: 0px;
+    padding-left: 20px;
+    margin-left: 10px;
     float: right;
     font-weight: bold;
     color: black;
@@ -32,9 +34,10 @@
 .container-header{
     background-color: #31A463;
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
-    padding-right: 30px;
+    padding-left: 20px;
+    max-width: 1655px;
 
 }
 

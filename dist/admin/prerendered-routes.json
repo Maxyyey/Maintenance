@@ -1,16 +1,26 @@
 {
   "routes": [
+    "/add",
     "/addlocker",
+    "/adduser",
     "/announcement",
     "/circulation",
+    "/history",
     "/inventory",
     "/login",
     "/main",
+    "/main/add",
     "/main/addlocker",
+    "/main/adduser",
     "/main/announcement",
     "/main/circulation",
+    "/main/history",
     "/main/inventory",
     "/main/personnelsetup",
-    "/personnelsetup"
+    "/main/upload",
+    "/main/user",
+    "/personnelsetup",
+    "/upload",
+    "/user"
   ]
 }
