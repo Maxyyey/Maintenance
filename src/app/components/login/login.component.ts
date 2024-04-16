@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit{
-  constructor(private router:Router) { }
+export class LoginComponent {
+  constructor() {
 
-  ngOnInit(): void { }
-  
-  onAddNewBtnClick() {
-    this.router.navigate(['/main']);
   }
-   
-   
+
+  showpassword = false;
+
+  toggleShow() {
+    this.showpassword = !this.showpassword
   }
+}
