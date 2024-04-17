@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-personnelsetup',
   templateUrl: './personnelsetup.component.html',
-  styleUrl: './personnelsetup.component.scss', // Use styleUrls instead of styleUrl
+  styleUrl: './personnelsetup.component.scss',
 })
-export class PersonnelSetupComponent implements OnInit {
-  constructor(private router: Router) { }
+export class PersonnelSetupComponent implements OnInit{
+  constructor(private router:Router) { }
 
   ngOnInit(): void { }
 
-  onAddNewBtnClick() {
+  onAddNewBtnClick(){
     this.router.navigate(['/adduser']);
   }
   // Component logic here

@@ -6,12 +6,10 @@ import { MatButtonModule } from '@angular/material/button'; // Import MatButtonM
 
 import { AnnouncementRoutingModule } from './announcement-routing.module';
 import { AddNewPopupComponent } from './components/addnew-popup/addnew-popup.component';
-import { DeletePopupComponent } from './components/delete-popup/delete-popup.component';
 
 @NgModule({
     declarations: [
         AddNewPopupComponent,
-        DeletePopupComponent
     ],
     imports: [
         CommonModule,
