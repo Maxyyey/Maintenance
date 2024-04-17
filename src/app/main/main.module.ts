@@ -7,10 +7,11 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { AnnouncementComponent } from './components/announcement/announcement.component';
 import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
 import { CirculationComponent } from './components/circulation/circulation.component';
-import { AnnouncementModule } from './components/announcement/announcement.module';
-
-
-import { FormsModule } from '@angular/forms';
+import { HistoryComponent  } from './components/addlocker/history/history.component';
+import { UserComponent } from './components/addlocker/user/user.component';
+import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
+import { UploadComponent } from './components/circulation/upload/upload.component';
+import { AddComponent } from './components/announcement/add/add.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { FormsModule } from '@angular/forms';
     AnnouncementComponent,
     PersonnelSetupComponent,
     CirculationComponent,
-    
+    HistoryComponent,
+    UserComponent,
+    AddUserComponent,
+    UploadComponent,
+    AddComponent
   ],
   imports: [
     CommonModule,
-    MainRoutingModule,
-    AnnouncementModule,
-    FormsModule
+    MainRoutingModule
   ]
 })
 export class MainModule { }

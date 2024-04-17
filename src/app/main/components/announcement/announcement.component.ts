@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { AddNewPopupComponent } from './components/addnew-popup/addnew-popup.component'; // Adjust the path as needed
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-announcement',
   templateUrl: './announcement.component.html',
   styleUrl: './announcement.component.scss',
 })
-export class AnnouncementComponent {
-  constructor(private dialog: MatDialog) {}
+export class AnnouncementComponent implements OnInit{
+  constructor(private router:Router) { }
 
-  openAddNewPopup() {
-    this.dialog.open(AddNewPopupComponent, {
-      width: '400px',
-      // other configuration options...
-    });
+  ngOnInit(): void { }
+
+  onAddNewBtnClick(){
+    this.router.navigate(['/add']);
+  }
+
+  showTable: boolean = false;
+
+  toggleTable() {
+    this.showTable = !this.showTable;
   }
 }
