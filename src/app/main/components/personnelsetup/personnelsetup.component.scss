@@ -4,10 +4,12 @@
     color: black;
     border-radius: 10px;
     padding: 10px;
-    padding-right: 10px;
+    border: 1px ;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
     margin-right: auto;
     float: right;
-    font-weight: bold;
     margin-top: 5px;
     text-align: center;
     
@@ -20,10 +22,12 @@
 .search-bar{
     background-color: white;
     border-radius: 10px;
+    border: 1px;
     padding: 10px;
     padding-right: 0px;
     padding-left: 20px;
     margin-left: 10px;
+    margin-right: 10px;
     float: right;
     font-weight: bold;
     color: black;
@@ -34,11 +38,11 @@
 .container-header{
     background-color: #31A463;
     color: white;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin-right: 25px;
+    margin-top: 25px;
     padding: 10px;
-    padding-left: 20px;
     max-width: 1655px;
-
 }
 
 body {
@@ -60,6 +64,7 @@ body {
 
 h1 {
     text-align: left;
+    margin-left: 20px;
 }
 
 table {
@@ -100,6 +105,6 @@ th {
     border-radius: 3px;
 }
 
-.edit-btn:hover, .delete-btn:hover {
-    background-color: #0056b3;
+.edit-btn:hover {
+    background-color: #298f55;
 }
