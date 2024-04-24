@@ -11,7 +11,7 @@ export class AnnouncementComponent implements OnInit{
 
   ngOnInit(): void { }
 
-  onAddNewBtnClick(){
+  onUploadBtnClick(){
     this.router.navigate(['/add']);
   }
 
