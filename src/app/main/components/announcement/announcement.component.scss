@@ -64,6 +64,7 @@
   }
 
   .card {
+    position: relative;
     height: 300px;
     flex: 1;
     background-color: #ffffff; /* White background */
@@ -97,3 +98,28 @@
   .card p {
     font-size:medium;
   }
+
+  .card-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px; /* Adjust margin for spacing */
+}
+
+.card-buttons .edit-btn {
+    margin-left: 5px; /* Adjust space between buttons */
+    background-color: green; /* Set green background color */
+    border: none;
+    color: white; /* Set text color to white */
+    padding: 10px 13px; /* Add padding for better appearance */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card-buttons .archive-btn {
+  margin-left: 5px; /* Adjust space between buttons */
+  background-color: #AB0E0E; /* Set green background color */
+  border: none;
+  color: white; /* Set text color to white */
+  padding: 10px 13px; /* Add padding for better appearance */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
