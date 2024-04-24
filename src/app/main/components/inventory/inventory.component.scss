@@ -80,6 +80,7 @@ h1 {
 }
 
 h2 {
+    margin-left: 30px;
     margin-top: 15px;
 }
 
@@ -98,6 +99,17 @@ th, td {
 th {
     background-color: #EEEEEE;
     font-weight: bold;
+}
+
+.list-btn {
+    padding: 5px 10px;
+    padding-left: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #b7cec100;
+    color: #080000;
+    border-radius: 3px;
 }
 
 .edit-btn {
