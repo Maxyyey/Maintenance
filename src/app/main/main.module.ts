@@ -13,6 +13,7 @@ import { UserComponent } from './components/addlocker/user/user.component';
 import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
 import { UploadComponent } from './components/circulation/upload/upload.component';
 import { AddComponent } from './components/announcement/add/add.component';
+import { MaterialsComponent } from './components/cataloging/materials/materials.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddComponent } from './components/announcement/add/add.component';
     UserComponent,
     AddUserComponent,
     UploadComponent,
-    AddComponent
+    AddComponent,
+    MaterialsComponent
   ],
   imports: [
     CommonModule,

@@ -9,56 +9,79 @@
                     
             </h1>
         </div>
- 
-        <div class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Locker ID</th>
-                        <th>Status</th>
-                        <th>Date & Time</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn"> <i class="fa-solid fa-edit"> </i> </button>
-                            <button class="archive-btn"> <i class="fa-solid fa-archive"> </i> </button>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn"> <i class="fa-solid fa-edit"> </i> </button>
-                            <button class="archive-btn"> <i class="fa-solid fa-archive"> </i> </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn"> <i class="fa-solid fa-edit"> </i> </button>
-                            <button class="archive-btn"> <i class="fa-solid fa-archive"> </i> </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn"> <i class="fa-solid fa-edit"> </i> </button>
-                            <button class="archive-btn"> <i class="fa-solid fa-archive"> </i> </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="page-content">
+            <div class="tabbed">
+                <input type="radio" id="tab1" name="css-tabs" checked="checked">
+                <input type="radio" id="tab2" name="css-tabs" >
+                <input type="radio" id="tab3" name="css-tabs" >
+                
+                <ul class="tabs">
+                    <li class="tab"><label for="tab1">Materials</label></li>
+                    <li class="tab"><label for="tab2">Academic Project</label></li>
+                </ul>
+            
+
+        <div class="tab-content">
+                <div class="materialcontainer">
+                        <!-- button -->
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="row buttons">
+                                    <div class="col-md-4">
+                                        <button class="btn btn-block btn-icon" [routerLink]="['materials']" routerLinkActive="active"> Books</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-block btn-icon" [routerLink]="['articles']" routerLinkActive="router-link-active"> Article</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-block btn-icon" [routerLink]="['periodicals']" routerLinkActive="router-link-active"> Periodical</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <!-- Search bar-->
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                       
         </div>
+        
+        <div class="tab-content">
+            <div class="academiccontainer">
+                <div class="row1">
+                    <div class="col-md-5">
+                        <div class="row buttons">
+                            <div class="col-md-4">
+                                <button class="btn btn-block btn-icon" [routerLink]="['materials']" routerLinkActive="router-link-active"> CCS  </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-block btn-icon" [routerLink]="['articles']" routerLinkActive="router-link-active"> CBA</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-block btn-icon" [routerLink]="['periodicals']" routerLinkActive="router-link-active"> CAHS</button>
+                            <div class="col-md-4">
+                                <button class="btn btn-block btn-icon" [routerLink]="['periodicals']" routerLinkActive="router-link-active"> CHTM</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-block btn-icon" [routerLink]="['periodicals']" routerLinkActive="router-link-active"> CEAS</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <!-- Search bar-->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+    </div>
 </div>
