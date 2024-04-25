@@ -87,10 +87,14 @@
 
             <!-- LOGOUT BUTTON -->
             <div class="logoutbtn">
-            <div class="logout" routerLink="/login">
-                <span> <i class="fa-solid fa-right-from-bracket"></i> </span>
-            </div>
-            </div>
+                <div class="logout" (click)="togglePopup()" >
+                    <span> <i class='fa-solid fa-right-from-bracket' ></i> 
+                        <app-logout-popup *ngIf="showPopup" (closedPopup)="closePopup()" (leaveClicked)="redirectToLoginPage()"></app-logout-popup>
+                    </span>
+    
+        
+                </div>
+                </div>
         </div>
     </nav>
 
