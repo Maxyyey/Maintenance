@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // ADMIN MAIN COMPONENTS
 import { MainRoutingModule } from './main-routing.module';
@@ -29,7 +30,8 @@ import { AddComponent } from './components/announcement/add/add.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MatTabsModule
   ]
 })
 export class MainModule { }

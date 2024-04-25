@@ -1,7 +1,7 @@
 import {
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-BOKDFOET.js";
+} from "./chunk-A4LZSBM5.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -80,7 +80,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-UKCBS76B.js";
+} from "./chunk-HUP633RX.js";
 
 // node_modules/@angular/cdk/fesm2022/platform.mjs
 var hasV8BreakIterator;
@@ -1307,6 +1307,26 @@ var ActiveDescendantKeyManager = class extends ListKeyManager {
     super.setActiveItem(index);
     if (this.activeItem) {
       this.activeItem.setActiveStyles();
+    }
+  }
+};
+var FocusKeyManager = class extends ListKeyManager {
+  constructor() {
+    super(...arguments);
+    this._origin = "program";
+  }
+  /**
+   * Sets the focus origin that will be passed in to the items for any subsequent `focus` calls.
+   * @param origin Focus origin to be used when focusing items.
+   */
+  setFocusOrigin(origin) {
+    this._origin = origin;
+    return this;
+  }
+  setActiveItem(item) {
+    super.setActiveItem(item);
+    if (this.activeItem) {
+      this.activeItem.focus(this._origin);
     }
   }
 };
@@ -4962,21 +4982,26 @@ export {
   coerceArray,
   coerceCssPixelValue,
   coerceElement,
+  CdkObserveContent,
   ObserversModule,
   addAriaReferencedId,
   removeAriaReferencedId,
   AriaDescriber,
   ActiveDescendantKeyManager,
+  FocusKeyManager,
   InteractivityChecker,
   FocusTrapFactory,
   LiveAnnouncer,
   FocusMonitor,
+  CdkMonitorFocus,
   A11yModule,
   Directionality,
   BidiModule,
   MatCommonModule,
   _ErrorStateTracker,
   ErrorStateMatcher,
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatRipple,
   MatRippleModule,
   MAT_OPTION_PARENT_COMPONENT,
   MAT_OPTGROUP,
@@ -4986,4 +5011,4 @@ export {
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-EDRNXKUB.js.map
+//# sourceMappingURL=chunk-XBV736ML.js.map
