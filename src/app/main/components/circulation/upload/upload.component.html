@@ -1,1 +1,61 @@
-<p>ADD PATRON</p>
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1> Add Patron</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            
+                              
+                            <div class="row">
+                              <div class="col-md-15">
+                                <label for="title">Patron Type</label>
+                                <input type="text" class="form-control" placeholder="Student">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label for="author">Fines Overdue</label>
+                                <input type="text" class="form-control" placeholder="[Price Here]">
+                                </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-md-6">
+                                <label for="location">Days or hours</label>
+                                <input type="text" class="form-control" placeholder="Days">
+                              </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="location">No. of days/hours allowed</label>
+                                  <input type="text" class="form-control" placeholder="10 Days">
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                      <label for="location">No. of materials allowed    </label>
+                                      <input type="text" class="form-control" placeholder="3">
+                                    </div>
+                                    </div>
+                            
+                          </form>
+                        </div>
+                        <div class="button-container">
+                            <button  class="add-btn">Add</button>
+                            <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                           
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>

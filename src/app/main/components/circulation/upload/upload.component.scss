@@ -1,0 +1,111 @@
+/* CONTAINER */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.detailsheader h1{
+    border-bottom: 3.5px solid #000000;
+    margin: 20px 20px 20px 20px;
+    color: black;
+    text-align: center;
+}
+.details-content {
+    position: relative;
+    padding: 0 30px 10px 30px;
+    background: white;
+    width: 900px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    max-height: 600px;
+    overflow-y: auto;
+    height: 500px;
+}
+
+
+.btn-close {
+    position: relative;
+    float: right;
+}
+form {
+    margin: 0 0 0 0;
+}
+.form-group {
+    display: flex;
+}
+.row {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+form .form-row {
+    padding: 10px;
+}
+form .form-control {
+    border: 5px solid #black;
+    border-radius: 1;
+    height: 30px;
+    float :right;
+    text-align: center;
+    width: 250px;
+}
+.modal-footer .btn-submit {
+    position: relative;
+    right: 25px;
+    background-color: #31A463;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 20%;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Poppins';
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    width: 100px;
+    letter-spacing: 1.5px;
+    margin: 10px;
+}
+
+.cancel-btn {
+    background-color: #AB0E0E;
+    color: white;
+    float: right;
+    margin-top: 100px;
+    
+}
+
+.cancel-btn:hover {
+    background-color: gray;
+}
+
+.add-btn {
+   
+    background-color: #31A463;
+    color: white;
+    float: right;
+    margin-top: 100px;
+
+}
+
+.add-btn:hover {
+    background-color: gray;
+}   
+.row {
+    margin-left: 50px;
+}
