@@ -7,7 +7,5 @@ import { Router } from '@angular/router';
   templateUrl: './cataloging.component.html',
   styleUrl: './cataloging.component.scss',
 })
-export class CatalogingComponent {
-locations: any;
-  
+export class CatalogingComponent {  
 }
