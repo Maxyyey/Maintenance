@@ -1,1 +1,48 @@
-<p>USER TO BAT BA!</p>
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1> Add User</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            
+                              
+                            <div class="row">
+                              <div class="col-md-15">
+                                <label for="title">Name</label>
+                                <input type="text" class="form-control">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label for="author">Password</label>
+                                <input type="text" class="form-control">
+                              </div>
+                              <div class="col-md-6">
+                                <label for="location">Access</label>
+                                <input type="text" class="form-control">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="button-container">
+                            <button  class="add-btn">Add</button>
+                            <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                           
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AddUserComponent } from './adduser/adduser.component';
 
 @Component({
   selector: 'app-personnelsetup',
@@ -7,12 +9,14 @@ import { Router } from '@angular/router';
   styleUrl: './personnelsetup.component.scss',
 })
 export class PersonnelSetupComponent implements OnInit{
-  constructor(private router:Router) { }
+  constructor(private dialogRef : MatDialog) { }
 
   ngOnInit(): void { }
 
   onAddNewBtnClick(){
-    this.router.navigate(['/adduser']);
+    // this.router.navigate(['/adduser']);
+    this.dialogRef.open(AddUserComponent, {});
+    
   }
   // Component logic here
 }
