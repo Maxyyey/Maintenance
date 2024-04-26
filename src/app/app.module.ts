@@ -3,6 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,7 +16,6 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 
 import { MaterialModule } from './modules/material/material.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MaterialModule
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

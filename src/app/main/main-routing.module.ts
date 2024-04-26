@@ -1,34 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-import { InventoryComponent } from './components/inventory/inventory.component';
-import { AnnouncementComponent } from './components/announcement/announcement.component';
-import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
-import { CirculationComponent } from './components/circulation/circulation.component';
 import { AddLockerComponent } from './components/addlocker/addlocker.component';
+import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
 import { CatalogingComponent } from './components/cataloging/cataloging.component';
-import { HistoryComponent } from './components/addlocker/history/history.component';
-import { UserComponent } from  './components/addlocker/user/user.component';
-import { AddUserComponent } from  './components/personnelsetup/adduser/adduser.component';
-import { UploadComponent } from  './components/circulation/upload/upload.component';
-import { AddComponent } from  './components/announcement/add/add.component';
-
-
+import { CirculationComponent } from './components/circulation/circulation.component';
+import { AnnouncementComponent } from './components/announcement/announcement.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'addmaterials', pathMatch: 'full' },
-  { path: 'announcement', component: AnnouncementComponent},
-  { path: 'inventory', component: InventoryComponent},
-  { path: 'personnelsetup', component: PersonnelSetupComponent},
-  { path: 'circulation', component: CirculationComponent},
-  { path: 'addlocker', component: AddLockerComponent},
-  { path: 'cataloging', component: CatalogingComponent},
-  { path: 'history',  component: HistoryComponent},
-  { path: 'user', component: UserComponent},
-  { path: 'adduser', component: AddUserComponent},
-  { path: 'upload', component: UploadComponent},
-  { path: 'add', component: AddComponent},
+  { path: '', redirectTo: 'addlocker', pathMatch: 'full' },
+  { path: 'addlocker', component: AddLockerComponent, 
+  children: [{
+    path: '',
+    loadChildren: ()=>import('./components/addlocker/addlocker.module').then((m)=>m.AddLockerModule)
+  }]
+  },
+  { path: 'personnelsetup', component: PersonnelSetupComponent },
+  { path: 'cataloging', component: CatalogingComponent,
+  children: [{
+    path: '',
+    loadChildren: ()=>import('./components/cataloging/cataloging.module').then((m)=>m.CatalogingModule)
+  }]
+   },
+  { path: 'circulation', component: CirculationComponent },
+  { path: 'announcement', component: AnnouncementComponent },
+  { path: 'inventory', component: InventoryComponent },
 ];
 
 @NgModule({
