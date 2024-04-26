@@ -21,6 +21,7 @@
     margin-top: 25px;
     padding: 10px;
     max-width: 1655px;
+    margin-bottom: 30px;
     
 }
 
@@ -72,8 +73,8 @@
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
     border: solid 2px var(--border-color);
-  margin: 30px;
-    
+  margin: 7px 5px;
+    display: block;
     transition: all .2s ease-in;
   }
 
@@ -88,16 +89,21 @@
     height: 70%; /* or any specific height */
     background-color: #f3f3f3; /* a light grey placeholder color */
     border-radius: 5px; /* if you want rounded corners */
-    margin-bottom: 10px; /* space between the image and the text below */
+    margin-bottom: 3px; /* space between the image and the text below */
     object-fit: contain;
   }
 
+
+  .textbox{
+    margin-bottom: 10px;
+    margin-left: 10px;;
+  }
   .card h2 {
-    font-size: medium; /* Larger title text */
+    font-size: small; /* Larger title text */
     font-weight: bold;
   }
   .card p {
-    font-size:medium;
+    font-size: x-small;
   }
 
   .card-buttons {
@@ -109,6 +115,7 @@
 
 .card-buttons .edit-btn {
     margin-left: 5px; /* Adjust space between buttons */
+    margin-bottom: 5px;
     background-color: green; /* Set green background color */
     border: none;
     color: white; /* Set text color to white */
