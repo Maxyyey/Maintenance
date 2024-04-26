@@ -16,6 +16,11 @@ import { AddComponent } from './components/announcement/add/add.component';
 import { BooksComponent } from './components/cataloging/materials/books/books.component';
 import { ArticleComponent } from './components/cataloging/materials/article/article.component';
 import { PeriodicalComponent } from './components/cataloging/materials/periodical/periodical.component';
+import { CcsComponent } from './components/cataloging/academicproject/ccs/ccs.component';
+import { CbaComponent } from './components/cataloging/academicproject/cba/cba.component';
+import { CahsComponent } from './components/cataloging/academicproject/cahs/cahs.component';
+import { ChtmComponent } from './components/cataloging/academicproject/chtm/chtm.component';
+import { CeasComponent } from './components/cataloging/academicproject/ceas/ceas.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,11 @@ import { PeriodicalComponent } from './components/cataloging/materials/periodica
     BooksComponent,
     ArticleComponent,
     PeriodicalComponent,
+    CcsComponent,
+    CbaComponent,
+    CahsComponent,
+    ChtmComponent,
+    CeasComponent,
 
   ],
   imports: [
