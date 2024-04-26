@@ -13,7 +13,9 @@ import { UserComponent } from './components/addlocker/user/user.component';
 import { AddUserComponent } from './components/personnelsetup/adduser/adduser.component';
 import { UploadComponent } from './components/circulation/upload/upload.component';
 import { AddComponent } from './components/announcement/add/add.component';
-import { MaterialsComponent } from './components/cataloging/materials/materials.component';
+import { BooksComponent } from './components/cataloging/materials/books/books.component';
+import { ArticleComponent } from './components/cataloging/materials/article/article.component';
+import { PeriodicalComponent } from './components/cataloging/materials/periodical/periodical.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { MaterialsComponent } from './components/cataloging/materials/materials.
     AddUserComponent,
     UploadComponent,
     AddComponent,
-    MaterialsComponent
+    BooksComponent,
+    ArticleComponent,
+    PeriodicalComponent,
+
   ],
   imports: [
     CommonModule,

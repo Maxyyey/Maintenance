@@ -13,7 +13,6 @@ import { UserComponent } from  './components/addlocker/user/user.component';
 import { AddUserComponent } from  './components/personnelsetup/adduser/adduser.component';
 import { UploadComponent } from  './components/circulation/upload/upload.component';
 import { AddComponent } from  './components/announcement/add/add.component';
-import { MaterialsComponent } from './components/cataloging/materials/materials.component';
 
 
 
@@ -30,8 +29,6 @@ const routes: Routes = [
   { path: 'adduser', component: AddUserComponent},
   { path: 'upload', component: UploadComponent},
   { path: 'add', component: AddComponent},
-  { path: 'materials', component: MaterialsComponent},
-
 ];
 
 @NgModule({

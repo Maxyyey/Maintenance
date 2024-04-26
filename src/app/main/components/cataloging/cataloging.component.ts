@@ -8,5 +8,6 @@ import { Router } from '@angular/router';
   styleUrl: './cataloging.component.scss',
 })
 export class CatalogingComponent {
+locations: any;
   
 }
