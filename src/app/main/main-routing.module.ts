@@ -10,7 +10,12 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'addlocker', pathMatch: 'full' },
-  { path: 'addlocker', component: AddLockerComponent, },
+  { path: 'addlocker', component: AddLockerComponent, 
+  children: [{
+    path: '',
+    loadChildren: ()=>import('./components/addlocker/addlocker.module').then((m)=>m.AddLockerModule)
+  }]
+  },
   { path: 'personnelsetup', component: PersonnelSetupComponent },
   { path: 'cataloging', component: CatalogingComponent,
   children: [{
