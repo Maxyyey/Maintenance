@@ -99,11 +99,13 @@
     margin-left: 10px;;
   }
   .card h2 {
-    font-size: small; /* Larger title text */
+    font-size: medium; /* Larger title text */
     font-weight: bold;
+    margin-bottom: 5px;
   }
   .card p {
-    font-size: x-small;
+    font-size: small;
+    margin-bottom: 3px;
   }
 
   .card-buttons {
