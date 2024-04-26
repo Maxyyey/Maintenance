@@ -116,8 +116,9 @@
 .card-buttons .edit-btn {
     margin-left: 5px; /* Adjust space between buttons */
     margin-bottom: 5px;
-    background-color: green; /* Set green background color */
+    background-color: #31A463; /* Set green background color */
     border: none;
+    border-radius: 5px;
     color: white; /* Set text color to white */
     padding: 10px 13px; /* Add padding for better appearance */
     cursor: pointer; /* Change cursor to pointer on hover */
@@ -127,6 +128,7 @@
   margin-left: 5px; /* Adjust space between buttons */
   background-color: #AB0E0E; /* Set green background color */
   border: none;
+  border-radius: 5px;
   color: white; /* Set text color to white */
   padding: 10px 13px; /* Add padding for better appearance */
   cursor: pointer; /* Change cursor to pointer on hover */
