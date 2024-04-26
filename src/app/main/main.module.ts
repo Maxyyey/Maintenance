@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // ADMIN MAIN COMPONENTS
 import { MainRoutingModule } from './main-routing.module';
@@ -46,7 +47,8 @@ import { CeasComponent } from './components/cataloging/academicproject/ceas/ceas
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MatTabsModule
   ]
 })
 export class MainModule { }
