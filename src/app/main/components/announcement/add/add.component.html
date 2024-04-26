@@ -1,1 +1,65 @@
-<p>POST ANNOUNCEMENT HERE!!!!!</p>
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1>Add an Announcement</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            
+                              
+                            <div class="row">
+                              <div class="Title">
+                                <label for="Title">Title: </label>
+                                <input type="text" class="form-control" placeholder="Title">
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="Category">
+                                  <label for="Category">Category: </label>
+                                  <input type="text" class="form-control" placeholder="Category">
+                                </div>
+                              </div>
+
+                            <div class="row">
+                              <div class="Date">
+                                <label for="Date">Date: </label>
+                                <input type="text" class="form-control" placeholder="MM/DD/YY">
+                                </div>
+                              </div>
+                             
+                              <div class="row">
+                                <div class="Upload File">
+                                  <label for="Upload Image">Upload Image: </label>
+                                  <label type="text" class="form-control" placeholder=" "></label><button type="upload">Choose File</button>
+                                  </div>
+                                </div>
+                               
+                                <div>
+                                    <p>Content: </p>
+                                    <textarea class="big-text-box" placeholder="Enter Content"></textarea>
+                                  </div>
+                            
+                                <div class="button-container">
+                                    <button  class="add-btn">Add</button>
+                                    <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                                </div>
+                          </form>
+                        </div>
+                           
+        
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+   
+</main>

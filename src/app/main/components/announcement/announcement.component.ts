@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AddComponent } from './add/add.component';
 
 @Component({
   selector: 'app-announcement',
@@ -7,17 +9,15 @@ import { Router } from '@angular/router'
   styleUrl: './announcement.component.scss',
 })
 export class AnnouncementComponent implements OnInit{
-  constructor(private router:Router) { }
+  constructor(private dialogRef : MatDialog) { }
 
   ngOnInit(): void { }
 
-  onUploadBtnClick(){
-    this.router.navigate(['/add']);
+  onAddNewBtnClick(){
+    // this.router.navigate(['/adduser']);
+    this.dialogRef.open(AddComponent, {});
+    
   }
-
-  showTable: boolean = false;
-
-  toggleTable() {
-    this.showTable = !this.showTable;
-  }
+  // Component logic here
 }
+
