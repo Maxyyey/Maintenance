@@ -48,12 +48,26 @@ form .form-row {
     padding: 10px;
 }
 form .form-control {
-    border: 5px solid #black;
-    border-radius: 1;
+
+        border: 2px solid #31A463;
+        border-radius: 2rem;
+        height: 30px;
+        float :right;
+        text-align: center;
+        width: 500px;
+    
+}
+form .form-control1 {
+
+    border: 2px solid #31A463;
+    color: #31A463;
+    font-weight: bolder;
+    border-radius: 2rem;
     height: 30px;
     float :right;
     text-align: center;
-    width: 250px;
+    width: 500px;
+
 }
 .modal-footer .btn-submit {
     position: relative;
