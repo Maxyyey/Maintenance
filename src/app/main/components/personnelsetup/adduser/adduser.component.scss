@@ -11,7 +11,11 @@
     align-items: center;
     z-index: 999;
 }
-
+.detailsheader h1{
+    border-bottom: 3.5px solid #000000;
+    margin: 20px 20px 20px 20px;
+    color: #31A463;;
+}
 .details-content {
     position: relative;
     padding: 0 30px 10px 30px;
@@ -36,14 +40,18 @@ form {
     display: flex;
 }
 .row {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 form .form-row {
-    padding: 10px;
+    padding: 20px;
 }
 form .form-control {
     border: 2px solid #31A463;
     border-radius: 2rem;
+    height: 30px;
+    float :right;
+    text-align: center;
+    width: 500px;
 }
 .modal-footer .btn-submit {
     position: relative;
