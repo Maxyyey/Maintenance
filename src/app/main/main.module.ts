@@ -9,6 +9,7 @@ import { CirculationComponent } from './components/circulation/circulation.compo
 import { AnnouncementComponent } from './components/announcement/announcement.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 
+
 @NgModule({
   declarations: [
     AddLockerComponent,
@@ -16,7 +17,7 @@ import { InventoryComponent } from './components/inventory/inventory.component';
     CatalogingComponent,
     CirculationComponent,
     AnnouncementComponent,
-    InventoryComponent
+    InventoryComponent,
   ],
   imports: [
     CommonModule,

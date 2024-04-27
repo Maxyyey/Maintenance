@@ -11,11 +11,12 @@ import { PeriodicalComponent } from './components/materials/periodical/periodica
   declarations: [
     ArticleComponent,
     BooksComponent,
-    PeriodicalComponent
+    PeriodicalComponent,
   ],
   imports: [
     CommonModule,
-    CatalogingRoutingModule // Include the routing module here
+    CatalogingRoutingModule,
+ // Include the routing module here
   ],
   // Other configurations...
 })

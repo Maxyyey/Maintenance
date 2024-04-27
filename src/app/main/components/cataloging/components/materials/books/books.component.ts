@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewcatalogingComponent } from '../../function/view/viewcataloging/viewcataloging.component';
+
 
 
 @Component({
@@ -9,4 +12,16 @@ import { Router } from '@angular/router';
 })
 export class BooksComponent {
 
+  constructor(private dialogRef : MatDialog) { }
+
+  ngOnInit(): void { }
+
+  onAddNewBtnClick(){
+    // this.router.navigate(['/adduser']);
+    this.dialogRef.open(ViewcatalogingComponent, {});
+    
+  }
+  // Component logic here
 }
+
+
