@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
+import { MatDialog } from '@angular/material/dialog';
+import { UserComponent } from './components/user/user.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @Component({
   selector: 'app-add-locker',
@@ -8,15 +10,17 @@ import { Router } from '@angular/router';
   styleUrl: './addlocker.component.scss',
 })
 export class AddLockerComponent implements OnInit{
-  constructor(private router:Router) { }
+  constructor(private dialogRef:MatDialog) { }
 
   ngOnInit(): void { }
 
   onHistoryBtnClick(){
-    this.router.navigate(['/history']);
+    this.dialogRef.open(HistoryComponent, {})
   }
   onAddNewBtnClick(){
-    this.router.navigate(['/user']);
+    // this.router.navigate(['/adduser']);
+    this.dialogRef.open(UserComponent, {});
+    
   }
   // Component logic here
 }

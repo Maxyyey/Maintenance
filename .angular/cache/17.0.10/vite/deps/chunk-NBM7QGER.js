@@ -2,7 +2,7 @@ import {
   ScrollDispatcher,
   ScrollingModule,
   ViewportRuler
-} from "./chunk-MMSF7CH5.js";
+} from "./chunk-OEQDWHBH.js";
 import {
   BidiModule,
   Directionality,
@@ -14,11 +14,11 @@ import {
   coerceCssPixelValue,
   hasModifierKey,
   supportsScrollBehavior
-} from "./chunk-HJLG5WTK.js";
+} from "./chunk-2V6OZ2D5.js";
 import {
   DOCUMENT,
   Location
-} from "./chunk-FS746D63.js";
+} from "./chunk-YDMVDUUT.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -61,9 +61,9 @@ import {
   ɵɵdirectiveInject,
   ɵɵgetInheritedFactory,
   ɵɵinject
-} from "./chunk-NUGAQBFJ.js";
+} from "./chunk-PXCPMM5L.js";
 
-// node_modules/@angular/cdk/fesm2022/portal.mjs
+// ../../../../../node_modules/@angular/cdk/fesm2022/portal.mjs
 function throwNullPortalError() {
   throw Error("Must provide a portal to attach");
 }
@@ -593,7 +593,7 @@ var PortalModule = _PortalModule;
   }], null, null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/overlay.mjs
+// ../../../../../node_modules/@angular/cdk/fesm2022/overlay.mjs
 var scrollBehaviorSupported = supportsScrollBehavior();
 var BlockScrollStrategy = class {
   constructor(_viewportRuler, document) {
@@ -3293,4 +3293,4 @@ export {
   CdkConnectedOverlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-HNBA36DM.js.map
+//# sourceMappingURL=chunk-NBM7QGER.js.map
