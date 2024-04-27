@@ -27,10 +27,11 @@
                 <div class="materialcontainer">
                         <!-- button -->
                         <div class="row">
+                            <div class="rowbuttons">
                             <div class="col-md-5">
-                                <div class="row buttons">
+                                
                                     <div class="col-md-4">
-                                        <button class="btn btn-block btn-icon" [routerLink]="['books']" routerLinkActive="active">Books</button>
+                                        <button class="btn btn-block btn-icon" [routerLink]="['books']" routerLinkActive="active" checked>Books</button>
                                     </div>                                    
                                     <div class="col-md-4">
                                         <button class="btn btn-block btn-icon" [routerLink]="['article']" routerLinkActive="active"> Article</button>
@@ -39,16 +40,15 @@
                                         <button class="btn btn-block btn-icon" [routerLink]="['periodical']" routerLinkActive="active"> Periodical</button>
                                     </div>
                                 </div>
-                            </div>
+                           
                             <div class="col-md-7">
                                 <!-- Search bar-->
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search">
                                 </div>
                             </div>
-                            <div>
-                                <router-outlet></router-outlet>
                             </div>
+                            
                         </div>
                         </div>
 
@@ -87,6 +87,11 @@
                 </div>
                 </div>
             </div>
+            
+            </div>
+            <div>
+                <router-outlet></router-outlet>
             </div>
     </div>
+</div>
 </div>
