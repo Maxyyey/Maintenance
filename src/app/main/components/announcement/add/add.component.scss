@@ -18,15 +18,15 @@
     text-align: center;
 }
 .details-content {
-    margin: 15% auto;
-    padding: 20px;
+    position: relative;
+    padding: 0 30px 10px 30px;
     background: white;
     width: 900px;
     border-radius: 5px;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
-    margin-top: 90px;
+    max-height: 600px;
     overflow-y: auto;
-    height: 600px;
+    height: 500px;
 }
 
 
@@ -44,6 +44,7 @@ form {
     width: calc(50% - 20px); /* Two items per row with margin between them */
   margin-right: 20px;
   margin-bottom: 20px;
+  display: inline-block;
 }
 form .form-row {
     padding: 10px;
@@ -52,30 +53,27 @@ form .form-control {
     border: 2px solid #31A463;
     height: 30px;
     border-radius: 5px;
+    width: 300px;
+    margin-bottom: 10px;
 }
 
-form .Title .form-control {
-    width: 200px; 
-}
-form .Title {
-    margin-top: -9px;
-}
-form .Category{
-    margin-left: 500px;
-    margin-top: -45px;
-    
-}
-form .Category .form-control {
-    width: 200px; 
-    margin-left: 80px;
-    margin-top: 0px;
-    
+form .form-control1 {
+    border: 2px solid #31A463;
+    height: 30px;
+    border-radius: 5px;
+    width: 170px;
 }
 
-form .Date .form-control {
-    width: 200px; 
-   
+form .upl-btn {
+    background-color: #31A463;
+    color: #fff;
+    height: 30px;
+    max-height: 30px;
+    width: 130px;
+    margin: 0;
+    display: inline-block;
 }
+
 
 
 .modal-footer .btn-submit {

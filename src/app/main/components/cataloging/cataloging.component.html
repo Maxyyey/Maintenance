@@ -14,11 +14,10 @@
         <div class="page-content">
             <div class="tabbed">
                 <input type="radio" id="tab1" name="css-tabs" checked="checked">
-                <input type="radio" id="tab2" name="css-tabs" checked="'checked">
-                <input type="radio" id="tab3" name="css-tabs" checked="'checked">
+                <input type="radio" id="tab2" name="css-tabs">
                 
                 <ul class="tabs">
-                    <li class="tab"><label for="tab1">Materials</label></li>
+                    <li class="tab" ><label for="tab1" >Materials</label></li>
                     <li class="tab"><label for="tab2">Academic Project</label></li>
                 </ul>
             
@@ -31,13 +30,13 @@
                             <div class="col-md-5">
                                 
                                     <div class="col-md-4">
-                                        <button class="btn btn-block btn-icon" [routerLink]="['books']" routerLinkActive="active" checked>Books</button>
+                                        <button class="btn btn-block btn-icon" [routerLink]="['books']" routerLinkActive="active">Books</button>
                                     </div>                                    
                                     <div class="col-md-4">
-                                        <button class="btn btn-block btn-icon" [routerLink]="['article']" routerLinkActive="active"> Article</button>
+                                        <button class="btn btn-block btn-icon" [routerLink]="['article']"routerLinkActive="router-link-active"> Article</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button class="btn btn-block btn-icon" [routerLink]="['periodical']" routerLinkActive="active"> Periodical</button>
+                                        <button class="btn btn-block btn-icon" [routerLink]="['periodical']"routerLinkActive="router-link-active"> Periodical</button>
                                     </div>
                                 </div>
                            
@@ -64,17 +63,18 @@
                                 <button class="btn btn-block btn-icon" [routerLink]="['ccs']" routerLinkActive="active"> CCS</button>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-block btn-icon" [routerLink]="['cba']" routerLinkActive="active"> CBA</button>
+                                <button class="btn btn-block btn-icon" [routerLink]="['cba']" routerLinkActive="router-link-active"> CBA</button>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-block btn-icon" [routerLink]="['cahs']" routerLinkActive="active"> CAHS</button>
+                                <button class="btn btn-block btn-icon" [routerLink]="['cahs']" routerLinkActive="router-link-active"> CAHS</button>
                             <div class="col-md-4">
-                                <button class="btn btn-block btn-icon" [routerLink]="['chtm']" routerLinkActive="active"> CHTM</button>
+                                <button class="btn btn-block btn-icon" [routerLink]="['chtm']" routerLinkActive="router-link-active"> CHTM</button>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-block btn-icon" [routerLink]="['ceas']" routerLinkActive="active"> CEAS</button>
+                                <button class="btn btn-block btn-icon" [routerLink]="['ceas']" routerLinkActive="router-link-active"> CEAS</button>
                             </div>
                             </div>
+                           
                         </div>
                        
                     </div>
@@ -89,9 +89,13 @@
             </div>
             
             </div>
-            <div>
-                <router-outlet></router-outlet>
-            </div>
+           
+           
     </div>
 </div>
+
+</div>
+
+<div class="connection">
+    <router-outlet></router-outlet>
 </div>
