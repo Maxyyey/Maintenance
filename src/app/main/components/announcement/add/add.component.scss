@@ -61,17 +61,7 @@ form .form-control1 {
     border: 2px solid #31A463;
     height: 30px;
     border-radius: 5px;
-    width: 170px;
-}
-
-form .upl-btn {
-    background-color: #31A463;
-    color: #fff;
-    height: 30px;
-    max-height: 30px;
-    width: 130px;
-    margin: 0;
-    display: inline-block;
+    width: 265px;
 }
 
 
@@ -136,7 +126,6 @@ input[type="text"], textarea {
   
   /* Style for big text box */
   .big-text-box {
-    width: calc(100% - 20px);
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -144,3 +133,28 @@ input[type="text"], textarea {
     min-height: 100px;
 
   }
+  /* INPUT FILE LABEL AND BUTTON */
+.txt-field .uploadlabel {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #777777;
+    margin-left: 200px;
+}
+
+.txt-field input[type="file"]:focus ~ .uploadlabel {
+    color: #31A463;
+}
+
+input[type="file"]::file-selector-button {
+    border-top-left-radius: 1px;
+    font-family: 'Poppins';
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #31A463;
+    border: none;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    transition: background-color 200ms;
+}
+/* INPUT FILE LABEL AND BUTTON */
