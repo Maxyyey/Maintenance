@@ -1,4 +1,3 @@
-/* CONTAINER */
 .container {
     position: fixed;
     top: 0;
@@ -7,7 +6,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); 
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     z-index: 999;
@@ -15,7 +13,7 @@
 .detailsheader h1{
     border-bottom: 3.5px solid #000000;
     margin: 20px 20px 20px 20px;
-    color: #31A463;
+    color: black;
     text-align: center;
 }
 .details-content {
@@ -36,37 +34,40 @@
     float: right;
 }
 form {
-    margin: 0 25px 0 25px;
+    margin: 0 0 0 0;
 }
 .form-group {
     display: flex;
 }
 .row {
-    width: calc(50% - 20px); /* Two items per row with margin between them */
-  margin-right: 20px;
-  margin-bottom: 20px;
-  display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
 }
 form .form-row {
     padding: 10px;
 }
 form .form-control {
-    border: 2px solid #31A463;
-    height: 30px;
-    border-radius: 5px;
-    width: 300px;
-    margin-bottom: 10px;
-}
 
+        border: 2px solid #31A463;
+        border-radius: 2rem;
+        height: 30px;
+        float :right;
+        text-align: center;
+        width: 500px;
+    
+}
 form .form-control1 {
+
     border: 2px solid #31A463;
+    color: #31A463;
+    font-weight: bolder;
+    border-radius: 2rem;
     height: 30px;
-    border-radius: 5px;
-    width: 265px;
+    float :right;
+    text-align: center;
+    width: 500px;
+
 }
-
-
-
 .modal-footer .btn-submit {
     position: relative;
     right: 25px;
@@ -98,7 +99,7 @@ button {
     background-color: #AB0E0E;
     color: white;
     float: right;
-    margin-top: 30px;
+    margin-top: 100px;
     
 }
 
@@ -107,55 +108,31 @@ button {
 }
 
 .add-btn {
+   
     background-color: #31A463;
     color: white;
     float: right;
-    margin-top: 30px;
+    margin-top: 100px;
 
 }
 
 .add-btn:hover {
     background-color: gray;
+}   
+.row {
+    margin-left: 50px;
 }
 
-input[type="text"], textarea {
-    width: calc(100% - 20px);
-    padding: 5px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  /* Style for big text box */
-  .big-text-box {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    resize: vertical;
-    min-height: 150px;
+form .form-control2 {
 
-  }
-  /* INPUT FILE LABEL AND BUTTON */
-.txt-field .uploadlabel {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-    margin-left: 200px;
-}
-
-.txt-field input[type="file"]:focus ~ .uploadlabel {
+    border: 2px solid #31A463;
     color: #31A463;
+    font-weight: medium;
+    border-radius: 2rem;
+    height: 30px;
+    float :right;
+    text-align: center;
+    width: 500px;
+
 }
 
-input[type="file"]::file-selector-button {
-    border-top-left-radius: 1px;
-    font-family: 'Poppins';
-    color: #ffffff;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    background-color: #31A463;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-    transition: background-color 200ms;
-}
-/* INPUT FILE LABEL AND BUTTON */

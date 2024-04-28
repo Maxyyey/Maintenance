@@ -134,28 +134,25 @@ input[type="text"], textarea {
     min-height: 150px;
 
   }
-  /* INPUT FILE LABEL AND BUTTON */
-.txt-field .uploadlabel {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-    margin-left: 200px;
-}
 
-.txt-field input[type="file"]:focus ~ .uploadlabel {
-    color: #31A463;
-}
+  
 
-input[type="file"]::file-selector-button {
-    border-top-left-radius: 1px;
-    font-family: 'Poppins';
-    color: #ffffff;
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    background-color: #31A463;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-    transition: background-color 200ms;
-}
-/* INPUT FILE LABEL AND BUTTON */
+.table .td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    /* Adjust the width of the cells */
+    width: 50%; /* Each cell takes up half of the table width */
+  }
+  .table .th {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+.table  .th {
+    background-color: #f2f2f2;
+  }
+.table .tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+

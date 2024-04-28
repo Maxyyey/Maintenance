@@ -1,68 +1,59 @@
 <main>
-    <div class="container">
-        <div class="content">
-            <div class="details-content">
-                <!-- HEADER - TITLE -->
-                <div class="detailsheader">
-                    <h1> Add New Locker</h1>
-                </div>
-                
-                <!-- BODY - DETAILS -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <form>
+  <div class="container">
+      <div class="content">
+          <div class="details-content">
+              <!-- HEADER - TITLE -->
+              <div class="detailsheader">
+                  <h1> Add Locker</h1>
+              </div>
+              
+              <!-- BODY - DETAILS -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <form>
+                          
                             
-                              
-                            <div class="row">
-                              <div class="col-md-15">
-                                <label for="title">Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Name">
-                              </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="locker">Locker Number</label>
+                              <input type="text" class="form-control" placeholder="1">
+                            </div>
                             </div>
                             <div class="row">
-                              <div class="col-md-6">
-                                <label for="author">Password</label>
-                                <input type="text" class="form-control" placeholder="Enter Password">
-                                </div>
-                              </div>
+                            <div class="col-md-6">
+                              <label for="locker">Locker Number</label>
+                              <input type="text" class="form-control" placeholder="">
+                            </div>
+                            </div>
                               <div class="row">
                               <div class="col-md-6">
-                                <label for="location">Access</label>
-                                
-                                <form>
-                                  <input type="checkbox" id="access" name="access" value="circulation">
-                                  <label for="access">Circulation</label>
-                                
-                                  
-                                  <input type="checkbox" id="access1" name="access1" value="cataloging">
-                                  <label for="access1">Cataloging</label>
-                                
-                                  
-                                  <input type="checkbox" id="access2" name="access2" value="locker">
-                                  <label for="access2">Locker</label>
-                                  
-                                  
-                                  <input type="checkbox" id="access3" name="access3" value="maintenance">
-                                  <label for="access3">Maintenance</label>
-                                </form>  
+                                <label for="date">Date: </label>
+                                <input type="date" class="form-control">
+                                </div>
                               </div>
-                              </div>
-                              
-                            
-                          </form>
-                        </div>
-                        <div class="button-container">
-                            <button  class="add-btn">Add</button>
-                            <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                           
-                            
-                          </div>
+                                  <div class="row">
+                                    <div class="col-md-15">
+                                      <label for="title">Status</label>
+                                      <select class="form-control2" id="language" name="language" required>
+                                        <option value="English"> Available  </option>
+                                        <option value="Tagalog"> Unavailable </option>
+                                        <option value="Tagalog"> Damaged </option>
+                                    </select>
+                                    </div>
+                                  </div>
+                          
+                        </form>
                       </div>
+                      <div class="button-container">
+                          <button  class="add-btn">Add</button>
+                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                         
+                          
+                        </div>
                     </div>
                   </div>
-            </div>
-        </div>
-    </div>
-</main>
+                </div>
+          </div>
+      </div>
