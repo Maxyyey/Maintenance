@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
-import { ArchiveComponent } from './archive/archive.component';
+import { ArchivessComponent } from './archivess/archivess.component';
 
 @Component({
   selector: 'app-personnelsetup',
@@ -23,7 +23,7 @@ export class PersonnelSetupComponent implements OnInit{
     this.dialogRef.open(EditUserComponent,{});
   }
   onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent,{});
+    this.dialogRef.open(ArchivessComponent,{});
   }
   // Component logic here
 }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { UploadComponent } from './upload/upload.component';
 import { EditComponent } from './edit/edit.component';
-import { ArchiveComponent } from '../personnelsetup/archive/archive.component';
+import { ArchivessComponent } from '../personnelsetup/archivess/archivess.component';
 
 @Component({
   selector: 'app-circulation',
@@ -23,6 +23,6 @@ export class CirculationComponent implements OnInit{
     }
   
   onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent, {});
+    this.dialogRef.open(ArchivessComponent, {});
   }
 }
