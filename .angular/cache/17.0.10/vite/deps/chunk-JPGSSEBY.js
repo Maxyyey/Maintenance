@@ -7,10 +7,10 @@ import {
   coerceNumberProperty,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-2V6OZ2D5.js";
+} from "./chunk-R35WSYYH.js";
 import {
   DOCUMENT
-} from "./chunk-YDMVDUUT.js";
+} from "./chunk-BOKDFOET.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -76,9 +76,9 @@ import {
   ɵɵqueryRefresh,
   ɵɵstyleProp,
   ɵɵviewQuery
-} from "./chunk-PXCPMM5L.js";
+} from "./chunk-UKCBS76B.js";
 
-// ../../../../../node_modules/@angular/cdk/fesm2022/collections.mjs
+// node_modules/@angular/cdk/fesm2022/collections.mjs
 var DataSource = class {
 };
 function isDataSource(value) {
@@ -464,7 +464,7 @@ var UniqueSelectionDispatcher = _UniqueSelectionDispatcher;
   }], null, null);
 })();
 
-// ../../../../../node_modules/@angular/cdk/fesm2022/scrolling.mjs
+// node_modules/@angular/cdk/fesm2022/scrolling.mjs
 var _c0 = ["contentWrapper"];
 var _c1 = ["*"];
 var VIRTUAL_SCROLL_STRATEGY = new InjectionToken("VIRTUAL_SCROLL_STRATEGY");
@@ -1995,4 +1995,4 @@ export {
   CdkScrollableModule,
   ScrollingModule
 };
-//# sourceMappingURL=chunk-OEQDWHBH.js.map
+//# sourceMappingURL=chunk-JPGSSEBY.js.map
