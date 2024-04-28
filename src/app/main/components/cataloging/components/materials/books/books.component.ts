@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { ViewcatalogingComponent } from '../../function/view/viewcataloging/viewcataloging.component';
+import { ViewcatalogingComponent } from './viewbooks/viewcataloging.component';
 
 
 

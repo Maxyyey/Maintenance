@@ -57,8 +57,8 @@
                     <div class="button-container">
                         <!--<button class="edit-btn" *ngIf="popupService.getPopupStatus() | async"> Edit </button>-->
                         <!-- <button class="delete-btn" (click)="archiveBox()"> Archive </button> -->
-                        <button  class="add-btn">Edit</button>
-                        <button  class="archive-btn">Archive</button>
+                        <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                        <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
                     </div>
                 
                 </div>
