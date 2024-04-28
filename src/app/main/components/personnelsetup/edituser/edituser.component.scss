@@ -7,16 +7,15 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); 
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     z-index: 999;
+    transition: .5s;
 }
 .detailsheader h1{
     border-bottom: 3.5px solid #000000;
     margin: 20px 20px 20px 20px;
-    color: #31A463;
-    text-align: center;
+    color: #31A463;;
 }
 .details-content {
     position: relative;
@@ -42,31 +41,20 @@ form {
     display: flex;
 }
 .row {
-    width: calc(50% - 20px); /* Two items per row with margin between them */
-  margin-right: 20px;
-  margin-bottom: 20px;
-  display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 form .form-row {
-    padding: 10px;
+    padding: 20px;
 }
 form .form-control {
     border: 2px solid #31A463;
+    border-radius: 2rem;
     height: 30px;
-    border-radius: 5px;
-    width: 300px;
-    margin-bottom: 10px;
+    float :right;
+    text-align: center;
+    width: 500px;
 }
-
-form .form-control1 {
-    border: 2px solid #31A463;
-    height: 30px;
-    border-radius: 5px;
-    width: 265px;
-}
-
-
-
 .modal-footer .btn-submit {
     position: relative;
     right: 25px;
@@ -98,7 +86,7 @@ button {
     background-color: #AB0E0E;
     color: white;
     float: right;
-    margin-top: 30px;
+    margin-top: 210px;
     
 }
 
@@ -107,10 +95,11 @@ button {
 }
 
 .add-btn {
+   
     background-color: #31A463;
     color: white;
     float: right;
-    margin-top: 30px;
+    margin-top: 210px;
 
 }
 
@@ -118,44 +107,40 @@ button {
     background-color: gray;
 }
 
-input[type="text"], textarea {
-    width: calc(100% - 20px);
-    padding: 5px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  /* Style for big text box */
-  .big-text-box {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    resize: vertical;
-    min-height: 150px;
+// checkbox //
 
-  }
-  /* INPUT FILE LABEL AND BUTTON */
-.txt-field .uploadlabel {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-    margin-left: 200px;
-}
 
-.txt-field input[type="file"]:focus ~ .uploadlabel {
-    color: #31A463;
-}
-
-input[type="file"]::file-selector-button {
-    border-top-left-radius: 1px;
-    font-family: 'Poppins';
-    color: #ffffff;
-    width: 100px;
-    height: 30px;
+input[type=checkbox] + label{
+    display: flex;
+    margin-left: 10px;
     cursor: pointer;
-    background-color: #31A463;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-    transition: background-color 200ms;
+    padding: 0.2em;
+    float: right;
+    font-weight: bold;
 }
-/* INPUT FILE LABEL AND BUTTON */
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox] + label:before{
+    content: "\2714  ";
+    border: 2px solid #31A463;
+    border-radius:  0.2em;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align:bottom;
+    color:transparent;
+    transition: .2s;
+}
+
+
+input[type=checkbox]:checked + label:before{
+    background-color: mediumseagreen;
+    border-color: mediumseagreen;
+    color:#fff;
+}
+
