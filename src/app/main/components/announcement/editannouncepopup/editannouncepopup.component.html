@@ -4,8 +4,7 @@
           <div class="details-content">
               <!-- HEADER - TITLE -->
               <div class="detailsheader">
-                  <h1>Edit Announcement</h1>
-              </div>
+                  <h1> Edit Announcement</h1>
               
               <!-- BODY - DETAILS -->
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -15,54 +14,63 @@
                         <form>
                           
                             
-                          <div class="row">
-                            <div class="Title">
-                              <label for="Title">Title: </label>
-                              <input type="text" class="form-control" placeholder="Title">
-                            </div>
+                          <div class="txt_field">
+                            <input class="inputtxt" type="text" required>
+                            <span></span>
+                            <div class="labelline">Title</div>
+                          </div>
+                          <div class="txt_field">
+                            <input class="inputtxt" type="text" required>
+                            <span></span>
+                            <div class="labelline">Category</div>
                           </div>
 
-                          <div class="row">
-                              <div class="Category">
-                                <label for="Category">Category: </label>
-                                <input type="text" class="form-control" placeholder="Category">
-                              </div>
+                           <div class="txt_field1">
+                              <div class="labelline1">Date</div>
+                              <span></span>
+
+                              
+                              <input type="date" class="date">
+                            </div>
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" required>
+                              <span></span>
+                              <div class="labelline">Content</div>
                             </div>
 
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label for="date">Date: </label>
-                              <input type="date" class="form-control">
-                              </div>
+                            <div class="txt_field1">
+                              <div class="labelline1">Edit Image</div>
+                              <span></span>
+                              <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
+                              
+                              
+                              
                             </div>
-                           
-                            <div class="row">
-                              <div class="txt_field"> 
-                                <label for="file">Upload Image: </label>
-                                <input class="form-control1"type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-                                <span></span>
-                                
-                            </div>
-                             </div>
-                             
-                              <div>
-                                  <p>Content: </p>
-                                  <textarea class="big-text-box" placeholder="Enter Content"></textarea>
-                                </div>
                           
-                              <div class="button-container">
-                                  <button  class="add-btn">Add</button>
-                                  <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                              </div>
+                                                          <!--<div class="txt_field">
+                              <select class="inputtxt" id="language" name="language" required>
+                                  <option value="English"> Maintenace </option>
+                                  <option value="Tagalog"> Locker </option>
+                                  <option value="Tagalog"> Cataloging </option>
+                                  <option value="Tagalog"> Circulation </option>
+                              </select>
+                              <span></span>
+                              <label class="labelline" for="language"> Access </label>
+                          </div>-->
+                          
                         </form>
-                      </div>
+                      </div> 
+                      <div class="button-container">
+                          <button  class="add-btn">Save</button>
+                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
                          
-      
+                          </div>
+                        
                         </div>
                     </div>
                   </div>
                 </div>
           </div>
       </div>
- 
+  </div>
 </main>

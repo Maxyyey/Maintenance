@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArchivecbapopupComponent } from './archivecbapopup.component';
+import { ViewchtmComponent } from './viewchtm.component';
 
-describe('ArchivecbapopupComponent', () => {
-  let component: ArchivecbapopupComponent;
-  let fixture: ComponentFixture<ArchivecbapopupComponent>;
+describe('ViewchtmComponent', () => {
+  let component: ViewchtmComponent;
+  let fixture: ComponentFixture<ViewchtmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ArchivecbapopupComponent]
+      declarations: [ViewchtmComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ArchivecbapopupComponent);
+    fixture = TestBed.createComponent(ViewchtmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
