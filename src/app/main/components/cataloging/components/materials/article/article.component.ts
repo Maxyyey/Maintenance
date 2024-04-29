@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewArticleComponent } from './viewarticle/viewarticle.component';
+
+
 
 @Component({
   selector: 'app-article',
@@ -7,4 +12,16 @@ import { Component } from '@angular/core';
 })
 export class ArticleComponent {
 
+  constructor(private dialogRef : MatDialog) { }
+
+  ngOnInit(): void { }
+
+  onAddNewBtnClick(){
+    // this.router.navigate(['/adduser']);
+    this.dialogRef.open(ViewArticleComponent, {});
+    
+  }
+  // Component logic here
 }
+
+
