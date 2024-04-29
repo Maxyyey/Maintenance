@@ -8,6 +8,9 @@ import { CatalogingComponent } from './components/cataloging/cataloging.componen
 import { CirculationComponent } from './components/circulation/circulation.component';
 import { AnnouncementComponent } from './components/announcement/announcement.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
+import { ScanbarcodeComponent } from './components/inventory/scanbarcode/scanbarcode.component';
+import { EnterbarcodeComponent } from './components/inventory/enterbarcode/enterbarcode.component';
+import { ClearhistoryComponent } from './components/inventory/clearhistory/clearhistory.component';
 
 
 
@@ -19,6 +22,9 @@ import { InventoryComponent } from './components/inventory/inventory.component';
     CirculationComponent,
     AnnouncementComponent,
     InventoryComponent,
+    ScanbarcodeComponent,
+    EnterbarcodeComponent,
+    ClearhistoryComponent,
   ],
   imports: [
     CommonModule,

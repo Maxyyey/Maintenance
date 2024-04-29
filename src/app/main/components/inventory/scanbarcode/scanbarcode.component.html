@@ -1,0 +1,75 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1> Add User</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            
+                              
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" required>
+                              <span></span>
+                              <div class="labelline">Name</div>
+                            </div>
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" required>
+                              <span></span>
+                              <div class="labelline">Password</div>
+                            </div>
+
+                             <div class="txt_field1">
+                                <div class="labelline1">Access</div>
+                                <span></span>
+                                
+
+                                  <input type="checkbox" id="access" name="access" value="circulation">
+                                  <label for="access">Circulation</label>
+                                
+                                  
+                                  <input type="checkbox" id="access1" name="access1" value="cataloging">
+                                  <label for="access1">Cataloging</label>
+                                
+                                  
+                                  <input type="checkbox" id="access2" name="access2" value="locker">
+                                  <label for="access2">Locker</label>
+                                  
+                                  
+                                  <input type="checkbox" id="access3" name="access3" value="maintenance">
+                                  <label for="access3">Maintenance</label>
+
+                              </div>
+                                                            <!--<div class="txt_field">
+                                <select class="inputtxt" id="language" name="language" required>
+                                    <option value="English"> Maintenace </option>
+                                    <option value="Tagalog"> Locker </option>
+                                    <option value="Tagalog"> Cataloging </option>
+                                    <option value="Tagalog"> Circulation </option>
+                                </select>
+                                <span></span>
+                                <label class="labelline" for="language"> Access </label>
+                            </div>-->
+                            
+                          </form>
+                        </div> 
+                        <div class="button-container">
+                            <button  class="add-btn">Add</button>
+                            <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                           
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</main>
