@@ -23,8 +23,9 @@ import { MaterialModule } from './modules/material/material.module';
     AppComponent,
     LoginComponent,
     LogoutPopupComponent,
-    MainComponent
+    MainComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

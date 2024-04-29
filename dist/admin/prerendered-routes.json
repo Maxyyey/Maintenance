@@ -1,26 +1,19 @@
 {
   "routes": [
-    "/add",
-    "/addlocker",
-    "/adduser",
-    "/announcement",
-    "/circulation",
-    "/history",
-    "/inventory",
     "/login",
     "/main",
-    "/main/add",
     "/main/addlocker",
-    "/main/adduser",
     "/main/announcement",
+    "/main/cataloging",
+    "/main/cataloging/article",
+    "/main/cataloging/books",
+    "/main/cataloging/cahs",
+    "/main/cataloging/cba",
+    "/main/cataloging/ceas",
+    "/main/cataloging/chtm",
+    "/main/cataloging/periodical",
     "/main/circulation",
-    "/main/history",
     "/main/inventory",
-    "/main/personnelsetup",
-    "/main/upload",
-    "/main/user",
-    "/personnelsetup",
-    "/upload",
-    "/user"
+    "/main/personnelsetup"
   ]
 }
