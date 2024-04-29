@@ -1,0 +1,68 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <button class="exit-button" (click)="closepopup()"> &times; </button>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="detailsbody">
+                    <div class="details">
+                        <div class="body-details">
+                            <img src= "/assets/images/GCLIBRARY.png">
+                            
+                            <!-- <img alt="blog" src="https://raw.githubusercontent.com/pitcza/sampleimages/main/NoImage.png"> -->
+                        </div>
+
+                        <div class="body-details">
+                            <span>
+                                <h2> Accession Number: </h2> 
+                            </span>
+                            <span>
+                                <h2> Location: </h2> 
+                            </span>
+                            <span>
+                                <h2> Call Number: </h2> 
+                            </span>
+                            <span>
+                                <h2> Copyright: </h2> 
+                            </span>
+                            <span>
+                                <h2> Author: </h2> 
+                            </span>
+                            <span>
+                                <h2> Publication Date: </h2>
+                            </span>
+                            <span>
+                                <h2> Volume: </h2> 
+                            </span>
+                            <span>
+                                <h2> Pages: </h2> 
+                            </span>
+                            <span>
+                                <h2> Edition: </h2> 
+                            </span>
+                            <span>
+                                <h2> Remark: </h2>
+                            </span>
+                            <span>
+                                <h2> Date Purchased/Donated: </h2>
+                            </span>
+                        </div>
+                    </div>
+                
+                    <!-- BUTTONS -->
+                    <div class="button-container">
+                        <!--<button class="edit-btn" *ngIf="popupService.getPopupStatus() | async"> Edit </button>-->
+                        <!-- <button class="delete-btn" (click)="archiveBox()"> Archive </button> -->
+                        <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                        <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
