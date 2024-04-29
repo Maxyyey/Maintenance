@@ -17,6 +17,9 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 
 import { MaterialModule } from './modules/material/material.module';
+import { ViewcbaComponent } from './viewcba/viewcba.component';
+import { EditcbapopupComponent } from './editcbapopup/editcbapopup.component';
+import { ArchivecbapopupComponent } from './archivecbapopup/archivecbapopup.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { MaterialModule } from './modules/material/material.module';
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
+    ViewcbaComponent,
+    EditcbapopupComponent,
+    ArchivecbapopupComponent,
   ],
   
   imports: [

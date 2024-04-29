@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewcbaComponent } from './viewcba.component';
+import { EditcbapopupComponent } from './editcbapopup.component';
 
-describe('ViewcbaComponent', () => {
-  let component: ViewcbaComponent;
-  let fixture: ComponentFixture<ViewcbaComponent>;
+describe('EditcbapopupComponent', () => {
+  let component: EditcbapopupComponent;
+  let fixture: ComponentFixture<EditcbapopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ViewcbaComponent]
+      declarations: [EditcbapopupComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ViewcbaComponent);
+    fixture = TestBed.createComponent(EditcbapopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
