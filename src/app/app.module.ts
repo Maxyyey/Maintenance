@@ -17,9 +17,7 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 
 import { MaterialModule } from './modules/material/material.module';
-import { ViewchtmComponent } from './viewchtm/viewchtm.component';
-import { Editchtmpopup1Component } from './editchtmpopup1/editchtmpopup1.component';
-import { Archivechtmpopup1Component } from './archivechtmpopup1/archivechtmpopup1.component';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +25,6 @@ import { Archivechtmpopup1Component } from './archivechtmpopup1/archivechtmpopup
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
-    ViewchtmComponent,
-    Editchtmpopup1Component,
-    Archivechtmpopup1Component,
   ],
   
   imports: [
