@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './chtm.component.scss'
 })
 export class ChtmComponent {
+onAddNewBtnClick() {
+throw new Error('Method not implemented.');
+}
 
 }

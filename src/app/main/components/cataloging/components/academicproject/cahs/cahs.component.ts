@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './cahs.component.scss'
 })
 export class CahsComponent {
+onAddNewBtnClick() {
+throw new Error('Method not implemented.');
+}
 
 }

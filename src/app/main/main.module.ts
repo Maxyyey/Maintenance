@@ -10,6 +10,7 @@ import { AnnouncementComponent } from './components/announcement/announcement.co
 import { InventoryComponent } from './components/inventory/inventory.component';
 
 
+
 @NgModule({
   declarations: [
     AddLockerComponent,

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './ccs.component.scss'
 })
 export class CcsComponent {
+onAddNewBtnClick() {
+throw new Error('Method not implemented.');
+}
 
 }

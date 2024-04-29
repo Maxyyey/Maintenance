@@ -1,16 +1,32 @@
+<div class="detailsheader">
+    <div class="txt_field">
+        <select class="inputtxt" id="language" name="language" required>
+            <option value="English"> CAHS </option>
+            <option value="Tagalog"> BSIT </option>
+            <option value="Tagalog"> BSCS </option>
+            <option value="Tagalog"> BSEMC </option>
+            <option value="Tagalog"> ACT </option>
+        </select>
+    
+            <button class = "add-btn"><i class="fa-solid fa-add"> </i></button>
+    </div>
+    
+    </div>
+
 <div class="card-container">
     <div class="card"> 
         <img src= "/assets/images/GCLIBRARY.png">
         <div class="textbox">
         <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        <h2>cahs</h2>
+        <h2>CAHS</h2>
         <p>Jose Rizal</p>
         <p>Fil</p>
     </div>
-        <div class="card-buttons">
-            <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-        </div>
+    <div class="card-buttons">
+        <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+        <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+        <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+    </div>
     </div>
     </div>
 
@@ -24,10 +40,11 @@
             <p>4/26/2024</p>
             </div>
 
-        <div class="card-buttons">
-             <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-        </div>
+            <div class="card-buttons">
+                <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+            </div>
     </div>
     </div>
 
@@ -40,10 +57,11 @@
                 <p>Extreme Heat Conditon</p>
                 <p>4/26/2024</p>
                 </div>
-            <div class="card-buttons">
-                 <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -
-            </div>
+                <div class="card-buttons">
+                    <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                    <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                    <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                </div>
         </div>
         </div>
         <div class="card-container">
@@ -56,10 +74,11 @@
                     <p>4/26/2024</p>
                     </div>
 
-                <div class="card-buttons">
-               <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-                </div>
+                    <div class="card-buttons">
+                        <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                        <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                        <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                    </div>
             </div>
             </div>
             <div class="card-container">
@@ -71,10 +90,11 @@
                         <p>Lait dito lait don</p>
                         <p>4/26/2024</p>
                         </div>
-                    <div class="card-buttons">
-                         <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-                    </div>
+                        <div class="card-buttons">
+                            <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                            <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                        </div>
                 </div>
                 </div>
                 <div class="card-container">
@@ -86,10 +106,11 @@
                             <p>Claim lang daily</p>
                             <p>4/26/2024</p>
                             </div>
-                        <div class="card-buttons">
-                            <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-                        </div>
+                            <div class="card-buttons">
+                                <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                                <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                                <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                            </div>
                     </div>
                     </div>
                     <div class="card-container">
@@ -101,10 +122,11 @@
                                 <p>Ma penge baon</p>
                                 <p>4/26/2024</p>
                                 </div>
-                            <div class="card-buttons">
-                               <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-                            </div>
+                                <div class="card-buttons">
+                                    <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                                    <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                                    <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                                </div>
                         </div>
                         </div>
                         <div class="card-container">
@@ -116,10 +138,11 @@
                                     <p>Category</p>
                                     <p>Date</p>
                                     </div>
-                                <div class="card-buttons">
-                                  <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
-            <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> 
-                                </div>
+                                    <div class="card-buttons">
+                                        <!-- <button class = "edit-btn"><i class="fa-solid fa-edit"> </i></button>
+                                        <button class = "archive-btn"><i class="fa-solid fa-archive"> </i></button> -->
+                                        <button class="view-button" type="button" (click)="onAddNewBtnClick()">View</button>
+                                    </div>
                             </div>
                             </div>
 

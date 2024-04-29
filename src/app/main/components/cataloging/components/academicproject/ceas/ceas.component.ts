@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './ceas.component.scss'
 })
 export class CeasComponent {
+onAddNewBtnClick() {
+throw new Error('Method not implemented.');
+}
 
 }

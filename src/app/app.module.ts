@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -29,7 +30,8 @@ import { MaterialModule } from './modules/material/material.module';
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
-    MaterialModule
+    MaterialModule,
+
   ],
   providers: [
     provideClientHydration(),
@@ -37,3 +39,4 @@ import { MaterialModule } from './modules/material/material.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class FormFieldOverviewExample {}
