@@ -252,6 +252,8 @@ input[type=file]{
 }
 
 input[type="file"]::file-selector-button {
+  letter-spacing: 0.5px;
+  font-size: 12px;
   border-top-left-radius: 1px;
   font-family: 'Poppins';
   color: #ffffff;
@@ -262,4 +264,16 @@ input[type="file"]::file-selector-button {
   border: none;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
   transition: background-color 200ms;
+  left: 10px;
+}
+
+.txt_field .uploadlabel {
+  position: absolute;
+  top: 0;
+  margin-top: -20px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #777777;
+  position: absolute;
+  left: 10px;
 }
