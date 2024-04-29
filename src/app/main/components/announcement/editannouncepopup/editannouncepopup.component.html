@@ -1,68 +1,68 @@
 <main>
-    <div class="container">
-        <div class="content">
-            <div class="details-content">
-                <!-- HEADER - TITLE -->
-                <div class="detailsheader">
-                    <h1> Edit Patron</h1>
-                </div>
-                
-                <!-- BODY - DETAILS -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <form>
+  <div class="container">
+      <div class="content">
+          <div class="details-content">
+              <!-- HEADER - TITLE -->
+              <div class="detailsheader">
+                  <h1>Edit Announcement</h1>
+              </div>
+              
+              <!-- BODY - DETAILS -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <form>
+                          
                             
-                            
-                            <div class="txt_field">
-                              <select class="inputtxt" id="language" name="language" required>
-                                  <option value="English"> Admin/Staff </option>
-                                  <option value="Tagalog"> Faculty </option>
-                                  <option value="Tagalog"> Student </option>
-                              </select>
-                              <span></span>
-                              <label class="labelline" for="language"> Patron Type </label>
+                          <div class="row">
+                            <div class="Title">
+                              <label for="Title">Title: </label>
+                              <input type="text" class="form-control" placeholder="Title">
+                            </div>
                           </div>
-  
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
-                              <span></span>
-                              <div class="labelline">[Price Here]</div>
+
+                          <div class="row">
+                              <div class="Category">
+                                <label for="Category">Category: </label>
+                                <input type="text" class="form-control" placeholder="Category">
+                              </div>
                             </div>
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
-                              <span></span>
-                              <div class="labelline">Days</div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="date">Date: </label>
+                              <input type="date" class="form-control">
+                              </div>
                             </div>
-                            <div class="txt_field1">
-                              <div class="labelline1">No. Of Days/Hours Allowed</div>
-                              <input class="inputtxt" type="text" required value="10 days" readonly>
-                              <span></span>
-                              
-                            </div>
-                            <div class="txt_field1">
-                              <div class="labelline1">No. Of Materials Allowed</div>
-                              <input class="inputtxt" type="text" required value="3" readonly>
-                              <span></span>
-                              
-                            </div>
-  
-  
-                            
-                                
-                            
-                          </form>
-                        </div>
-                        <div class="button-container">
-                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                            <button  class="add-btn">Save</button>
-                            
                            
-                            
-                          </div>
+                            <div class="row">
+                              <div class="txt_field"> 
+                                <label for="file">Upload Image: </label>
+                                <input class="form-control1"type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
+                                <span></span>
+                                
+                            </div>
+                             </div>
+                             
+                              <div>
+                                  <p>Content: </p>
+                                  <textarea class="big-text-box" placeholder="Enter Content"></textarea>
+                                </div>
+                          
+                              <div class="button-container">
+                                  <button  class="add-btn">Add</button>
+                                  <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                              </div>
+                        </form>
                       </div>
+                         
+      
+                        </div>
                     </div>
                   </div>
-            </div>
-        </div>
+                </div>
+          </div>
+      </div>
+ 
+</main>
