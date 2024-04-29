@@ -122,18 +122,18 @@ form .txt_field1{
   }
 
   .txt_field1 .labelline1{
+    margin-top: 5px;
     margin-left: 10px;
-    top: 50%;
-    left: 10px;
-    color: #777777;
-    font-size: 15px;   
+    top: 17px;
+    font-size: 12px;
+    color: #31A463;
+    letter-spacing: 0.5px;
   }
 .txt_field1 .inputtxt{
         width: 100%;
-        padding-top: 19px;
         padding-left: 10px;
         padding-right: 10px;
-        height: 60px;
+        height: 40px;
         font-size: 15px;
         border: none;
         background-color: #F6F6F6;
