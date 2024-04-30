@@ -17,9 +17,6 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 
 import { MaterialModule } from './modules/material/material.module';
-import { ViewceasComponent } from './viewceas/viewceas.component';
-import { ArchiveceasmodalComponent } from './archiveceasmodal/archiveceasmodal.component';
-import { EditceasmodalComponent } from './editceasmodal/editceasmodal.component';
 
 
 @NgModule({
@@ -28,9 +25,7 @@ import { EditceasmodalComponent } from './editceasmodal/editceasmodal.component'
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
-    ViewceasComponent,
-    ArchiveceasmodalComponent,
-    EditceasmodalComponent,
+
 
   ],
   

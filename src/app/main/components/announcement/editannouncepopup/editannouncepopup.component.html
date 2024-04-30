@@ -38,14 +38,20 @@
                               <div class="labelline">Content</div>
                             </div>
 
-                            <div class="txt_field1">
+                            <!-- <div class="txt_field1">
                               <div class="labelline1">Edit Image</div>
                               <span></span>
                               <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
                               
                               
                               
-                            </div>
+                            </div> -->
+                            <div class="txt_field2"> 
+                              <div class="labelline2"> Upload Image </div>
+                              <input class="inputtxt2" type="file" accept=".jpeg, .png, .jpg" name="image_location" > 
+                              <span></span>
+                              
+                          </div>
                           
                                                           <!--<div class="txt_field">
                               <select class="inputtxt" id="language" name="language" required>
@@ -61,8 +67,9 @@
                         </form>
                       </div> 
                       <div class="button-container">
+                        <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
                           <button  class="add-btn">Save</button>
-                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                          
                          
                           </div>
                         

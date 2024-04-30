@@ -66,6 +66,9 @@
 
 .button-container {
   margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
 }
 
 button {
@@ -106,44 +109,37 @@ button {
   background-color: gray;
 }
 
-// checkbox //
-
-
-input[type=checkbox] + label{
-  margin:20px 0 0 20px;
-  cursor: pointer;
-  font-weight: bold;
-  display: inline-block;
-}
-
-
-input[type=checkbox]{
-  display: none;
-}
-
-input[type=checkbox] + label:before{
-  content: "\2714  ";
-  border: 2px solid #31A463;
-  border-radius:  0.2em;
-  width: 1em;
-  height: 1em;
-  padding-left: 0.2em;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  margin-right: 0.2em;
-  vertical-align:bottom;
-  color:transparent;
-  transition: .2s;
-}
-
-
-input[type=checkbox]:checked + label:before{
-  background-color: mediumseagreen;
-  border-color: mediumseagreen;
-  color:#fff;
-}
 
 // pop up design
+
+form .txt_field2{
+  padding-top: 10px;
+  background-color: #F6F6F6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 40px;
+  
+  
+}
+.txt_field2 .inputtxt2{
+  width: 100%;
+  padding: 5px 0 0 0;
+  font-size: 15px;
+  border: none;
+  background-color: #F6F6F6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none;
+  border-bottom: 2px solid #777777;
+}
+.txt_field2 .labelline2{
+  margin-left: 10px;
+  left: 10px;
+  color: #777777;
+  font-size: 12px;
+
+}
+
 
 form .txt_field1{
   padding-top: 10px;
@@ -152,16 +148,31 @@ form .txt_field1{
   background-color: #F6F6F6;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  height: 60px;
   
 }
 
 .txt_field1 .labelline1{
   margin-left: 10px;
-  top: 50%;
   left: 10px;
   color: #777777;
-  font-size: 15px;
+  font-size: 12px;
 
+}
+
+
+.txt_field1 .inputtxt1{
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 15px;
+  border: none;
+  background-color: #F6F6F6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none;
 }
 form .txt_field{
   position: relative;
@@ -236,15 +247,15 @@ form .txt_field{
   border: none; /* Blue border with increased thickness */
   width: 97%;
   font-size: 15px;
-  margin-left: 5px;
+  margin-left: 10px;
   background-color: #F6F6F6;
   border-radius: 5px; /* Rounded border */
   outline: none; /* Remove default outline */
   color: #31A463;
+
 }
 
 input[type=file]{
-  
   
   background-color:#F6F6F6;
   border: none;
@@ -257,8 +268,8 @@ input[type="file"]::file-selector-button {
   border-top-left-radius: 1px;
   font-family: 'Poppins';
   color: #ffffff;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 40px;
   cursor: pointer;
   background-color: #31A463;
   border: none;
