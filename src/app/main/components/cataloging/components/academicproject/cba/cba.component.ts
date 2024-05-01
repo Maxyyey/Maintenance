@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewCbaComponent } from './viewcba/viewcba.component';
+import { EditCbaPopupComponent } from './editcbapopup/editcbapopup.component';
 
 
 
@@ -21,7 +22,12 @@ export class CbaComponent {
     this.dialogRef.open(ViewCbaComponent, {});
     
   }
-  
+
+  editbox(){
+    
+    this.dialogRef.open(EditCbaPopupComponent, {});
+    
+  }
 }
 
 

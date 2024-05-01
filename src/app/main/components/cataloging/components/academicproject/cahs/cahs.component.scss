@@ -132,6 +132,17 @@
     padding: 10px 13px; /* Add padding for better appearance */
     cursor: pointer; /* Change cursor to pointer on hover */
   }
+
+  .card-buttons .edit-button {
+    margin-left: 5px; /* Adjust space between buttons */
+    margin-bottom: 5px;
+    background-color: #31A463; /* Set green background color */
+    border: none;
+    border-radius: 5px;
+    color: white; /* Set text color to white */
+    padding: 10px 13px; /* Add padding for better appearance */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
   
   .card-buttons .archive-btn {
   margin-left: 5px; /* Adjust space between buttons */

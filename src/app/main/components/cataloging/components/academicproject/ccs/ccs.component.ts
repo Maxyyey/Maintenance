@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewCcsComponent } from './viewccs/viewccs.component';
+import { EditCcsPopupComponent } from './editccspopup/editccspopup.component';
 
 
 
@@ -22,6 +23,11 @@ export class CcsComponent {
     
   }
   
+  editbox(){
+    
+    this.dialogRef.open(EditCcsPopupComponent, {});
+    
+  }
 }
 
 

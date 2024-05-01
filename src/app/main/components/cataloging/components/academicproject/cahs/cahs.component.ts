@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewCahsComponent } from './viewcahs/viewcahs.component';
+import { EditCahsPopupComponent } from './editcahspopup/editcahspopup.component';
 
 
 
@@ -19,6 +20,12 @@ export class CahsComponent {
   onAddNewBtnClick(){
     
     this.dialogRef.open(ViewCahsComponent, {});
+    
+  }
+
+  editbox(){
+    
+    this.dialogRef.open(EditCahsPopupComponent, {});
     
   }
   

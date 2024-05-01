@@ -3,30 +3,56 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'; // Import Ma
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EditCcsPopupComponent } from '../editccspopup/editccspopup.component';
 import { ArchiveCcsPopupComponent } from '../archiveccspopup/archiveccspopup.component';
+import { FormBuilder } from '@angular/forms';
+
+
+// Import DataService //
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-viewccs',
   templateUrl: './viewccs.component.html',
   styleUrl: './viewccs.component.scss', // Corrected property name
 })
-export class ViewCcsComponent {
+export class ViewCcsComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ViewCcsComponent>, private dialog: MatDialog) {
-    // Inject MatDialogRef and MatDialog
+  protected image: any = null;
+
+  ngOnInit(): void {
+
   }
+
+  constructor(
+    private ref: MatDialogRef<ViewCcsComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private buildr: FormBuilder, 
+  ) { }
 
   closepopup() {
-    this.dialogRef.close('Closed using function');
+    this.ref.close('Closed using function');
   }
 
-  ngOnInit(): void { }
-
-  onEditBtnClick(){
-    // Open the EditPopupComponent dialog
-    const dialogRef = this.dialog.open(EditCcsPopupComponent, {});
-    // If you need to do something with the dialog reference, you can assign it to a class variable
-    // this.dialogRef = dialogRef;
-  }
-  onArchiveBtnClick(){
-    const dialogRef = this.dialog.open(ArchiveCcsPopupComponent, {});
-  }
+  archiveBox(){
+    Swal.fire({
+      title: "Archive Project",
+      text: "Are you sure want to archive this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.ref.close('Closed using function');
+        Swal.fire({
+          title: "Archiving complete!",
+          text: "Project has been safely archived.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    });
+}
 }

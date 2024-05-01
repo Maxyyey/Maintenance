@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,6 +36,7 @@ import { MaterialModule } from './modules/material/material.module';
     HttpClientModule,
     MatDialogModule,
     MaterialModule,
+    FormsModule
 
   ],
   providers: [

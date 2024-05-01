@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { ViewCeasComponent } from './viewceas/viewceas.component';
-
+import { ViewCeasComponent } from './viewceas/viewceas.component'; 
+import { EditCeasModalComponent } from './editceasmodal/editceasmodal.component';
 
 
 @Component({
@@ -11,7 +11,6 @@ import { ViewCeasComponent } from './viewceas/viewceas.component';
   styleUrl: './ceas.component.scss'
 })
 export class CeasComponent {
-
   constructor(private dialogRef : MatDialog) { }
 
   ngOnInit(): void { }
@@ -21,7 +20,11 @@ export class CeasComponent {
     this.dialogRef.open(ViewCeasComponent, {});
     
   }
-  
+
+  editbox(){
+    
+    this.dialogRef.open(EditCeasModalComponent, {});
+    
+  }
+
 }
-
-

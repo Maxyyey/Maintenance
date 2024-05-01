@@ -3,30 +3,56 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'; // Import Ma
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EditCbaPopupComponent } from '../editcbapopup/editcbapopup.component';
 import { ArchiveCbaPopupComponent } from '../archivecbapopup/archivecbapopup.component';
+import { FormBuilder } from '@angular/forms';
+
+// Import DataService //
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-viewcba',
   templateUrl: './viewcba.component.html',
-  styleUrl: './viewcba.component.scss', // Corrected property name
+  styleUrls: ['./viewcba.component.scss'] // Corrected property name
 })
-export class ViewCbaComponent {
+export class ViewCbaComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<ViewCbaComponent>, private dialog: MatDialog) {
-    // Inject MatDialogRef and MatDialog
+  protected image: any = null;
+
+  ngOnInit(): void {
+
   }
+
+  constructor(
+    private ref: MatDialogRef<ViewCbaComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private buildr: FormBuilder, 
+  ) { }
 
   closepopup() {
-    this.dialogRef.close('Closed using function');
+    this.ref.close('Closed using function');
   }
 
-  ngOnInit(): void { }
-
-  onEditBtnClick(){
-    // Open the EditPopupComponent dialog
-    const dialogRef = this.dialog.open(EditCbaPopupComponent, {});
-    // If you need to do something with the dialog reference, you can assign it to a class variable
-    // this.dialogRef = dialogRef;
-  }
-  onArchiveBtnClick(){
-    const dialogRef = this.dialog.open(ArchiveCbaPopupComponent, {});
-  }
+  archiveBox(){
+    Swal.fire({
+      title: "Archive Project",
+      text: "Are you sure want to archive this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.ref.close('Closed using function');
+        Swal.fire({
+          title: "Archiving complete!",
+          text: "Project has been safely archived.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    });
 }
+}
+

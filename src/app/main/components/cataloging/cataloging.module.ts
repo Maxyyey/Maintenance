@@ -6,6 +6,7 @@ import { CatalogingRoutingModule } from './cataloging-routing.module'; // Import
 import { ArticleComponent } from './components/materials/article/article.component';
 import { BooksComponent } from './components/materials/books/books.component';
 import { PeriodicalComponent } from './components/materials/periodical/periodical.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { PeriodicalComponent } from './components/materials/periodical/periodica
   imports: [
     CommonModule,
     CatalogingRoutingModule,
- // Include the routing module here
+    FormsModule
   ],
   // Other configurations...
 })
