@@ -5,7 +5,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   selector: 'app-archive',
   templateUrl: './archive.component.html',
   styleUrl: './archive.component.scss',
-  
+  host: {
+    '[attr.extraHostAttribute]': 'true'
+  }
 })
 export class ArchiveComponent {
 

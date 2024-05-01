@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+   
 }
 
 .details-content {
@@ -43,7 +43,17 @@
     border-top-right-radius: 5px;
     z-index: 1;
 }
-
+.detailsheader h1{
+    border-bottom: 3.5px solid #000000;
+    margin-top: -30px;
+    color: #000000;;
+}
+.detailsheader p{
+  margin-top: -40px;
+  margin-left: 70px;
+  color: #000000;
+  font-size: 25px;
+}
 /* EXIT BUTTON */
 .exit-button {
     position: relative;
@@ -51,7 +61,7 @@
     right: 0;
     background-color: transparent;
     border: none;
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
     color: var(--cancel-btn);
     text-align: right;
