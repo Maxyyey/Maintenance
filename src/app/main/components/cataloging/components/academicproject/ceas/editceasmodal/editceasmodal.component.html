@@ -1,1 +1,68 @@
-<p>editceasmodal works!</p>
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1> Edit User</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            
+                              
+                            <div class="row">
+                              <div class="col-md-15">
+                                <label for="title">Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Name">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label for="author">Password</label>
+                                <input type="text" class="form-control" placeholder="Enter Password">
+                                </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-md-6">
+                                <label for="location">Access</label>
+                                
+                                <form>
+                                  <input type="checkbox" id="access" name="access" value="circulation">
+                                  <label for="access">Circulation</label>
+                                
+                                  
+                                  <input type="checkbox" id="access1" name="access1" value="cataloging">
+                                  <label for="access1">Cataloging</label>
+                                
+                                  
+                                  <input type="checkbox" id="access2" name="access2" value="locker">
+                                  <label for="access2">Locker</label>
+                                  
+                                  
+                                  <input type="checkbox" id="access3" name="access3" value="maintenance">
+                                  <label for="access3">Maintenance</label>
+                                </form>  
+                              </div>
+                              </div>
+                              
+                            
+                          </form>
+                        </div>
+                        <div class="button-container">
+                            <button  class="add-btn">Add</button>
+                            <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                           
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</main>

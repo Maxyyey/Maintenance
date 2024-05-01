@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditCeasModalComponent } from './editceasmodal.component';
+import { ViewCcsComponent } from './viewccs.component';
 
-describe('EditCeasModalComponent', () => {
-  let component: EditCeasModalComponent;
-  let fixture: ComponentFixture<EditCeasModalComponent>;
+describe('ViewCcsComponent', () => {
+  let component: ViewCcsComponent;
+  let fixture: ComponentFixture<ViewCcsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EditCeasModalComponent]
+      declarations: [ViewCcsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EditCeasModalComponent);
+    fixture = TestBed.createComponent(ViewCcsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

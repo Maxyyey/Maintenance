@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArchiveceasmodalComponent } from './archiveceasmodal.component';
+import { ArchiveCeasModalComponent } from './archiveceasmodal.component';
 
-describe('ArchiveceasmodalComponent', () => {
-  let component: ArchiveceasmodalComponent;
-  let fixture: ComponentFixture<ArchiveceasmodalComponent>;
+describe('ArchiveCeasModalComponent', () => {
+  let component: ArchiveCeasModalComponent;
+  let fixture: ComponentFixture<ArchiveCeasModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ArchiveceasmodalComponent]
+      declarations: [ArchiveCeasModalComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ArchiveceasmodalComponent);
+    fixture = TestBed.createComponent(ArchiveCeasModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

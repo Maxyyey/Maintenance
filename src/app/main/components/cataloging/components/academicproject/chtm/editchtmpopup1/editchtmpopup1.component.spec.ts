@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Editchtmpopup1Component } from './editchtmpopup1.component';
+import { EditChtmPopup1Component } from './editchtmpopup1.component';
 
-describe('Editchtmpopup1Component', () => {
-  let component: Editchtmpopup1Component;
-  let fixture: ComponentFixture<Editchtmpopup1Component>;
+describe('EditChtmPopup1Component', () => {
+  let component: EditChtmPopup1Component;
+  let fixture: ComponentFixture<EditChtmPopup1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Editchtmpopup1Component]
+      declarations: [EditChtmPopup1Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(Editchtmpopup1Component);
+    fixture = TestBed.createComponent(EditChtmPopup1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

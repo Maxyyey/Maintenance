@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewCcsComponent } from './viewccs/viewccs.component';
+
+
 
 @Component({
   selector: 'app-ccs',
@@ -6,8 +11,17 @@ import { Component } from '@angular/core';
   styleUrl: './ccs.component.scss'
 })
 export class CcsComponent {
-onAddNewBtnClick() {
-throw new Error('Method not implemented.');
+
+  constructor(private dialogRef : MatDialog) { }
+
+  ngOnInit(): void { }
+
+  onAddNewBtnClick(){
+    
+    this.dialogRef.open(ViewCcsComponent, {});
+    
+  }
+  
 }
 
-}
+

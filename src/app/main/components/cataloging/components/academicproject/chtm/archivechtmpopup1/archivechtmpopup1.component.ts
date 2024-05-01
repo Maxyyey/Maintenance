@@ -6,9 +6,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './archivechtmpopup1.component.html',
   styleUrl: './archivechtmpopup1.component.scss'
 })
-export class Archivechtmpopup1Component {
+export class ArchiveChtmPopup1Component {
 // Component logic here
-constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<Archivechtmpopup1Component>) {
+constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<ArchiveChtmPopup1Component>) {
 
 }
 closepopup() {

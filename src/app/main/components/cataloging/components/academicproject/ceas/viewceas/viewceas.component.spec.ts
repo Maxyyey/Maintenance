@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewceasComponent } from './viewceas.component';
+import { ViewCeasComponent } from './viewceas.component';
 
-describe('ViewceasComponent', () => {
-  let component: ViewceasComponent;
-  let fixture: ComponentFixture<ViewceasComponent>;
+describe('ViewCeasComponent', () => {
+  let component: ViewCeasComponent;
+  let fixture: ComponentFixture<ViewCeasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ViewceasComponent]
+      declarations: [ViewCeasComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ViewceasComponent);
+    fixture = TestBed.createComponent(ViewCeasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
