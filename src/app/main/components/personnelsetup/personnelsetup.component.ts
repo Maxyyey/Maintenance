@@ -26,4 +26,6 @@ export class PersonnelSetupComponent implements OnInit{
     this.dialogRef.open(ArchivessComponent,{});
   }
   // Component logic here
+
+  
 }
