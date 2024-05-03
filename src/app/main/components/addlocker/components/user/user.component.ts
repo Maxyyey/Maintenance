@@ -27,11 +27,9 @@ interface MyOption {
 export class UserComponent {
 
   options1 = [
-    { value: 'CCS', label: 'CCS' },
-    { value: 'CBA', label: 'CBA' },
-    { value: 'CEAS', label: 'CEAS' },
-    { value: 'CAHS', label: 'CAHS' },
-    { value: 'CHTM', label: 'CHTM' },
+    { value: 'Available', label: 'Available' },
+    { value: 'Not Available', label: 'Not Available' },
+    { value: 'Damaged', label: 'Damaged' },
   ];
   options2: MyOption[] = [];
   options3: MyOption[] = [];
@@ -264,8 +262,8 @@ export class UserComponent {
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Update Project",
-      text: "Are you sure you want to update the project details?",
+      title: "Add New Locker",
+      text: "Are you sure you want to add new locker?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',

@@ -27,11 +27,10 @@ interface MyOption {
 export class UploadComponent {
 
   options1 = [
-    { value: 'CCS', label: 'CCS' },
-    { value: 'CBA', label: 'CBA' },
-    { value: 'CEAS', label: 'CEAS' },
-    { value: 'CAHS', label: 'CAHS' },
-    { value: 'CHTM', label: 'CHTM' },
+    { value: 'Admin/Staff', label: 'Admin/Staff' },
+    { value: 'Faculty', label: 'Faculty' },
+    { value: 'Student', label: 'Student' },
+    
   ];
   options2: MyOption[] = [];
   options3: MyOption[] = [];
@@ -264,8 +263,8 @@ export class UploadComponent {
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Update Project",
-      text: "Are you sure you want to update the project details?",
+      title: "Add Patron",
+      text: "Are you sure you want to add this patron?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -276,7 +275,7 @@ export class UploadComponent {
       if (result.isConfirmed) {
         this.ref.close('Closed using function');
         Swal.fire({
-          title: "Update successful!",
+          title: "Add successful!",
           text: "The changes have been saved.",
           icon: "success",
           confirmButtonText: 'Close',

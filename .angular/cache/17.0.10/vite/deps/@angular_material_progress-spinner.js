@@ -1,10 +1,10 @@
 import {
   MatCommonModule
-} from "./chunk-W7NPENPZ.js";
+} from "./chunk-BDH6AKLV.js";
 import {
   CommonModule,
   NgTemplateOutlet
-} from "./chunk-YYENIAVB.js";
+} from "./chunk-4BOJPUFA.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -45,7 +45,7 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-SXSQSZC5.js";
+} from "./chunk-F4I3CHC3.js";
 import "./chunk-OXCW2X5T.js";
 
 // node_modules/@angular/material/fesm2022/progress-spinner.mjs

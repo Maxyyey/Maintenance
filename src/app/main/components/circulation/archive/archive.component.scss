@@ -45,7 +45,7 @@ button {
     color: var(--primary-color);
 }
 
-.archive-btn {
+.delete-btn {
     background: var(--red);
     color: var(--primary-color);
 }
@@ -54,6 +54,6 @@ button {
     background-color: var(--cancel-hover);
 }
 
-.archive-btn:hover {
+.delete-btn:hover {
     background-color: var(--red-hover);
 }

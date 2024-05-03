@@ -1,109 +1,81 @@
 <main>
-  <div class="container">
-      <div class="content">
+    <div class="container">
+        <div class="content">
           <div class="details-content">
-              <!-- HEADER - TITLE -->
-              <div class="detailsheader">
-                  <h1> Add New Locker </h1>
-                  <button class="exit-button" (click)="closepopup()"> &times; </button>
-              </div>
-
-              <!-- BODY - DETAILS -->
-              <div class="detailsbody">
+            <!-- HEADER - TITLE -->
+            <div class="detailsheader">
+                <h1> Add New Locker</h1>
+            </div>
+                <!-- BODY - DETAILS -->
+                <div class="detailsbody">
                   <div class="details">
                       <form>
-                          <div class="input_field">
-                              <div class="input-row">
-                                  <div class="txt_field">
-                                      <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
-                                          <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
-                                      </select>
-                                      <span></span>
-                                      <label class="labelline" for="college"> No. of Locker </label>
-                                  </div>
-                                  <div class="txt_field">
-                                      <select class="inputtxt" required name="program_id" id="program" [(ngModel)]="selectedOption2" (change)="onOption2Change()" [ngModelOptions]="{standalone: true}">
-                                          <option *ngFor="let option of options2" [value]="option.value">{{ option.label }} </option>
-                                      </select>
-                                      <span></span>
-                                      <label class="labelline" for="program"> Program </label>
-                                  </div>
-                                  <div class="txt_field">
-                                      <select class="inputtxt" required name="category" id="category" [(ngModel)]="selectedOption3" [ngModelOptions]="{standalone: true}">
-                                          <option *ngFor="let option of options3" [value]="option.value">{{ option.label }}</option>
-                                      </select>
-                                      <span></span>
-                                      <label class="labelline" for="category"> Category </label>
-                                  </div>
+                            
+                              
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" required>
+                              <span></span>
+                              <div class="labelline">Number of Locker</div>
+                            </div>
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" required>
+                              <span></span>
+                              <div class="labelline">Locker Number</div>
+                            </div>
+  
+                            
+                            <div class="txt_field">
+                                <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
+                                </select>
+                                <span></span>
+                                <label class="labelline" for="college"> Status </label>
+                            </div>
+  
+                              <!-- <div class="txt_field1">
+                                <div class="labelline1">Edit Image</div>
+                                <span></span>
+                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
+                                
+                                
+                                
+                              </div> -->
+                              <div class="txt_field1">
+                                <div class="labelline1">Date</div>
+                                <span></span>
+  
+                                
+                                <input type="date" class="date">
                               </div>
-          
-                              <div class="input-row">
-                                  <div class="txt_field">
-                                      <input class="inputtxt" type="text" name="title" required value="Sample value from backend data">
-                                      <span></span>
-                                      <div class="labelline"> Title </div>
-                                  </div>
-                              </div>
-          
-                              <!-- CAN ADD MULTIPLE AUTHOR -->
-                              <div class="input-row">
-                                  <div class="multiple-author" *ngFor="let item of values; let i = index">
-                                      <div class="txt_field"> 
-                                          <input class="inputtxt" name="author" type="text" id="author" [(ngModel)]="item.value">
-                                          <span></span>
-                                          <div class="labelline"> Author </div>
-                                      </div>
-                                      <p *ngIf="i === 0"> Add more AUTHOR if necessary </p>
-                                      <button class="removebtn" *ngIf="i > 0" (click)="removevalue(i)"><i class='bx bx-x'></i></button>
-                                  </div>
-                                  <div class="addbtn">
-                                      <button class="add-author" (click)="addvalue()">ADD</button>
-                                  </div>
-                              </div>
-          
-                              <div class="input-row">
-                                  <div class="txt_field">
-                                      <select class="inputtxt" id="language" name="language" required>
-                                          <option value="English"> FIL </option>
-                                          <option value="Tagalog"> FOR </option>
-                                      </select>
-                                      <span></span>
-                                      <label class="labelline" for="language"> Language </label>
-                                  </div>
-                                  <div class="txt_field">
-                                      <input class="inputtxt" type="date" id="datepub" name="date_published" required>
-                                      <span></span>
-                                      <div class="datelabel"> Date Published </div>
-                                  </div> 
-                                  <div class="txt_field"> 
-                                      <input class="inputtxt" type="file" accept=".jpeg, .png, .jpg" name="image_location" style="padding-left: 110px;"> 
-                                      <span></span>
-                                      <div class="uploadlabel"> Upload Image </div>
-                                  </div>
-                              </div>
-          
-                              <div class="input-row">
-                                  <div class="txtarea">
-                                      <textarea name="abstract" placeholder="Project abstract..."> sample sample... hindi ko pa magawa yung sa keywords </textarea>
-                                      <span></span>
-                                      <label class="labelline1"> Abstract </label>
-                                  </div>
-                              </div>
-          
-          
+                              <!--<div class="txt_field1"> 
+                                <div class="labelline2"> Upload Image </div>
+                                <input class="inputtxt2" type="file" accept=".jpeg, .png, .jpg" name="image_location" > 
+                                <span></span>
+                                
+                            </div>-->
+                            
+                                                            <!--<div class="txt_field">
+                                <select class="inputtxt" id="language" name="language" required>
+                                    <option value="English"> Maintenace </option>
+                                    <option value="Tagalog"> Locker </option>
+                                    <option value="Tagalog"> Cataloging </option>
+                                    <option value="Tagalog"> Circulation </option>
+                                </select>
+                                <span></span>
+                                <label class="labelline" for="language"> Access </label>
+                            </div>-->
+                            
+                          </form>
+                        </div> 
+                        <div class="button-container">
+                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                          <button class="update-btn" (click)="updateBox()"> Add </button>
+                            
+                           
+                            </div>
+                          
                           </div>
-                      </form>
+                      </div>
+                    </div>
                   </div>
-              
-                  <!-- BUTTONS -->
-                  <div class="button-container">
-                      <button class="update-btn" (click)="updateBox()"> Update </button>
-                      <button class="delete-btn" (click)="archiveBox()"> Archive </button>
-                      <button class="cancel-btn" (click)="cancelBox()"> Cancel </button>
-                  </div>
-              
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
+  </main>

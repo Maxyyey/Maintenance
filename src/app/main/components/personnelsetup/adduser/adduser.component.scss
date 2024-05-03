@@ -361,41 +361,48 @@ input[type="file"]::file-selector-button {
 // TEXTAREA
 
 .button-container {
-  margin: 10px 30px 30px 0px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
+  margin-right: 0;
 }
 
-.button-container button {
+button {
   font-family: 'Poppins';
   padding: 10px 20px;
+  margin: 0 10px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   font-weight: 400;
   width: 100px;
   letter-spacing: 1.5px;
+  margin: 10px;
 }
-
-.add-btn {
-  background: var(--main-green);
-  color: var(--primary-color);
-  margin-left: 10px;
-}
-
 
 .cancel-btn {
-  background: var(--cancel-btn);
-  color: var(--primary-color);
+  background-color: #AB0E0E;
+  color: white;
+  float: right;
+  margin-top: 50px;
+  
 }
-
-.add-btn:hover {
-  background-color: var(--cancel-hover);
-}
-
 
 .cancel-btn:hover {
-  background-color: var(--cancel-hover);
+  background-color: gray;
+}
+
+.update-btn {
+ 
+  background-color: #179733;
+  color: white;
+  float: right;
+  margin-top: 50px;
+
+}
+
+.update-btn:hover {
+  background-color: gray;
 }
 
 // checkbox //
