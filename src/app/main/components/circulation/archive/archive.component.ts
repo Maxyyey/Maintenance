@@ -36,13 +36,26 @@ export class ArchiveComponent {
   archiveBox(){
     this.dialogRef.close('Closed using function');
     Swal.fire({
-      title: "Archiving complete!",
-      text: "Project has been safely archived.",
-      icon: "success",
-      confirmButtonText: 'Close',
-      confirmButtonColor: "#777777",
+      title: "Archive Project",
+      text: "Are you sure want to archive this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.dialogRef.close('Closed using function');
+        Swal.fire({
+          title: "Archiving complete!",
+          text: "Project has been safely archived.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
     });
-  
 }
 }
 
