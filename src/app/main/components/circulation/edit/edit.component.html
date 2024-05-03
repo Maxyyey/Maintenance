@@ -4,65 +4,106 @@
           <div class="details-content">
               <!-- HEADER - TITLE -->
               <div class="detailsheader">
-                  <h1> Edit Patron</h1>
+                  <h1> Edit Project Details </h1>
+                  <button class="exit-button" (click)="closepopup()"> &times; </button>
               </div>
-              
+
               <!-- BODY - DETAILS -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-body">
-                        <form>
-                          
-                          
-                          <div class="txt_field">
-                            <select class="inputtxt" id="language" name="language" required>
-                                <option value="English"> Admin/Staff </option>
-                                <option value="Tagalog"> Faculty </option>
-                                <option value="Tagalog"> Student </option>
-                            </select>
-                            <span></span>
-                            <label class="labelline" for="language"> Patron Type </label>
-                        </div>
-
-                          <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
-                            <span></span>
-                            <div class="labelline">[Price Here]</div>
+              <div class="detailsbody">
+                  <div class="details">
+                      <form>
+                          <div class="input_field">
+                              <div class="input-row">
+                                  <div class="txt_field">
+                                      <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
+                                          <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
+                                      </select>
+                                      <span></span>
+                                      <label class="labelline" for="college"> College </label>
+                                  </div>
+                                  <div class="txt_field">
+                                      <select class="inputtxt" required name="program_id" id="program" [(ngModel)]="selectedOption2" (change)="onOption2Change()" [ngModelOptions]="{standalone: true}">
+                                          <option *ngFor="let option of options2" [value]="option.value">{{ option.label }} </option>
+                                      </select>
+                                      <span></span>
+                                      <label class="labelline" for="program"> Program </label>
+                                  </div>
+                                  <div class="txt_field">
+                                      <select class="inputtxt" required name="category" id="category" [(ngModel)]="selectedOption3" [ngModelOptions]="{standalone: true}">
+                                          <option *ngFor="let option of options3" [value]="option.value">{{ option.label }}</option>
+                                      </select>
+                                      <span></span>
+                                      <label class="labelline" for="category"> Category </label>
+                                  </div>
+                              </div>
+          
+                              <div class="input-row">
+                                  <div class="txt_field">
+                                      <input class="inputtxt" type="text" name="title" required value="Sample value from backend data">
+                                      <span></span>
+                                      <div class="labelline"> Title </div>
+                                  </div>
+                              </div>
+          
+                              <!-- CAN ADD MULTIPLE AUTHOR -->
+                              <div class="input-row">
+                                  <div class="multiple-author" *ngFor="let item of values; let i = index">
+                                      <div class="txt_field"> 
+                                          <input class="inputtxt" name="author" type="text" id="author" [(ngModel)]="item.value">
+                                          <span></span>
+                                          <div class="labelline"> Author </div>
+                                      </div>
+                                      <p *ngIf="i === 0"> Add more AUTHOR if necessary </p>
+                                      <button class="removebtn" *ngIf="i > 0" (click)="removevalue(i)"><i class='bx bx-x'></i></button>
+                                  </div>
+                                  <div class="addbtn">
+                                      <button class="add-author" (click)="addvalue()">ADD</button>
+                                  </div>
+                              </div>
+          
+                              <div class="input-row">
+                                  <div class="txt_field">
+                                      <select class="inputtxt" id="language" name="language" required>
+                                          <option value="English"> FIL </option>
+                                          <option value="Tagalog"> FOR </option>
+                                      </select>
+                                      <span></span>
+                                      <label class="labelline" for="language"> Language </label>
+                                  </div>
+                                  <div class="txt_field">
+                                      <input class="inputtxt" type="date" id="datepub" name="date_published" required>
+                                      <span></span>
+                                      <div class="datelabel"> Date Published </div>
+                                  </div> 
+                                  <div class="txt_field"> 
+                                      <input class="inputtxt" type="file" accept=".jpeg, .png, .jpg" name="image_location" style="padding-left: 110px;"> 
+                                      <span></span>
+                                      <div class="uploadlabel"> Upload Image </div>
+                                  </div>
+                              </div>
+          
+                              <div class="input-row">
+                                  <div class="txtarea">
+                                      <textarea name="abstract" placeholder="Project abstract..."> sample sample... hindi ko pa magawa yung sa keywords </textarea>
+                                      <span></span>
+                                      <label class="labelline1"> Abstract </label>
+                                  </div>
+                              </div>
+          
+          
                           </div>
-                          <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
-                            <span></span>
-                            <div class="labelline">Days</div>
-                          </div>
-                          <div class="txt_field1">
-                            <div class="labelline1">No. Of Days/Hours Allowed</div>
-                            <input class="inputtxt" type="text" required value="10 days" readonly>
-                            <span></span>
-                            
-                          </div>
-                          <div class="txt_field1">
-                            <div class="labelline1">No. Of Materials Allowed</div>
-                            <input class="inputtxt" type="text" required value="3" readonly>
-                            <span></span>
-                            
-                          </div>
-
-
-                          
-                              
-                          
-                        </form>
-                      </div>
-                      <div class="button-container">
-                        <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                          <button  class="add-btn">Save</button>
-                          
-                         
-                          
-                        </div>
-                    </div>
+                      </form>
                   </div>
-                </div>
+              
+                  <!-- BUTTONS -->
+                  <div class="button-container">
+                      <button class="update-btn" (click)="updateBox()"> Update </button>
+                      <button class="delete-btn" (click)="archiveBox()"> Archive </button>
+                      <button class="cancel-btn" (click)="cancelBox()"> Cancel </button>
+                  </div>
+              
+              </div>
           </div>
       </div>
+  </div>
+</main>

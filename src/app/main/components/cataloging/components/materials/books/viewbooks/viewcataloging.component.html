@@ -1,60 +1,59 @@
 <main>
     <div class="container">
         <div class="content">
-            <div class="details-content">
-                <!-- HEADER - TITLE -->
+            <div class="project-details">
+                <!-- TITLE -->
                 <div class="detailsheader">
+                    <h1> Sample Project </h1>
                     <button class="exit-button" (click)="closepopup()"> &times; </button>
-                    <h1>Title:</h1>
-                    <p>Project Title</p>
                 </div>
                 
-                
-                <!-- BODY - DETAILS -->
                 <div class="detailsbody">
-                    <div class="details">
-                        <div class="body-details">
-                            <img src= "/assets/images/GCLIBRARY.png">
+                <div class="details">
+                    <div class="projectdetails">
+                        <img alt="blog" src="https://raw.githubusercontent.com/pitcza/sampleimages/main/NoImage.png">
                         <span>
-                            <h2>Date Published:</h2>  <p>Ngayon</p>
-                        </span>    
-                           
-                        </div>
-
-                        <div class="body-details">
-                            <span>
-                                <h2> Department:  </h2> <p>HAHAHA</p>
-                            </span>
-                            <span>
-                                <h2> Course:  </h2> <p>HAHAHA</p>
-                            </span>
-                            <span>
-                                <h2> Author: </h2>  <p>HAHAHA</p>
-                            </span>
-                            <span>
-                                <h2> Project Type:</h2>  <p>HAHAHA</p>
-                            </span>
-                            <span>
-                                <h2> Language:</h2>  <p>HAHAHA</p>
-                            </span>
-                            <span>
-                                <h2> Abstract:</h2> 
-                            </span>
-                            <span>
-                                HAHAHA
-                            </span>
-                        </div>
+                            <h2> Date Published: </h2> <p> ha </p>
+                        </span>
                     </div>
-                
-                    <!-- BUTTONS -->
-                    <div class="button-container">
-                        <!--<button class="edit-btn" *ngIf="popupService.getPopupStatus() | async"> Edit </button>-->
-                        <!-- <button class="delete-btn" (click)="archiveBox()"> Archive </button> -->
-                        <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                        <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+        
+                    <div class="projectdetails">
+                        <span>
+                            <h2> Title: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> Author: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> College: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> Program: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> Category: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> Language: </h2> <p> ha </p>
+                        </span>
+                        <span>
+                            <h2> Abstract: </h2>
+                        </span>
+                        <span>
+                            <p> ha </p>
+                        </span>
                     </div>
+                </div>
+                <div class="button-container">
+                    <!--<button class="edit-btn"> Edit </button>-->
+                    <button class="delete-btn" (click)="archiveBox()"> Archive </button>
+                </div>
                 
                 </div>
+        
+        
+        
+        
             </div>
         </div>
     </div>

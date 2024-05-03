@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewPeriodicalComponent } from './viewperiodical/viewperiodical.component';
 
+import { EditPeriodicalPopupComponent } from './editperiodicalpopup/editperiodicalpopup.component';
 
 
 @Component({
@@ -19,6 +20,11 @@ export class PeriodicalComponent {
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
     this.dialogRef.open(ViewPeriodicalComponent, {});
+    
+  }
+  editbox(){
+    
+    this.dialogRef.open(EditPeriodicalPopupComponent, {});
     
   }
   // Component logic here

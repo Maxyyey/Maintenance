@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewcatalogingComponent } from './viewbooks/viewcataloging.component';
 
+import { EditPopupComponent } from './editpopup/editpopup.component';
 
 
 @Component({
@@ -19,6 +20,11 @@ export class BooksComponent {
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
     this.dialogRef.open(ViewcatalogingComponent, {});
+    
+  }
+  editbox(){
+    
+    this.dialogRef.open(EditPopupComponent, {});
     
   }
   // Component logic here
