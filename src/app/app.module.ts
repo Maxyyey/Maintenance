@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
@@ -18,6 +18,8 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 
 import { MaterialModule } from './modules/material/material.module';
+
+import { AuthInterceptor } from './interceptors/auth';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { MaterialModule } from './modules/material/material.module';
   ],
   providers: [
     provideClientHydration(),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

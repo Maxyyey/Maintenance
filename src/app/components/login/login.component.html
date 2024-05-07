@@ -48,21 +48,20 @@
             <!-- LOG IN FORM -->
             <div class="input-container email">
                 <i class='bx bx-user-circle'></i>
-                <input id="email" name="email" type="email" placeholder="Email">
+                <input id="email" name="email" type="email" placeholder="Email" [(ngModel)]="email">
             </div>
             <div class="input-container password">
                 <i class='bx bxs-lock' ></i>
-                <input id="password" name="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password">
+                <input id="password" name="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password">
                 <i (click)="toggleShow()" class="fa-solid fa-eye" *ngIf="!showpassword"></i>
                 <i (click)="toggleShow()" class="fa-solid fa-eye-slash" *ngIf="showpassword"></i>
-                
             </div>
 
 
       
             <!-- LOG IN BUTTON -->
             <div class="loginbtn">
-            <a class="login-btn" routerLink="/main"> LogIn </a>
+                <a class="login-btn" (click)="login()"> LogIn </a>
             </div>
 
             <div class="gclims">
