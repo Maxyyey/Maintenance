@@ -183,6 +183,88 @@ h1 {
 
 
 
+
+
+.input-row .txt_field2 {
+  display: inline-flex;
+}
+
+.input-row .txt_field2{
+  position: relative;
+  border-bottom: 2px solid var(--cancel-btn);
+  margin:20px ;
+  display: inline-block;
+
+  width: 740px;
+}
+
+.txt_field2 .inputtxt2 {
+  font-family: 'Poppins';
+  width: 100%;
+  padding-top: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 15px;
+  border: none;
+  background-color: var(--input);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none;
+
+}
+
+.txt_field2 .labelline2{
+  font-family: 'Poppins';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: var(--cancel-btn);
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.txt_field2 span::before{
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--main-green);
+  transition: .3s;
+}
+
+.inputtxt2:not(:focus) + span::before {
+  background: var(--cancel-btn);
+}
+
+.txt_field2 .inputtxt2:hover{
+  background-color: var(--input-hover);
+}
+
+.txt_field2 .inputtxt2:valid ~ .labelline2 {
+  top: 17px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--cancel-btn);
+}
+
+.txt_field2 .inputtxt2:focus ~ .labelline2 {
+  top: 17px;
+  font-size: 12px;
+  color: var(--main-green);
+  letter-spacing: 0.5px;
+}
+
+.txt_field2 .inputtxt2:focus ~ span::before {
+  width: 100%;
+}
+
+
+
 option {
   background-color: var(--primary-color);
 }
@@ -384,7 +466,7 @@ button {
   background-color: #AB0E0E;
   color: white;
   float: right;
-  margin-top: 50px;
+  margin-top: 35px;
   
 }
 
@@ -397,7 +479,7 @@ button {
   background-color: #179733;
   color: white;
   float: right;
-  margin-top: 50px;
+  margin-top: 35px;
 
 }
 

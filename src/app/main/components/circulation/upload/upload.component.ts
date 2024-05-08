@@ -29,7 +29,8 @@ export class UploadComponent {
   options1 = [
     { value: 'Admin/Staff', label: 'Admin/Staff' },
     { value: 'Faculty', label: 'Faculty' },
-    { value: 'Student', label: 'Student' },
+    { value: 'Student (Online)', label: 'Student (Online)' },
+    { value: 'Student (FaceToFace)', label: 'Student (FaceToFace)' },
     
   ];
   options2: MyOption[] = [];
