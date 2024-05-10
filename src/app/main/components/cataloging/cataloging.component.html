@@ -63,7 +63,7 @@
                     <div class="col-md-5">
                         <div class="row buttons">
                             <div class="col-md-4">
-                                <button class="btn btn-block btn-icon" [routerLink]="['ccs']" routerLinkActive="active"> CCS</button>
+                           <!----     <button class="btn btn-block btn-icon" [routerLink]="['ccs']" routerLinkActive="active"> CCS</button>
                             </div>
                             <div class="col-md-4">
                                 <button class="btn btn-block btn-icon" [routerLink]="['cba']" routerLinkActive="router-link-active"> CBA</button>
@@ -76,8 +76,28 @@
                             <div class="col-md-4">
                                 <button class="btn btn-block btn-icon" [routerLink]="['ceas']" routerLinkActive="router-link-active"> CEAS</button>
                             </div>
-                            </div>
+                            </div> -->
                            
+                            <div class="detailsheader">
+                                <div class="txt_field">
+                                    <select class="inputtxt" id="language" name="language" required>
+                                        <option value="ccs"> ALL COLLEGES </option>
+                                        <option value="ccs"> CCS </option>
+                                        <option value="cba"> CBA </option>
+                                        <option value="cahs"> CAHS </option>
+                                        <option value="chtm"> CHTM </option>
+                                        <option value="ceas"> CEAS </option>
+                                    </select>
+
+                                    <div class="txt_field">
+                                        <select class="inputtxt" id="language" name="language" required>
+                                            <option value="English"> CAHS </option>
+                                            <option value="Tagalog"> BSH </option>
+                                            <option value="Tagalog"> BSM </option>
+                                            <option value="Tagalog"> BSRT </option>
+                                            <option value="Tagalog"> BMLS </option>
+                                        </select>
+
                         </div>
                        
                     </div>
@@ -100,5 +120,5 @@
 </div>
 
 <div class="connection">
-    <router-outlet></router-outlet>
+    <router-outlet></router-outlet> 
 </div>

@@ -36,8 +36,8 @@ export class ArchiveComponent {
   archiveBox(){
     this.dialogRef.close('Closed using function');
     Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
+      title: "Archive User",
+      text: "Are you sure want to archive this user?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
