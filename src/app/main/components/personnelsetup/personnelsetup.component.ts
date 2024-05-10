@@ -4,16 +4,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
 import { ArchivessComponent } from './archivess/archivess.component';
-
+import { PersonnelService } from '@app/services/personnel.service';
 @Component({
   selector: 'app-personnelsetup',
   templateUrl: './personnelsetup.component.html',
   styleUrl: './personnelsetup.component.scss',
 })
 export class PersonnelSetupComponent implements OnInit{
-  constructor(private dialogRef : MatDialog) { }
+  public personnels: any = [];
+  constructor(private dialogRef : MatDialog, private personnelService: PersonnelService) { }
 
-  ngOnInit(): void { }
+  async ngOnInit(): Promise<void> {
+    this.personnels = await this.personnelService.getPersonnels()
+   }
 
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
