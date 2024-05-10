@@ -190,4 +190,18 @@ th {
   .dropdown:hover .dropdown-content {
     display: block;
   }
- 
+
+  .search-bar{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px;
+    padding: 10px;
+    padding-right: 0px;
+    padding-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+  }
