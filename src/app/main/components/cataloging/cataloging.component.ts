@@ -20,3 +20,5 @@ export class CatalogingComponent implements OnInit{
     this.dialogRef.open(EditPopupComponent, {});
   }
 }
+
+ 
