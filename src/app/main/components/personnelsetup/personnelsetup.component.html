@@ -24,41 +24,13 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>John Doe</td>
+                  <tr *ngFor="let personnel of personnels">
+                      <td> Jhon doe</td>
                       <td>Cataloging</td>
-                      <td>johnexample.com</td>
-                      <td>
-                          
-                          <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                          <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Jane Smith</td>
-                      <td>Maintenance</td>
-                      <td>janeexample.com</td>
+                      <td> {{ personnel.username }} </td>
                       <td>
                           <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
                           <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Bob Johnson</td>
-                      <td>Circulation</td>
-                      <td>bob example.com</td>
-                      <td>
-                        <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                        <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Jose Maria</td>
-                      <td>Locker</td>
-                      <td>abcde.com</td>
-                      <td>
-                        <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                        <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
                       </td>
                   </tr>
               </tbody>
