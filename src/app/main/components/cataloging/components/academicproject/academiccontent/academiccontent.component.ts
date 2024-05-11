@@ -16,6 +16,7 @@ export class AcademiccontentComponent implements OnInit{
   onAddNewBtnClick(){
     this.dialogRef.open(AddiconacadComponent, {});
   }
-
+  
+  
   
 }
