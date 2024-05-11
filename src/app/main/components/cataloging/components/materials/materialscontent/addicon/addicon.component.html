@@ -4,7 +4,7 @@
         <div class="details-content">
           <!-- HEADER - TITLE -->
           <div class="detailsheader">
-              <h1> Add Patron</h1>
+              <h1> Add Location</h1>
           </div>
               <!-- BODY - DETAILS -->
               <div class="detailsbody">
@@ -12,25 +12,32 @@
                     <form>
                           
                             
-                          <div class="txt_field">
-                              <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
+                          <div class="txt_field1">
+                              <select class="inputtxt1" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
                                   <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
                               </select>
                               <span></span>
-                              <label class="labelline" for="college"> Patron Type </label>
+                              <label class="labelline1" for="college"> Category </label>
                           </div>
                           <div class="txt_field">
                             <input class="inputtxt" type="text" required>
                             <span></span>
-                            <div class="labelline">[Price Here]</div>
+                            <div class="labelline">Location 1</div>
+                          </div>
+
+                          <div class="txt_field">
+                            <input class="inputtxt" type="text" required>
+                            <span></span>
+                            <div class="labelline">Location 2</div>
+                          </div>
+                          <div class="txt_field">
+                            <input class="inputtxt" type="text" required>
+                            <span></span>
+                            <div class="labelline">Location 3</div>
                           </div>
 
                           
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
-                              <span></span>
-                              <div class="labelline">Days</div>
-                            </div>
+                          
 
                             <!-- <div class="txt_field1">
                               <div class="labelline1">Edit Image</div>
@@ -38,21 +45,7 @@
                               <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
                               
                               
-                              
-                            </div> -->
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
-                              <span></span>
-                              <div class="labelline">No. of Days/Hours Allowed</div>
-                            </div>
-                            <div class="txt_field">
-                              <select class="inputtxt" id="language" name="language" required>
-                                <option value="English"> 3 (if students)</option>
-                                <option value="Tagalog"> 5 (if faculty) </option>
-                            </select>
-                              <span></span>
-                              <div class="labelline">No. of Books Allowed</div>
-                            </div>
+                           
                           
                                                           <!--<div class="txt_field">
                               <select class="inputtxt" id="language" name="language" required>
@@ -64,6 +57,7 @@
                               <span></span>
                               <label class="labelline" for="language"> Access </label>
                           </div>-->
+                        
                           
                         </form>
                       </div> 
