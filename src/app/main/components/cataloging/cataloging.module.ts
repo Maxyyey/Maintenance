@@ -9,6 +9,8 @@ import { PeriodicalComponent } from './components/materials/periodical/periodica
 import { FormsModule } from '@angular/forms';
 import { MaterialscontentComponent } from './components/materials/materialscontent/materialscontent.component';
 import { AcademiccontentComponent } from './components/academicproject/academiccontent/academiccontent.component';
+import { AddiconComponent } from './components/materials/materialscontent/addicon/addicon.component';
+import { AddiconacadComponent } from './components/academicproject/academiccontent/addiconacad/addiconacad.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { AcademiccontentComponent } from './components/academicproject/academicc
     PeriodicalComponent,
     MaterialscontentComponent,
     AcademiccontentComponent,
+    AddiconComponent,
+    AddiconacadComponent,
   ],
   imports: [
     CommonModule,
