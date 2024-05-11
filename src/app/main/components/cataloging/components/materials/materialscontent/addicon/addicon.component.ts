@@ -27,10 +27,9 @@ interface MyOption {
 export class AddiconComponent {
 
   options1 = [
-    { value: 'Admin/Staff', label: 'Admin/Staff' },
-    { value: 'Faculty', label: 'Faculty' },
-    { value: 'Student (Online)', label: 'Student (Online)' },
-    { value: 'Student (FaceToFace)', label: 'Student (FaceToFace)' },
+    { value: 'Books', label: 'Books' },
+    { value: 'Article', label: 'Article' },
+    { value: 'Periodical ', label: 'Periodical' },
     
   ];
   options2: MyOption[] = [];

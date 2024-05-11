@@ -4,32 +4,29 @@
           <div class="details-content">
             <!-- HEADER - TITLE -->
             <div class="detailsheader">
-                <h1> Add Patron</h1>
+                <h1>Add College</h1>
             </div>
                 <!-- BODY - DETAILS -->
                 <div class="detailsbody">
                   <div class="details">
                       <form>
                             
-                              
-                            <div class="txt_field">
-                                <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
-                                    <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
-                                </select>
-                                <span></span>
-                                <label class="labelline" for="college"> Patron Type </label>
-                            </div>
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
+                             <div class="txtheader">
+                              <h1>College</h1>
+                             </div> 
+                            <div class="txt_field1">
+                              <input class="inputtxt1" type="text" required>
                               <span></span>
-                              <div class="labelline">[Price Here]</div>
+                              <div class="labelline1">College</div>
                             </div>
   
-                            
+                            <div class="txtheader">
+                              <h2>Courses</h2>
+                             </div> 
                               <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
-                                <div class="labelline">Days</div>
+                                <div class="labelline">Course 1</div>
                               </div>
   
                               <!-- <div class="txt_field1">
@@ -43,16 +40,29 @@
                               <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
-                                <div class="labelline">No. of Days/Hours Allowed</div>
+                                <div class="labelline">Course 2</div>
                               </div>
                               <div class="txt_field">
-                                <select class="inputtxt" id="language" name="language" required>
-                                  <option value="English"> 3 (if students)</option>
-                                  <option value="Tagalog"> 5 (if faculty) </option>
-                              </select>
+                                <input class="inputtxt" type="text" required>
                                 <span></span>
-                                <div class="labelline">No. of Books Allowed</div>
+                                <div class="labelline">Course 3</div>
                               </div>
+                              <div class="txt_field">
+                                <input class="inputtxt" type="text" required>
+                                <span></span>
+                                <div class="labelline">Course 4</div>
+                              </div>
+                              <div class="txt_field">
+                                <input class="inputtxt" type="text" required>
+                                <span></span>
+                                <div class="labelline">Course 5</div>
+                              </div>
+                              <div class="txt_field">
+                                <input class="inputtxt" type="text" required>
+                                <span></span>
+                                <div class="labelline">Course 6</div>
+                              </div>
+                             
                             
                                                             <!--<div class="txt_field">
                                 <select class="inputtxt" id="language" name="language" required>
