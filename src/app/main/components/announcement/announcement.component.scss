@@ -78,10 +78,10 @@
   transition: all .2s ease-in;
 }
 
-.card:hover{
-  transform: scale(1.05);
-  transition: all .2s ease-in;
-}
+// .card:hover{
+//   transform: scale(1.05);
+//   transition: all .2s ease-in;
+// }
 
 /* CARD CONTENTS */
 .card img {
@@ -161,7 +161,7 @@ cursor: pointer; /* Change cursor to pointer on hover */
   object-fit: contain;
 }
 
-.latest-card:hover{
-  transform: scale(1.05);
-  transition: all .2s ease-in;
-}
+// .latest-card:hover{
+//   transform: scale(1.05);
+//   transition: all .2s ease-in;
+// }
