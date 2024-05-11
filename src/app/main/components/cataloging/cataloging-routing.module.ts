@@ -9,9 +9,11 @@ import { CbaComponent } from './components/academicproject/cba/cba.component';
 import { CcsComponent } from './components/academicproject/ccs/ccs.component';
 import { CeasComponent } from './components/academicproject/ceas/ceas.component';
 import { ChtmComponent } from './components/academicproject/chtm/chtm.component';
+import { MaterialscontentComponent } from './components/materials/materialscontent/materialscontent.component';
+import { AcademiccontentComponent } from './components/academicproject/academiccontent/academiccontent.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  { path: '', redirectTo: 'materialscontent', pathMatch: 'full' },
   { path: 'books', component: BooksComponent},
   { path: 'article', component: ArticleComponent},
   { path: 'periodical', component: PeriodicalComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'ccs', component: CcsComponent},
   { path: 'ceas', component: CeasComponent},
   { path: 'chtm', component: ChtmComponent},
+  { path: 'materialscontent', component: MaterialscontentComponent},
+  { path: 'academiccontent', component: AcademiccontentComponent},
 ];
 
 @NgModule({

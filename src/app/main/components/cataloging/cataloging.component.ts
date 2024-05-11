@@ -19,6 +19,10 @@ export class CatalogingComponent implements OnInit{
   onEditBtnClick(){
     this.dialogRef.open(EditPopupComponent, {});
   }
+  editbox(){
+    
+    this.dialogRef.open(EditPopupComponent, {});
 }
 
- 
+
+}
