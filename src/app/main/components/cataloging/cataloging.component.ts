@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { EditPopupComponent } from './components/materials/books/editpopup/editpopup.component';
-
 
 
 
@@ -11,18 +9,8 @@ import { EditPopupComponent } from './components/materials/books/editpopup/editp
   templateUrl: './cataloging.component.html',
   styleUrl: './cataloging.component.scss',
 })
-export class CatalogingComponent implements OnInit{
-  constructor(public dialogRef: MatDialog){ }
-
-  ngOnInit(): void { }
-
-  onEditBtnClick(){
-    this.dialogRef.open(EditPopupComponent, {});
-  }
-  editbox(){
-    
-    this.dialogRef.open(EditPopupComponent, {});
-}
+export class CatalogingComponent  {
+  
 
 
 }
