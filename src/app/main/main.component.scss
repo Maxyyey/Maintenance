@@ -94,7 +94,7 @@ body {
 
 .admin-tab a {
     display: flex;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     padding: 10px 10px 10px 10px;
     text-decoration: none;
@@ -108,7 +108,7 @@ body {
 }
 
 .admin-tab a.active-link {
-    font-weight: bolder;
+    font-weight: 700;
     color: var(--main-green);
 }
 
