@@ -131,41 +131,11 @@ p {
 }
 
 .card-buttons .archive-btn {
-margin-left: 5px; /* Adjust space between buttons */
-background-color: #AB0E0E; /* Set green background color */
-border: none;
-border-radius: 5px;
-color: white; /* Set text color to white */
-padding: 10px 13px; /* Add padding for better appearance */
-cursor: pointer; /* Change cursor to pointer on hover */
+  margin-left: 5px; /* Adjust space between buttons */
+  background-color: #AB0E0E; /* Set green background color */
+  border: none;
+  border-radius: 5px;
+  color: white; /* Set text color to white */
+  padding: 10px 13px; /* Add padding for better appearance */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
-
-// recent tab
-.latest-card {
-  position: relative;
-  height: 300px;
-  width: 98.4%;
-  flex: 1;
-  background-color: #ffffff; /* White background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
-  border: solid 2px var(--border-color);
-  margin: 7px 5px;
-  transition: all .2s ease-in;
-  margin-left: justify;
-}
-
-.latest-card img {
-  float: left;
-  width: 30%; /* or any specific width */
-  height: 93%; /* or any specific height */
-  background-color: #f3f3f3; /* a light grey placeholder color */
-  border-radius: 5px; /* if you want rounded corners */
-  margin: 10px; /* space between the image and the text below */
-  object-fit: contain;
-}
-
-// .latest-card:hover{
-//   transform: scale(1.05);
-//   transition: all .2s ease-in;
-// }
