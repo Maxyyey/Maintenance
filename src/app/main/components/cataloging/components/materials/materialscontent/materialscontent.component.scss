@@ -1,11 +1,9 @@
 
 .detailsheader{
-    margin-left: -125px;
-    display: inline-block;
-    margin-top: -5px;
-    margin-bottom: -30px;
-    color: #31A463;
-    width: 1400px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #31A463;;
+    width: 1100px;
     
 }
 
@@ -48,7 +46,7 @@
     color: black;
     border: 2px solid #31A463;
     background-color: transparent;
-    margin-right:0;
+    margin-right: -350px;
 }  
 
 
@@ -94,128 +92,3 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text2"] {
-      width: calc(200%);
-      padding: 10px;
-      height: 60px;
-      font-size: 15px;
-      border: none;
-      border-bottom: 2px solid #777777;
-      background-color: #F6F6F6;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      outline: none;
-}
-
-input[type="text2"]:hover {
-    background-color: #f0f0f0; /* Darken the background on hover */
-    color: #000; /* Change text color to black on hover */
-}
-
-input[type="text2"]::placeholder {
-    transition: all 0.3s;
-}
-
-input[type="text2"]:focus::placeholder {
-    font-size: 12px;
-    transform: translate(-5px, -20px); /* Move the placeholder up-left */
-    transition: green;
-    transition: 0.3s;
-}
-
-.txt_field1 {
-    padding-left: 125px;
-}
-
-select[type="text1"] {
-      width: 67%;
-      display: block;
-      
-      padding: 5px;
-      height: 60px;
-      font-size: 15px;
-      border: none;
-      border-bottom: 2px solid #777777;
-      background-color: #F6F6F6;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      outline: none;
-}
-
-select[type="text1"]:hover {
-    background-color: #f0f0f0; /* Darken the background on hover */
-    color: #000; /* Change text color to black on hover */
-}
-
-select[type="text1"]::placeholder {
-    transition: all 0.3s;
-}
-
-
-
-
-
-
-div {
-    margin-bottom: 10px;
-}
-
-.update-btn {
-     
-    background-color: #179733;
-    color: white;
-    float: right;
-    margin-top: 50px;
-  
-  }
-  
-  .update-btn:hover {
-    background-color: gray;
-  }
-
-  .clear-btn {
-     
-    background-color: #b43018;
-    color: white;
-    float: right;
-    margin-top: 50px;
-  
-  }
-  
-  .clear-btn:hover {
-    background-color: gray;
-  }
-  
-  .button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 0;
-  }
-
-  button {
-    font-family: 'Poppins';
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-weight: 400;
-    width: 100px;
-    letter-spacing: 1.5px;
-    margin: 10px;
-  }
-
- 
-
-  .row { 
-    padding-left: 125px;
-    margin-right: 300px;
-    display: inline-block;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.column {
-    flex: 0 0 30%; /* Adjust column width */
-}

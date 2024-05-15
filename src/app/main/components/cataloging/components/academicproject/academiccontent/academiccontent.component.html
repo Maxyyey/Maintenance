@@ -50,7 +50,7 @@
                                     <input type="text" class="form-control" placeholder="Search">
                                 </div>
                             </div>
-                        <!--   <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-add"> </i></button> -->
+                           <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-add"> </i></button> 
                         </div>
                                 
                     </div>
@@ -63,123 +63,75 @@
             <div class="content">
               <div class="details-content">
                 <!-- HEADER - TITLE -->
-                <div class="detailsheader1">
-                    <h1>Add College</h1>
-                </div>
-                    <!-- BODY - DETAILS -->
-                    <div class="detailsbody">
-                      <div class="details">
-                          <form>
-                                
-                                 <div class="txtheader">
-                                  <h1>College</h1>
-                                 </div> 
-                                <div class="txt_field1">
-                                  <input class="inputtxt1" type="text1" placeholder="Enter College name" required >
-                                  <span></span>
-                                  
-                                </div>
-      
-                                <div class="txtheader">
-                                  <h1>Courses</h1>
-                                 </div> 
-                                  
-      
-                                  <!-- <div class="txt_field1">
-                                    <div class="labelline1">Edit Image</div>
-                                    <span></span>
-                                    <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-                                    
-                                    
-                                    
-                                  </div> -->
-                            <!---      <div class="txt_field">
-                                    <input class="inputtxt" type="text" required>
-                                    <span></span>
-                                    <div class="labelline">Course 2</div>
-                                  </div>
-                                  <div class="txt_field">
-                                    <input class="inputtxt" type="text" required>
-                                    <span></span>
-                                    <div class="labelline">Course 3</div>
-                                  </div>
-                                  <div class="txt_field">
-                                    <input class="inputtxt" type="text" required>
-                                    <span></span>
-                                    <div class="labelline">Course 4</div>
-                                  </div>
-                                  <div class="txt_field">
-                                    <input class="inputtxt" type="text" required>
-                                    <span></span>
-                                    <div class="labelline">Course 5</div>
-                                  </div>
-                                  <div class="txt_field">
-                                    <input class="inputtxt" type="text" required>
-                                    <span></span>
-                                    <div class="labelline">Course 6</div>
-                                  </div>
-                                 
-                                  <div class="button-container">
-                                    <button class="update-btn" (click)="updateBox()"> Add </button>
-                                      
-
-                                      
-                                     
-                                      </div> 
-                                    
-                                
-                              </form>
-                            </div> -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>College</th>
+                            <th>Course</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>Love Story ni mamar</td>
+                                <td>Jomar Lester</td>
+                                <td>CCS</td>
+                                <td>BSIT</td>
+                                  <!-- <td>
+                                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                            <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                                        </td> -->
+                            </tr>
                             
-
-        <!-- College Section -->
-        
-        
-
-        <!-- Courses Section -->
-        <div class="row">
-            <div class="column">
-
-        <div class="txt_field2">
-            
-            <input type="text2" id="course1" name="course1" placeholder="Enter course name">
-            <span></span>
+                            <tr>
+                                <td>Diwata</td>
+                                <td>George McGregor</td>
+                                <td>CBA</td>
+                                <td>BSBA</td>
+                                  <!-- <td>
+                                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                            <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                                        </td> -->
+                            </tr>
+                            <tr>
+                                <td>1003</td>
+                                <td>MED</td>
+                                <td>CAHS</td>
+                                <td>MIDWIFERY</td>
+                                 <!-- <td>
+                                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                            <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                                        </td> -->
+                            </tr>
+                            <tr>
+                                <td>1004</td>
+                                <td>COMM</td>
+                                <td>CHTM</td>
+                                <td>BSTM</td>
+                                 <!-- <td>
+                                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                            <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                                        </td> -->
+                            </tr>
+                            <tr>
+                                <td>1004</td>
+                                <td>COMM</td>
+                                <td>CEAS</td>
+                                <td>BACOMM</td>
+                                 <!-- <td>
+                                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                            <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                                        </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
         </div>
-        <div class="txt_field2"> 
-            
-            <input type="text2" id="course2" name="course2" placeholder="Enter course name">
-            <span></span>
         </div>
-        <div class="txt_field2">
-            
-            <input type="text2" id="course3" name="course3" placeholder="Enter course name">
-            <span></span>
-        </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="column">
-        <div class="txt_field2">
-            
-            <input type="text2" id="course4" name="course4" placeholder="Enter course name">
-            <span></span>
-        </div>
-        <div class="txt_field2">
-            <input type="text2" id="course5" name="course5" placeholder="Enter course name">
-            <span></span>
-        </div>
-        <div class="txt_field2">
-            
-            <input type="text2" id="course6" name="course6" placeholder="Enter course name">
-            <span></span>
-        </div>
-        </div>
-        </div>
-
-        <div class="button-container">
-            <button class="clear-btn"> Clear </button>
-            <button class="update-btn" value=""> Add </button>
-              
-
 </div>
+
+
+
+
 

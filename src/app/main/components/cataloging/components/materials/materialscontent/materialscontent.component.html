@@ -39,7 +39,7 @@
                                    
                         </div>
                         <!-- add button -->
-                      <!---  <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-add"> </i></button> -->
+                        <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-add"> </i></button> 
                         
           
                      </div>
@@ -54,53 +54,59 @@
         </div>           
     </div>
         <div class="container">
-            <div class="detailsbody">
-                <div class="details">
-                    <form>
-                          
-                           <div class="txtheader">
-                            <h1>Category</h1>
-                           </div> 
-                          <div class="txt_field1">
-                            <select class="inputtxt1" type="text1" placeholder="Category" required >
-                                <option value="" selected disabled hidden>Select Category</option>
-                                <option>Books</option>
-                                <option>Article</option> 
-                                <option>Periodical</option>
-                            </select>
-                                
-                            <span></span>
-                            
-                          </div>
-
-                          <div class="txtheader">
-                            <h1>Location</h1>
-                           </div> 
-                           <div class="row">
-                            <div class="column">
-                
-                        <div class="txt_field2">
-                            
-                            <input type="text2" id="course1" name="course1" placeholder="Enter location">
-                            <span></span>
-                        </div>
-                        <div class="txt_field2"> 
-                            
-                            <input type="text2" id="course2" name="course2" placeholder="Enter location">
-                            <span></span>
-                        </div>
-                        <div class="txt_field2">
-                            
-                            <input type="text2" id="course3" name="course3" placeholder="Enter location">
-                            <span></span>
-                        </div>
-                        </div>
-                        </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <!-- <th>Action</th> -->
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Love Story ni mamar</td>
+                            <td>Jomar Lester</td>
+                            <td>Books</td>
+                            <td>Fil</td>
+                            <!-- <td>
+                                <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            </td> -->
+                        </tr>
                         
-                
-                        <div class="button-container">
-                            <button class="clear-btn"> Clear </button>
-                            <button class="update-btn" value=""> Add </button>
-                              
-        </div>     
-    
+                        <tr>
+                            <td>Diwata</td>
+                            <td>George McGregor</td>
+                            <td>Article</td>
+                            <td>For</td>
+                              <!-- <td>
+                                <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td>1003</td>
+                            <td>MED</td>
+                            <td>Periodical</td>
+                            <td>Jose Rizal</td>
+                             <!-- <td>
+                                <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td>1004</td>
+                            <td>COMM</td>
+                            <td>Noli Me Tangere</td>
+                            <td>Jose Rizal</td>
+                             <!-- <td>
+                                <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                                <button class="archive-btn" type="button"(click)="onAddNewBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        </div>
