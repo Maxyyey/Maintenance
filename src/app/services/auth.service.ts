@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '@app/config/config';
 import { Observable, Subject, catchError, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { HeaderService } from './header.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private headers: HeaderService) { }
 
   login(credentials: { username: string, password:string}) {
 
@@ -23,7 +24,7 @@ export class AuthService {
   }
 
   logout() {
-    return this.http.get<any>(`${apiUrl}/logout`).pipe(
+    return this.http.post<any>(`${apiUrl}/logout`, {}, {headers: this.headers.get() } ).pipe(
       tap((response => {
           sessionStorage.clear()
           this.router.navigate(['/login'])

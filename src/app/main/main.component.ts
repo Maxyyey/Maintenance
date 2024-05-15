@@ -26,7 +26,7 @@ export class MainComponent {
   }
 
   redirectToLoginPage() {
-    console.log('logging out...')
+    console.log(sessionStorage.getItem ("token"))
     this.authService.logout().subscribe(
       response => {
         Swal.fire({
@@ -46,7 +46,7 @@ export class MainComponent {
         });
       },
       error => {
-        // console.error(error)
+        console.log(error)
         // sessionStorage.clear()
         // this.router.navigate(['/login'])
       }

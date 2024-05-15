@@ -2,6 +2,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs';
 import { throwError } from 'rxjs';
+import { HeaderService } from './header.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +11,17 @@ import { throwError } from 'rxjs';
 export class DataService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private headers: HeaderService
   ) { }
 
-  private url:string = 'http://127.0.0.1:8000/api/';
+  private baseurl:string = 'http://127.0.0.1:8000/api/';
 
-  public get(endpoint: string, param: string) {
-    return this.http.get(this.url+endpoint+param);
+  public get(url: string) {
+    return this.http.get(this.baseurl+url);
   }
 
-  public getImage(endpoint: string, param: string) {
-      return this.http.get(this.url+endpoint+param, { responseType: 'blob' }).pipe(
-        catchError((error: HttpErrorResponse) => {
-          
-          return throwError(() => 'HTTP Response: No image found or invalid file found.');
-        })
-      );
-  }
-
-  public post(endpoint: string, param: string, payload: any) {
-    return this.http.get(this.url+endpoint+param, payload);
+  public post(url: string,formData: FormData) {
+    return this.http.post(this.baseurl+url, formData, { headers: this.headers.get() });
   }
 }
