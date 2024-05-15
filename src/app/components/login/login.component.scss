@@ -39,8 +39,8 @@ main {
 .logos {
     position: absolute;
     align-items: flex-end;
-    padding-top: 450px;
-    padding-left: 525px;
+    padding-top: 400px;
+    padding-left: 320px;
     //width: 900px;
 }
 
@@ -58,32 +58,25 @@ main {
 }
 
 .circle2 {
-    height: 0%;
-        width: 0%;
-        border: 450px solid #31A463;
-        border-radius: 5000px;
-        position: absolute;
-        top: -215px;
-        left: -130px;
+    position: absolute;
+    background-color: var(--main-green);
+    height: 680px;
+    width: 680px;
+    border-radius: 50%;
 }
 
 .circle1 {
-    height: 0%;
-        width: 0%;
-        border: 450px solid #7CC644;
-        border-radius: 5000px;
-        position: absolute;
-        top: -190px;
-        left: 50px;
-        display: flex;
-        justify-content: center;
+    position: absolute;
+    background-color: #7CC644;
+    height: 690px;
+    width: 690px;
+    left: 4px;
+    border-radius: 50%;
 }
 
 .LOGIN-PHOTO img {
     position: relative;
-    width: 1300px;
-    top: -40px;
-    left: 65px;
+    width: 1000px;
 }
 
 
