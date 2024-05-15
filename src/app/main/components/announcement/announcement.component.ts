@@ -38,8 +38,18 @@ export class AnnouncementComponent implements OnInit{
     this.dialogRef.open(AddComponent, {});
     
   }
-  onEditBtnClick(){
-    this.dialogRef.open(EditAnnouncePopupComponent, {});
+  onEditBtnClick(id: number){
+    this.announcementService.getAnnouncement(id).subscribe(
+      announcement => {
+        console.log(announcement)
+        this.dialogRef.open(EditAnnouncePopupComponent, {
+          data: announcement
+        });
+      },
+      error => {
+        console.error(error)
+      }
+    )
     }
   
   onArchiveBtnClick(){

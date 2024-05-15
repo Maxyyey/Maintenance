@@ -13,19 +13,19 @@
                           
                             
                           <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
+                            <input class="inputtxt" type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline">Title</div>
                           </div>
                           <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
+                            <input class="inputtxt" type="text" [(ngModel)]="category" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline">Category</div>
                           </div>
 
                           
                             <div class="txt_field">
-                              <input class="inputtxt" type="text" required>
+                              <input class="inputtxt" type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}" required>
                               <span></span>
                               <div class="labelline">Content</div>
                             </div>
@@ -41,9 +41,7 @@
                             <div class="txt_field1">
                               <div class="labelline1">Date</div>
                               <span></span>
-
-                              
-                              <input type="date" class="date">
+                              <input type="date" class="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="txt_field1"> 
                               <div class="labelline2"> Upload Image </div>
