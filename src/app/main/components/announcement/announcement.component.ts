@@ -22,7 +22,7 @@ export class AnnouncementComponent implements OnInit{
   getAnnouncements(){
     this.announcementService.getAnnouncements().subscribe(
       announcements => {
-          this.announcements = announcements 
+          this.announcements = announcements.announcements 
           console.log(this.announcements)
         
       },

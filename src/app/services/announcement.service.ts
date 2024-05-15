@@ -12,7 +12,7 @@ export class AnnouncementService {
     return this.http.get<any>(`${apiUrl}/announcements`)
   }
 
-  // getPersonnel(id:number) {
-  //   return this.http.get<any>(`${apiUrl}/personnels/${id}`)
-  // }
+  getAnnouncement(id:number) {
+    return this.http.get<any>(`${apiUrl}/announcements/${id}`)
+  }
 }
