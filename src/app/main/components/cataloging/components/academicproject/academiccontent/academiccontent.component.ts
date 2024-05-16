@@ -4,7 +4,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddiconacadComponent } from './addiconacad/addiconacad.component';
 import { ViewComponent } from './viewccs/view.component';
 import { ViewCbaComponent } from './cba/viewcba.component';
-
+import { ViewChtmComponent } from './chtm/viewchtm.component';
+import { ViewCahsComponent } from './cahs/viewcahs.component';
+import { ViewCeasComponent } from './ceas/viewceas.component';
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
@@ -28,6 +30,16 @@ export class AcademiccontentComponent implements OnInit {
   onViewCbaBtnClick(){
     this.dialogRef.open(ViewCbaComponent, {});
   }
+  onViewChtmBtnClick(){
+    this.dialogRef.open(ViewChtmComponent, {});
+  }
+  onViewCahsBtnClick(){
+    this.dialogRef.open(ViewCahsComponent, {});
+  }
+  onViewCeasBtnClick(){
+    this.dialogRef.open(ViewCeasComponent, {});
+  }
+
 
   // Other component logic goes here
 }

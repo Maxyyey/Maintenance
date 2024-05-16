@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { UploadComponent } from './upload/upload.component';
 import { EditComponent } from './edit/edit.component';
 import { ArchiveComponent } from '../circulation/archive/archive.component';
-import { PatronService } from '@app/services/patron.service';
-import { error } from 'console';
-import { response } from 'express';
 
 @Component({
   selector: 'app-circulation',
@@ -52,7 +48,5 @@ export class CirculationComponent implements OnInit{
     )
   }
   
-  onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent, {});
-  }
+
 }
