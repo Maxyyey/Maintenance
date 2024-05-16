@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from './edit/edit.component';
-import { ArchiveComponent } from '../circulation/archive/archive.component';
+import { PatronService } from '@app/services/patron.service';
 
 @Component({
   selector: 'app-circulation',
@@ -31,9 +31,6 @@ export class CirculationComponent implements OnInit{
     )
   }
 
-  onAddNewBtnClick(){
-    this.dialogRef.open(UploadComponent, {});
-  }
   onEditBtnClick(id:number){
     this.patronService.getPatron(id).subscribe(
       patron => {
