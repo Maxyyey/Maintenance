@@ -17,6 +17,11 @@ export class AnnouncementService {
     return this.http.get<any>(`${apiUrl}/announcements/${id}`)
   }
 
+  
+  createAnnouncement(data: any): Observable<any> {
+    return this.http.post(`${apiUrl}/announcements`, data);
+  } 
+
   updateAnnouncement(announcementId: string, data: any): Observable<any> {
     return this.http.put (`${apiUrl}/announcements/`, data);
   } 
