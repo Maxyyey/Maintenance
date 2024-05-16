@@ -9,9 +9,10 @@ import { AddiconacadComponent } from './addiconacad/addiconacad.component';
   styleUrls: ['./academiccontent.component.scss'],
 })
 export class AcademiccontentComponent implements OnInit {
+  constructor(private dialogRef : MatDialog) { }
  // Assuming Book is the type of objects in the 'books' array
-  isLoading: boolean = false;
-  dialogRef: any;
+ // isLoading: boolean = false;
+  //dialogRef: any;
 
 
   ngOnInit(): void {

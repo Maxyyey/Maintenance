@@ -4,39 +4,75 @@
           <div class="details-content">
             <!-- HEADER - TITLE -->
             <div class="detailsheader">
-                <h1>Add College</h1>
+                <h1></h1>
             </div>
                 <!-- BODY - DETAILS -->
                 <div class="detailsbody">
                   <div class="details">
                       <form>
                             
-                             <div class="txtheader">
+                        <!--     <div class="txtheader">
                               <h1>College</h1>
                              </div> 
                             <div class="txt_field1">
                               <input class="inputtxt1" type="text" required>
                               <span></span>
                               <div class="labelline1">College</div>
-                            </div>
+                            </div> -->
   
                             <div class="txtheader">
-                              <h2>Courses</h2>
+                              <h2>SELECT LOCATION</h2>
+
                              </div> 
+
+                             <button class="add-btn" type="button"> <i class="fa-solid fa-add"> </i></button> 
+                          <!--  <div class="txt_field">
+                                <input class="inputtxt" type="text" required>
+                                <span></span>
+                                <div class="labelline">Course 1</div>
+                              </div> 
+  
+                               <div class="txt_field1">
+                                <div class="labelline1">Edit Image</div>
+                                <span></span>
+                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
+                                
+                               
+                                
+                              </div> -->
+                              <div class="checkbox-group">
+                              <div class="txt_field1">
+                                <div class="labelline1"></div>
+                                <span></span>
+                                
+
+                                  <input type="checkbox" id="access" name="access" value="circulation">
+                                  <label for="access">Circulation</label>
+                                
+                                  
+                                  <input type="checkbox" id="access1" name="access1" value="cataloging">
+                                  <label for="access1">Cataloging</label>
+                                
+                                  
+                                  <input type="checkbox" id="access2" name="access2" value="locker">
+                                  <label for="access2">Locker</label>
+                                  
+                                  
+                                  <input type="checkbox" id="access3" name="access3" value="maintenance">
+                                  <label for="access3">Maintenance</label>
+                              </div>
+                              </div>
+
+                              <div class="txtheader2">
+                                <h2>ADD COURSE</h2>
+                               </div> 
+                               <button class="add-btn" type="button"> <i class="fa-solid fa-add"> </i></button> 
+
                               <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
                                 <div class="labelline">Course 1</div>
                               </div>
-  
-                              <!-- <div class="txt_field1">
-                                <div class="labelline1">Edit Image</div>
-                                <span></span>
-                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-                                
-                                
-                                
-                              </div> -->
                               <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
@@ -45,14 +81,13 @@
                               <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
-                                <div class="labelline">Course 3</div>
+                             <div class="labelline">Course 3</div>
                               </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 4</div>
-                              </div>
-                              <div class="txt_field">
+
+                            
+                          </form>
+                        </div> 
+                        <!--     <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
                                 <div class="labelline">Course 5</div>
@@ -61,10 +96,10 @@
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
                                 <div class="labelline">Course 6</div>
-                              </div>
-                             
+                              </div> 
                             
-                                                            <!--<div class="txt_field">
+                            
+                                                            <div class="txt_field">
                                 <select class="inputtxt" id="language" name="language" required>
                                     <option value="English"> Maintenace </option>
                                     <option value="Tagalog"> Locker </option>
@@ -75,18 +110,19 @@
                                 <label class="labelline" for="language"> Access </label>
                             </div>-->
                             
-                          </form>
-                        </div> 
+                       
+                        
+
                         <div class="button-container">
                           <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
                           <button class="update-btn" (click)="updateBox()"> Add </button>
                             
                             
-                           
+                        </div>
                             </div>
                           
                           </div>
                       </div>
                     </div>
-                  </div>
+                  
   </main>
