@@ -5,7 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { AnnouncementService } from '@app/services/announcement.service';
 
 import Swal from 'sweetalert2';
 
@@ -25,62 +25,78 @@ interface MyOption {
   
 })
 export class EditAnnouncePopupComponent {
-
-  options1 = [
-    { value: 'Available', label: 'Available' },
-    { value: 'Not Available', label: 'Not Available' },
-    { value: 'Damaged', label: 'Damaged' },
-  ];
-  options2: MyOption[] = [];
-  options3: MyOption[] = [];
-
-  selectedOption1: string;
-  selectedOption2: string;
-  selectedOption3: string;
-
-  title: string = ''
-  category: string = ''
-  content: string = ''
-  date: any = ''
+  form: {
+    title: string 
+    category: string 
+    content: string 
+    date: any 
+    file: File | null
+  }
 
   constructor(
     private router: Router, 
     private ref: MatDialogRef<EditAnnouncePopupComponent>, 
+    private announcementService: AnnouncementService,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
-    this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
-    this.selectedOption2 = '';
-    this.selectedOption3 = '';
+      this.form = {
+        title: '',
+        category: '',
+        content: '',
+        date: '',
+        file: null
+      }
   }
-
-  
-
-
- 
-
 
   // DYNAMIC ADD MULTIPLE AUTHOR
   ngOnInit() {
-    console.log(this.data)
-    this.title = this.data.title
-    this.category = this.data.category
-    this.content = this.data.content
-    this.date = this.data.date
-    this.addvalue();
+    this.getOldValues() 
+    // console.log(this.data)
   }
 
-  values: { value: string }[] = [];
-
-  removevalue(i: any){
-    this.values.splice(i, 1);
+  getOldValues() {
+    this.form = {
+      title: this.data.title,
+      category: this.data.category,
+      content: this.data.content,
+      date: this.data.date,
+      file: null
+    }
   }
 
-  addvalue(){
-    this.values.push({value: "'di ko alam paano, comma na ba kapag marami tas pwede pa rin mag add?"});
+  updateAnnouncement() {
+    const formData = new FormData();      //bruhhh like file is not working in ng model
+    formData.append('title', 'test');
+    formData.append('category', this.form.category);
+    formData.append('content', this.form.content);
+    formData.append('date', this.form.date);
+    formData.append('file', this.form.file || '');
+
+    // console.log(formData)
+    
+
+    this.announcementService.updateAnnouncement(this.data.id, formData).subscribe(
+      response => {
+        Swal.fire({
+          title: "Update successful!",
+          text: "The changes have been saved.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+        console.log(response)
+        this.ref.close('Closed using function');
+      },
+      error => {
+        console.error(error)
+      }
+    )
   }
 
-  closepopup() {
-    this.ref.close('Closed using function');
-  }
+  uploadFile(event: any){
+    this.form.file = event.target.files[0];
+    console.table(this.form.file) 
+   }
+
 
   // SWEETALERT UPDATE POPUP
   updateBox(){
@@ -95,45 +111,13 @@ export class EditAnnouncePopupComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Update successful!",
-          text: "The changes have been saved.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        this.updateAnnouncement()
       }
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
-    Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
-      }
-    });
-  }
 
-  // CANCEL EDITING POPUP
-  cancelBox(){
+  closepopup(){
     Swal.fire({
       title: "Are you sure you want to cancel editing details?",
       text: "Your changes will not be saved.",
@@ -145,6 +129,7 @@ export class EditAnnouncePopupComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
+          this.ref.close('Closed using function');
           this.ref.close('Closed using function');
           const Toast = Swal.mixin({
             toast: true,

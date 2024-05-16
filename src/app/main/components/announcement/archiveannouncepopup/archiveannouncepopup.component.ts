@@ -7,6 +7,8 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
+import { AnnouncementService } from '@app/services/announcement.service';
+import { response } from 'express';
 
 interface MyOption {
   value: string;
@@ -24,10 +26,40 @@ interface MyOption {
 })
 export class ArchiveAnnouncePopupComponent {
 
-  constructor(public dialogRef: MyMatDialogRef<ArchiveAnnouncePopupComponent>) {}
+  constructor(
+    private dialogRef: MyMatDialogRef<ArchiveAnnouncePopupComponent>,
+    private announcementService: AnnouncementService,
+    @Inject(MAT_DIALOG_DATA) private data: any) {
+
+    }
 
   closepopup() {
     this.dialogRef.close('Closed using function');
+  }
+
+  archiveAnnouncement(id: number) {
+    this.announcementService.archiveAnnouncement(id).subscribe(
+      response => {
+        console.log(response)
+        this.dialogRef.close('Closed using function');
+        Swal.fire({
+          title: "Archiving complete!",
+          text: "Project has been safely archived.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      },
+      error => {
+        console.error(error)
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
+        this.dialogRef.close('Closed using function'); 
+      }
+    )
   }
 
   archiveBox(){
@@ -43,14 +75,7 @@ export class ArchiveAnnouncePopupComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.dialogRef.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        this.archiveAnnouncement(this.data)
       }
     });
 }

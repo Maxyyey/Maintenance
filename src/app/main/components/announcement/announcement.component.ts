@@ -14,7 +14,9 @@ import { error } from 'console';
 export class AnnouncementComponent implements OnInit{
   announcements: any[] = []
 
-  constructor(private dialogRef : MatDialog, private announcementService: AnnouncementService) { }
+  constructor(
+    private dialogRef : MatDialog, 
+    private announcementService: AnnouncementService) { }
 
   ngOnInit() { 
     this.getAnnouncements()
@@ -32,15 +34,7 @@ export class AnnouncementComponent implements OnInit{
     )
   }
 
-  updateAnnouncement() {
-    const announcement = '1'; // Example ID
-    const data = { title: 'Updated Title', content: 'Updated Content' };
-    this.announcementService.updateAnnouncement('announcement', data).subscribe(
-      response => console.log(response),
-      error => console.error(error)
-    );
-  }
-
+  
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
     this.dialogRef.open(AddComponent, {});
@@ -60,8 +54,10 @@ export class AnnouncementComponent implements OnInit{
     )
     }
   
-  onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveAnnouncePopupComponent, {});
+  onArchiveBtnClick(id:number){
+    this.dialogRef.open(ArchiveAnnouncePopupComponent, {
+      data: id
+    });
   }
   // Component logic here
 
