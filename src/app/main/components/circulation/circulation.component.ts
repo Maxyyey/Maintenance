@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { UploadComponent } from './upload/upload.component';
 import { EditComponent } from './edit/edit.component';
-import { ArchiveComponent } from '../circulation/archive/archive.component';
+
 
 @Component({
   selector: 'app-circulation',
@@ -15,14 +14,10 @@ export class CirculationComponent implements OnInit{
 
   ngOnInit(): void { }
 
-  onAddNewBtnClick(){
-    this.dialogRef.open(UploadComponent, {});
-  }
+ 
   onEditBtnClick(){
     this.dialogRef.open(EditComponent, {});
     }
   
-  onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent, {});
-  }
+
 }
