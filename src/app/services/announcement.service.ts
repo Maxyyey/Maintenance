@@ -19,10 +19,14 @@ export class AnnouncementService {
 
   
   createAnnouncement(data: any): Observable<any> {
-    return this.http.post(`${apiUrl}/announcements`, data);
+    return this.http.post(`${apiUrl}/announcements`, data );
   } 
 
-  updateAnnouncement(announcementId: string, data: any): Observable<any> {
-    return this.http.put (`${apiUrl}/announcements/`, data);
+  updateAnnouncement(id: string, data: any): Observable<any> {
+    return this.http.post(`${apiUrl}/announcements/${id}`, data);
+  } 
+
+  archiveAnnouncement(id: number): Observable<any> {
+    return this.http.delete(`${apiUrl}/announcements/${id}`);
   } 
 }
