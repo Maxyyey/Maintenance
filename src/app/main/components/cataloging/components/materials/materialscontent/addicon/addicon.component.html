@@ -12,13 +12,7 @@
                     <form>
                           
                             
-                          <div class="txt_field1">
-                              <select class="inputtxt1" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
-                                  <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
-                              </select>
-                              <span></span>
-                              <label class="labelline1" for="college"> Category </label>
-                          </div>
+                          
                           <div class="txt_field">
                             <input class="inputtxt" type="text" required>
                             <span></span>
@@ -62,8 +56,9 @@
                         </form>
                       </div> 
                       <div class="button-container">
-                        <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
+                        
                         <button class="update-btn" (click)="updateBox()"> Add </button>
+                        <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
                           
                           
                          

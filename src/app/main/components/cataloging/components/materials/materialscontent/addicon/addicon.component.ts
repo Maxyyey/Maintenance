@@ -263,8 +263,8 @@ export class AddiconComponent {
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Add Patron",
-      text: "Are you sure you want to add this patron?",
+      title: "Add Location",
+      text: "Are you sure you want to add this location?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
