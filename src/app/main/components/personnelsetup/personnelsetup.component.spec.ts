@@ -11,7 +11,7 @@ describe('PersonnelSetupComponent', () => {
       declarations: [PersonnelSetupComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PersonnelSetupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -23,3 +23,4 @@ describe('PersonnelSetupComponent', () => {
 });
 
 
+//up

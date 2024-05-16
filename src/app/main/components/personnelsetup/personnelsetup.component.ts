@@ -30,5 +30,7 @@ export class PersonnelSetupComponent implements OnInit{
   }
   // Component logic here
 
-  
+
 }
+
+//up
