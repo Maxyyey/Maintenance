@@ -58,6 +58,7 @@
 /* CARD CONTAINER */
 .card-container {
   width: 200px;
+  padding: 5px;
   display: inline-block;
   margin-right: 10px;
   width: calc(33.33% - 10px); /* Set the width to one-third of the available space */
@@ -78,6 +79,10 @@
   transition: all .2s ease-in;
 }
 
+.card:hover {
+  transform: scale(1.05);
+  transition: all .2s ease-in;
+}
 // .card:hover{
 //   transform: scale(1.05);
 //   transition: all .2s ease-in;
@@ -87,6 +92,7 @@
 .card img {
   width: 100%; /* or any specific width */
   height: 70%; /* or any specific height */
+  padding: 3px;
   background-color: #f3f3f3; /* a light grey placeholder color */
   border-radius: 5px; /* if you want rounded corners */
   margin-bottom: 3px; /* space between the image and the text below */
@@ -139,3 +145,53 @@ p {
   padding: 10px 13px; /* Add padding for better appearance */
   cursor: pointer; /* Change cursor to pointer on hover */
 }
+
+.container > div:first-child {
+  width: 100%;
+  .card {
+    height: 400px;
+    position: relative;
+    margin-left: justify;
+
+    .textbox {
+      padding: 20px;
+    }
+    img {
+      float: left;
+      width: 30%; /* or any specific width */
+      height: 93%; 
+      background-color: #f3f3f3;
+      border-radius: 5px; 
+      margin: 10px; 
+      object-fit: contain;
+      margin-left: 5px; 
+      border: none;
+      border-radius: 5px;
+      color: white; 
+      padding: 10px 13px; 
+      cursor: pointer; 
+    }
+  }
+  .card:hover {
+    transform: scale(1.01);
+
+  }
+}
+
+// width: 200px;
+// display: inline-block;
+// margin-right: 10px;
+// width: calc(33.33% - 10px); /* Set the width to one-third of the available space */
+// vertical-align: top;
+// box-sizing: border-box;
+
+// position: relative;
+// height: 300px;
+// flex: 1;
+// background-color: #ffffff; /* White background */
+// border-radius: 10px; /* Rounded corners */
+// box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
+// border: solid 2px var(--border-color);
+// margin: 7px 5px;
+// display: block;
+// transition: all .2s ease-in;
