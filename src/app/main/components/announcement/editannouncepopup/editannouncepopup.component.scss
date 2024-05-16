@@ -141,17 +141,10 @@ h1 {
   
   // pop up design
   
-  form .txt_field2{
-    padding-top: 10px;
-    background-color: #F6F6F6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 40px;
-    width: 300px;
-    float: right;
+
     
     
-  }
+  
   .txt_field1 .inputtxt2{
     width: 100%;
     padding: 15px 5px 40px 0;
@@ -180,23 +173,27 @@ h1 {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 80px;
-    width: 370px;
-    display: inline-grid;
+    width: 730px;
+    display: block;
     margin: 30px 10px 30px 10px;
     }
   
   .txt_field1 .labelline1{
-    margin-left: 10px;
+    position: absolute;
+    top: 50%;
     left: 10px;
     color: #777777;
-    font-size: 12px;
-  
+    transform: translateY(-50%);
+    font-size: 15px;
+    pointer-events: none;
+    transition: .3s;
   }
   
   
   .txt_field1 .inputtxt1{
     width: 100%;
-    padding-top: 50px;
+    display: block;
+    padding-top: 19px;
     padding-left: 10px;
     padding-right: 10px;
     height: 60px;
@@ -210,7 +207,7 @@ h1 {
   form .txt_field{
     position: relative;
     border-bottom: 2px solid #777777;
-    margin: 30px 10px 30px 10px;
+    margin: 30px 10px 30px 0;
     width: 240px;
     display: inline-block;
   }
@@ -239,6 +236,18 @@ h1 {
     font-size: 15px;
     pointer-events: none;
     transition: .3s;
+  }
+  .txt_field .labelline1{
+    position: absolute;
+    left: 10px;
+    color: #777777;
+    transform: translateY(-50%);
+    font-size: 15px;
+    pointer-events: none;
+    top: 28px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  
   }
   
   .txt_field span::before{
@@ -273,21 +282,80 @@ h1 {
     color: #31A463;
     letter-spacing: 0.5px;
   }
-  
+
+  .txt_field .date:hover{
+    background-color: #ececec;
+  }
+  .txt_field .date:valid ~ .labelline1 {
+    top: 17px;
+    left:10px;
+    font-size: 12px;
+    color: #777777;
+  }
+  .txt_field .date:focus ~ .labelline1 {
+    top: 17px;
+    color: #31A463;
+  }
+
   .txt_field .inputtxt:focus ~ span::before,
   .txt_field .inputtxt:valid ~ span::before{
     width: 100%;
   }
+  .txt_field1 span::before{
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #31A463;
+    transition: .3s;
+  }
+
+  .inputtxt1:not(:focus) + span::before {
+    background: #777777;
+  }
+  
+  .txt_field1 .inputtxt1:hover{
+    background-color: #ececec;
+  }
+  
+  .txt_field1 .inputtxt1:valid ~ .labelline1 {
+  left: 75px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #777777;
+  }
+  
+  .txt_field1 .inputtxt1:focus ~ .labelline1 {
+    top: 17px;
+    font-size: 12px;
+    color: #31A463;
+    letter-spacing: 0.5px;
+  }
+
+
+
+  .txt_field1 .inputtxt1:focus ~ span::before,
+  .txt_field1 .inputtxt1:valid ~ span::before{
+    width: 100%;
+  }
   
   .date {
-    border: none; /* Blue border with increased thickness */
-    width: 97%;
+    width: 100%;
+    display: block;
+    padding-top: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 60px;
     font-size: 15px;
-    margin-left: 10px;
+    border: none;
     background-color: #F6F6F6;
-    border-radius: 5px; /* Rounded border */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     outline: none; /* Remove default outline */
     color: #31A463;
+    margin-top: 10px;
   
   }
   
