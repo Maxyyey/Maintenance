@@ -15,6 +15,7 @@ body {
 /* HEADER */
 .header {
     position: fixed;
+    z-index: 999;
     background-color: var(--primary-color);
     height: 80px;
     width: 100%;
@@ -182,6 +183,7 @@ ul ul {
 }
 
 .body-content {
+    overflow-x: hidden;
     padding-left: 240px;
     padding-top: 90px;
 }

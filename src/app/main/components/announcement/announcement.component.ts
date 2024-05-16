@@ -22,7 +22,7 @@ export class AnnouncementComponent implements OnInit{
   getAnnouncements(){
     this.announcementService.getAnnouncements().subscribe(
       announcements => {
-          this.announcements = announcements 
+          this.announcements = announcements.announcements 
           console.log(this.announcements)
         
       },
@@ -32,14 +32,32 @@ export class AnnouncementComponent implements OnInit{
     )
   }
 
+  updateAnnouncement() {
+    const announcement = '1'; // Example ID
+    const data = { title: 'Updated Title', content: 'Updated Content' };
+    this.announcementService.updateAnnouncement('announcement', data).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
 
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
     this.dialogRef.open(AddComponent, {});
     
   }
-  onEditBtnClick(){
-    this.dialogRef.open(EditAnnouncePopupComponent, {});
+  onEditBtnClick(id: number){
+    this.announcementService.getAnnouncement(id).subscribe(
+      announcement => {
+        console.log(announcement)
+        this.dialogRef.open(EditAnnouncePopupComponent, {
+          data: announcement.announcement
+        });
+      },
+      error => {
+        console.error(error)
+      }
+    )
     }
   
   onArchiveBtnClick(){
