@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { UploadComponent } from './upload/upload.component';
 import { EditComponent } from './edit/edit.component';
-import { ArchiveComponent } from '../circulation/archive/archive.component';
+import { PatronService } from '@app/services/patron.service';
 
 @Component({
   selector: 'app-circulation',
@@ -11,18 +10,40 @@ import { ArchiveComponent } from '../circulation/archive/archive.component';
   styleUrl: './circulation.component.scss',
 })
 export class CirculationComponent implements OnInit{
-  constructor(private dialogRef : MatDialog) { }
+  patrons: any = []
 
-  ngOnInit(): void { }
+  constructor(
+    private dialogRef : MatDialog,
+    private patronService: PatronService) { }
 
-  onAddNewBtnClick(){
-    this.dialogRef.open(UploadComponent, {});
+  ngOnInit() { 
+    this.getPatrons()
   }
-  onEditBtnClick(){
-    this.dialogRef.open(EditComponent, {});
-    }
+
+  getPatrons() {
+    this.patronService.getPatrons().subscribe(
+      patrons => {
+        this.patrons = patrons
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+  onEditBtnClick(id:number){
+    this.patronService.getPatron(id).subscribe(
+      patron => {
+        this.dialogRef.open(EditComponent, {
+          data: patron
+        });
+      },
+      error => {
+        console.error(error)
+      }
+
+    )
+  }
   
-  onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent, {});
-  }
+
 }

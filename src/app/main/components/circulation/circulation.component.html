@@ -6,7 +6,7 @@
             <h1>
                 CIRCULATION
         
-                    <button class="container-UploadButton" (click)="onAddNewBtnClick()">Upload</button>
+                   
                 
             </h1>
             
@@ -26,48 +26,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Admin</td>
-                        <td>₱15</td>
-                        <td>3</td>
-                        <td>43h</td>
-                        <td>5</td>
+                    <tr *ngFor="let patron of patrons">
+                        <td> {{ patron.patron }} </td>
+                        <td> {{ patron.fines_if_overdue }} </td>
+                        <td> {{ patron.days_allowed }}</td>
+                        <td> {{ patron.hours_allowed }}</td>
+                        <td> {{ patron.materials_allowed }}</td>
                         <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Student (Online)</td>
-                        <td>₱100</td>
-                        <td>7</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Student (Face to Face)</td>
-                        <td>₱50</td>
-                        <td>0</td>
-                        <td>3h</td>
-                        <td>3</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Faculty</td>
-                        <td>₱25</td>
-                        <td>7</td>
-                        <td>0</td>
-                        <td>5</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            <button class="edit-btn" type="button"(click)="onEditBtnClick(patron.id)"> <i class="fa-solid fa-edit"> </i></button>
+                            <!-- <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button> -->
                         </td>
                     </tr>
                 </tbody>
