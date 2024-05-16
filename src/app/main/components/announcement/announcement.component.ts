@@ -32,6 +32,14 @@ export class AnnouncementComponent implements OnInit{
     )
   }
 
+  updateAnnouncement() {
+    const announcement = '1'; // Example ID
+    const data = { title: 'Updated Title', content: 'Updated Content' };
+    this.announcementService.updateAnnouncement('announcement', data).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
 
   onAddNewBtnClick(){
     // this.router.navigate(['/adduser']);
@@ -43,7 +51,7 @@ export class AnnouncementComponent implements OnInit{
       announcement => {
         console.log(announcement)
         this.dialogRef.open(EditAnnouncePopupComponent, {
-          data: announcement
+          data: announcement.announcement
         });
       },
       error => {

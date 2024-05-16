@@ -40,7 +40,7 @@ export class EditAnnouncePopupComponent {
 
   title: string = ''
   category: string = ''
-  text: string = ''
+  content: string = ''
   date: any = ''
 
   constructor(
@@ -63,7 +63,7 @@ export class EditAnnouncePopupComponent {
     console.log(this.data)
     this.title = this.data.title
     this.category = this.data.category
-    this.text = this.data.text
+    this.content = this.data.content
     this.date = this.data.date
     this.addvalue();
   }
