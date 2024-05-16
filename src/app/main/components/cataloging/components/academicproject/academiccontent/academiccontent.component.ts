@@ -1,22 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddiconacadComponent } from './addiconacad/addiconacad.component';
+import { ViewComponent } from './view/view.component';
 
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
-  styleUrl: './academiccontent.component.scss'
+  styleUrls: ['./academiccontent.component.scss'],
 })
-export class AcademiccontentComponent implements OnInit{
+export class AcademiccontentComponent implements OnInit {
   constructor(private dialogRef : MatDialog) { }
+  // Assuming Book is the type of objects in the 'books' array
+  // isLoading: boolean = false;
+  // dialogRef: any; 
 
-  ngOnInit(): void { }
+
+  ngOnInit(): void {
+    // Initialize component properties or fetch data here
+  }
 
   onAddNewBtnClick(){
     this.dialogRef.open(AddiconacadComponent, {});
   }
-  
-  
-  
+
+  onViewBtnClick(){
+    this.dialogRef.open(ViewComponent, {});
+  }
+
+  // Other component logic goes here
 }

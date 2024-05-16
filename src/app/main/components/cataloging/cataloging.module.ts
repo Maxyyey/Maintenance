@@ -10,6 +10,7 @@ import { AcademiccontentComponent } from './components/academicproject/academicc
 import { AddiconComponent } from './components/materials/materialscontent/addicon/addicon.component';
 import { AddiconacadComponent } from './components/academicproject/academiccontent/addiconacad/addiconacad.component';
 
+
 @NgModule({
   declarations: [
     
