@@ -122,12 +122,19 @@
     }
 
     .add-btn {
-        margin-left: 1100px;
+        justify-content: flex-end;
         padding: 10px 13px 12px 13px;
         border: none;
-        background-color: #31A463;
+        background-color: #31A463; 
         color: #fff;
         text-decoration: none;
         border-radius: 3px;
         cursor: pointer;
       }
+      
+    .button-container {
+      justify-content: left;
+      display: flex;
+      
+     
+    }
