@@ -20,6 +20,7 @@ import { MainModule } from './main/main.module';
 import { MaterialModule } from './modules/material/material.module';
 
 import { AuthInterceptor } from './interceptors/auth';
+import { AddlocationComponent } from './addlocation/addlocation.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AuthInterceptor } from './interceptors/auth';
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
+    AddlocationComponent,
 
 
   ],
