@@ -22,12 +22,16 @@
                             <span></span>
                             <div class="labelline">Category</div>
                           </div>
-
+                          <div class="txt_field">
+                            <div class="labelline1">Date</div>
+                            <span></span>
+                            <input type="date" class="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
+                          </div>
                           
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" [(ngModel)]="content" [ngModelOptions]="{standalone: true}" required>
+                            <div class="txt_field1">
+                              <input class="inputtxt1" type="text" [(ngModel)]="content" [ngModelOptions]="{standalone: true}" required>
                               <span></span>
-                              <div class="labelline">Content</div>
+                              <div class="labelline1">Content</div>
                             </div>
 
                             <!-- <div class="txt_field1">
@@ -38,11 +42,7 @@
                               
                               
                             </div> -->
-                            <div class="txt_field1">
-                              <div class="labelline1">Date</div>
-                              <span></span>
-                              <input type="date" class="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
-                            </div>
+                           
                             <div class="txt_field1"> 
                               <div class="labelline2"> Upload Image </div>
                               <input class="inputtxt2" type="file" accept=".jpeg, .png, .jpg" name="image_location" > 
