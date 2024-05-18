@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AddPopupComponent } from './addpopup/addpopup.component';
 
 
 import Swal from 'sweetalert2';
@@ -24,7 +25,9 @@ interface MyOption {
   ],
   
 })
-export class AddiconacadComponent {
+export class AddiconacadComponent implements OnInit{
+[x: string]: any;
+
 
   options1 = [
     { value: 'Admin/Staff', label: 'Admin/Staff' },
@@ -40,7 +43,7 @@ export class AddiconacadComponent {
   selectedOption2: string;
   selectedOption3: string;
 
-  constructor(private router: Router, private ref: MatDialogRef<AddiconacadComponent>, private buildr: FormBuilder,) {
+  constructor(private router: Router, private ref: MatDialogRef<AddiconacadComponent>, private buildr: FormBuilder, private dialogRef: MatDialog) {
     this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
     this.selectedOption2 = '';
     this.selectedOption3 = '';
@@ -260,6 +263,11 @@ export class AddiconacadComponent {
   closepopup() {
     this.ref.close('Closed using function');
   }
+  onAddBtnClick() {
+    this.dialogRef.open(AddPopupComponent, {});
+    this.ref.close('Closed using function');
+  }
+  
 
   // SWEETALERT UPDATE POPUP
   updateBox(){

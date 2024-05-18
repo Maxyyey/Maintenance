@@ -1,4 +1,6 @@
-
+.main-content {
+    margin: 10px 40px 10px 10px;
+}
 
 
 .container-header{
@@ -8,12 +10,11 @@
     margin-right: 25px;
     margin-top: 25px;
     padding: 10px;
-    max-width: 1655px;
+    width: 100%;
 }
 
 .page-content {
-	max-width: 95%; 
-	margin: 5px 20px ; 
+	max-width: 100%;  
 	background: #ffffff;
 }
 a {
@@ -32,26 +33,26 @@ a {
 }
 
 .tabs {
-
+    left: 0;
+    display: flex;
 	align-items: stretch;
 	list-style: none;
-    width: 93.5%; /*changed*/ 
-    margin-left: 50px; /*changed*/
+    width: 100%; /*changed*/
 	border-bottom: 3.5px solid #000000;
-    padding-left: 180px;
+    padding-top: 15px;
 }
 
 .tabs:hover {
 	display: flex;
 	align-items: stretch;
 	list-style: none;
-    width: 93.5%; /*changed*/
+    width: 100%; /*changed*/
 	color: #31A463;
 }
 
 .tab {
     margin-top: 5px;
-    width: 35%; /*changed*/
+    width: 100%; /*changed*/
     
 }
 .tab > label {
@@ -90,6 +91,10 @@ ul li{
     display: inline-block;
     position: relative;
 
+}
+
+.connection {
+    width: 100%;
 }
 
 
