@@ -55,7 +55,7 @@ export class AddiconComponent {
         else {
           Swal.fire({
             title: "Error!",
-            text: "The location field must not exceed 10 characters.",
+            text: "Invalid input!",
             icon: "error",
           });
         }
