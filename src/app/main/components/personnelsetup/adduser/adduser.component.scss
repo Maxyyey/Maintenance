@@ -103,17 +103,15 @@ h1 {
   justify-content: space-between;
 }
 
-.input-row .txt_field {
-  display: inline-flex;
-}
+
 
 .input-row .txt_field{
   position: relative;
   border-bottom: 2px solid var(--cancel-btn);
-  margin:20px ;
+  margin:5px ;
   display: inline-block;
 
-  width: 350px;
+  width: 217px;
 }
 
 .txt_field .inputtxt {
@@ -131,6 +129,8 @@ h1 {
   outline: none;
 
 }
+
+
 
 .txt_field .labelline {
   font-family: 'Montserrat';
@@ -182,22 +182,6 @@ h1 {
 }
 
 
-
-
-
-.input-row .txt_field2 {
-  display: inline-flex;
-}
-
-.input-row .txt_field2{
-  position: relative;
-  border-bottom: 2px solid var(--cancel-btn);
-  margin:20px ;
-  display: inline-block;
-
-  width: 740px;
-}
-
 .txt_field2 .inputtxt2 {
   font-family: 'Montserrat';
   width: 100%;
@@ -213,8 +197,7 @@ h1 {
   outline: none;
 
 }
-
-.txt_field2 .labelline2{
+.txt_field2 .labelline2 {
   font-family: 'Montserrat';
   position: absolute;
   top: 50%;
@@ -225,6 +208,17 @@ h1 {
   pointer-events: none;
   transition: .3s;
 }
+
+.input-row .txt_field2{
+  position: relative;
+  border-bottom: 2px solid var(--cancel-btn);
+  margin-bottom: 20px;
+  margin-left: 5px;
+  display: inline-block;
+
+  width: 100px;
+}
+
 
 .txt_field2 span::before{
   content: '';
@@ -260,6 +254,83 @@ h1 {
 }
 
 .txt_field2 .inputtxt2:focus ~ span::before {
+  width: 100%;
+}
+
+
+
+
+.txt_field3 .inputtxt3 {
+  font-family: 'Montserrat';
+  width: 100%;
+  padding-top: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 15px;
+  border: none;
+  background-color: var(--input);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none;
+
+}
+.txt_field3 .labelline3 {
+  font-family: 'Montserrat';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: var(--cancel-btn);
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.input-row .txt_field3{
+  position: relative;
+  border-bottom: 2px solid var(--cancel-btn);
+  margin:5px ;
+  display: inline-block;
+
+  width: 385px  ;
+}
+
+
+.txt_field3 span::before{
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--main-green);
+  transition: .3s;
+}
+
+.inputtxt3:not(:focus) + span::before {
+  background: var(--cancel-btn);
+}
+
+.txt_field3 .inputtxt3:hover{
+  background-color: var(--input-hover);
+}
+
+.txt_field3 .inputtxt3:valid ~ .labelline3 {
+  top: 17px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--cancel-btn);
+}
+
+.txt_field3 .inputtxt3:focus ~ .labelline3 {
+  top: 17px;
+  font-size: 12px;
+  color: var(--main-green);
+  letter-spacing: 0.5px;
+}
+
+.txt_field3 .inputtxt3:focus ~ span::before {
   width: 100%;
 }
 
@@ -532,7 +603,7 @@ form .txt_field1{
   background-color: #F6F6F6;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin:20px 30px 30px 20px
+  margin:20px 10px 30px 0px;
   
   
 }
