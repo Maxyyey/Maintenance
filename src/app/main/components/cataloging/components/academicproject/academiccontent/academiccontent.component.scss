@@ -11,12 +11,10 @@
   /* CARD CONTAINER */
   .card-container {
       width: calc(100% - 220px);
-      height: calc(100vh - 210px);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       padding: 20px;
-      gap: 1.5em;
       overflow-y: auto;
       margin-left: 100px;
       margin-top: 20px;

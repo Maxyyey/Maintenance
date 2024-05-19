@@ -50,7 +50,7 @@
   }
   
   .details {
-    padding: 100px 50px 30px 55px;
+    padding: 60px 50px 30px 55px;
     padding-bottom: 10px;
   }
   
@@ -141,32 +141,22 @@
     }
     
     form {
-      height: 350px;
+      height: 250px;
+      display: block;
     }
   
     // pop up design
-    form .txt_field1{
+   
+    
+    form .txt_field{
       position: relative;
-    //  border-bottom: 2px solid #777777;
+      border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 300px;
-   //   display: block;
-      }
-    
-    .txt_field1 .labelline1{
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      color: #777777;
-      transform: translateY(-50%);
-      font-size: 15px;
-      pointer-events: none;
-      transition: .3s;
-    
+      width: 240px;
+      display: block;
     }
     
-    
-    .txt_field1 .inputtxt1{
+    .txt_field .inputtxt{
       width: 100%;
       display: block;
       padding-top: 19px;
@@ -180,61 +170,37 @@
       border-top-right-radius: 5px;
       outline: none;
     }
-  
-    .txt_field1 span::before{
-      content: '';
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #31A463;
-      transition: .3s;
-    }
-    
-    .inputtxt1:not(:focus) + span::before {
-      background: #777777;
-    }
-    
-    .txt_field1 .inputtxt1:hover{
-      background-color: #ececec;
-    }
-    
-    .txt_field1 .inputtxt1:valid ~ .labelline1 {
-      top: 17px;
-      font-size: 12px;
-      letter-spacing: 0.5px;
-      color: #777777;
-    }
-    
-    .txt_field1 .inputtxt1:focus ~ .labelline1 {
-      top: 17px;
-      font-size: 12px;
-      color: #31A463;
-      letter-spacing: 0.5px;
-    }
-    form .txt_field{
+    form .txt_field1{
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 240px;
-      display: inline-block;
+      width: 770px;
+      display: block;
     }
     
-    .txt_field .inputtxt{
+    .txt_field1 .inputtxt{
       width: 100%;
       display: block;
-      padding-top: 15px;
-    //  padding-left: 10px;
-     // padding-right: 10px;
-      padding-bottom: 10px;
-      height: 50px;
+      padding-top: 19px;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 60px;
       font-size: 15px;
       border: none;
       background-color: #F6F6F6;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       outline: none;
+    }
+    .txt_field1 .labelline{
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      color: #777777;
+      transform: translateY(-50%);
+      font-size: 15px;
+      pointer-events: none;
+      transition: .3s;
     }
     
     .txt_field .labelline{
@@ -285,118 +251,6 @@
     .txt_field .inputtxt:valid ~ span::before{
       width: 100%;
     }
-    
-    .date {
-      border: none; /* Blue border with increased thickness */
-      width: 97%;
-      font-size: 15px;
-      margin-left: 10px;
-      background-color: #F6F6F6;
-      border-radius: 5px; /* Rounded border */
-      outline: none; /* Remove default outline */
-      color: #31A463;
-    
-    }
-    
-    input[type=file]{
-      
-      background-color:#F6F6F6;
-      border: none;
-      width: 100%;
-    }
-    
-    input[type="file"]::file-selector-button {
-      letter-spacing: 0.5px;
-      font-size: 14px;
-      border-top-left-radius: 1px;
-      font-family: 'Montserrat';
-      color: #ffffff;
-      width: 150px;
-      height: 50px;
-      cursor: pointer;
-      background-color: #31A463;
-      border: none;
-      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-      transition: background-color 200ms;
-      left: 10px;
-    }
-    
-    .txt_field .uploadlabel {
-      position: absolute;
-      top: 0;
-      margin-top: -20px;
-      font-size: 8px;
-      letter-spacing: 0.5px;
-      color: #777777;
-      position: absolute;
-      left: 10px;
-    }
-  
-    .checkbox-group{ 
-      display: flex;
-    justify-content: space-between;
-    }
-  
-     .txt_field1{
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      
-    }
-    
-    .txt_field1 .labelline1{
-      margin-left: 10px;
-     // top: 50%;
-     // left: 10px;
-      color: #777777;
-      font-size: 15px;    
-    
-    }
-  
-    input[type="checkbox"] {
-      display: none;
-      
-    }
-  
-    input[type=checkbox] + label{
-      display: flex;
-      align-items: center;
-      width: 150px;
-      margin:0px 70px 5px 5px;
-      cursor: pointer;
-      font-weight: bold;
-      
-      
-      
-     // grid-template-rows: repeat(1, 50px);
-     // float: right;
-      
-  }
-  
-  
-   input[type=checkbox]{
-      display: none;
-      
-  }
-  
-   input[type=checkbox] + label:before{
-      content: "\2714  ";
-      border: 2px solid #31A463;
-      border-radius:  0.2em;
-      width: 1em;
-      height: 1.2em;
-      padding-left: 0.3em;
-      color:transparent;
-      transition: .2s;
-  }
-  
-  
-  input[type=checkbox]:checked + label:before{
-      background-color: mediumseagreen;
-      border-color: mediumseagreen;
-      color:#fff;
-  
-  }
   
   .txtheader {
     margin-top: -30px;
@@ -404,7 +258,7 @@
   }
   
   .txtheader2 {
-    padding-top: 50px;
+    padding-top: 10px;
   
   }
   .add-btn {
