@@ -1,39 +1,77 @@
 <div class="main-content">
 
-    
-  <div class="sidebar-content">
-      <div class="container-header">
-          <h1>
-              PERSONNEL SETUP
-                  <input class="search-bar" type="search" placeholder="Search.." >          
-                  <button class="container-addUserButton" type="button" (click)="onAddNewBtnClick()">Add User</button>
 
-              
-          </h1>
-
-      </div>
-
-        <div class="container">
-          <table>
-              <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Access</th>
-                      <th>Email</th>
-                      <th>Actions</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let personnel of personnels">
-                      <td> Jhon doe</td>
-                      <td>Cataloging</td>
-                      <td> {{ personnel.username }} </td>
-                      <td>
+    <div class="sidebar-content">
+        <div class="container-header">
+            <h1>
+                PERSONNEL SETUP
+                    <input class="search-bar" type="search" placeholder="Search.." >
+                    <button class="container-addUserButton" type="button" (click)="onAddNewBtnClick()">Add User</button>
+  
+  
+            </h1>
+  
+        </div>
+  
+          <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Access</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>John Doe</td>
+                        <td>Cataloging</td>
+                        <td>johnexample.com</td>
+                        <td>
+  
+                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Maintenance</td>
+                        <td>janeexample.com</td>
+                        <td>
+                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bob Johnson</td>
+                        <td>Circulation</td>
+                        <td>bob example.com</td>
+                        <td>
                           <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
                           <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                      </td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jose Maria</td>
+                        <td>Locker</td>
+                        <td>abcde.com</td>
+                        <td>
+                          <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                          <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                        </td>
+                    </tr> -->
+                      <tr *ngFor="let personnel of personnels.users">
+                          <td>{{personnel.first_name }} {{personnel.last_name}}</td>
+                          <td> - </td>
+                          <td> {{personnel.username}} </td>
+                          <td>
+                              <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
+                              <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
+                            </td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+  </div>
+  <!--    up-->
