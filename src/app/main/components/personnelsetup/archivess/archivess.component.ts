@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 
 
 import Swal from 'sweetalert2';
+import { PersonnelService } from '@app/services/personnel.service';
+import { response } from 'express';
+import { error } from 'console';
 
 interface MyOption {
   value: string;
@@ -26,10 +29,34 @@ interface MyOption {
 })
 export class ArchivessComponent {
 
-constructor(public dialogRef: MyMatDialogRef<ArchivessComponent>) {}
+constructor(
+  public dialogRef: MyMatDialogRef<ArchivessComponent>,
+  @Inject(MAT_DIALOG_DATA) public data: any,
+  private personnelService: PersonnelService) {}
 
     closepopup() {
       this.dialogRef.close('Closed using function');
+    }
+
+    deletePersonnel() {
+      this.personnelService.deletePersonnel(this.data).subscribe(
+        response => {
+          console.log(response)
+        },
+        error => {
+          console.log(error)
+        },
+        () => {
+          this.dialogRef.close('Closed using function');
+          Swal.fire({
+            title: "Archiving complete!",
+            text: "Project has been safely archived.",
+            icon: "success",
+            confirmButtonText: 'Close',
+            confirmButtonColor: "#777777",
+          });
+        }
+      )
     }
 
     archiveBox(){
@@ -45,14 +72,7 @@ constructor(public dialogRef: MyMatDialogRef<ArchivessComponent>) {}
         cancelButtonColor: "#777777",
       }).then((result) => {
         if (result.isConfirmed) {
-          this.dialogRef.close('Closed using function');
-          Swal.fire({
-            title: "Archiving complete!",
-            text: "Project has been safely archived.",
-            icon: "success",
-            confirmButtonText: 'Close',
-            confirmButtonColor: "#777777",
-          });
+          this.deletePersonnel()
         }
       });
   }

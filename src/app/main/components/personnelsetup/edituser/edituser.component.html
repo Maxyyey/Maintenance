@@ -15,37 +15,37 @@
                             <div class="input-row">
                             
                           <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
+                            <input class="inputtxt" type="text" [(ngModel)]="form.first_name" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline"> First Name</div>
                           </div>
 
                           <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
+                            <input class="inputtxt" type="text" [(ngModel)]="form.middle_name" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline">Middle Name</div>
                           </div>
 
                           <div class="txt_field">
-                            <input class="inputtxt" type="text" required>
+                            <input class="inputtxt" type="text" [(ngModel)]="form.last_name" [ngModelOptions]="{standalone: true}"  required>
                             <span></span>
                             <div class="labelline">Last Name</div>
                           </div>
 
                           <div class="txt_field2">
-                            <input class="inputtxt2" type="text" required>
+                            <input class="inputtxt2" type="text" [(ngModel)]="form.ext_name" [ngModelOptions]="{standalone: true}"  required>
                             <span></span>
                             <div class="labelline2">Suffix</div>
                           </div>
 
                           <div class="txt_field3">
-                            <input class="inputtxt3" type="text" required>
+                            <input class="inputtxt3" type="text" [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}"  readonly>
                             <span></span>
                             <div class="labelline3">Email</div>
                           </div>
 
                           <div class="txt_field3">
-                            <input class="inputtxt3" type="text" required>
+                            <input class="inputtxt3" type="text" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline3">Password</div>
                           </div>
@@ -56,15 +56,15 @@
                               <span></span>
                               
 
-                                <input type="radio" id="access" name="access" value="circulation">
+                                <input type="radio" id="access" name="access"  [(ngModel)]="form.access" [ngModelOptions]="{standalone: true}"  value="circulation">
                                 <label for="access">Circulation</label>
                               
                                 
-                                <input type="radio" id="access1" name="access" value="cataloging">
+                                <input type="radio" id="access1" name="access"  [(ngModel)]="form.access" [ngModelOptions]="{standalone: true}"  value="cataloging">
                                 <label for="access1">Cataloging</label>
                               
                                 
-                                <input type="radio" id="access2" name="access" value="locker">
+                                <input type="radio" id="access2" name="access"  [(ngModel)]="form.access" [ngModelOptions]="{standalone: true}"  value="locker">
                                 <label for="access2">Locker</label>
                                 
                                 

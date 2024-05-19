@@ -5,6 +5,8 @@ import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
 import { ArchivessComponent } from './archivess/archivess.component';
 import { PersonnelService } from '@app/services/personnel.service';
+import { response } from 'express';
+import { error } from 'console';
 @Component({
   selector: 'app-personnelsetup',
   templateUrl: './personnelsetup.component.html',
@@ -22,11 +24,24 @@ export class PersonnelSetupComponent implements OnInit{
     // this.router.navigate(['/adduser']);
     this.dialogRef.open(AddUserComponent, {});
   }
-  onEditBtnClick(){
-    this.dialogRef.open(EditUserComponent,{});
+  onEditBtnClick(id: number){
+    console.log(id)
+    this.personnelService.getPersonnel(id).subscribe(
+      personnel => {
+        this.dialogRef.open(EditUserComponent,{
+          data: personnel
+        });
+        console.log(personnel)
+      },
+      error => {
+        console.error(error)
+      }
+    )
   }
-  onArchiveBtnClick(){
-    this.dialogRef.open(ArchivessComponent,{});
+  onArchiveBtnClick(id:number){
+    this.dialogRef.open(ArchivessComponent,{
+      data: id
+    });
   }
   // Component logic here
 
