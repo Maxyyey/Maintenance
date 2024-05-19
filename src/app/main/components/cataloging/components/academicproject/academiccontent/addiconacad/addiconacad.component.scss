@@ -305,7 +305,7 @@ h1 {
     width: 100%;
   }
   
-  input[type="file"]::file-selector-button {
+  input[type=file]::file-selector-button {
     letter-spacing: 0.5px;
     font-size: 14px;
     border-top-left-radius: 1px;
@@ -333,19 +333,19 @@ h1 {
   }
 
   .checkbox-group{ 
-    display: flex;
+    display: inline flex;
   justify-content: space-between;
   }
 
    .txt_field1{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    
     
   }
   
   .txt_field1 .labelline1{
-    margin-left: 10px;
+  
    // top: 50%;
    // left: 10px;
     color: #777777;
@@ -353,33 +353,33 @@ h1 {
   
   }
 
-  input[type="checkbox"] {
-    display: none;
+  // input[type=radio] {
+  //   display: none;
     
-  }
+  // }
 
-  input[type=checkbox] + label{
-    display: flex;
+  input[type=radio] + label{
+    display: inline-flex;
     align-items: center;
     width: 150px;
-    margin:0px 70px 5px 5px;
+    margin:0px 10px 5px 0;
     cursor: pointer;
     font-weight: bold;
     
     
     
-   // grid-template-rows: repeat(1, 50px);
-   // float: right;
+    
+   
     
 }
 
 
- input[type=checkbox]{
+ input[type=radio]{
     display: none;
     
 }
 
- input[type=checkbox] + label:before{
+ input[type=radio] + label:before{
     content: "\2714  ";
     border: 2px solid #31A463;
     border-radius:  0.2em;
@@ -388,10 +388,11 @@ h1 {
     padding-left: 0.3em;
     color:transparent;
     transition: .2s;
+    margin-right: 15px;
 }
 
 
-input[type=checkbox]:checked + label:before{
+input[type=radio]:checked + label:before{
     background-color: mediumseagreen;
     border-color: mediumseagreen;
     color:#fff;
