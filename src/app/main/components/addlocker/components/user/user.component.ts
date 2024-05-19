@@ -25,11 +25,11 @@ interface MyOption {
   
 })
 export class UserComponent {
+[x: string]: any;
 
   options1 = [
     { value: 'Available', label: 'Available' },
-    { value: 'Not Available', label: 'Not Available' },
-    { value: 'Damaged', label: 'Damaged' },
+ 
   ];
   options2: MyOption[] = [];
   options3: MyOption[] = [];

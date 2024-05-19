@@ -25,11 +25,16 @@
   
                             
                             <div class="txt_field">
-                                <select class="inputtxt" required name="department" id="college" [(ngModel)]="selectedOption1" (change)="onOption1Change()" [ngModelOptions]="{standalone: true}">
-                                    <option *ngFor="let option of options1" [value]="option.value">{{ option.label }} </option>
+                                <select class="inputtxt" type="text"  value="Available" readonly>
+                                    <option *ngFor="let option of options1" [value]="option.value" disabled selected>Available</option>
                                 </select>
+
+                                <!-- <select class="inputtxt" type="text"  value="Available" readonly>
+                                  <input *ngFor="let option of options1" [value]="option.value" placeholder="Available" disabled>
+                                </select> -->
+                                
                                 <span></span>
-                                <label class="labelline" for="college"> Status </label>
+                                <label class="labelline1" for="college"> Status </label>
                             </div>
   
                               <!-- <div class="txt_field1">

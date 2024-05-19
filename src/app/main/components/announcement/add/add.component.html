@@ -20,28 +20,31 @@
                 <span></span>
                 <div class="labelline">Category</div>
               </div>
-              <div class="txt_field">
-                <input class="inputtxt" type="text" [(ngModel)]="form.content" [ngModelOptions]="{standalone: true}" required>
-                <span></span>
-                <div class="labelline">Content</div>
-              </div>
-              <!-- <div class="txt_field1">
-                <div class="labelline1">Edit Image</div>
-                <span></span>
-                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-              </div> -->
               <div class="txt_field1">
                 <div class="labelline1">Date</div>
                 <span></span>
 
                 <input type="date" class="date" [(ngModel)]="form.date" [ngModelOptions]="{standalone: true}">
               </div>
-              <div class="txt_field1"> 
+
+              <div class="txt_field2"> 
                 <div class="labelline2"> Upload Image </div>
                 <input class="inputtxt2" type="file" accept=".jpeg, .png, .jpg"  (change)="uploadFile($event)"> 
                 <span></span>
               </div>
                   
+              <div class="txt_field3">
+                <textarea class="inputtxt3" [(ngModel)]="form.content" [ngModelOptions]="{standalone: true}" required></textarea>
+                <span></span>
+                <div class="labelline3">Content</div>
+              </div>
+              <!-- <div class="txt_field1">
+                <div class="labelline1">Edit Image</div>
+                <span></span>
+                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
+              </div> -->
+             
+   
               <!--<div class="txt_field">
                 <select class="inputtxt" id="language" name="language" required>
                     <option value="English"> Maintenace </option>
