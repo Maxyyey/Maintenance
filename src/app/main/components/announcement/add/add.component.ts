@@ -38,11 +38,12 @@ export class AddComponent {
     private ref: MatDialogRef<AddComponent>,
     private announcementService: AnnouncementService
   ) {
+      const today = new Date();
       this.form = {
         title: '',
         category: '',
         content: '',
-        date: '',
+        date: today.toISOString().split('T')[0],
         file: null
       }
 }
