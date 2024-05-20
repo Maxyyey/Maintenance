@@ -49,62 +49,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1001</td>
-                            <td>BEP</td>
-                            <td>Noli Me Tangere</td>
-                            <td>Jose Rizal</td>
+                        <tr *ngFor="let inventory of inventories">
+                            <td>{{inventory.accession_number}}</td>
+                            <td>{{inventory.location}}</td>
+                            <td>{{inventory.title}}</td>
+                            <td>{{inventory.author}}</td>
                             <td>
                                 <div class="dropdown">
                                     <select class="inputtxt" id="language" name="language" required>
                                         <option value="ccs">Available</option>
                                         <option value="ccs">Unavailable</option>
                                         <option value="cba">Missing</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1002</td>
-                        <td>IT</td>
-                        <td>Noli Me Tangere</td>
-                        <td>Jose Rizal</td>
-                        <td>
-                            <div class="dropdown">
-                                <select class="inputtxt" id="language" name="language" required>
-                                    <option value="ccs">Available</option>
-                                    <option value="ccs">Unavailable</option>
-                                    <option value="cba">Missing</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1003</td>
-                        <td>MED</td>
-                        <td>Noli Me Tangere</td>
-                        <td>Jose Rizal</td>
-                            <td>
-                                <div class="dropdown">
-                                    <select class="inputtxt" id="language" name="language" required>
-                                        <option value="ccs">Available</option>
-                                        <option value="ccs">Unavailable</option>
-                                        <option value="cba">Missing</option>
-                                    </select>
-                                </div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td>1004</td>
-                        <td>COMM</td>
-                        <td>Noli Me Tangere</td>
-                        <td>Jose Rizal</td>
-                        <td>
-                            <div class="dropdown">
-                                <select class="inputtxt" id="lang   uage" name="language" required>
-                                    <option value="ccs">Available</option>
-                                    <option value="ccs">Unavailable</option>
-                                    <option value="cba">Missing</option>
                                 </select>
                             </div>
                         </td>

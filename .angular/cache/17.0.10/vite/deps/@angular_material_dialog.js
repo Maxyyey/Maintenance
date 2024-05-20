@@ -9,7 +9,8 @@ import {
   OverlayRef,
   PortalModule,
   TemplatePortal
-} from "./chunk-BX4MXE7P.js";
+} from "./chunk-JY6IOLD4.js";
+import "./chunk-S4NHU4BD.js";
 import {
   animate,
   animateChild,
@@ -20,7 +21,6 @@ import {
   transition,
   trigger
 } from "./chunk-6MSGX35G.js";
-import "./chunk-YESQX6XC.js";
 import {
   A11yModule,
   Directionality,
@@ -33,7 +33,7 @@ import {
   _getFocusedElementPierceShadowDom,
   coerceNumberProperty,
   hasModifierKey
-} from "./chunk-ML2LVOE7.js";
+} from "./chunk-NEE3SSWP.js";
 import {
   DOCUMENT,
   Location
