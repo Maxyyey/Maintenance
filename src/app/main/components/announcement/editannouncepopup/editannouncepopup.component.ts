@@ -65,7 +65,7 @@ export class EditAnnouncePopupComponent {
 
   updateAnnouncement() {
     const formData = new FormData();      //bruhhh like file is not working in ng model
-    formData.append('title', 'test');
+    formData.append('title', this.form.title);
     formData.append('category', this.form.category);
     formData.append('content', this.form.content);
     formData.append('date', this.form.date);
