@@ -66,6 +66,10 @@
 .search-bar{
     float: right;
 }   
+.main-content {
+    margin: 10px 40px 10px 10px;
+}
+
 
 .container-header{
     background-color: #31A463;
@@ -74,9 +78,13 @@
     margin-right: 25px;
     margin-top: 25px;
     padding: 10px;
-    max-width: 1655px;
+    width: 100%;
 }
 
+h1 {
+    text-align: left;
+    // margin-left: 20px;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;

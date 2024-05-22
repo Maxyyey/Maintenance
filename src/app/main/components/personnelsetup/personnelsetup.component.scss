@@ -31,6 +31,10 @@
     color: black;
 }   
 
+.main-content {
+    margin: 10px 40px 10px 10px;
+}
+
 
 .container-header{
     background-color: #31A463;
@@ -39,7 +43,7 @@
     margin-right: 25px;
     margin-top: 25px;
     padding: 10px;
-    max-width: 1655px;
+    width: 100%;
 }
 
 body {
@@ -61,7 +65,7 @@ body {
 
 h1 {
     text-align: left;
-    margin-left: 20px;
+    // margin-left: 20px;
 }
 
 table {
