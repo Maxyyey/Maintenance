@@ -26,7 +26,7 @@
                           <div class="txt_field1">
                             <div class="labelline1">Date</div>
                             <span></span>
-                            <input type="date" class="date" [(ngModel)]="form.date" [ngModelOptions]="{standalone: true}">
+                            <input type="date" class="date" [(ngModel)]="form.date" [ngModelOptions]="{standalone: true}" readonly>
                           </div>
                           
                           <div class="txt_field2"> 
@@ -36,7 +36,7 @@
                             
                         </div>
                         <div class="txt_field3">
-                          <textarea class="inputtxt3"  [(ngModel)]="form.content" [ngModelOptions]="{standalone: true}" required></textarea>
+                          <textarea class="inputtxt3"  [(ngModel)]="form.text" [ngModelOptions]="{standalone: true}" required></textarea>
                               <span></span>
                               <div class="labelline3">Content</div>
                             </div>

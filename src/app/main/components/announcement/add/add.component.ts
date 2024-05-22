@@ -29,7 +29,7 @@ export class AddComponent {
   form: {
     title: string | null,
     category: string | null,
-    content: string | null,
+    text: string | null,
     date: string | null,
     file: File | null
   }
@@ -42,7 +42,7 @@ export class AddComponent {
       this.form = {
         title: '',
         category: '',
-        content: '',
+        text: '',
         date: today.toISOString().split('T')[0],
         file: null
       }
@@ -60,7 +60,7 @@ export class AddComponent {
     const formData = new FormData();      //bruhhh like file is not working in ng model
     formData.append('title', this.form.title || '');
     formData.append('category', this.form.category || '');
-    formData.append('content', this.form.content || '');
+    formData.append('text', this.form.text || '');
     formData.append('date', this.form.date || '');
     formData.append('file', this.form.file || '');
     

@@ -24,7 +24,7 @@ export class AnnouncementComponent implements OnInit{
   getAnnouncements(){
     this.announcementService.getAnnouncements().subscribe(
       announcements => {
-          this.announcements = announcements.announcements 
+          this.announcements = announcements
           console.log(this.announcements)
         
       },
@@ -45,7 +45,7 @@ export class AnnouncementComponent implements OnInit{
       announcement => {
         console.log(announcement)
         this.dialogRef.open(EditAnnouncePopupComponent, {
-          data: announcement.announcement
+          data: announcement
         });
       },
       error => {

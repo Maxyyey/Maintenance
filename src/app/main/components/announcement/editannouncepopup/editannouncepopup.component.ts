@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { AnnouncementService } from '@app/services/announcement.service';
 
 import Swal from 'sweetalert2';
@@ -28,8 +28,8 @@ export class EditAnnouncePopupComponent {
   form: {
     title: string 
     category: string 
-    content: string 
-    date: any 
+    text: string 
+    date: string | null
     file: File | null
   }
 
@@ -37,11 +37,12 @@ export class EditAnnouncePopupComponent {
     private router: Router, 
     private ref: MatDialogRef<EditAnnouncePopupComponent>, 
     private announcementService: AnnouncementService,
-    @Inject(MAT_DIALOG_DATA) public data: any,) {
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private datePipe: DatePipe) {
       this.form = {
         title: '',
         category: '',
-        content: '',
+        text: '',
         date: '',
         file: null
       }
@@ -57,8 +58,8 @@ export class EditAnnouncePopupComponent {
     this.form = {
       title: this.data.title,
       category: this.data.category,
-      content: this.data.content,
-      date: this.data.date,
+      text: this.data.text,
+      date: this.datePipe.transform(this.data.created_at, 'yyyy-MM-dd'),
       file: null
     }
   }
@@ -67,8 +68,8 @@ export class EditAnnouncePopupComponent {
     const formData = new FormData();      //bruhhh like file is not working in ng model
     formData.append('title', this.form.title);
     formData.append('category', this.form.category);
-    formData.append('content', this.form.content);
-    formData.append('date', this.form.date);
+    formData.append('text', this.form.text);
+    // formData.append('date', this.form.date);
     formData.append('file', this.form.file || '');
 
     // console.log(formData)

@@ -22,6 +22,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { AuthInterceptor } from './interceptors/auth';
 import { AddlocationComponent } from './addlocation/addlocation.component';
 
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AddlocationComponent } from './addlocation/addlocation.component';
   ],
   providers: [
     provideClientHydration(),
+    DatePipe,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

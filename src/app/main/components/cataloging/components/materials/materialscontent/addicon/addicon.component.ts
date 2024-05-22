@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 
 import Swal from 'sweetalert2';
 import { CatalogingService } from '@app/services/cataloging.service';
-import { error } from 'console';
 
 interface MyOption {
   value: string;
@@ -28,19 +27,25 @@ interface MyOption {
 })
 export class AddiconComponent {
   currentDate: string;
-  location: string = ''
-
+  form: {
+    location: string,
+    full_location: string
+  }
+  
   constructor(
     private ref: MatDialogRef<AddiconComponent>, 
     private catalogingService: CatalogingService) {
       const today = new Date();
       this.currentDate = today.toISOString().split('T')[0];
+
+      this.form = {
+        location: '',
+        full_location: '',
+      }
   }
 
   createLocation() {
-    const data = { location: this.location}
-    console.log(data)
-    this.catalogingService.createLocations(data).subscribe(
+    this.catalogingService.createLocations(this.form).subscribe(
       response => {
         if(response.hasOwnProperty('success')) {
           this.ref.close('Closed using function');
