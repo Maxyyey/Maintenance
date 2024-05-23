@@ -1,34 +1,26 @@
 <div class="main-content">
-
-    
     <div class="sidebar-content">
         <div class="container-header">
             <h1>
                 CATALOGING
-
-
             </h1>
-            
         </div>
-
         <div class="page-content">
             <div class="tabbed">
                 <input type="radio" id="tab1" name="css-tabs" checked="checked">
                 <input type="radio" id="tab2" name="css-tabs">
-                
-                <ul class="tabs">
-                    <li class="tab" [routerLink]="['materialscontent']" routerLinkActive="active"><label for="tab1" >Location</label></li>
-                    <li class="tab" [routerLink]="['academiccontent']" routerLinkActive="active"><label for="tab2">Department</label></li>
-                </ul>
-            
-                <!-- TAB 1 MATERIALS -->
-        
 
+                <ul class="tabs">
+                    <li class="tab" [routerLink]="['materialscontent']" routerLinkActive="active"><label
+                            for="tab1">Location</label></li>
+                    <li class="tab" [routerLink]="['academiccontent']" routerLinkActive="active"><label
+                            for="tab2">Department</label></li>
+                </ul>
             </div>
-       
+
         </div>
 
-    <div class="connection">
-        <router-outlet></router-outlet> 
+        <div class="connection">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-</div>
