@@ -4,7 +4,7 @@ import { ScanbarcodeComponent } from './scanbarcode/scanbarcode.component';
 import { EnterbarcodeComponent } from './enterbarcode/enterbarcode.component';
 import { ClearhistoryComponent } from './clearhistory/clearhistory.component';
 import { InventoryService } from '@app/services/inventory.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
@@ -43,6 +43,25 @@ export class InventoryComponent implements OnInit {
   }
 
   onClrHistoryBtnClick() {
-    this.dialogRef.open(ClearhistoryComponent, {});
-  }
+    Swal.fire({
+      title: "Clear History",
+      text: "Are you sure want to clear history?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Clearing complete!",
+          text: "History has been cleared.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    });
+}
 }

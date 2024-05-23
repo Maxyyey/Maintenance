@@ -13,7 +13,7 @@
               <div class="txt_field">
                 <input class="inputtxt" type="text" [(ngModel)]="lockerNumber" [ngModelOptions]="{standalone: true}" readonly>
                 <span></span>
-                <div class="labelline">Locker Number</div>
+                <div class="labelline1">Locker Number</div>
               </div>
               <div class="txt_field">
                   <select class="inputtxt" [(ngModel)]="form.status" [ngModelOptions]="{standalone: true}" required>
@@ -32,7 +32,7 @@
               </div>
               <div class="input-row">
                 <div class="txtarea">
-                    <textarea name="abstract" [(ngModel)]="form.remarks" [ngModelOptions]="{standalone: true}" placeholder="Project abstract...">
+                    <textarea name="abstract" [(ngModel)]="form.remarks" [ngModelOptions]="{standalone: true}" >
                       {{ form.remarks }}
                     </textarea>
                     <span></span>

@@ -252,7 +252,7 @@ h1 {
     left: 10px;
     top: 9px;
     font-size: 12px;
-    color: #31A463;
+    color: #777777;
     letter-spacing: 0.5px;
   }
   
@@ -284,6 +284,20 @@ h1 {
   
   .txt_field .inputtxt:focus ~ .labelline {
     top: 17px;
+    font-size: 12px;
+    color: #31A463;
+    letter-spacing: 0.5px;
+  }
+
+  
+  .txt_field .inputtxt:valid ~ .labelline1 {
+    top: 17px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #777777;
+  }
+  
+  .txt_field .inputtxt:focus ~ .labelline1 {
     font-size: 12px;
     color: #31A463;
     letter-spacing: 0.5px;
@@ -351,6 +365,8 @@ h1 {
     flex-basis: 100%;
     position: relative;
     margin-top: 1.5rem;
+    margin-left: 10px;
+    
   }
   
   .txtarea textarea {
@@ -358,7 +374,7 @@ h1 {
     width: 96%;
     height: 100px;
     padding-top: 29px;
-    margin-left: 10px;
+   padding-left: 9px;
     font-size: 15px;
     border: none;
     background-color: var(--input);
@@ -369,11 +385,10 @@ h1 {
   }
   
   .txtarea .labelline1 {
-    font-family: 'Montserrat';
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 10px;
-    color: var(--cancel-btn);
+    color: #777777;
     transform: translateY(-50%);
     font-size: 15px;
     pointer-events: none;
@@ -387,19 +402,19 @@ h1 {
   
   .txtarea textarea:hover{
     background-color: var(--input-hover);
+   
   }
   
   .txtarea textarea:valid ~ .labelline1 {
-    top: 17px;
-    font-size: 12px;
+    top: 50%;
+    font-size: 15px;
     letter-spacing: 0.5px;
-    
     color: var(--cancel-btn);
   }
   
   .txtarea textarea:focus ~ .labelline1 {
     top: 17px;
     font-size: 12px;
-    color: var(--main-green);
+    color: #31A463;
     letter-spacing: 0.5px;
   }
