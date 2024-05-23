@@ -1,5 +1,4 @@
 /* CONTAINER */
-/* CONTAINER */
 .container {
   position: fixed;
   top: 0;
@@ -42,7 +41,7 @@
 .details-content::-webkit-scrollbar-thumb:hover {
   background-color: var(--table-border2);
 }
-// SCROLLBAR
+//BODY
 
 .detailsbody {
   height: auto; /* Adjust the height as needed */
@@ -66,6 +65,10 @@
   z-index: 1;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.192);
   padding-bottom: 15px;
+}
+.txtheader {
+  margin-top: -30px;
+  margin-bottom: -27px;
 }
 
 /* EXIT BUTTON */
@@ -472,10 +475,7 @@ input[type=radio]:checked + label:before{
 
 }
 
-.txtheader {
-  margin-top: -30px;
-  margin-bottom: -27px;
-}
+
 
 .txtheader2 {
   padding-top: 50px;
