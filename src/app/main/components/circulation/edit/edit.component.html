@@ -1,55 +1,50 @@
 <main>
-    <div class="container">
-        <div class="content">
-          <div class="details-content">
-            <!-- HEADER - TITLE -->
-            <div class="detailsheader">
-                <h1> Edit Patron</h1>
-            </div>
-                <!-- BODY - DETAILS -->
-                <div class="detailsbody">
-                  <div class="details">
-                      <form>
-                            
-                              
-                            <div class="txt_field">
-                                <input class="inputtxt" [(ngModel)]="patron" [ngModelOptions]="{standalone: true}" readonly>
-                                <span></span>
-                                <label class="labelline1" > Patron Type </label>
-                            </div>
-                            <div class="txt_field">
-                              <input class="inputtxt" type="text" [(ngModel)]="fines_if_overdue" [ngModelOptions]="{standalone: true}" required>
-                              <span></span>
-                              <div class="labelline">[Price Here]</div>
-                            </div>
-  
-                            
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" [(ngModel)]="days_allowed" [ngModelOptions]="{standalone: true}" required>
-                                <span></span>
-                                <div class="labelline">Days</div>
-                              </div>
-  
-                              <!-- <div class="txt_field1">
+  <div class="container">
+    <div class="content">
+      <div class="details-content">
+        <!-- HEADER - TITLE -->
+        <div class="detailsheader">
+          <h1> Edit Patron</h1>
+        </div>
+        <!-- BODY - DETAILS -->
+        <div class="detailsbody">
+          <div class="details">
+            <form>
+              <div class="txt_field">
+                <input class="inputtxt" [(ngModel)]="patron" [ngModelOptions]="{standalone: true}" readonly>
+                <span></span>
+                <label class="labelline1"> Patron Type </label>
+              </div>
+              <div class="txt_field">
+                <input class="inputtxt" type="text" [(ngModel)]="fines_if_overdue" [ngModelOptions]="{standalone: true}"
+                  required>
+                <span></span>
+                <div class="labelline">[Price Here]</div>
+              </div>
+              <div class="txt_field">
+                <input class="inputtxt" type="text" [(ngModel)]="days_allowed" [ngModelOptions]="{standalone: true}"
+                  required>
+                <span></span>
+                <div class="labelline">Days</div>
+              </div>
+              <!-- <div class="txt_field1">
                                 <div class="labelline1">Edit Image</div>
                                 <span></span>
-                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-                                
-                                
-                                
+                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location">              
                               </div> -->
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" [(ngModel)]="hours_allowed" [ngModelOptions]="{standalone: true}"  required>
-                                <span></span>
-                                <div class="labelline">No. of Days/Hours Allowed</div>
-                              </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" [(ngModel)]="materials_allowed" [ngModelOptions]="{standalone: true}"  readonly>
-                                <span></span>
-                                <div class="labelline1">No. of Books Allowed</div>
-                              </div>
-                            
-                                                            <!--<div class="txt_field">
+              <div class="txt_field">
+                <input class="inputtxt" type="text" [(ngModel)]="hours_allowed" [ngModelOptions]="{standalone: true}"
+                  required>
+                <span></span>
+                <div class="labelline">No. of Days/Hours Allowed</div>
+              </div>
+              <div class="txt_field">
+                <input class="inputtxt" [(ngModel)]="materials_allowed" [ngModelOptions]="{standalone: true}" readonly>
+                <span></span>
+                <div class="labelline1">No. of Books Allowed</div>
+              </div>
+
+              <!--<div class="txt_field">
                                 <select class="inputtxt" id="language" name="language" required>
                                     <option value="English"> Maintenace </option>
                                     <option value="Tagalog"> Locker </option>
@@ -59,20 +54,15 @@
                                 <span></span>
                                 <label class="labelline" for="language"> Access </label>
                             </div>-->
-                            
-                          </form>
-                        </div> 
-                        <div class="button-container">
-                          
-                          <button class="update-btn" (click)="updateBox()"> Update </button>
-                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                            
-                            
-                           
-                            </div>
-                          
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-  </main>
+            </form>
+          </div>
+          <div class="button-container">
+            <button class="update-btn" (click)="updateBox()"> Update </button>
+            <button (click)="closepopup()" class="cancel-btn">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

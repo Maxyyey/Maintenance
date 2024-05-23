@@ -1,12 +1,11 @@
 /* CONTAINER */
-/* CONTAINER */
 .container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +33,7 @@
 }
 
 .details-content::-webkit-scrollbar-track {
-  background-color: var(--primary-color); 
+  background-color: var(--primary-color);
   margin-top: 90px;
   margin-bottom: 10px;
 }
@@ -42,19 +41,9 @@
 .details-content::-webkit-scrollbar-thumb:hover {
   background-color: var(--table-border2);
 }
-// SCROLLBAR
 
-.detailsbody {
-  height: auto; /* Adjust the height as needed */
-  justify-content: center; 
-}
+//HEADER
 
-.details {
-  padding: 100px 50px 30px 55px;
-  padding-bottom: 10px;
-}
-
-// POPUP HEADER SCSS
 .detailsheader {
   display: flex;
   padding: 20px 30px 30px;
@@ -68,22 +57,6 @@
   padding-bottom: 15px;
 }
 
-/* EXIT BUTTON */
-.exit-button {
-  position: relative;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  border: none;
-  font-size: 40px;
-  cursor: pointer;
-  color: var(--primary-color);
-}
-
-.exit-button:hover {
-  color: var(--secondary-color);
-}
-
 h1 {
   color: var(--primary-color);
   padding-top: 5px;
@@ -92,244 +65,211 @@ h1 {
   font-size: 25px;
   text-align: left;
 }
-  
-  .button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 0;
-  }
-  
-  button {
-    font-family: 'Montserrat';
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-weight: 400;
-    width: 100px;
-    letter-spacing: 1.5px;
-    margin: 10px;
-  }
-  
-  .cancel-btn {
-    background-color: #AB0E0E;
-    color: white;
-    float: right;
-    margin-top: 50px;
-    
-  }
-  
-  .cancel-btn:hover {
-    background-color: gray;
-  }
-  
-  .update-btn {
-   
-    background-color: #179733;
-    color: white;
-    float: right;
-    margin-top: 50px;
-  
-  }
-  
-  .update-btn:hover {
-    background-color: gray;
-  }
-  
-  
-  // pop up design
-  
-  form .txt_field2{
-    padding-top: 10px;
-    background-color: #F6F6F6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 40px;
-    width: 300px;
-    float: right;
-    
-    
-  }
-  .txt_field1 .inputtxt2{
-    width: 100%;
-    padding: 15px 5px 40px 0;
-    font-size: 15px;
-    border: none;
-    background-color: #F6F6F6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    outline: none;
-    border-bottom: 2px solid #777777;
-  }
-  .txt_field1 .labelline2{
-    margin-left: 10px;
-    left: 10px;
-    color: #777777;
-    font-size: 12px;
-  
-  }
-  
-  
-  form .txt_field1{
-    padding-top: 10px;
-    border-bottom: 2px solid #777777;
-    padding-bottom: 10px;
-    background-color: #F6F6F6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 80px;
-    width: 370px;
-    display: inline-grid;
-    margin: 30px 10px 30px 10px;
-    }
-  
-  .txt_field .labelline1{
-    position: absolute;
-    
-    left: 10px;
-    color: #777777;
-    transform: translateY(-50%);
-    
-    pointer-events: none;
-    transition: .3s;
-    top: 17px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-  }
-  
-  
-  
- 
-  form .txt_field{
-    position: relative;
-    border-bottom: 2px solid #777777;
-    margin: 30px 10px 30px 10px;
-    width: 240px;
-    display: inline-block;
-  }
-  
-  .txt_field .inputtxt{
-    width: 100%;
-    display: block;
-    padding-top: 19px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 60px;
-    font-size: 15px;
-    border: none;
-    background-color: #F6F6F6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    outline: none;
-  }
-  
-  .txt_field .labelline{
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    color: #777777;
-    transform: translateY(-50%);
-    font-size: 15px;
-    pointer-events: none;
-    transition: .3s;
-  }
-  
-  .txt_field span::before{
-    content: '';
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #31A463;
-    transition: .3s;
-  }
-  
-  .inputtxt:not(:focus) + span::before {
-    background: #777777;
-  }
-  
-  .txt_field .inputtxt:hover{
-    background-color: #ececec;
-  }
-  
-  .txt_field .inputtxt:valid ~ .labelline {
-    top: 17px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-  }
-  
-  .txt_field .inputtxt:focus ~ .labelline {
-    top: 17px;
-    font-size: 12px;
-    color: #31A463;
-    letter-spacing: 0.5px;
-  }
-  .txt_field .inputtxt:valid ~ .labelline1 {
-    top: 17px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #777777;
-  }
-  
-  .txt_field .inputtxt:focus ~ .labelline1 {
-    top: 17px;
-    font-size: 12px;
-    color: #31A463;
-    letter-spacing: 0.5px;
-  }
-  
-  .txt_field .inputtxt:focus ~ span::before,
-  .txt_field .inputtxt:valid ~ span::before{
-    width: 100%;
-  }
-  
-  .date {
-    border: none; /* Blue border with increased thickness */
-    width: 97%;
-    font-size: 15px;
-    margin-left: 10px;
-    background-color: #F6F6F6;
-    border-radius: 5px; /* Rounded border */
-    outline: none; /* Remove default outline */
-    color: #31A463;
-  
-  }
-  
-  input[type=file]{
-    
-    background-color:#F6F6F6;
-    border: none;
-    width: 100%;
-  }
-  
-  input[type="file"]::file-selector-button {
-    letter-spacing: 0.5px;
-    font-size: 14px;
-    border-top-left-radius: 1px;
-    font-family: 'Montserrat';
-    color: #ffffff;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    background-color: #31A463;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-    transition: background-color 200ms;
-    left: 10px;
-  }
-  
-  .txt_field .uploadlabel {
-    position: absolute;
-    top: 0;
-    margin-top: -20px;
-    font-size: 8px;
-    letter-spacing: 0.5px;
-    color: #777777;
-    position: absolute;
-    left: 10px;
-  }
+
+//BODY
+
+.detailsbody {
+  height: auto;
+  /* Adjust the height as needed */
+  justify-content: center;
+}
+
+.details {
+  padding: 100px 50px 30px 55px;
+  padding-bottom: 10px;
+}
+
+//FORM FIELD
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #777777;
+  margin: 30px 10px 30px 10px;
+  width: 240px;
+  display: inline-block;
+}
+
+.txt_field .inputtxt {
+  width: 100%;
+  display: block;
+  padding-top: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 15px;
+  border: none;
+  background-color: #F6F6F6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none;
+}
+
+.txt_field .labelline {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: #777777;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.txt_field span::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #31A463;
+  transition: .3s;
+}
+
+.inputtxt:not(:focus)+span::before {
+  background: #777777;
+}
+
+.txt_field .inputtxt:hover {
+  background-color: #ececec;
+}
+
+.txt_field .inputtxt:valid~.labelline {
+  top: 17px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #777777;
+}
+
+.txt_field .inputtxt:focus~.labelline {
+  top: 17px;
+  font-size: 12px;
+  color: #31A463;
+  letter-spacing: 0.5px;
+}
+
+.txt_field .labelline1 {
+  position: absolute;
+  left: 10px;
+  color: #777777;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: .3s;
+  top: 17px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #777777;
+}
+
+.txt_field .inputtxt:valid~.labelline1 {
+  top: 17px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #777777;
+}
+
+.txt_field .inputtxt:focus~.labelline1 {
+  top: 17px;
+  font-size: 12px;
+  color: #31A463;
+  letter-spacing: 0.5px;
+}
+
+.txt_field .inputtxt:focus~span::before,
+.txt_field .inputtxt:valid~span::before {
+  width: 100%;
+}
+
+//BUTTON
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+}
+
+button {
+  font-family: 'Montserrat';
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  width: 100px;
+  letter-spacing: 1.5px;
+  margin: 10px;
+}
+
+.cancel-btn {
+  background-color: #AB0E0E;
+  color: white;
+  float: right;
+  margin-top: 50px;
+}
+
+.cancel-btn:hover {
+  background-color: gray;
+}
+
+.update-btn {
+  background-color: #179733;
+  color: white;
+  float: right;
+  margin-top: 50px;
+
+}
+
+.update-btn:hover {
+  background-color: gray;
+}
+
+// form .txt_field1{
+//   padding-top: 10px;
+//   border-bottom: 2px solid #777777;
+//   padding-bottom: 10px;
+//   background-color: #F6F6F6;
+//   border-top-left-radius: 5px;
+//   border-top-right-radius: 5px;
+//   height: 80px;
+//   width: 370px;
+//   display: inline-grid;
+//   margin: 30px 10px 30px 10px;
+//   }
+
+// pop up design
+
+// input[type=file]{
+
+//   background-color:#F6F6F6;
+//   border: none;
+//   width: 100%;
+// }
+
+// input[type="file"]::file-selector-button {
+//   letter-spacing: 0.5px;
+//   font-size: 14px;
+//   border-top-left-radius: 1px;
+//   font-family: 'Montserrat';
+//   color: #ffffff;
+//   width: 150px;
+//   height: 50px;
+//   cursor: pointer;
+//   background-color: #31A463;
+//   border: none;
+//   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+//   transition: background-color 200ms;
+//   left: 10px;
+// }
+
+// .txt_field .uploadlabel {
+//   position: absolute;
+//   top: 0;
+//   margin-top: -20px;
+//   font-size: 8px;
+//   letter-spacing: 0.5px;
+//   color: #777777;
+//   position: absolute;
+//   left: 10px;
+// }

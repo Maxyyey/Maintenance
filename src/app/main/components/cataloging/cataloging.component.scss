@@ -1,8 +1,10 @@
+//CONTAINER
+
 .main-content {
     margin: 10px 40px 10px 10px;
 }
 
-
+//HEADER
 .container-header{
     background-color: #31A463;
     color: white;
@@ -17,6 +19,8 @@ h1 {
     text-align: left;
     // margin-left: 20px;
 }
+
+//BODY
 .page-content {
 	max-width: 100%;  
 	background: #ffffff;
@@ -99,6 +103,20 @@ ul li{
 
 .connection {
     width: 100%;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label {
+	border-bottom-color: #31A463;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+	background: #31A463;
+	color: #ffffff;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2) {
+	display: block;
 }
 
 
@@ -232,19 +250,5 @@ ul li{
 // tab1 table
 
 
-
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label {
-	border-bottom-color: #31A463;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-	background: #31A463;
-	color: #ffffff;
-}
-
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2) {
-	display: block;
-}
 
 
