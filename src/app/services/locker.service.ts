@@ -39,54 +39,8 @@ export class LockerService {
   updateLocker(data: any, id:number): Observable<any> {
     return this.http.post(`${apiUrl}/lockers/${id}`, data);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  // // Add this method to the LockerService class
-  // getNextLockerNumber(): number {
-  //   // Find the maximum locker number in the lockers array
-  //   const maxLockerNumber = Math.max(...this.lockers.map(locker => locker.lockerNumber));
-
-  //   // Return the next available locker number
-  //   return maxLockerNumber + 1;
-  // }
-
-  // getLocker(id: number): Observable<any> {
-  //   const url = 'http://127.0.0.1:8000/api/getlocker/${id}';
-  //   return this.http.get(url, { responseType: 'json' });
-  // }
-  
-  // updateLocker(id: number, body: any): Observable<any> {
-  //   const url = 'http://127.0.0.1:8000/api/updatelocker/${id}';
-  //   const headers = new HttpHeaders().set('Content-Type', 'application/json');
-  //   return this.http.post(url, body, { headers, responseType: 'json' });
-  // }
-
-  // getLockerByLockerNumber(lockerNumber: number): Observable<Locker> {
-  //   return this.http.get<Locker>('${this.apiUrl}/api/getlocker/${lockerNumber}');
-  // }
-  
   
   deleteLocker(id: number): Observable<any> {
-    return this.http.delete('${this.apiUrl}/${id}');
+    return this.http.get(`${apiUrl}/lockers/delete/${id}`);
   }
 }

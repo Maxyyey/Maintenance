@@ -28,7 +28,9 @@ export class AddLockerComponent implements OnInit {
     status: '',
   };
 
-  constructor(private dialogRef: MatDialog, private lockerService: LockerService) { }
+  constructor(
+    private dialogRef: MatDialog, 
+    private lockerService: LockerService) { }
 
   ngOnInit(): void {
     this.getLockers();
@@ -41,19 +43,33 @@ export class AddLockerComponent implements OnInit {
       console.log(this.lockers)
     });
   }
+  
+  deleteLocker(id:number) {
+    console.log(id)
+  this.lockerService.deleteLocker(id).subscribe(
+    result => {
+      Swal.fire({
+        title: "Deleting complete!",
+        text: "locker has been deleted.",
+        icon: "success",
+        confirmButtonText: 'Close',
+        confirmButtonColor: "#777777",
+      });
+    },
+    error => {
+      console.error(error)
+      if(error.status == 400) {
+        Swal.fire({
+          title: "Error!",
+          text: "You must delete the latest locker first.",
+          icon: "error",
+        })
 
-  // onSubmit() {
-  //   this.lockerService.addLocker(this.lockerData).subscribe(
-  //     (response) => {
-  //       console.log('Locker added successfully:', response);
-  //       // Handle successful response here
-  //     },
-  //     (error) => {
-  //       console.error('Error adding locker:', error);
-  //       // Handle error here
-  //     }
-  //   );
-  // }
+      }
+    }
+  )
+
+  }
 
   onHistoryBtnClick() {
     this.lockerService.getLockers().subscribe(
@@ -91,7 +107,20 @@ export class AddLockerComponent implements OnInit {
     )
   }
 
-  onArchiveBtnClick(locker: any) {
-    this.dialogRef.open(ArchiveComponent, { data: locker });
-  }
+  onArchiveBtnClick(id:number){
+    Swal.fire({
+      title: "Delete Project",
+      text: "Are you sure want to delete this locker?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteLocker(id)
+      }
+    });
+}
 }
