@@ -5,6 +5,8 @@ import { UserComponent } from './components/user/user.component';
 import { HistoryComponent } from './components/history/history.component';
 import { EditUsersComponent } from './components/editusers/editusers.component';
 import { ArchiveComponent } from './components/archives/archives.component';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-add-locker',
@@ -12,7 +14,8 @@ import { ArchiveComponent } from './components/archives/archives.component';
   styleUrl: './addlocker.component.scss',
 })
 export class AddLockerComponent implements OnInit{
-  constructor(private dialogRef:MatDialog) { }
+  constructor(private dialogRef:MatDialog
+  ) { }
 
   ngOnInit(): void { }
 
@@ -27,7 +30,30 @@ export class AddLockerComponent implements OnInit{
   onEditBtnClick(){
     this.dialogRef.open(EditUsersComponent,{});
   }
+  // onArchiveBtnClick(){
+  //   this.dialogRef.open(ArchiveComponent,{});
+  // }
+
   onArchiveBtnClick(){
-    this.dialogRef.open(ArchiveComponent,{});
-  }
+    Swal.fire({
+      title: "Delete Project",
+      text: "Are you sure want to delete this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleting complete!",
+          text: "Project has been deleted.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    });
+}
 }

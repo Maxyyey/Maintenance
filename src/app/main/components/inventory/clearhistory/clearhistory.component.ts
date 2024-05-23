@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'; // Import MatDialog
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Clearhistory1Component } from '../clearhistory1/clearhistory1.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-clearhistory',
@@ -27,8 +28,27 @@ export class ClearhistoryComponent {
     // this.dialogRef = dialogRef;
   
   onClear1BtnClick(){
-    const dialogRef = this.dialog.open(Clearhistory1Component, {});
-  }
+    Swal.fire({
+      title: "Clear History",
+      text: "Are you sure want to clear history?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Clearing complete!",
+          text: "History has been cleared.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    });
+}
 
 }
 

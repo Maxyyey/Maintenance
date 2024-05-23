@@ -7,6 +7,8 @@ import { ArchivessComponent } from './archivess/archivess.component';
 import { PersonnelService } from '@app/services/personnel.service';
 import { response } from 'express';
 import { error } from 'console';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-personnelsetup',
   templateUrl: './personnelsetup.component.html',
@@ -39,10 +41,27 @@ export class PersonnelSetupComponent implements OnInit{
     )
   }
   onArchiveBtnClick(id:number){
-    this.dialogRef.open(ArchivessComponent,{
-      data: id
+    Swal.fire({
+      title: "Delete Project",
+      text: "Are you sure want to delete this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleting complete!",
+          text: "Project has been deleted.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
     });
-  }
+}
   // Component logic here
 
 

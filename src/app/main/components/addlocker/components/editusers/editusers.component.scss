@@ -355,11 +355,10 @@ h1 {
   
   .txtarea textarea {
     font-family: 'Montserrat';
-    width: 100%;
+    width: 96%;
     height: 100px;
     padding-top: 29px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-left: 10px;
     font-size: 15px;
     border: none;
     background-color: var(--input);
@@ -394,6 +393,7 @@ h1 {
     top: 17px;
     font-size: 12px;
     letter-spacing: 0.5px;
+    
     color: var(--cancel-btn);
   }
   
