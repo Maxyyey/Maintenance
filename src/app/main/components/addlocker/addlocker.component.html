@@ -1,66 +1,40 @@
+<!-- addlocker.component.html -->
 <div class="main-content">
-
-    
     <div class="sidebar-content">
-        <div class="container-header">
-            <h1>
-                LOCKER
-                
-                    <button class="container-AddNewButton" (click)="onAddNewBtnClick()">Add New</button>
-                    <button class="container-AddNewButton" (click)="onHistoryBtnClick()">History</button>
-
-            </h1>
-        </div>
- 
-        <div class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Locker ID</th>
-                        <th>Status</th>
-                        <th>Date & Time</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                          <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                          <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Available</td>
-                        <td>04/01/24,11:05pm</td>
-                        <td>
-                            <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                            <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-</div>
+      <div class="container-header">
+        <h1>
+          LOCKER INVENTORY
+          <button class="container-AddNewButton" (click)="onAddNewBtnClick()">Add New</button>
+          <button class="container-AddNewButton" (click)="onHistoryBtnClick()">History</button>
+        </h1>
+      </div>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Locker ID</th>
+              <th>Status</th>
+              <th>Date & Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let locker of lockers">
+              <td>{{ locker.lockerNumber }}</td>
+              <td>{{ locker.status }}</td>
+              <td>{{ locker.created_at | date:'MM/dd/yyyy' }}</td>
+            <td>
+                <button class="edit-btn" type="button" (click)="onEditBtnClick(locker.id)">
+                  <i class="fa-solid fa-edit" aria-label="Edit"></i>
+                </button>
+                <button class="archive-btn" type="button" (click)="onArchiveBtnClick(locker)">
+                  <i class="fa-solid fa-archive" aria-label="Archive"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

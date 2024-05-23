@@ -7,263 +7,71 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
-import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
 
+import Swal from 'sweetalert2';
+import { LockerService } from '@app/services/locker.service';
 interface MyOption {
   value: string;
   label: string;
 }
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrl: './user.component.scss',
+  styleUrls: ['./user.component.scss'],
   standalone: true,
   imports: [
     FormsModule,
     CommonModule
   ],
-  
 })
 export class UserComponent {
-[x: string]: any;
+  numberOfLockers: number = 0;
+  startingLockerNumber: number = 0; //just a placeholder
+  status: string = 'Available'   //just a placeholder
+  date: string = new Date().toISOString().slice(0, 10);
 
-  options1 = [
-    { value: 'Available', label: 'Available' },
- 
-  ];
-  options2: MyOption[] = [];
-  options3: MyOption[] = [];
+  constructor(
+    private ref: MatDialogRef<UserComponent>,
+    private lockersService: LockerService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
 
-  selectedOption1: string;
-  selectedOption2: string;
-  selectedOption3: string;
-
-  constructor(private router: Router, private ref: MatDialogRef<UserComponent>, private buildr: FormBuilder,) {
-    this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
-    this.selectedOption2 = '';
-    this.selectedOption3 = '';
   }
 
-  onOption1Change() {
-    // Logic for populating PROGRAM based on COLLEGE DEPARTMENT
-
-    // CCS -------------------------------------------------
-    if (this.selectedOption1 === 'CCS') {
-      this.options2 = [
-        { value: 'BSCS', label: 'BSCS' },
-        { value: 'BSIT', label: 'BSIT' },
-        { value: 'BSEMC', label: 'BSEMC' },
-        { value: 'ACT', label: 'ACT' },
-      ];
+  addLocker() {
+    const form = {
+      numberOfLockers: this.numberOfLockers
     }
-    // CBA -------------------------------------------------
-    else if (this.selectedOption1 === 'CBA') {
-      this.options2 = [
-        { value: 'BSA', label: 'BSA' },
-        { value: 'BSCA', label: 'BSCA' },
-        { value: 'BSBA-FM', label: 'BSBA-FM' },
-        { value: 'BSBA-MKT', label: 'BSBA-MKT' },
-        { value: 'BSBA-HRM', label: 'BSBA-HRM' },
-      ];
-    }
-    // CEAS -------------------------------------------------
-    else if (this.selectedOption1 === 'CEAS') {
-      this.options2 = [
-        { value: 'BACOMM', label: 'BACOMM' },
-        { value: 'BEED', label: 'BEED' },
-        { value: 'BPED', label: 'BPED' },
-        { value: 'BCAED', label: 'BCAED' },
-        { value: 'BECED', label: 'BECED' },
-        { value: 'BSED-ENG', label: 'BSED-ENG' },
-        { value: 'BSED-FIL', label: 'BSED-FIL' },
-        { value: 'BSED-MATH', label: 'BSED-MATH' },
-        { value: 'BSED-SCI', label: 'BSED-SCI' },
-        { value: 'BSED-SOC', label: 'BSED-SOC' }
-      ];
-    }
-    // CAHS -------------------------------------------------
-    else if (this.selectedOption1 === 'CAHS') {
-      this.options2 = [
-        { value: 'BSM', label: 'BSM' },
-        { value: 'BSN', label: 'BSN' }
-      ];
-    }
-    // CHTM -------------------------------------------------
-    else if (this.selectedOption1 === 'CHTM') {
-      this.options2 = [
-        { value: 'BSHM', label: 'BSHM' },
-        { value: 'BSTM', label: 'BSTM' }
-      ];
-    } 
-    
-    else {
-      this.options2 = [];
-    }
-
-    this.selectedOption2 = '';
-    this.options3 = []; // Reset options3 when the first select menu changes
-    this.selectedOption3 = ''; // Reset selectedOption3 when the first select menu changes
+    this.lockersService.addLocker(form).subscribe(
+      result => {
+        if(result.success){
+          this.showSuccessAlert()
+          this.ref.close()
+        }
+      },
+      error => {
+        if(error.status == 400) {
+          this.showErrorAlert()
+        }
+        console.error(error)
+      }
+    )
   }
 
-
-  onOption2Change() {
-    // Logic for populating PROJECT TYPE based on COLLEGE PROGRAM
-
-    // CCS PROGRAMS -------------------------------------------------
-    if (this.selectedOption2 === 'BSCS') {
-      this.options3 = [
-        { value: 'Thesis', label: 'Thesis' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSIT') {
-      this.options3 = [
-        { value: 'Capstone', label: 'Capstone' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSEMC') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'ACT') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    // CBA PROGRAMS -------------------------------------------------
-    else if (this.selectedOption2 === 'BSA') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSCA') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSBA-FM') {
-      this.options3 = [
-        { value: 'Feasibility', label: 'Feasibility' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSBA-MKT') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSBA-HRM') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-
-    // CEAS PROGRAMS -------------------------------------------------
-    else if (this.selectedOption2 === 'BACOMM') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BEED') {
-      this.options3 = [
-        { value: 'Classroom Based Action Research', label: 'Classroom Based Action Research' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BPED') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BCAED') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BECED') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BSED-ENG') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BSED-FIL') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BSED-MATH') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BSED-SCI') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-    else if (this.selectedOption2 === 'BSED-SOC') {
-      this.options3 = [
-        { value: '', label: '' }
-      ];
-    }
-
-    // CAHS PROGRAMS -------------------------------------------------
-    else if (this.selectedOption2 === 'BSN') {
-      this.options3 = [
-        { value: 'Case Presentation', label: 'Case Presentation' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSM') {
-      this.options3 = [
-        { value: 'Case Presentation', label: 'Case Presentation' }
-      ];
-    }
-    // CHTM PROGRAMS -------------------------------------------------
-    else if (this.selectedOption2 === 'BSTM') {
-      this.options3 = [
-        { value: 'Thesis', label: 'Thesis' }
-      ];
-    } 
-    else if (this.selectedOption2 === 'BSHM') {
-      this.options3 = [
-        { value: 'Thesis', label: 'Thesis' }
-      ];
-    } 
-
-    else {
-      this.options3 = [];
-    }
-
-    this.selectedOption3 = '';
+  ngOnInit() {
+    this.getLatestLockerNumber()
   }
 
-
-  // DYNAMIC ADD MULTIPLE AUTHOR
-  ngOnInit(): void {
-    this.addvalue();
+  getLatestLockerNumber() {
+    this.startingLockerNumber = this.data
   }
 
-  values: { value: string }[] = [];
-
-  removevalue(i: any){
-    this.values.splice(i, 1);
-  }
-
-  addvalue(){
-    this.values.push({value: "'di ko alam paano, comma na ba kapag marami tas pwede pa rin mag add?"});
-  }
-
-  closepopup() {
-    this.ref.close('Closed using function');
-  }
-
-  // SWEETALERT UPDATE POPUP
-  updateBox(){
+  addBox() {
     Swal.fire({
       title: "Add New Locker",
-      text: "Are you sure you want to add new locker?",
+      text: "Are you sure you want to add a new locker?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -272,48 +80,35 @@ export class UserComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Update successful!",
-          text: "The changes have been saved.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        this.addLocker()
       }
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
+  showSuccessAlert() {
+        Swal.fire({
+          title: "Success!",
+          text: "Locker has been successfully added.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+    });
+  }
+
+  showErrorAlert() {
     Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
+      title: "Error!",
+      text: "Failed to add locker.",
+      icon: "error",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",
-        });
-      }
     });
   }
 
-  // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
-      text: "Your changes will not be saved.",
+      title: "Cancel?",
+      text: "Are you sure you want to cancel adding lockers?",
       icon: "question",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -336,11 +131,9 @@ export class UserComponent {
           });
           Toast.fire({
             icon: "error",
-            title: "Changes not saved."
+            title: "Adding lockers has been cancelled."
           });
       }
     });
   }
 }
-
-
