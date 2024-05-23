@@ -6,6 +6,8 @@ import { EditUsersComponent } from './components/editusers/editusers.component';
 import { ArchiveComponent } from './components/archives/archives.component';
 import { LockerService } from '@app/services/locker.service';
 import { error } from 'console';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-add-locker',
