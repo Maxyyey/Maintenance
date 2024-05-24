@@ -56,7 +56,7 @@ export class EditUsersComponent {
   updateLocker() {
     this.lockerService.updateLocker(this.form, this.data.id).subscribe(
       result => {
-        this.ref.close('Closed using function');
+        this.ref.close(result);
         Swal.fire({
           title: "Update successful!",
           text: "The changes have been saved.",
@@ -112,7 +112,7 @@ export class EditUsersComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.ref.close();
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

@@ -48,7 +48,7 @@ export class UserComponent {
       result => {
         if(result.success){
           this.showSuccessAlert()
-          this.ref.close()
+          this.ref.close(result)
         }
       },
       error => {
@@ -117,7 +117,7 @@ export class UserComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.ref.close();
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

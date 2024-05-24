@@ -17,16 +17,6 @@ import Swal from 'sweetalert2';
 export class AddLockerComponent implements OnInit {
 
   lockers: any[] = [];
-  lockerData = {
-    locker_number: '',
-    name: '',
-    student_number: '',
-    college_program: '',
-    college_department: '',
-    user_id: '',
-    gender: '',
-    status: '',
-  };
 
   constructor(
     private dialogRef: MatDialog, 
@@ -45,7 +35,6 @@ export class AddLockerComponent implements OnInit {
   }
   
   deleteLocker(id:number) {
-    console.log(id)
   this.lockerService.deleteLocker(id).subscribe(
     result => {
       Swal.fire({
@@ -55,6 +44,7 @@ export class AddLockerComponent implements OnInit {
         confirmButtonText: 'Close',
         confirmButtonColor: "#777777",
       });
+      this.lockers.pop()  //remove the last element on success
     },
     error => {
       console.error(error)
@@ -86,9 +76,18 @@ export class AddLockerComponent implements OnInit {
   onAddNewBtnClick() {
     this.lockerService.getStartingLockerNumber().subscribe(
       data => {
-        this.dialogRef.open(UserComponent, {
+        let modal = this.dialogRef.open(UserComponent, {
           data: data
         });
+        modal.afterClosed().subscribe(
+          result => {
+            if(result.success) {
+              result.success.forEach((locker: any) => {
+                this.lockers.push(locker)
+              });
+            }
+          }
+        )
       }
     )
   }
@@ -97,9 +96,22 @@ export class AddLockerComponent implements OnInit {
     this.lockerService.getLocker(id).subscribe(
       data => {
         console.log(data)
-        this.dialogRef.open(EditUsersComponent, 
+        let modal = this.dialogRef.open(EditUsersComponent, 
           { data: data }
         );
+        modal.afterClosed().subscribe(
+          result => {
+            console.log(result)
+            if(result.success) {
+              this.lockers = this.lockers.map(locker => {
+                if (locker.id === result.success.id) {
+                    return { ...locker, status: result.success.status };
+                }
+                return locker;
+              });
+            }
+          }
+        )
       },
       error => {
         console.error(error)
