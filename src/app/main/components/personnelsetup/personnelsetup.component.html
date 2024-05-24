@@ -5,7 +5,7 @@
         <div class="container-header">
             <h1>
                 PERSONNEL SETUP
-                    <input class="search-bar" type="search" placeholder="Search.." >
+                    <input class="search-bar" #inputstring type="search" (keyup)="search(inputstring.value)"  placeholder="Search.." >
                     <button class="container-addUserButton" type="button" (click)="onAddNewBtnClick()">Add User</button>
   
   
@@ -23,7 +23,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="personnels">
                     <!-- <tr>
                         <td>John Doe</td>
                         <td>Cataloging</td>

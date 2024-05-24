@@ -15,8 +15,36 @@ import Swal from 'sweetalert2';
   styleUrl: './personnelsetup.component.scss',
 })
 export class PersonnelSetupComponent implements OnInit{
+  // searchValue: string = ''
   public personnels: any = [];
   constructor(private dialogRef : MatDialog, private personnelService: PersonnelService) { }
+
+  search(value: string) {
+    value = value.toUpperCase()
+    let tbody = document.getElementById("personnels");
+    if(tbody) {
+      let tr = tbody.getElementsByTagName("tr");
+      for (let i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0];
+          let txtValue = td.textContent || td.innerText;
+
+          
+          let td2 = tr[i].getElementsByTagName("td")[1];
+          let access = td2.textContent || td2.innerText;
+
+          let td3 = tr[i].getElementsByTagName("td")[2];
+          let email = td3.textContent || td3.innerText;
+
+          if (txtValue.toUpperCase().indexOf(value) > -1 || access.toUpperCase().indexOf(value) > -1 || email.toUpperCase().indexOf(value) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
+
+    }
+    console.log(value)
+  }
 
   async ngOnInit(): Promise<void> {
     this.personnels = await this.personnelService.getPersonnels()
