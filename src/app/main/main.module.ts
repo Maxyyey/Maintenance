@@ -11,6 +11,7 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { ScanbarcodeComponent } from './components/inventory/scanbarcode/scanbarcode.component';
 import { EnterbarcodeComponent } from './components/inventory/enterbarcode/enterbarcode.component';
 import { ClearhistoryComponent } from './components/inventory/clearhistory/clearhistory.component';
+import { HistoryComponent } from './components/addlocker/components/history/history.component';
 
 
 
@@ -25,6 +26,7 @@ import { ClearhistoryComponent } from './components/inventory/clearhistory/clear
     ScanbarcodeComponent,
     EnterbarcodeComponent,
     ClearhistoryComponent,
+    HistoryComponent
   ],
   imports: [
     CommonModule,

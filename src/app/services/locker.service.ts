@@ -43,4 +43,8 @@ export class LockerService {
   deleteLocker(id: number): Observable<any> {
     return this.http.get(`${apiUrl}/lockers/delete/${id}`);
   }
+
+  getHistory() {
+    return this.http.get(`${apiUrl}/lockers/logs`);
+  }
 }

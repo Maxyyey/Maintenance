@@ -100,17 +100,15 @@ form .txt_field1{
   }
   
   .txt_field1 .labelline1{
-    margin-left: 10px;
-    left: 10px;
     color: #777777;
     font-size: 12px;
   
   }
   .date {
     border: none; /* Blue border with increased thickness */
-    width: 97%;
+    width: 100%;
     font-size: 15px;
-    margin-left: 10px;
+    padding: 10px;
     background-color: #F6F6F6;
     border-radius: 5px; /* Rounded border */
     outline: none; /* Remove default outline */
@@ -131,7 +129,7 @@ form .txt_field1{
 }
 
 .button-container {
-    margin-top: 20px;
+  height: 90px;
 }
 
 button {
