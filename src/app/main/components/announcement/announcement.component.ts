@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddComponent } from './add/add.component';
 import { EditAnnouncePopupComponent } from './editannouncepopup/editannouncepopup.component';
-import { ArchiveAnnouncePopupComponent } from '../announcement/archiveannouncepopup/archiveannouncepopup.component';
 import { AnnouncementService } from '@app/services/announcement.service';
-import { error } from 'console';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-announcement',
   templateUrl: './announcement.component.html',
@@ -36,17 +36,26 @@ export class AnnouncementComponent implements OnInit{
 
   
   onAddNewBtnClick(){
-    // this.router.navigate(['/adduser']);
-    this.dialogRef.open(AddComponent, {});
+    let modal = this.dialogRef.open(AddComponent, {});
+
+    this
     
   }
   onEditBtnClick(id: number){
     this.announcementService.getAnnouncement(id).subscribe(
       announcement => {
         console.log(announcement)
-        this.dialogRef.open(EditAnnouncePopupComponent, {
+        let modal = this.dialogRef.open(EditAnnouncePopupComponent, {
           data: announcement
         });
+
+        modal.afterClosed().subscribe(
+          result => {
+            if(result) {
+
+            }
+          }
+        )
       },
       error => {
         console.error(error)
@@ -55,9 +64,42 @@ export class AnnouncementComponent implements OnInit{
     }
   
   onArchiveBtnClick(id:number){
-    this.dialogRef.open(ArchiveAnnouncePopupComponent, {
-      data: id
+    Swal.fire({
+      title: "Delete Project",
+      text: "Are you sure want to delete this project?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#AB0E0E",
+      cancelButtonColor: "#777777",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.archiveAnnouncement(id)
+      }
     });
+  }
+
+  archiveAnnouncement(id: number) {
+    this.announcementService.archiveAnnouncement(id).subscribe(
+      response => {
+        Swal.fire({
+          title: "Deleting complete!",
+          text: "Project has been  deleted.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      },
+      error => {
+        console.error(error)
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
+      }
+    )
   }
   // Component logic here
 
