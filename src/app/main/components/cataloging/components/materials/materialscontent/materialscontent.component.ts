@@ -32,7 +32,14 @@ export class MaterialscontentComponent implements OnInit{
     )
   }
   onAddNewBtnClick(){
-    this.dialogRef.open(AddiconComponent, {});
+    let modal = this.dialogRef.open(AddiconComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        if(result) {
+          this.locations.unshift(result.success)
+        }
+      }
+    )
   }
 
   
