@@ -42,7 +42,6 @@ export class PersonnelSetupComponent implements OnInit{
       }
 
     }
-    console.log(value)
   }
 
   async ngOnInit(): Promise<void> {

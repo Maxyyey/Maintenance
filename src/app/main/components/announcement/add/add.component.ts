@@ -53,7 +53,7 @@ export class AddComponent {
 
   closepopup() {
     console.log(this.form)
-    this.ref.close('Closed using function');
+    this.ref.close();
   }
 
   createAnnouncements() {
@@ -80,7 +80,7 @@ export class AddComponent {
             text: "Announcement has been successfully created.",
             icon: "success",
           });
-          this.ref.close('Closed using function'); 
+          this.ref.close(success); 
         }
       },
       error => {

@@ -38,7 +38,14 @@ export class AnnouncementComponent implements OnInit{
   onAddNewBtnClick(){
     let modal = this.dialogRef.open(AddComponent, {});
 
-    this
+    modal.afterClosed().subscribe(
+      result => {
+        console.log(result)
+        if(result) {
+          this.announcements.unshift(result.success)
+        }
+      }
+    )
     
   }
   onEditBtnClick(id: number){
@@ -52,7 +59,14 @@ export class AnnouncementComponent implements OnInit{
         modal.afterClosed().subscribe(
           result => {
             if(result) {
-
+              this.announcements = this.announcements.map(
+                announcement => {
+                  if(announcement.id === result.success.id) {
+                    return {...announcement, ...result.success}
+                  }
+                  return announcement
+                }
+              )
             }
           }
         )
@@ -90,6 +104,7 @@ export class AnnouncementComponent implements OnInit{
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",
         });
+        this.announcements = this.announcements.filter(announcement => announcement.id !== id); 
       },
       error => {
         console.error(error)
