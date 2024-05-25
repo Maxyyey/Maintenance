@@ -12,14 +12,9 @@
                   <div class="details">
                     <div class="detailscontent1">
                         <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-                   
-                        <div class="contentdetails">
-                          <p>Bachelor of Science in Accountancy </p>
-                          <p>Bachelor of Science in Customs Administration</p>
-                          <p>Bachelor of Science in Business Administration - Major in Financial Management</p>
-                          <p>Bachelor of Science in Business Administration - Major in Human Resource Management</p>
-                          <p>Bachelor of Science in Business Administration - Major in Marketing Management</p>
-                    </div>
+                        <div *ngFor="let program of programs" class="contentdetails">
+                          <p>{{ program }}</p>
+                        </div>
                     </div>
                 </div>
                 </div>

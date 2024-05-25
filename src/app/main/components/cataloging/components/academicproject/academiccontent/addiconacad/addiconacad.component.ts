@@ -5,7 +5,6 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AddPopupComponent } from './addpopup/addpopup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
@@ -311,7 +310,7 @@ export class AddiconacadComponent implements OnInit{
     }).then((result) => {
       if (result.isConfirmed) {
         // Send data to backend
-        this['http'].post('http://localhost:8000/add-program', { payload })
+        this['http'].post('http://localhost:8000/api/add-program', { payload })
           .subscribe(
             (response: any) => {
               console.log('Program added successfully', response);
