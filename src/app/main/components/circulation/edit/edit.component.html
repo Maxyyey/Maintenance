@@ -16,7 +16,7 @@
                 <label class="labelline1"> Patron Type </label>
               </div>
               <div class="txt_field">
-                <input class="inputtxt" type="text" [(ngModel)]="fines_if_overdue" [ngModelOptions]="{standalone: true}"
+                <input class="inputtxt" type="text" [(ngModel)]="fine" [ngModelOptions]="{standalone: true}"
                   required>
                 <span></span>
                 <div class="labelline">[Price Here]</div>
@@ -57,7 +57,7 @@
             </form>
           </div>
           <div class="button-container">
-            <button (click)="closepopup()" class="cancel-btn">Cancel</button>
+            <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
             <button class="update-btn" (click)="updateBox()"> Update </button>
           </div>
 

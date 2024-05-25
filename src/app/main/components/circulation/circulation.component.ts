@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from './edit/edit.component';
 import { PatronService } from '@app/services/patron.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-circulation',
@@ -18,13 +19,16 @@ export class CirculationComponent implements OnInit{
 
   ngOnInit() { 
     this.getPatrons()
-    console.log(this.patrons)
   }
 
   getPatrons() {
     this.patronService.getPatrons().subscribe(
       patrons => {
         this.patrons = patrons
+        this.patrons.forEach((patron: any) => {
+          patron.days_allowed = Math.floor(patron.hours_allowed / 24)
+          patron.hours_allowed = patron.hours_allowed % 24
+        });
       },
       error => {
         console.error(error)
@@ -35,9 +39,18 @@ export class CirculationComponent implements OnInit{
   onEditBtnClick(id:number){
     this.patronService.getPatron(id).subscribe(
       patron => {
-        this.dialogRef.open(EditComponent, {
+        let modal = this.dialogRef.open(EditComponent, {
           data: patron
         });
+
+        modal.afterClosed().subscribe(
+          response => {
+            if(response) {
+              this.getPatrons()
+              console.log('updating')
+            }
+          }
+        )
       },
       error => {
         console.error(error)

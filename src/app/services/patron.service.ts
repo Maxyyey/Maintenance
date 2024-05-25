@@ -10,7 +10,7 @@ export class PatronService {
   constructor(private http: HttpClient,) { }
 
   getPatrons() {
-    return this.http.get(`${apiUrl}/patrons`);
+    return this.http.get<any>(`${apiUrl}/patrons`);
   }
 
   getPatron(id:number) {

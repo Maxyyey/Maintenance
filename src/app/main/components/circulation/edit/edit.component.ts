@@ -29,7 +29,7 @@ interface MyOption {
 })
 export class EditComponent {
   patron: string = ''
-  fines_if_overdue: number = 0 
+  fine: number = 0 
   days_allowed: number = 0
   hours_allowed: number = 0
   materials_allowed: number = 0
@@ -45,20 +45,20 @@ export class EditComponent {
 
   getOldValue() {
     this.patron = this.data.patron
-    this.fines_if_overdue = this.data.fines_if_overdue
-    this.days_allowed = this.data.days_allowed
-    this.hours_allowed = this.data.hours_allowed
+    this.fine = this.data.fine
+    this.days_allowed = Math.floor(this.data.hours_allowed / 24)
+    this.hours_allowed =this.data.hours_allowed % 24
     this.materials_allowed = this.data.materials_allowed
     console.log(this.data.patron)
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close(null);
   }
 
   updatePatrons(id:number) {
     const data = {
-      fines_if_overdue: this.fines_if_overdue,
+      fine: this.fine,
       days_allowed: this.days_allowed,
       hours_allowed: this.hours_allowed
     } 
@@ -66,7 +66,7 @@ export class EditComponent {
 
     this.patronService.updatePatron(id, data).subscribe(
       response => {
-        this.ref.close('Closed using function');
+        this.ref.close(response);
         Swal.fire({
           title: "Update successful!",
           text: "The changes have been saved.",
@@ -77,6 +77,11 @@ export class EditComponent {
       },
       error => {
         console.error(error)
+        Swal.fire({
+          title: "Error!",
+          text: "Invalid input!",
+          icon: "error",
+        });
       }
     )
   }
@@ -99,31 +104,6 @@ export class EditComponent {
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
-    Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
-      }
-    });
-  }
-
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
@@ -137,7 +117,7 @@ export class EditComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.closepopup()
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
