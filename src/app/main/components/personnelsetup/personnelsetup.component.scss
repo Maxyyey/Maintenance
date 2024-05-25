@@ -79,13 +79,16 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    
 }
-
 th,
 td {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
     text-align: center;
+    position: relative;
+    width: 25%;
 }
 
 th {

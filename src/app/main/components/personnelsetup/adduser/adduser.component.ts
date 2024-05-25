@@ -62,32 +62,43 @@ export class AddUserComponent {
 
   addUser() {
     console.log(this.form)
-    this.personnelService.createPersonnel(this.form).subscribe(
-      response => {
-        console.log(response)
-        if(response.message) {
-          this.ref.close('Closed using function');
-          Swal.fire({
-            title: "Add successful!",
-            text: "The changes have been saved.",
-            icon: "success",
-            confirmButtonText: 'Close',
-            confirmButtonColor: "#777777",
-          });
-          return
+    if(this.form.username.includes('@')) {
+      this.personnelService.createPersonnel(this.form).subscribe(
+        response => {
+          console.log(response)
+          if(response.message) {
+            this.ref.close('Closed using function');
+            Swal.fire({
+              title: "Add successful!",
+              text: "The changes have been saved.",
+              icon: "success",
+              confirmButtonText: 'Close',
+              confirmButtonColor: "#777777",
+            });
+            return
+          }
+          else {
+            Swal.fire({
+              title: "error!",
+              text: "Invalid input.",
+              icon: "error",
+            });
+          }
+        },
+        error => {
+          console.error(error)
         }
-        else {
-          Swal.fire({
-            title: "error!",
-            text: "Invalid input.",
-            icon: "error",
-          });
-        }
-      },
-      error => {
-        console.error(error)
-      }
-    )
+      )
+    } else {
+      Swal.fire({
+        title: "Invalid Email Address!",
+        text: "Personnel not saved.",
+        icon: "error",
+        confirmButtonText: 'Close',
+        confirmButtonColor: "#777777",
+      });
+    }
+    
   }
 
   // SWEETALERT UPDATE POPUP
