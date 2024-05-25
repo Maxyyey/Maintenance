@@ -14,7 +14,7 @@
 }
 
 .details-content {
-  width: 900px;
+  width: 600px;
   position: relative;
   background: white;
   border-radius: 5px;
@@ -59,52 +59,66 @@
 
 .detailscontent1{
     width: auto;
+    display: inline-block;
 }
-
+.contentdetails{
+  margin-top: 10px;
+  display: block;
+}
+.contentdetails h2{
+  font-size: 40px;
+  width: 500px;
+  margin-bottom: 20px;
+}
 .detailscontent1 p {
-    padding-left: 45px;
     display: center;
-    font-weight: bold;
+    font-weight: 800;
     align-items: center;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 
 .details {
-  padding: 100px 50px 30px 55px;
-  padding-bottom: 10px;
-  display: inline-flex;  
+  padding: 80px 10px 10px 10px;
+  // display: inline-flex;  
 }
 
 .details img{
-    margin-left: 22px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+    margin-left: 140px;
     max-height: 300px;
-    margin-top: 30px;
+    
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.2117647059);
 }
 
 // POPUP HEADER SCSS
 .detailsheader {
-  display: flex;
-  padding: 20px 30px 30px;
+  padding: 20px 10px 20px;
   position: fixed;
-  width: 900px;
+  width: 600px;
   background-color: var(--main-green);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   z-index: 1;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.192);
-  padding-bottom: 15px;
+
 }
 
 /* EXIT BUTTON */
 .exit-button {
-  position: relative;
-  top: 0;
-  right: 0;
+  position: absolute;
   background-color: transparent;
   border: none;
   font-size: 40px;
   cursor: pointer;
   color: var(--primary-color);
+  float: right;
+  top: -5px;
+  right: -30px;
 }
 
 .exit-button:hover {
@@ -114,7 +128,7 @@
 h1 {
   color: var(--primary-color);
   padding-top: 5px;
-  width: 880px;
+  width: 550px;
   font-weight: 700;
   font-size: 25px;
   text-align: left;
@@ -135,12 +149,6 @@ button {
     width: 100px;
     letter-spacing: 1.5px;
     margin: 10px;
-}
-.cancel-btn {
-    background-color: #AB0E0E;
-    color: white;
-    float: right;
-    margin-top: 30px;
 }
 
 #course{

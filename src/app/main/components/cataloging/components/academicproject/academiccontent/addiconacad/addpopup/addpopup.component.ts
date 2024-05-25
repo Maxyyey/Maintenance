@@ -39,6 +39,7 @@ export class AddPopupComponent {
   selectedOption1: string;
   selectedOption2: string;
   selectedOption3: string;
+  form: any;
 
   constructor(private router: Router, private ref: MatDialogRef<AddPopupComponent>, private buildr: FormBuilder,) {
     this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
@@ -46,6 +47,7 @@ export class AddPopupComponent {
     this.selectedOption3 = '';
   }
 
+  
   onOption1Change() {
     // Logic for populating PROGRAM based on COLLEGE DEPARTMENT
 
@@ -343,6 +345,10 @@ export class AddPopupComponent {
       }
     });
   }
+  uploadFile(event: any){
+    this.form.file = event.target.files[0];
+    console.table(this.form.file)
+   }
 }
 
 

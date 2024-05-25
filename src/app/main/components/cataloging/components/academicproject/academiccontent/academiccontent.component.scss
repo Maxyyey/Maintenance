@@ -10,8 +10,7 @@
   
   /* CARD CONTAINER */
   .card-container {
-    width: calc(100% - 220px);
-    height: calc(100vh - 210px);
+    height: calc(100% - 210px);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -52,8 +51,8 @@
       object-fit: contain;
     }
   
-    .card h2 {
-      font-size: large; /* Larger title text */
+    .card h1 {
+      font-size: 30px; /* Larger title text */
       text-align: center;
     }
    
