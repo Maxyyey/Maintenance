@@ -17,13 +17,37 @@ import Swal from 'sweetalert2';
 export class AddLockerComponent implements OnInit {
 
   lockers: any[] = [];
+  currentPage = 1;
+  itemsPerPage = 10;
+
 
   constructor(
     private dialogRef: MatDialog, 
     private lockerService: LockerService) { }
 
-  ngOnInit(): void {
+ ngOnInit() {
     this.getLockers();
+  }
+  get totalPages(): number {
+    return Math.ceil(this.lockers.length / this.itemsPerPage);
+  }
+
+  paginatedLockers(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.lockers.slice(startIndex, endIndex);
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
   }
 
   getLockers(): void {

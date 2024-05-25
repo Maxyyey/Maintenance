@@ -26,7 +26,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let location of locations">
+            <!-- paginatedLocations -->
+            <tr *ngFor="let location of locations"> 
                 <td> {{ location.location }} </td>
                 <td> {{ location.full_location }} </td>
                 <td> {{ location.created_at | date:'MM/dd/yyyy' }} </td>
@@ -39,5 +40,10 @@
             </tr>
         </tbody>
     </table>
+    <!-- <div class="pagination">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span>{{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+      </div> -->
 </div>
 

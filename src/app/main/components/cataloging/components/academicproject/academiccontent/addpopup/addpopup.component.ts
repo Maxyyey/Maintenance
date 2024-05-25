@@ -266,8 +266,8 @@ export class AddPopupComponent {
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Add Patron",
-      text: "Are you sure you want to add this patron?",
+      title: "Add College",
+      text: "Are you sure you want to add this College?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -278,7 +278,7 @@ export class AddPopupComponent {
       if (result.isConfirmed) {
         this.ref.close('Closed using function');
         Swal.fire({
-          title: "Add successful!",
+          title: "College Added!",
           text: "The changes have been saved.",
           icon: "success",
           confirmButtonText: 'Close',

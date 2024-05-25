@@ -281,10 +281,10 @@ export class AddiconacadComponent implements OnInit{
   closepopup() {
     this.ref.close('Closed using function');
   }
-  onAddBtnClick() {
-    this.dialogRef.open(AddPopupComponent, {});
-    this.ref.close('Closed using function');
-  }
+  // onAddBtnClick() {
+  //   this.dialogRef.open(AddPopupComponent, {});
+  //   this.ref.close('Closed using function');
+  // }
   
 
   // SWEETALERT UPDATE POPUP
@@ -300,8 +300,8 @@ export class AddiconacadComponent implements OnInit{
 
     // Display confirmation dialog
     Swal.fire({
-      title: "Add Patron",
-      text: "Are you sure you want to add this patron?",
+      title: "Add Program",
+      text: "Are you sure you want to add this program?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',

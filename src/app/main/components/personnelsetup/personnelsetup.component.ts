@@ -1,72 +1,90 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
-import { ArchivessComponent } from './archivess/archivess.component';
 import { PersonnelService } from '@app/services/personnel.service';
-import { response } from 'express';
-import { error } from 'console';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-personnelsetup',
   templateUrl: './personnelsetup.component.html',
-  styleUrl: './personnelsetup.component.scss',
+  styleUrls: ['./personnelsetup.component.scss'],
 })
-export class PersonnelSetupComponent implements OnInit{
-  // searchValue: string = ''
-  public personnels: any = [];
-  constructor(private dialogRef : MatDialog, private personnelService: PersonnelService) { }
+export class PersonnelSetupComponent implements OnInit {
+  currentPage = 1;
+  itemsPerPage = 10;
+  personnels: any = [];
 
-  search(value: string) {
-    value = value.toUpperCase()
-    let tbody = document.getElementById("personnels");
-    if(tbody) {
-      let tr = tbody.getElementsByTagName("tr");
-      for (let i = 0; i < tr.length; i++) {
-          let td = tr[i].getElementsByTagName("td")[0];
-          let txtValue = td.textContent || td.innerText;
+  constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) { }
 
-          let td2 = tr[i].getElementsByTagName("td")[1];
-          let access = td2.textContent || td2.innerText;
+  async ngOnInit(): Promise<void> {
+    this.personnels = await this.personnelService.getPersonnels();
+  }
 
-          let td3 = tr[i].getElementsByTagName("td")[2];
-          let email = td3.textContent || td3.innerText;
+  get totalPages(): number {
+    return Math.ceil(this.personnels.users.length / this.itemsPerPage);
+  }
 
-          if (txtValue.toUpperCase().indexOf(value) > -1 || access.toUpperCase().indexOf(value) > -1 || email.toUpperCase().indexOf(value) > -1) {
-              tr[i].style.display = "";
-          } else {
-              tr[i].style.display = "none";
-          }
-      }
+  paginatedPersonnels(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.personnels.users.slice(startIndex, endIndex);
+  }
 
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
     }
   }
 
-  async ngOnInit(): Promise<void> {
-    this.personnels = await this.personnelService.getPersonnels()
-   }
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
 
-  onAddNewBtnClick(){
-    // this.router.navigate(['/adduser']);
+  search(value: string) {
+    value = value.toUpperCase();
+    let tbody = document.getElementById("personnels");
+    if (tbody) {
+      let tr = tbody.getElementsByTagName("tr");
+      for (let i = 0; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName("td")[0];
+        let txtValue = td.textContent || td.innerText;
+
+        let td2 = tr[i].getElementsByTagName("td")[1];
+        let access = td2.textContent || td2.innerText;
+
+        let td3 = tr[i].getElementsByTagName("td")[2];
+        let email = td3.textContent || td3.innerText;
+
+        if (txtValue.toUpperCase().indexOf(value) > -1 || access.toUpperCase().indexOf(value) > -1 || email.toUpperCase().indexOf(value) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  onAddNewBtnClick() {
     this.dialogRef.open(AddUserComponent, {});
   }
-  onEditBtnClick(id: number){
-    console.log(id)
+
+  onEditBtnClick(id: number) {
     this.personnelService.getPersonnel(id).subscribe(
       personnel => {
-        this.dialogRef.open(EditUserComponent,{
+        this.dialogRef.open(EditUserComponent, {
           data: personnel
         });
-        console.log(personnel)
       },
       error => {
-        console.error(error)
+        console.error(error);
       }
-    )
+    );
   }
-  onArchiveBtnClick(id:number){
+
+  onArchiveBtnClick(id: number) {
     Swal.fire({
       title: "Delete Project",
       text: "Are you sure want to delete this project?",
@@ -87,12 +105,5 @@ export class PersonnelSetupComponent implements OnInit{
         });
       }
     });
+  }
 }
-
-
-  // Component logic here
-
-
-}
-
-//up
