@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AddPopupComponent } from './addpopup/addpopup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 
 
 import Swal from 'sweetalert2';
@@ -21,7 +24,8 @@ interface MyOption {
   standalone: true,
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   
 })
@@ -34,7 +38,7 @@ export class AddiconacadComponent implements OnInit{
     { value: 'Faculty', label: 'Faculty' },
     { value: 'Student (Online)', label: 'Student (Online)' },
     { value: 'Student (FaceToFace)', label: 'Student (FaceToFace)' },
-    
+
   ];
   options2: MyOption[] = [];
   options3: MyOption[] = [];
@@ -43,10 +47,24 @@ export class AddiconacadComponent implements OnInit{
   selectedOption2: string;
   selectedOption3: string;
 
-  constructor(private router: Router, private ref: MatDialogRef<AddiconacadComponent>, private buildr: FormBuilder, private dialogRef: MatDialog) {
+  selectedDepartment: string;
+  programAbbreviation: string;
+  projectCategory: string;
+  programName: string;
+
+
+
+
+  constructor(private router: Router, private ref: MatDialogRef<AddiconacadComponent>, private buildr: FormBuilder, private dialogRef: MatDialog,
+    private http: HttpClient) {
     this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
     this.selectedOption2 = '';
     this.selectedOption3 = '';
+    this.selectedDepartment = '';
+    this.programAbbreviation= '';
+    this.projectCategory= '';
+    this.programName= '';
+    
   }
 
   onOption1Change() {
@@ -270,7 +288,17 @@ export class AddiconacadComponent implements OnInit{
   
 
   // SWEETALERT UPDATE POPUP
-  updateBox(){
+  addProgram() {
+    const payload = {
+      department: this.selectedDepartment,
+      program: this.programAbbreviation,
+      category: this.projectCategory,
+      full_program: this.programName
+    };
+
+    console.log('Form data:', payload);
+
+    // Display confirmation dialog
     Swal.fire({
       title: "Add Patron",
       text: "Are you sure you want to add this patron?",
@@ -282,17 +310,36 @@ export class AddiconacadComponent implements OnInit{
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Add successful!",
-          text: "The changes have been saved.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        // Send data to backend
+        this['http'].post('http://localhost:8000/add-program', { payload })
+          .subscribe(
+            (response: any) => {
+              console.log('Program added successfully', response);
+              // Show success message to the user
+              Swal.fire({
+                title: "Add successful!",
+                text: "The changes have been saved.",
+                icon: "success",
+                confirmButtonText: 'Close',
+                confirmButtonColor: "#777777",
+              });
+            },
+            (error: any) => {
+              console.error('Error adding program', error);
+              // Show error message to the user
+              Swal.fire({
+                title: "Error",
+                text: "Failed to add program. Please try again later.",
+                icon: "error",
+                confirmButtonText: 'Close',
+                confirmButtonColor: "#777777",
+              });
+            }
+          );
       }
     });
-  }
+
+}
 
   // SWEETALERT ARCHIVE POPUP
   archiveBox(){

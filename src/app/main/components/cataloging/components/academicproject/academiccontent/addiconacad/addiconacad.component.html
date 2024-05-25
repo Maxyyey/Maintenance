@@ -54,31 +54,36 @@
 
                                   <input type="checkbox" id="access3" name="access3" value="CHTM">
                                   <label for="access3">   CHTM</label> -->
-                  <input type="radio" class="radio-button__input" id="radio1" name="radio-group">
-                  <label class="radio-button__label" for="radio1">
-                    <span class="radio-button__custom"></span>
-                    CCS
-                  </label>
-                  <input type="radio" class="radio-button__input" id="radio2" name="radio-group">
-                  <label class="radio-button__label" for="radio2">
-                    <span class="radio-button__custom"></span>
-                    CEAS
-                  </label>
-                  <input type="radio" class="radio-button__input" id="radio3" name="radio-group">
-                  <label class="radio-button__label" for="radio3">
-                    <span class="radio-button__custom"></span>
-                    CAHS
-                  </label>
-                  <input type="radio" class="radio-button__input" id="radio4" name="radio-group">
-                  <label class="radio-button__label" for="radio4">
-                    <span class="radio-button__custom"></span>
-                    CBA
-                  </label>
-                  <input type="radio" class="radio-button__input" id="radio5" name="radio-group">
-                  <label class="radio-button__label" for="radio5">
-                    <span class="radio-button__custom"></span>
-                    CHTM
-                  </label>
+                                  <input type="radio" class="radio-button__input" id="radio1" name="department" [(ngModel)]="selectedDepartment" value="CCS">
+                                  <label class="radio-button__label" for="radio1">
+                                    <span class="radio-button__custom"></span>
+                                    CCS
+                                  </label>
+                                  
+                                  <input type="radio" class="radio-button__input" id="radio2" name="department" [(ngModel)]="selectedDepartment" value="CEAS">
+                                  <label class="radio-button__label" for="radio2">
+                                    <span class="radio-button__custom"></span>
+                                    CEAS
+                                  </label>
+                                  
+                                  <input type="radio" class="radio-button__input" id="radio3" name="department" [(ngModel)]="selectedDepartment" value="CAHS">
+                                  <label class="radio-button__label" for="radio3">
+                                    <span class="radio-button__custom"></span>
+                                    CAHS
+                                  </label>
+                                  
+                                  <input type="radio" class="radio-button__input" id="radio4" name="department" [(ngModel)]="selectedDepartment" value="CBA">
+                                  <label class="radio-button__label" for="radio4">
+                                    <span class="radio-button__custom"></span>
+                                    CBA
+                                  </label>
+                                  
+                                  <input type="radio" class="radio-button__input" id="radio5" name="department" [(ngModel)]="selectedDepartment" value="CHTM">
+                                  <label class="radio-button__label" for="radio5">
+                                    <span class="radio-button__custom"></span>
+                                    CHTM
+                                  </label>
+                                  
                 </div>
               </div>
               <div class="txtheader2">
@@ -87,19 +92,19 @@
               </div>
               <div class="container2">
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" required>
+                  <input class="inputtxt" type="text" [(ngModel)]="programAbbreviation" [ngModelOptions]="{ standalone: true }" required>
                   <span></span>
                   <div class="labelline">Program Abbreviation</div>
                 </div>
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" required>
+                  <input class="inputtxt" type="text" [(ngModel)]="projectCategory" [ngModelOptions]="{ standalone: true }" required>
                   <span></span>
                   <div class="labelline">Project Category</div>
                 </div>
                 <div class="txt_field2">
-                  <input class="inputtxt2" type="text" required>
+                  <input class="inputtxt2" type="text" [(ngModel)]="programName" [ngModelOptions]="{ standalone: true }" required>
                   <span></span>
-                  <div class="labelline2">Program </div>
+                  <div class="labelline2">Program</div>
                 </div>
               </div>
               <!--   <div class="txt_field">
@@ -137,7 +142,7 @@
           <div class="button-container">
 
             <button (click)="closepopup()" class="cancel-btn">Cancel</button>
-            <button class="update-btn" (click)="updateBox()"> Add </button>
+            <button class="update-btn" (click)="addProgram()"> Add </button>
 
 
           </div>
