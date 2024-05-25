@@ -47,32 +47,29 @@ export class AddiconComponent {
   createLocation() {
     this.catalogingService.createLocations(this.form).subscribe(
       response => {
-        if(response.hasOwnProperty('success')) {
-          this.ref.close('Closed using function');
-          Swal.fire({
-            title: "Add successful!",
-            text: "The changes have been saved.",
-            icon: "success",
-            confirmButtonText: 'Close',
-            confirmButtonColor: "#777777",
-          });
-        }
-        else {
-          Swal.fire({
-            title: "Error!",
-            text: "Invalid input!",
-            icon: "error",
-          });
-        }
+        console.log(response)
+        this.ref.close(response);
+        Swal.fire({
+          title: "Add successful!",
+          text: "The changes have been saved.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
       },
       error => {
         console.error(error)
+        Swal.fire({
+          title: "Error!",
+          text: "Invalid input!",
+          icon: "error",
+        });
       }
     )
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close();
   }
 
   // SWEETALERT UPDATE POPUP
@@ -93,31 +90,6 @@ export class AddiconComponent {
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
-    Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
-      }
-    });
-  }
-
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
@@ -131,7 +103,7 @@ export class AddiconComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.closepopup()
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

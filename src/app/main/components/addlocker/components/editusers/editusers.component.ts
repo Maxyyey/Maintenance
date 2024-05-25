@@ -112,7 +112,7 @@ export class EditUsersComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close();
+          this.ref.close(null);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

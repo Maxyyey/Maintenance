@@ -62,15 +62,16 @@ export class AddLockerComponent implements OnInit {
   }
 
   onHistoryBtnClick() {
-    this.lockerService.getLockers().subscribe(
-      (response) => {
-        this.lockers = response;
+    this.lockerService.getHistory().subscribe(
+      result => {
+        this.dialogRef.open(HistoryComponent, {
+          data: result
+        })
       },
-      (error) => {
-        console.error('Error retrieving lockers:', error);
-        // Handle error here
+      error => {
+        console.log(error)
       }
-    );
+    )
   }
 
   onAddNewBtnClick() {
@@ -81,7 +82,7 @@ export class AddLockerComponent implements OnInit {
         });
         modal.afterClosed().subscribe(
           result => {
-            if(result.success) {
+            if(result != null) {
               result.success.forEach((locker: any) => {
                 this.lockers.push(locker)
               });
@@ -102,7 +103,7 @@ export class AddLockerComponent implements OnInit {
         modal.afterClosed().subscribe(
           result => {
             console.log(result)
-            if(result.success) {
+            if(result != null) {
               this.lockers = this.lockers.map(locker => {
                 if (locker.id === result.success.id) {
                     return { ...locker, status: result.success.status };

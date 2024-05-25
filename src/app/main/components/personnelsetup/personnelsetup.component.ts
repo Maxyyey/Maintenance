@@ -28,7 +28,6 @@ export class PersonnelSetupComponent implements OnInit{
           let td = tr[i].getElementsByTagName("td")[0];
           let txtValue = td.textContent || td.innerText;
 
-          
           let td2 = tr[i].getElementsByTagName("td")[1];
           let access = td2.textContent || td2.innerText;
 
@@ -43,7 +42,6 @@ export class PersonnelSetupComponent implements OnInit{
       }
 
     }
-    console.log(value)
   }
 
   async ngOnInit(): Promise<void> {

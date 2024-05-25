@@ -8,9 +8,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrl: './history.component.scss',
 })
 export class HistoryComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<HistoryComponent>) {
-
+  lockerLogs: any[] = []
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any, 
+    private ref: MatDialogRef<HistoryComponent>) {
   }
+
+  ngOnInit() {
+    this.lockerLogs = this.data
+    console.log(this.lockerLogs)
+  }
+
   closepopup() {
     this.ref.close('Closed using function');
   }
