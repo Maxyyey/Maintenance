@@ -18,6 +18,7 @@ export class CirculationComponent implements OnInit{
 
   ngOnInit() { 
     this.getPatrons()
+    console.log(this.patrons)
   }
 
   getPatrons() {
