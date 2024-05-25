@@ -7,6 +7,7 @@ import { ViewCbaComponent } from './cba/viewcba.component';
 import { ViewChtmComponent } from './chtm/viewchtm.component';
 import { ViewCahsComponent } from './cahs/viewcahs.component';
 import { ViewCeasComponent } from './ceas/viewceas.component';
+import { AddPopupComponent } from './addpopup/addpopup.component';
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
@@ -18,7 +19,10 @@ export class AcademiccontentComponent implements OnInit {
   ngOnInit(): void {
     // Initialize component properties or fetch data here
   }
+  onAddCollegeClick() {
+    this.dialogRef.open(AddPopupComponent, {});
 
+  }
   onAddNewBtnClick(){
     this.dialogRef.open(AddiconacadComponent, {});
   }

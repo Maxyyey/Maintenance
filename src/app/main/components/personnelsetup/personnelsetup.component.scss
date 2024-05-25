@@ -124,3 +124,41 @@ th {
     border-radius: 3px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+
+    button {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        background-color: #31A463;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        margin: 0 5px;
+        border-radius: 4px;
+        outline: none;
+        color: white;
+
+        &:hover {
+            background-color: #298f55;
+            color: #fff;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+
+    span {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        color: #333;
+        margin: 0 5px;
+        border-radius: 4px;
+    }
+}

@@ -12,14 +12,38 @@ import Swal from 'sweetalert2';
 })
 export class InventoryComponent implements OnInit {
   inventories: any = [];
+  currentPage = 1;
+  itemsPerPage = 10;
 
   constructor(
     private dialogRef: MatDialog,
     private inventoryService: InventoryService
   ) {}
 
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
     this.getInventories();
+    this.inventories = await this.inventoryService.getInventories();
+  }
+  get totalPages(): number {
+    return Math.ceil(this.inventories.users.length / this.itemsPerPage);
+  }
+
+  paginatedInventories(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.inventories.users.slice(startIndex, endIndex);
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
   }
 
   getInventories() {

@@ -5,7 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AddPopupComponent } from './addpopup/addpopup.component';
+
 
 
 import Swal from 'sweetalert2';
@@ -263,17 +263,17 @@ export class AddiconacadComponent implements OnInit{
   closepopup() {
     this.ref.close('Closed using function');
   }
-  onAddBtnClick() {
-    this.dialogRef.open(AddPopupComponent, {});
-    this.ref.close('Closed using function');
-  }
+  // onAddBtnClick() {
+  //   this.dialogRef.open(AddPopupComponent, {});
+  //   this.ref.close('Closed using function');
+  // }
   
 
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Add Patron",
-      text: "Are you sure you want to add this patron?",
+      title: "Add Program",
+      text: "Are you sure you want to add this program?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -284,7 +284,7 @@ export class AddiconacadComponent implements OnInit{
       if (result.isConfirmed) {
         this.ref.close('Closed using function');
         Swal.fire({
-          title: "Add successful!",
+          title: "Program Added!",
           text: "The changes have been saved.",
           icon: "success",
           confirmButtonText: 'Close',
