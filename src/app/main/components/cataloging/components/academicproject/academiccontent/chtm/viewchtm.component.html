@@ -4,26 +4,26 @@
       <div class="details-content">
         <!-- HEADER - TITLE -->
         <div class="detailsheader">
-          <h1>Add College</h1>
+          <h1>College of Hospitality and Tourism Management</h1>
+          <button class="exit-button" (click)="closepopup()"> &times; </button>
         </div>
+        
         <!-- BODY - DETAILS -->
         <div class="detailsbody">
           <div class="details">
             <div class="detailscontent1">
               <img [src]="'/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-              <p style="position: center;">College of Hospitality and Tourism Management</p>
-            </div>
-            <div id="course">
+            
+              <div class="contentdetails">
               <div *ngFor="let program of programs">
                 <p>{{ program }}</p>
               </div>
+              </div>
             </div>
           </div>
-          <div class="button-container">
-            <button (click)="closepopup()" class="cancel-btn">Close</button>
-          </div>
+        </div>
         </div>
       </div>
     </div>
-  </div>
+  
 </main>
