@@ -1,12 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
-
+import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 
 interface MyOption {
@@ -20,11 +21,15 @@ interface MyOption {
   standalone: true,
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   
 })
 export class AddPopupComponent {
+
+  collegeForm: FormGroup;
+  formData: FormData = new FormData();
 
   options1 = [
     { value: 'Admin/Staff', label: 'Admin/Staff' },
@@ -41,10 +46,24 @@ export class AddPopupComponent {
   selectedOption3: string;
   form: any;
 
-  constructor(private router: Router, private ref: MatDialogRef<AddPopupComponent>, private buildr: FormBuilder,) {
+  constructor(private router: Router, 
+    private ref: MatDialogRef<AddPopupComponent>, 
+    private buildr: FormBuilder,
+    private fb: FormBuilder,
+    private http: HttpClient,
+  ) 
+  {
     this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
     this.selectedOption2 = '';
     this.selectedOption3 = '';
+
+    // Initialize collegeForm in the constructor
+    this.collegeForm = this.fb.group({
+      abbreviation: ['', Validators.required],
+      name: ['', Validators.required],
+    });
+
+    
   }
 
   
@@ -265,24 +284,34 @@ export class AddPopupComponent {
 
   // SWEETALERT UPDATE POPUP
   updateBox(){
+    const payload = {
+      department: this.collegeForm.get('abbreviation')?.value,
+      full_department: this.collegeForm.get('name')?.value
+    };
+
+    console.log('Form data:', payload);
+
     Swal.fire({
-      title: "Add College",
-      text: "Are you sure you want to add this College?",
-      icon: "warning",
+      title: 'Add College',
+      text: 'Are you sure you want to add this College?',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'Cancel',
-      confirmButtonColor: "#31A463",
-      cancelButtonColor: "#777777",
+      confirmButtonColor: '#31A463',
+      cancelButtonColor: '#777777',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "College Added!",
-          text: "The changes have been saved.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+        this['http'].post('http://localhost:8000/add-program', { payload }).subscribe(response => {
+          Swal.fire({
+            title: 'College Added!',
+            text: 'The changes have been saved.',
+            icon: 'success',
+            confirmButtonText: 'Close',
+            confirmButtonColor: '#777777',
+          }).then(() => {
+            this.ref.close(true);
+          });
         });
       }
     });
