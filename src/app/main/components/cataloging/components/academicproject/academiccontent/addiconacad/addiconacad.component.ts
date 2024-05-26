@@ -311,7 +311,7 @@ export class AddiconacadComponent implements OnInit{
     }).then((result) => {
       if (result.isConfirmed) {
         // Send data to backend
-        this['http'].post('http://localhost:8000/add-program', { payload })
+        this['http'].post('http://localhost:8000/api/add-program', { payload })
           .subscribe(
             (response: any) => {
               console.log('Program added successfully', response);
