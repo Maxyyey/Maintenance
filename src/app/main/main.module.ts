@@ -12,6 +12,7 @@ import { ScanbarcodeComponent } from './components/inventory/scanbarcode/scanbar
 import { EnterbarcodeComponent } from './components/inventory/enterbarcode/enterbarcode.component';
 import { ClearhistoryComponent } from './components/inventory/clearhistory/clearhistory.component';
 import { HistoryComponent } from './components/addlocker/components/history/history.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +31,8 @@ import { HistoryComponent } from './components/addlocker/components/history/hist
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule,  //di gumagana forms module sa invetory component kaya inimport ko siya dito, gumagana naman siya pag ganto
   ]
 })
 export class MainModule { }

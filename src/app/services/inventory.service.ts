@@ -12,4 +12,20 @@ export class InventoryService {
   getInventories(){
     return this.http.get<any>(`${apiUrl}/inventory`)
   }
+
+  getBookInventories(filter: string = 'available'){
+    return this.http.get<any>(`${apiUrl}/inventory/books/${filter}`)
+  }
+
+  searchBookInventories(filter: string = 'available', search: string){
+    return this.http.get<any>(`${apiUrl}/inventory/books/search/${filter}?search=${search}`)
+  }
+
+  updateBookInventoryStatus(forms: any, id:number) {
+    return this.http.post<any>(`${apiUrl}/inventory/books/${id}`, forms)
+  }
+
+  clearBookInventoryStatus() {
+    return this.http.get<any>(`${apiUrl}/inventory/books/clear`)
+  }
 }

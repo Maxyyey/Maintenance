@@ -8,30 +8,34 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss']
+  styleUrls: ['./inventory.component.scss'],
 })
 export class InventoryComponent implements OnInit {
   inventories: any = [];
+  filter: string = 'available'
   currentPage = 1;
   itemsPerPage = 10;
+  search: string = ''
+  default: boolean = true; //dont mind this
 
   constructor(
     private dialogRef: MatDialog,
     private inventoryService: InventoryService
   ) {}
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit() {
     this.getInventories();
-    this.inventories = await this.inventoryService.getInventories();
+    // this.inventories = await this.inventoryService.getInventories();
   }
+
   get totalPages(): number {
-    return Math.ceil(this.inventories.users.length / this.itemsPerPage);
+    return Math.ceil(this.inventories.length / this.itemsPerPage);
   }
 
   paginatedInventories(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.inventories.users.slice(startIndex, endIndex);
+    return this.inventories.slice(startIndex, endIndex);
   }
 
   previousPage(): void {
@@ -46,8 +50,79 @@ export class InventoryComponent implements OnInit {
     }
   }
 
+  onSearch(){
+    let search = this.search.trim()
+    this.inventoryService.searchBookInventories(this.filter, search).subscribe(
+      inventories => {
+        this.inventories = inventories
+        this.default = false
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+  checkSearchInput() {
+    if(this.search.trim().length > 0 || this.default) {
+      return
+    }
+    this.default = true
+    this.getInventories()
+  }
+
+  onFilterChange(event: Event) {
+    const element = event.target as HTMLSelectElement;
+    this.filter = element.value;
+    this.getInventories()
+    this.currentPage = 1
+    console.log('changing...')
+  }
+
+  onStatusChange(event: Event, id:number) {
+    const element = event.target as HTMLSelectElement;
+    let form = { status: element.value }
+    
+    this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
+      response => {
+        Swal.fire({
+          title: 'Update Successful',
+          icon: 'success',
+          timer: 3000,
+          timerProgressBar: true,
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          customClass: {
+            popup: 'sweetalert-custom-popup',
+            title: 'sweetalert-custom-title',
+            icon: 'sweetalert-custom-icon-success'
+          },
+          background: '#ffffff',
+        });
+      },
+      error => {
+        Swal.fire({
+          title: 'Something went wrong. please try again later',
+          icon: 'error',
+          timer: 3000,
+          timerProgressBar: true,
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          customClass: {
+            popup: 'sweetalert-custom-popup',
+            title: 'sweetalert-custom-title',
+            icon: 'sweetalert-custom-icon-success'
+          },
+          background: '#ffffff',
+        });
+      }
+    )
+  }
+
   getInventories() {
-    this.inventoryService.getInventories().subscribe(
+    this.inventoryService.getBookInventories(this.filter).subscribe(
       inventories => {
         this.inventories = inventories || [];
         console.log(this.inventories);
@@ -66,6 +141,29 @@ export class InventoryComponent implements OnInit {
     this.dialogRef.open(EnterbarcodeComponent, {});
   }
 
+  clearInventoryStatus() {
+    this.inventoryService.clearBookInventoryStatus().subscribe(
+      result => {
+        Swal.fire({
+          title: "Clearing complete!",
+          text: "History has been cleared.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+        this.getInventories()
+      },
+      error => {
+        Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again later",
+          icon: "error",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      }
+    )
+  }
   onClrHistoryBtnClick() {
     Swal.fire({
       title: "Clear History",
@@ -78,13 +176,7 @@ export class InventoryComponent implements OnInit {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Clearing complete!",
-          text: "History has been cleared.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        this.clearInventoryStatus()
       }
     });
 }

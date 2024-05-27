@@ -9,17 +9,18 @@
                     <button class="container-addUserButton1" type="button" (click)="onClrHistoryBtnClick()"> Clear History</button>
                     <!-- <button class="container-addUserButton2" type="button" (click)="onAddNewBtnClick()">Scan Barcode</button> -->
                     <!-- <button class="container-addUserButton3" type="button" (click)="onAddNewBtnClick1()">Scan Barcode</button> -->
-                    <input class="search-bar" type="search" placeholder="Enter Barcode" >  
+                    <input class="search-bar" type="text" placeholder="Enter Barcode" [(ngModel)]="search" (keyup)="checkSearchInput()" (keyup.enter)="onSearch()">  
             </h1>
             
         </div>
         <div class="detailsheader">
             <div class="txt_field">
-                <select class="inputtxt" id="language" name="language" required>
+                <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
                     <!-- <option value="English"> All  </option> -->
-                    <option value="Tagalog"> Available </option>
-                    <option value="Tagalog"> Unavailable </option>
-                    <option value="Tagalog"> Missing </option>
+                    <option value="available"> Available </option>
+                    <option value="unreturned"> Unreturned </option>
+                    <option value="missing"> Missing </option>
+                    <option value="unlabeled"> unlabeled </option>
                 </select>
             
             </div>
@@ -48,23 +49,31 @@
                         <th>Status</th>
                     </tr>
                     </thead>
+                    <!-- *ngIf="paginatedInventories().length > 0; else noItems" -->
                     <tbody>
                         <tr *ngFor="let inventory of paginatedInventories()">
-                            <td>{{inventory.accession_number}}</td>
-                            <td>{{inventory.location}}</td>
+                            <td>{{inventory.call_number}}</td>
+                            <td>{{inventory.location.location}}</td>
                             <td>{{inventory.title}}</td>
-                            <td>{{inventory.author}}</td>
+                            <td>
+                                <div *ngFor="let author of inventory.authors; let last = last">
+                                    <p>{{ author }} <span *ngIf="!last">,</span></p>
+                                </div>
                             <td>
                                 <div class="dropdown">
-                                    <select class="inputtxt" id="language" name="language" required>
-                                        <option value="ccs">Available</option>
-                                        <option value="ccs">Unavailable</option>
-                                        <option value="cba">Missing</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                                    <select class="inputtxt"  value="{{inventory.status}}" (change)="onStatusChange($event, inventory.id)"required>
+                                        <option value="available"> Available </option>
+                                        <option value="unreturned"> Unreturned </option>
+                                        <option value="missing"> Missing </option>
+                                        <option value="unlabeled"> unlabeled </option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                <!-- <ng-template #noItems>
+                    <tbody>ala nga</tbody>
+                </ng-template> -->
             </table>
              <div class="pagination">
         <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
