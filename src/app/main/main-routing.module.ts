@@ -9,7 +9,7 @@ import { AnnouncementComponent } from './components/announcement/announcement.co
 import { InventoryComponent } from './components/inventory/inventory.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'addlocker', pathMatch: 'full' },
+  { path: '', redirectTo: 'personnelsetup', pathMatch: 'full' },
   { path: 'addlocker', component: AddLockerComponent, 
  
   },

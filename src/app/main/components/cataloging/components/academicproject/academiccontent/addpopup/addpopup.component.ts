@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -23,14 +24,11 @@ interface MyOption {
   imports: [
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    HttpClientModule
   ],
   
 })
 export class AddPopupComponent {
-
-  collegeForm: FormGroup;
-  formData: FormData = new FormData();
 
   options1 = [
     { value: 'Admin/Staff', label: 'Admin/Staff' },
@@ -47,6 +45,9 @@ export class AddPopupComponent {
   selectedOption3: string;
   form: any;
 
+  department: string;
+  full_department: string;
+
   constructor(private router: Router, 
     private ref: MatDialogRef<AddPopupComponent>, 
     private builder: FormBuilder,
@@ -57,6 +58,8 @@ export class AddPopupComponent {
     this.selectedOption1 = ''; // Initialize selectedOption1 in the constructor
     this.selectedOption2 = '';
     this.selectedOption3 = '';
+    this.department = '';
+    this.full_department = '';
 
     // Initialize collegeForm in the constructor
     this.collegeForm = this.fb.group({

@@ -1,13 +1,14 @@
 <main>
     <div class="container">
         <div class="content">
-          <div class="details-content">
-            <!-- HEADER - TITLE -->
-            <div class="detailsheader">
-                <h1></h1>
-            </div>
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1></h1>
+                </div>
                 <!-- BODY - DETAILS -->
                 <div class="detailsbody">
+<<<<<<< HEAD
                   <div class="details">
                     <div class="txtheader2">
                       <h2>ADD COLLEGE</h2>
@@ -73,11 +74,41 @@
                         </form>
                       </div> 
                             
+=======
+                    <div class="details">
+                        <div class="txtheader2">
+                            <h2>ADD COLLEGE</h2>
+                            <hr>
+>>>>>>> b2ac13ee0d0f0ba6e3b8a4cb9319115a7e42ce5e
                         </div>
+                        <form>
+                            <div class="txt_field">
+                                <input class="inputtxt" type="text" [(ngModel)]="department" name="collegeAbbreviation" required>
+                                <span></span>
+                                <div class="labelline">College Abbreviation</div>
                             </div>
+<<<<<<< HEAD
                           
                           </div>
                       </div>
                     
                   
   </main>
+=======
+                            <div class="txt_field1">
+                                <input class="inputtxt" type="text" [(ngModel)]="full_department" name="collegeName" required>
+                                <span></span>
+                                <div class="labelline">Name of College</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="button-container">
+                        <button (click)="closepopup()" class="cancel-btn">Cancel</button>
+                        <button class="update-btn" (click)="updateBox()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+>>>>>>> b2ac13ee0d0f0ba6e3b8a4cb9319115a7e42ce5e
