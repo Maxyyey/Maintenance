@@ -47,8 +47,8 @@ export class MainComponent {
       },
       error => {
         console.log(error)
-        // sessionStorage.clear()
-        // this.router.navigate(['/login'])
+        sessionStorage.clear()
+        this.router.navigate(['/login'])
       }
     )
   }
