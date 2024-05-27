@@ -62,10 +62,10 @@ export class AddPopupComponent {
     this.full_department = '';
 
     // Initialize collegeForm in the constructor
-    this.collegeForm = this.fb.group({
-      department: ['', [Validators.required, Validators.maxLength(10)]],
-      full_department: ['', [Validators.required, Validators.maxLength(255)]]
-    });
+    // this.collegeForm = this.fb.group({
+    //   department: ['', [Validators.required, Validators.maxLength(10)]],
+    //   full_department: ['', [Validators.required, Validators.maxLength(255)]]
+    // });
 
     
   }
@@ -320,8 +320,8 @@ export class AddPopupComponent {
   // }
   updateBox() {
     const payload = {
-      department: this.collegeForm.get('department')?.value,
-      full_department: this.collegeForm.get('full_department')?.value
+      // department: this.collegeForm.get('department')?.value,
+      // full_department: this.collegeForm.get('full_department')?.value
     };
 
     console.log('Form data:', payload);
