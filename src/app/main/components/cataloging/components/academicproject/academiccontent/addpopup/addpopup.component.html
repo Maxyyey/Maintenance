@@ -1,82 +1,37 @@
 <main>
     <div class="container">
         <div class="content">
-          <div class="details-content">
-            <!-- HEADER - TITLE -->
-            <div class="detailsheader">
-                <h1></h1>
-            </div>
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1></h1>
+                </div>
                 <!-- BODY - DETAILS -->
                 <div class="detailsbody">
-                  <div class="details">
-                    <div class="txtheader2">
-                      <h2>ADD COLLEGE</h2>
-                      <hr>
-                     </div> 
-                     <form [formGroup]="collegeForm" (ngSubmit)="updateBox()">
-                      <div class="txt_field">
-                        <input formControlName="abbreviation" class="inputtxt" type="text" required>
-                        <span></span>
-                        <div class="labelline">College Abbreviation</div>
-                      </div>
-                      <!-- Removed image upload field -->
-                      <div class="txt_field1">
-                        <input formControlName="name" class="inputtxt" type="text" required>
-                        <span></span>
-                        <div class="labelline">Name of College</div>
-                      </div>
-                    
-                           <!--   <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 2</div>
-                              </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                             <div class="labelline">Course 3</div>
-                              </div> -->
-
-                            
-                          </form>
-                        </div> 
-                        <!--     <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 5</div>
-                              </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 6</div>
-                              </div> 
-                            
-                            
-                                                            <div class="txt_field">
-                                <select class="inputtxt" id="language" name="language" required>
-                                    <option value="English"> Maintenace </option>
-                                    <option value="Tagalog"> Locker </option>
-                                    <option value="Tagalog"> Cataloging </option>
-                                    <option value="Tagalog"> Circulation </option>
-                                </select>
-                                <span></span>
-                                <label class="labelline" for="language"> Access </label>
-                            </div>-->
-                            
-                       
-                        
-
-                        <div class="button-container">
-                         
-                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                          <button class="update-btn" (click)="updateBox()"> Add </button>
-                            
-                            
+                    <div class="details">
+                        <div class="txtheader2">
+                            <h2>ADD COLLEGE</h2>
+                            <hr>
                         </div>
+                        <form>
+                            <div class="txt_field">
+                                <input class="inputtxt" type="text" [(ngModel)]="department" name="collegeAbbreviation" required>
+                                <span></span>
+                                <div class="labelline">College Abbreviation</div>
                             </div>
-                          
-                          </div>
-                      </div>
+                            <div class="txt_field1">
+                                <input class="inputtxt" type="text" [(ngModel)]="full_department" name="collegeName" required>
+                                <span></span>
+                                <div class="labelline">Name of College</div>
+                            </div>
+                        </form>
                     </div>
-                  
-  </main>
+                    <div class="button-container">
+                        <button (click)="closepopup()" class="cancel-btn">Cancel</button>
+                        <button class="update-btn" (click)="updateBox()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

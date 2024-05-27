@@ -16,6 +16,7 @@ export class DataService {
   ) { }
 
   private baseurl:string = 'http://127.0.0.1:8000/api/';
+  //private baseurl:string = 'http://26.68.32.39:8000/api/';
 
   public get(url: string) {
     return this.http.get(this.baseurl+url);

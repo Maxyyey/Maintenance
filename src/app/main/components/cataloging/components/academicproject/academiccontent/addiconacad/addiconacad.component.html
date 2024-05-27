@@ -10,83 +10,46 @@
         <div class="detailsbody">
           <div class="details">
             <form>
-              <!--     <div class="txtheader">
-                              <h1>College</h1>
-                             </div> 
-                            <div class="txt_field1">
-                              <input class="inputtxt1" type="text" required>
-                              <span></span>
-                              <div class="labelline1">College</div>
-                            </div> -->
               <div class="txtheader">
                 <h2>SELECT DEPARTMENT</h2>
               </div>
-              <!-- <button class="add-btn" type="button" (click)="onAddBtnClick()"> <i class="fa-solid fa-add"> </i></button> -->
-              
               <hr>
-              <!--  <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 1</div>
-                              </div> 
-  
-                               <div class="txt_field1">
-                                <div class="labelline1">Edit Image</div>
-                                <span></span>
-                                <input type="file" accept=".jpeg, .png, .jpg" name="image_location"> 
-                            </div> -->
               <div class="checkbox-group">
                 <div class="txt_field1">
                   <div class="labelline1"></div>
-                  <!-- <input type="checkbox" id="access" name="access" value="CCS">
-                                  <label for="access">   CCS</label>
-                                
-                                  
-                                  <input type="checkbox" id="access1" name="access1" value="CEAS">
-                                  <label for="access1">   CEAS</label>
-                                
-                                  
-                                  <input type="checkbox" id="access2" name="access2" value="CAHS">
-                                  <label for="access2">   CAHS</label>
-                                  
-                                  
-                                  <input type="checkbox" id="access3" name="access3" value="CBA">
-                                  <label for="access3">   CBA</label>
-
-                                  <input type="checkbox" id="access3" name="access3" value="CHTM">
-                                  <label for="access3">   CHTM</label> -->
-                                  <input type="radio" class="radio-button__input" id="radio1" name="department" [(ngModel)]="selectedDepartment" value="CCS">
-                                  <label class="radio-button__label" for="radio1">
-                                    <span class="radio-button__custom"></span>
-                                    CCS
-                                  </label>
-                                  
-                                  <input type="radio" class="radio-button__input" id="radio2" name="department" [(ngModel)]="selectedDepartment" value="CEAS">
-                                  <label class="radio-button__label" for="radio2">
-                                    <span class="radio-button__custom"></span>
-                                    CEAS
-                                  </label>
-                                  
-                                  <input type="radio" class="radio-button__input" id="radio3" name="department" [(ngModel)]="selectedDepartment" value="CAHS">
-                                  <label class="radio-button__label" for="radio3">
-                                    <span class="radio-button__custom"></span>
-                                    CAHS
-                                  </label>
-                                  
-                                  <input type="radio" class="radio-button__input" id="radio4" name="department" [(ngModel)]="selectedDepartment" value="CBA">
-                                  <label class="radio-button__label" for="radio4">
-                                    <span class="radio-button__custom"></span>
-                                    CBA
-                                  </label>
-                                  
-                                  <input type="radio" class="radio-button__input" id="radio5" name="department" [(ngModel)]="selectedDepartment" value="CHTM">
-                                  <label class="radio-button__label" for="radio5">
-                                    <span class="radio-button__custom"></span>
-                                    CHTM
-                                  </label>
+                    <input type="radio" class="radio-button__input" id="radio1" name="department" [(ngModel)]="selectedDepartment" value="CCS">
+                    <label class="radio-button__label" for="radio1">
+                      <span class="radio-button__custom"></span>
+                      CCS
+                    </label>
+                    
+                    <input type="radio" class="radio-button__input" id="radio2" name="department" [(ngModel)]="selectedDepartment" value="CEAS">
+                    <label class="radio-button__label" for="radio2">
+                      <span class="radio-button__custom"></span>
+                      CEAS
+                    </label>
+                    
+                    <input type="radio" class="radio-button__input" id="radio3" name="department" [(ngModel)]="selectedDepartment" value="CAHS">
+                    <label class="radio-button__label" for="radio3">
+                      <span class="radio-button__custom"></span>
+                      CAHS
+                    </label>
+                    
+                    <input type="radio" class="radio-button__input" id="radio4" name="department" [(ngModel)]="selectedDepartment" value="CBA">
+                    <label class="radio-button__label" for="radio4">
+                      <span class="radio-button__custom"></span>
+                      CBA
+                    </label>
+                    
+                    <input type="radio" class="radio-button__input" id="radio5" name="department" [(ngModel)]="selectedDepartment" value="CHTM">
+                    <label class="radio-button__label" for="radio5">
+                      <span class="radio-button__custom"></span>
+                      CHTM
+                    </label>
                                   
                 </div>
               </div>
+
               <div class="txtheader2">
                 <hr>
                 <h2>ADD PROGRAM</h2>
@@ -108,38 +71,8 @@
                   <div class="labelline2">Program</div>
                 </div>
               </div>
-              <!--   <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 2</div>
-                              </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                             <div class="labelline">Course 3</div>
-                              </div> -->
             </form>
           </div>
-          <!--     <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 5</div>
-                              </div>
-                              <div class="txt_field">
-                                <input class="inputtxt" type="text" required>
-                                <span></span>
-                                <div class="labelline">Course 6</div>
-                              </div> 
-                         <div class="txt_field">
-                                <select class="inputtxt" id="language" name="language" required>
-                                    <option value="English"> Maintenace </option>
-                                    <option value="Tagalog"> Locker </option>
-                                    <option value="Tagalog"> Cataloging </option>
-                                    <option value="Tagalog"> Circulation </option>
-                                </select>
-                                <span></span>
-                                <label class="labelline" for="language"> Access </label>
-                            </div>-->
           <div class="button-container">
 
             <button (click)="closepopup()" class="cancel-btn">Cancel</button>
