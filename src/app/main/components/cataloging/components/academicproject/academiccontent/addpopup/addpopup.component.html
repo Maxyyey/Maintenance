@@ -15,13 +15,13 @@
                      </div> 
                      <form [formGroup]="collegeForm" (ngSubmit)="updateBox()">
                       <div class="txt_field">
-                        <input formControlName="abbreviation" class="inputtxt" type="text" required>
+                        <input formControlName="department" class="inputtxt" type="text" required>
                         <span></span>
                         <div class="labelline">College Abbreviation</div>
                       </div>
                       <!-- Removed image upload field -->
                       <div class="txt_field1">
-                        <input formControlName="name" class="inputtxt" type="text" required>
+                        <input formControlName="full_department" class="inputtxt" type="text" required>
                         <span></span>
                         <div class="labelline">Name of College</div>
                       </div>
@@ -38,8 +38,7 @@
                               </div> -->
 
                             
-                          </form>
-                        </div> 
+                       
                         <!--     <div class="txt_field">
                                 <input class="inputtxt" type="text" required>
                                 <span></span>
@@ -62,7 +61,7 @@
                                 <span></span>
                                 <label class="labelline" for="language"> Access </label>
                             </div>-->
-                            
+                             
                        
                         
 
@@ -70,13 +69,15 @@
                          
                           <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
                           <button class="update-btn" (click)="updateBox()"> Add </button>
-                            
+                          </div>
+                        </form>
+                      </div> 
                             
                         </div>
                             </div>
                           
                           </div>
                       </div>
-                    </div>
+                    
                   
   </main>
