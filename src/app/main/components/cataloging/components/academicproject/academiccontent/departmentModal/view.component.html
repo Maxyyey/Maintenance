@@ -4,7 +4,7 @@
       <div class="details-content">
         <!-- HEADER - TITLE -->
         <div class="detailsheader">
-          <h1>College of Education, Arts and Sciences</h1>
+          <h1>{{ department.full_department }}</h1>
           <button class="exit-button" (click)="closepopup()"> &times; </button>
         </div>
         <!-- BODY - DETAILS -->
@@ -13,15 +13,13 @@
             <div class="detailscontent1">
               <img [src]="'/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
               <div class="contentdetails">
-          
-           
-              <div *ngFor="let program of programs">
-                <p>{{ program }}</p>
-              </div>
+                <!-- Use *ngFor to iterate over the programs array and display each program -->
+                <div *ngFor="let program of department.programs">
+                  <p>{{ program.full_program }}</p>
+                </div>
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

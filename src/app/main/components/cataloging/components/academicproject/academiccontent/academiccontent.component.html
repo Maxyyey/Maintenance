@@ -9,46 +9,11 @@
 
 
 <div class="card-container">
-    <div class="card" (click)="onViewBtnClick()"> 
+    <div class="card" *ngFor="let department of departments" (click)="openDepartment(department.id)"> 
         <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image" >
         <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        
-        <h1>College of Computer Studies </h1>
-        
-                            
-    </div>  
-    <div class="card" (click)="onViewCbaBtnClick()"> 
-        <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-        <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        
-        <h1>College of Business and Accountancy</h1>
-       
+        <h1>{{ department.full_department }}</h1>                  
     </div> 
-    <div class="card" (click)="onViewChtmBtnClick()"> 
-        <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-        <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        
-        <h1>College of Hospitality and Tourism Management </h1>
-        
-                            
-    </div> 
-    <div class="card" (click)="onViewCahsBtnClick()"> 
-        <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-        <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        
-        <h1>College of Allied Health Studies</h1>
-        
-                            
-    </div> 
-    <div class="card" (click)="onViewCeasBtnClick()"> 
-        <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
-        <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        
-        <h2>College of Education, Arts and Sciences</h2>
-        
-                            
-    </div> 
-    
 </div>  
 
 

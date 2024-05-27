@@ -2,46 +2,59 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddiconacadComponent } from './addiconacad/addiconacad.component';
-import { ViewComponent } from './viewccs/view.component';
-import { ViewCbaComponent } from './cba/viewcba.component';
-import { ViewChtmComponent } from './chtm/viewchtm.component';
-import { ViewCahsComponent } from './cahs/viewcahs.component';
-import { ViewCeasComponent } from './ceas/viewceas.component';
+import { ViewComponent } from './departmentModal/view.component';
 import { AddPopupComponent } from './addpopup/addpopup.component';
+import { CatalogingService } from '@app/services/cataloging.service';
+import { error } from 'console';
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
   styleUrl: './academiccontent.component.scss',
 })
 export class AcademiccontentComponent implements OnInit {
-  constructor(private dialogRef: MatDialog) { }
+  departments: any[] = []
 
-  ngOnInit(): void {
-    // Initialize component properties or fetch data here
+  constructor(
+    private dialogRef: MatDialog, 
+    private catalogingService: CatalogingService) { }
+
+  ngOnInit(){
+    this.getDepartments()
   }
+
+  getDepartments() {
+    this.catalogingService.getDepartments().subscribe(
+      departments => {
+        this.departments = departments
+        console.log(this.departments)
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
   onAddCollegeClick() {
     this.dialogRef.open(AddPopupComponent, {});
 
   }
+
   onAddNewBtnClick(){
     this.dialogRef.open(AddiconacadComponent, {});
   }
 
-  onViewBtnClick(){
-    this.dialogRef.open(ViewComponent, {});
-  }
-
-  onViewCbaBtnClick(){
-    this.dialogRef.open(ViewCbaComponent, {});
-  }
-  onViewChtmBtnClick(){
-    this.dialogRef.open(ViewChtmComponent, {});
-  }
-  onViewCahsBtnClick(){
-    this.dialogRef.open(ViewCahsComponent, {});
-  }
-  onViewCeasBtnClick(){
-    this.dialogRef.open(ViewCeasComponent, {});
+  openDepartment(id: number){
+    console.log(id)
+    this.catalogingService.getPrograms(id).subscribe(
+      department => {
+        this.dialogRef.open(ViewComponent, {
+          data: department
+        })
+      },
+      error => {
+        console.error(error)
+      }
+    )
   }
 
 

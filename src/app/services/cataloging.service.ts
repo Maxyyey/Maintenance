@@ -18,4 +18,12 @@ export class CatalogingService {
   public createLocations(data: any) {
     return this.http.post(`${apiUrl}/locations`, data)
   }
+
+  getDepartments() {
+    return this.http.get<any>(`${apiUrl}/departments`)
+  }
+
+  getPrograms(id: number) {
+    return this.http.get<any>(`http://localhost:8000/api/view/${id}`)
+  }
 }
