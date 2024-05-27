@@ -35,12 +35,27 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   onAddCollegeClick() {
-    this.dialogRef.open(AddPopupComponent, {});
-
+    let modal = this.dialogRef.open(AddPopupComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        if(result) {
+          this.departments.push(result.department)
+        }
+      }
+    )
   }
 
   onAddNewBtnClick(){
-    this.dialogRef.open(AddiconacadComponent, {});
+    this.catalogingService.getDepartments().subscribe(
+      departments => {  //temporary lang angbagal neto
+        this.dialogRef.open(AddiconacadComponent, {
+          data: departments
+        });
+      },
+      error => {
+        console.error(error)
+      }
+    )
   }
 
   openDepartment(id: number){

@@ -23,7 +23,15 @@ export class CatalogingService {
     return this.http.get<any>(`${apiUrl}/departments`)
   }
 
+  addDepartments(payload: any) {
+    return this.http.post(`${apiUrl}/add-department`, payload)
+  }
+
+  addPrograms(form:any){
+    return this.http.post(`${apiUrl}/add-program`, form)
+  }
+
   getPrograms(id: number) {
-    return this.http.get<any>(`http://localhost:8000/api/view/${id}`)
+    return this.http.get<any>(`${apiUrl}/view/${id}`)
   }
 }

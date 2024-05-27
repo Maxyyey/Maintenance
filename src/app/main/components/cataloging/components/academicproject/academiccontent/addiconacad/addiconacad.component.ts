@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import Swal from 'sweetalert2';
+import { CatalogingService } from '@app/services/cataloging.service';
 
 interface MyOption {
   value: string;
@@ -30,13 +31,17 @@ interface MyOption {
   
 })
 export class AddiconacadComponent implements OnInit{
+  departments: any[] = []
+
   selectedDepartment: string;
   programAbbreviation: string;
   projectCategory: string;
   programName: string;
 
-  constructor(private router: Router, private ref: MatDialogRef<AddiconacadComponent>, private buildr: FormBuilder, private dialogRef: MatDialog,
-    private http: HttpClient) {
+  constructor(
+    private ref: MatDialogRef<AddiconacadComponent>,
+    private catalogingService: CatalogingService, 
+    @Inject(MAT_DIALOG_DATA) public data: any,) {
     this.selectedDepartment = '';
     this.programAbbreviation= '';
     this.projectCategory= '';
@@ -45,23 +50,62 @@ export class AddiconacadComponent implements OnInit{
   }
 
   ngOnInit() {
+    console.log(this.data)
+    this.departments = this.data
   }
+
 
   closepopup() {
     this.ref.close('Closed using function');
   }
 
   addProgram() {
-    const payload = {
-      department: this.selectedDepartment,
+    const form = {
+      department_id: this.selectedDepartment,
       program: this.programAbbreviation,
       category: this.projectCategory,
       full_program: this.programName
     };
 
-    console.log('Form data:', payload);
+    console.log('Form data:', form);
+    
+    this.catalogingService.addPrograms(form).subscribe(
+      (response: any) => {
+        this.closepopup()
+        console.log('Program added successfully', response);
+        Swal.fire({
+          title: "Add successful!",
+          text: "The changes have been saved.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      },
+      (error: any) => {
+        console.error('Error adding program', error);
+        if(error.status === 400) {
+          Swal.fire({
+            title: "Error!",
+            text: "Invalid input.",
+            icon: "error",
+            confirmButtonText: 'Close',
+            confirmButtonColor: "#777777",
+          });
+        }
+        else {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to add program. Please try again later.",
+            icon: "error",
+            confirmButtonText: 'Close',
+            confirmButtonColor: "#777777",
+          });
+        }
+      }
+    );
 
-    // Display confirmation dialog
+  }
+  addBox() {
     Swal.fire({
       title: "Add Program",
       text: "Are you sure you want to add this program?",
@@ -73,33 +117,7 @@ export class AddiconacadComponent implements OnInit{
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Send data to backend
-        this['http'].post('http://localhost:8000/api/add-program', { payload })
-          .subscribe(
-            (response: any) => {
-              this.closepopup()
-              console.log('Program added successfully', response);
-              // Show success message to the user
-              Swal.fire({
-                title: "Add successful!",
-                text: "The changes have been saved.",
-                icon: "success",
-                confirmButtonText: 'Close',
-                confirmButtonColor: "#777777",
-              });
-            },
-            (error: any) => {
-              console.error('Error adding program', error);
-              // Show error message to the user
-              Swal.fire({
-                title: "Error",
-                text: "Failed to add program. Please try again later.",
-                icon: "error",
-                confirmButtonText: 'Close',
-                confirmButtonColor: "#777777",
-              });
-            }
-          );
+        this.addProgram()
       }
     });
 
@@ -133,7 +151,7 @@ export class AddiconacadComponent implements OnInit{
           });
           Toast.fire({
             icon: "error",
-            title: "Changes not saved."
+            title: "Adding cancelled."
           });
       }
     });

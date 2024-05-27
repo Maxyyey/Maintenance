@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { CatalogingService } from '@app/services/cataloging.service';
 
 interface MyOption {
   value: string;
@@ -31,21 +32,56 @@ export class AddPopupComponent {
 
   constructor(
     private ref: MatDialogRef<AddPopupComponent>, 
-    private http: HttpClient,
+    private catalogingService: CatalogingService
   ) 
   {
     this.department = '';
     this.full_department = '';
   }
 
-  updateBox() {
+  addDepartment() {
     const payload = {
       department: this.department,
       full_department: this.full_department
     };
-
     console.log('Form data:', payload);
+    
+    this.catalogingService.addDepartments(payload).subscribe(
+      response => {
+        Swal.fire({
+          title: 'College Added!',
+          text: 'The changes have been saved.',
+          icon: 'success',
+          confirmButtonText: 'Close',
+          confirmButtonColor: '#777777',
+        }).then(() => {
+          this.ref.close(response);
+        });
+    }, error => {
+      console.error('Error adding college:', error);
+      if(error.status === 400) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Invalid input.',
+          icon: 'error',
+          confirmButtonText: 'Close',
+          confirmButtonColor: '#777777',
+        });
+      }
+      else {
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was an error adding the college.',
+          icon: 'error',
+          confirmButtonText: 'Close',
+          confirmButtonColor: '#777777',
+        });
+      }
+    });
 
+  }
+
+  updateBox() {
     Swal.fire({
       title: 'Add College',
       text: 'Are you sure you want to add this College?',
@@ -57,34 +93,13 @@ export class AddPopupComponent {
       cancelButtonColor: '#777777',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.http.post('http://localhost:8000/api/add-department', payload).subscribe(response => {
-          Swal.fire({
-            title: 'College Added!',
-            text: 'The changes have been saved.',
-            icon: 'success',
-            confirmButtonText: 'Close',
-            confirmButtonColor: '#777777',
-          }).then(() => {
-            // Assuming you have some method to close the popup
-            this.closepopup();
-          });
-        }, error => {
-          // Handle error here
-          console.error('Error adding college:', error);
-          Swal.fire({
-            title: 'Error!',
-            text: 'There was an error adding the college.',
-            icon: 'error',
-            confirmButtonText: 'Close',
-            confirmButtonColor: '#777777',
-          });
-        });
+        this.addDepartment()
       }
     });
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close(null);
   }
 
   // CANCEL EDITING POPUP
@@ -100,7 +115,7 @@ export class AddPopupComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.closepopup()
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
