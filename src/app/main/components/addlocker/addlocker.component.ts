@@ -106,6 +106,7 @@ export class AddLockerComponent implements OnInit {
       },
       error => {
         console.log(error)
+        this.isModalOpen = false
       }
     )
   }
@@ -167,6 +168,7 @@ export class AddLockerComponent implements OnInit {
       },
       error => {
         console.error(error)
+        this.isModalOpen = false
       }
     )
   }

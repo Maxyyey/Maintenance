@@ -26,7 +26,7 @@ interface MyOption {
   
 })
 export class EditUsersComponent {
-  lockerNumber: string = ''
+  locker_number: string = ''
   date: string = ''
   form: {
     status: string,
@@ -47,7 +47,7 @@ export class EditUsersComponent {
   }
 
   ngOnInit() {
-    this.lockerNumber = this.data.lockerNumber
+    this.locker_number = this.data.locker_number
     this.form.status = this.data.status
     this.form.remarks = this.data.remarks
     console.log(this.form.remarks)

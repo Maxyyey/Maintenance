@@ -25,7 +25,8 @@ export class PersonnelSetupComponent implements OnInit {
   getPersonnels() {
     this.personnelService.getPersonnels().subscribe(
       personnels => {
-        this.personnels = personnels
+        this.personnels = personnels.users
+        console.log(personnels)
       },
       error => {
         console.error(error)
@@ -90,7 +91,7 @@ export class PersonnelSetupComponent implements OnInit {
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false
-        
+
         if(result) {
           this.personnels.push(result.success)
         }
