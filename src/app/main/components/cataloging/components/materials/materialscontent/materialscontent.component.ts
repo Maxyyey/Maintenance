@@ -12,6 +12,7 @@ import { error } from 'console';
 })
 export class MaterialscontentComponent implements OnInit{
   locations: any = []
+  isModalOpen: boolean = false
 
   constructor(
     private dialogRef : MatDialog,
@@ -32,9 +33,17 @@ export class MaterialscontentComponent implements OnInit{
     )
   }
   onAddNewBtnClick(){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     let modal = this.dialogRef.open(AddiconComponent, {});
     modal.afterClosed().subscribe(
       result => {
+        this.isModalOpen = false
+        
         if(result) {
           this.locations.unshift(result.success)
         }

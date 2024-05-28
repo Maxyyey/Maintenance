@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class AnnouncementComponent implements OnInit{
   announcements: any[] = []
+  isModalOpen: boolean = false
 
   constructor(
     private dialogRef : MatDialog, 
@@ -25,8 +26,6 @@ export class AnnouncementComponent implements OnInit{
     this.announcementService.getAnnouncements().subscribe(
       announcements => {
           this.announcements = announcements
-          console.log(this.announcements)
-        
       },
       error => {
         console.error(error)
@@ -36,11 +35,18 @@ export class AnnouncementComponent implements OnInit{
 
   
   onAddNewBtnClick(){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     let modal = this.dialogRef.open(AddComponent, {});
 
     modal.afterClosed().subscribe(
       result => {
-        console.log(result)
+        this.isModalOpen = false
+        
         if(result) {
           this.announcements.unshift(result.success)
         }
@@ -49,15 +55,22 @@ export class AnnouncementComponent implements OnInit{
     
   }
   onEditBtnClick(id: number){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.announcementService.getAnnouncement(id).subscribe(
       announcement => {
-        console.log(announcement)
         let modal = this.dialogRef.open(EditAnnouncePopupComponent, {
           data: announcement
         });
 
         modal.afterClosed().subscribe(
           result => {
+            this.isModalOpen = false
+
             if(result) {
               this.announcements = this.announcements.map(
                 announcement => {

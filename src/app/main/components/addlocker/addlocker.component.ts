@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 export class AddLockerComponent implements OnInit {
 
   lockers: any[] = [];
+  isModalOpen: boolean = false
   currentPage = 1;
   itemsPerPage = 10;
 
@@ -86,11 +87,22 @@ export class AddLockerComponent implements OnInit {
   }
 
   onHistoryBtnClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.lockerService.getHistory().subscribe(
       result => {
-        this.dialogRef.open(HistoryComponent, {
+        let modal = this.dialogRef.open(HistoryComponent, {
           data: result
         })
+        modal.afterClosed().subscribe(
+          result => {  
+           this.isModalOpen = false
+          }
+        )
       },
       error => {
         console.log(error)
@@ -99,6 +111,12 @@ export class AddLockerComponent implements OnInit {
   }
 
   onAddNewBtnClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.lockerService.getStartingLockerNumber().subscribe(
       data => {
         let modal = this.dialogRef.open(UserComponent, {
@@ -106,6 +124,8 @@ export class AddLockerComponent implements OnInit {
         });
         modal.afterClosed().subscribe(
           result => {
+            this.isModalOpen = false
+
             if(result != null) {
               result.success.forEach((locker: any) => {
                 this.lockers.push(locker)
@@ -118,15 +138,22 @@ export class AddLockerComponent implements OnInit {
   }
 
   onEditBtnClick(id: number) {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.lockerService.getLocker(id).subscribe(
       data => {
-        console.log(data)
         let modal = this.dialogRef.open(EditUsersComponent, 
           { data: data }
         );
+
         modal.afterClosed().subscribe(
           result => {
-            console.log(result)
+            this.isModalOpen = false
+            //update locker info
             if(result != null) {
               this.lockers = this.lockers.map(locker => {
                 if (locker.id === result.success.id) {

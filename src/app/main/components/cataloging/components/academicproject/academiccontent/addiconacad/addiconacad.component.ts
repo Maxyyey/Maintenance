@@ -127,7 +127,7 @@ export class AddiconacadComponent implements OnInit{
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
+      title: "Are you sure you want to cancel adding program?",
       text: "Your changes will not be saved.",
       icon: "question",
       showCancelButton: true,

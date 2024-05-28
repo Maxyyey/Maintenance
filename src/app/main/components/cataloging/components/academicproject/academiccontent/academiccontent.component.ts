@@ -13,6 +13,7 @@ import { error } from 'console';
 })
 export class AcademiccontentComponent implements OnInit {
   departments: any[] = []
+  isModalOpen: boolean = false
 
   constructor(
     private dialogRef: MatDialog, 
@@ -35,9 +36,17 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   onAddCollegeClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     let modal = this.dialogRef.open(AddPopupComponent, {});
     modal.afterClosed().subscribe(
       result => {
+        this.isModalOpen = false
+
         if(result) {
           this.departments.push(result.department)
         }
@@ -46,11 +55,22 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   onAddNewBtnClick(){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.catalogingService.getDepartments().subscribe(
       departments => {  //temporary lang angbagal neto
-        this.dialogRef.open(AddiconacadComponent, {
+        let modal = this.dialogRef.open(AddiconacadComponent, {
           data: departments
         });
+        modal.afterClosed().subscribe(
+          result => {
+            this.isModalOpen = false
+          }
+        )
       },
       error => {
         console.error(error)
@@ -59,19 +79,27 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   openDepartment(id: number){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+    
     console.log(id)
     this.catalogingService.getPrograms(id).subscribe(
       department => {
-        this.dialogRef.open(ViewComponent, {
+        let modal = this.dialogRef.open(ViewComponent, {
           data: department
         })
+        modal.afterClosed().subscribe(
+          result => {   
+            this.isModalOpen = false
+          }
+        )
       },
       error => {
         console.error(error)
       }
     )
   }
-
-
-  // Other component logic goes here
 }

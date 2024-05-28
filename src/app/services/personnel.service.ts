@@ -9,9 +9,8 @@ export class PersonnelService {
 
   constructor(private http: HttpClient) { }
 
-  async getPersonnels(){
-    const data = await this.http.get(`${apiUrl}/personnels`).toPromise()
-    return data;
+  getPersonnels(){
+    return this.http.get<any>(`${apiUrl}/personnels`)
   }
 
   getPersonnel(id: number){

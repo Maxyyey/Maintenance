@@ -12,6 +12,7 @@ import { response } from 'express';
 })
 export class CirculationComponent implements OnInit{
   patrons: any = []
+  isModalOpen: boolean = false
 
   constructor(
     private dialogRef : MatDialog,
@@ -37,6 +38,12 @@ export class CirculationComponent implements OnInit{
   }
 
   onEditBtnClick(id:number){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.patronService.getPatron(id).subscribe(
       patron => {
         let modal = this.dialogRef.open(EditComponent, {
@@ -45,6 +52,8 @@ export class CirculationComponent implements OnInit{
 
         modal.afterClosed().subscribe(
           response => {
+            this.isModalOpen = false
+
             if(response) {
               this.getPatrons()
               console.log('updating')

@@ -53,11 +53,8 @@ export class AddUserComponent {
       }
   }
 
-  ngOnInit(): void {
-  }
-
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close();
   }
 
   addUser() {
@@ -65,9 +62,8 @@ export class AddUserComponent {
     if(this.form.username.includes('@')) {
       this.personnelService.createPersonnel(this.form).subscribe(
         response => {
-          console.log(response)
-          if(response.message) {
-            this.ref.close('Closed using function');
+          if(response.success) {
+            this.ref.close(response);
             Swal.fire({
               title: "Add successful!",
               text: "The changes have been saved.",
@@ -75,18 +71,15 @@ export class AddUserComponent {
               confirmButtonText: 'Close',
               confirmButtonColor: "#777777",
             });
-            return
-          }
-          else {
-            Swal.fire({
-              title: "error!",
-              text: "Invalid input.",
-              icon: "error",
-            });
           }
         },
         error => {
           console.error(error)
+          Swal.fire({
+            title: "error!",
+            text: "Invalid input.",
+            icon: "error",
+          });
         }
       )
     } else {
@@ -119,35 +112,9 @@ export class AddUserComponent {
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
-    Swal.fire({
-      title: "Archive Project",
-      text: "Are you sure want to archive this project?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
-      }
-    });
-  }
-
-  // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
+      title: "Are you sure you want to cancel adding personnel?",
       text: "Your changes will not be saved.",
       icon: "question",
       showCancelButton: true,
@@ -157,22 +124,22 @@ export class AddUserComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Changes not saved."
-          });
+        this.closepopup()
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Changes not saved."
+        });
       }
     });
   }

@@ -50,8 +50,8 @@ export class AddiconComponent {
         console.log(response)
         this.ref.close(response);
         Swal.fire({
-          title: "Add successful!",
-          text: "The changes have been saved.",
+          title: "Success!",
+          text: "Location has been added.",
           icon: "success",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",
@@ -93,7 +93,7 @@ export class AddiconComponent {
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
+      title: "Are you sure you want to cancel adding location?",
       text: "Your changes will not be saved.",
       icon: "question",
       showCancelButton: true,

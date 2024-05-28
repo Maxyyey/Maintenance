@@ -14,21 +14,33 @@ export class PersonnelSetupComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
   personnels: any = [];
+  isModalOpen: boolean = false
 
   constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) { }
 
-  async ngOnInit(): Promise<void> {
-    this.personnels = await this.personnelService.getPersonnels();
+  ngOnInit() {
+    this.getPersonnels()
+  }
+
+  getPersonnels() {
+    this.personnelService.getPersonnels().subscribe(
+      personnels => {
+        this.personnels = personnels
+      },
+      error => {
+        console.error(error)
+      }
+    )
   }
 
   get totalPages(): number {
-    return Math.ceil(this.personnels.users.length / this.itemsPerPage);
+    return Math.ceil(this.personnels.length / this.itemsPerPage);
   }
 
   paginatedPersonnels(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.personnels.users.slice(startIndex, endIndex);
+    return this.personnels.slice(startIndex, endIndex);
   }
 
   previousPage(): void {
@@ -68,15 +80,40 @@ export class PersonnelSetupComponent implements OnInit {
   }
 
   onAddNewBtnClick() {
-    this.dialogRef.open(AddUserComponent, {});
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
+    let modal = this.dialogRef.open(AddUserComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        if(result) {
+          this.isModalOpen = false
+          this.personnels.push(result.success)
+        }
+      }
+    )
   }
 
   onEditBtnClick(id: number) {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
     this.personnelService.getPersonnel(id).subscribe(
       personnel => {
-        this.dialogRef.open(EditUserComponent, {
+        let modal = this.dialogRef.open(EditUserComponent, {
           data: personnel
         });
+        modal.afterClosed().subscribe(
+          result => { 
+            this.isModalOpen = false
+          }
+        )
       },
       error => {
         console.error(error);
@@ -87,7 +124,7 @@ export class PersonnelSetupComponent implements OnInit {
   onArchiveBtnClick(id: number) {
     Swal.fire({
       title: "Delete Project",
-      text: "Are you sure want to delete this project?",
+      text: "Are you sure want to delete this personnel?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -98,7 +135,7 @@ export class PersonnelSetupComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire({
           title: "Deleting complete!",
-          text: "Project has been deleted.",
+          text: "Personnel has been deleted.",
           icon: "success",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",

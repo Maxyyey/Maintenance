@@ -105,7 +105,7 @@ export class AddPopupComponent {
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
+      title: "Are you sure you want to cancel adding college?",
       text: "Your changes will not be saved.",
       icon: "question",
       showCancelButton: true,
@@ -129,7 +129,7 @@ export class AddPopupComponent {
           });
           Toast.fire({
             icon: "error",
-            title: "Changes not saved."
+            title: "Adding cancelled."
           });
       }
     });

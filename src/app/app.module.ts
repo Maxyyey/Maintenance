@@ -20,7 +20,6 @@ import { MainModule } from './main/main.module';
 import { MaterialModule } from './modules/material/material.module';
 
 import { AuthInterceptor } from './interceptors/auth';
-import { AddlocationComponent } from './addlocation/addlocation.component';
 
 import { DatePipe } from '@angular/common';
 
@@ -30,9 +29,6 @@ import { DatePipe } from '@angular/common';
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
-    AddlocationComponent,
-
-
   ],
   
   imports: [
