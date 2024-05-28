@@ -140,13 +140,7 @@
     
     
     // pop up design
-    form .txt_field1{
-      position: relative;
-      border-bottom: 2px solid #777777;
-      margin: 30px 10px 30px 10px;
-      width: 300px;
-      display: block;
-      }
+  
     
     
 
@@ -277,7 +271,7 @@
       background-color: #F6F6F6;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      height: 80px;
+      height: 60;
       width: 370px;
       display: block;
       margin: 30px 10px 30px 10px;
@@ -298,6 +292,7 @@
       width: 97%;
       font-size: 15px;
       margin-left: 10px;
+      margin-top: 5px;
       background-color: #F6F6F6;
       border-radius: 5px; /* Rounded border */
       outline: none; /* Remove default outline */

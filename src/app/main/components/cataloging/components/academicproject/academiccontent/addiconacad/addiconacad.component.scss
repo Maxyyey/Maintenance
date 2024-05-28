@@ -227,10 +227,10 @@ h1 {
   .txt_field .inputtxt{
     width: 100%;
     display: block;
-    padding-top: 15px;
-  //  padding-left: 10px;
+    padding-top: 30px;
+    padding-left: 10px;
    // padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     height: 60px;
     font-size: 15px;
     border: none;
@@ -275,6 +275,7 @@ h1 {
     font-size: 12px;
     letter-spacing: 0.5px;
     color: #777777;
+    
   }
   
   .txt_field .inputtxt:focus ~ .labelline {
@@ -282,6 +283,7 @@ h1 {
     font-size: 12px;
     color: #31A463;
     letter-spacing: 0.5px;
+    left: 5px;
   }
   
   .txt_field .inputtxt:focus ~ span::before,
@@ -300,10 +302,10 @@ h1 {
   .txt_field2 .inputtxt2{
     width: 100%;
     display: block;
-    padding-top: 15px;
-  //  padding-left: 10px;
+    padding-top: 30px;
+    padding-left: 10px;
    // padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     height: 60px;
     font-size: 15px;
     border: none;
@@ -438,7 +440,7 @@ h1 {
     display: inline-flex;
     align-items: center;
     width: 150px;
-    margin:0px 10px 5px 0;
+    margin:0px 10px 12px 5px;
     cursor: pointer;
     font-weight: bold;    
 }
@@ -451,12 +453,13 @@ h1 {
     content: "\2714  ";
     border: 2px solid #31A463;
     border-radius:  0.2em;
-    width: 1em;
-    height: 1.2em;
+    width: 1.1em;
+    height: 1.4em;
     padding-left: 0.3em;
     color:transparent;
     transition: .2s;
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-top: 1px;
 }
 
 

@@ -14,7 +14,7 @@ export class AuthService {
 
   login(credentials: { username: string, password:string}) {
 
-    return this.http.post<any>(`${apiUrl}/login/maintenance`, credentials).pipe(
+    return this.http.post<any>(`${apiUrl}/login`, credentials).pipe(
       tap((response => {
         if(response.token){
           sessionStorage.setItem('token', response.token)

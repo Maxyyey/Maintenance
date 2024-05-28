@@ -20,7 +20,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let locker of paginatedLockers()">
-              <td>{{ locker.lockerNumber }}</td>
+              <td>{{ locker.locker_number }}</td>
               <td>{{ locker.status }}</td>
               <td>{{ locker.updated_at | date:'MM/dd/yyyy' }}</td>
               <td>

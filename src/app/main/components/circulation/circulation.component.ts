@@ -25,6 +25,7 @@ export class CirculationComponent implements OnInit{
   getPatrons() {
     this.patronService.getPatrons().subscribe(
       patrons => {
+        console.log(patrons)
         this.patrons = patrons
         this.patrons.forEach((patron: any) => {
           patron.days_allowed = Math.floor(patron.hours_allowed / 24)

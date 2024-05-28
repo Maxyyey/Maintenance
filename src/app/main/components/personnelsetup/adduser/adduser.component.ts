@@ -37,7 +37,7 @@ export class AddUserComponent {
     ext_name: string,
     username: string,  //this is email
     password: string,
-    access: string
+    role: string
   }
   constructor(
     private ref: MatDialogRef<AddUserComponent>,
@@ -49,7 +49,7 @@ export class AddUserComponent {
         ext_name: '',
         username: '',  //this is email
         password: '',
-        access: ''
+        role: ''
       }
   }
 
@@ -60,6 +60,8 @@ export class AddUserComponent {
   addUser() {
     console.log(this.form)
     if(this.form.username.includes('@')) {
+      let role = [this.form.role];
+      this.form.role = JSON.stringify(role)
       this.personnelService.createPersonnel(this.form).subscribe(
         response => {
           if(response.success) {
@@ -70,6 +72,13 @@ export class AddUserComponent {
               icon: "success",
               confirmButtonText: 'Close',
               confirmButtonColor: "#777777",
+            });
+          }
+          else {
+            Swal.fire({
+              title: "error!",
+              text: "Invalid input.",
+              icon: "error",
             });
           }
         },

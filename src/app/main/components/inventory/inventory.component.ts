@@ -85,6 +85,7 @@ export class InventoryComponent implements OnInit {
     
     this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
       response => {
+        console.log(response)
         Swal.fire({
           title: 'Update Successful',
           icon: 'success',
@@ -102,6 +103,7 @@ export class InventoryComponent implements OnInit {
         });
       },
       error => {
+        console.log(error)
         Swal.fire({
           title: 'Something went wrong. please try again later',
           icon: 'error',

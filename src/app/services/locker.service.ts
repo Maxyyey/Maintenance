@@ -21,30 +21,30 @@ export class LockerService {
   constructor(private http: HttpClient) { }
 
   getLockers(): Observable<any> {
-    return this.http.get(`${apiUrl}/lockers/`);
+    return this.http.get(`${apiUrl}/maintenance/lockers/`);
   }
 
   getStartingLockerNumber() {
-    return this.http.get(`${apiUrl}/lockers/latest`);
+    return this.http.get(`${apiUrl}/maintenance/lockers/latest`);
   }
 
   addLocker(numberOfLockers: any): Observable<any> {
-    return this.http.post(`${apiUrl}/lockers/`, numberOfLockers);
+    return this.http.post(`${apiUrl}/maintenance/lockers/`, numberOfLockers);
   }
 
   getLocker(id:number): Observable<any> {
-    return this.http.get(`${apiUrl}/lockers/${id}`);
+    return this.http.get(`${apiUrl}/maintenance/lockers/${id}`);
   }
 
   updateLocker(data: any, id:number): Observable<any> {
-    return this.http.post(`${apiUrl}/lockers/${id}`, data);
+    return this.http.post(`${apiUrl}/maintenance/lockers/${id}`, data);
   }
   
   deleteLocker(id: number): Observable<any> {
-    return this.http.get(`${apiUrl}/lockers/delete/${id}`);
+    return this.http.get(`${apiUrl}/maintenance/lockers/delete/${id}`);
   }
 
   getHistory() {
-    return this.http.get(`${apiUrl}/lockers/logs`);
+    return this.http.get(`${apiUrl}/maintenance/lockers/logs`);
   }
 }
