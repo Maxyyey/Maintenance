@@ -34,7 +34,7 @@ export class EditUserComponent {
     ext_name: string,
     username: string,  //this is email
     password: string,
-    access: string
+    role: string
   }
 
   constructor(
@@ -48,7 +48,7 @@ export class EditUserComponent {
         ext_name: '',
         username: '',  //this is email
         password: '',
-        access: ''
+        role: ''
       }
   }
 
@@ -62,37 +62,41 @@ export class EditUserComponent {
     this.form.last_name = this.data.last_name
     this.form.ext_name = this.data.ext_name
     this.form.username = this.data.username
-    this.form.access = this.data.access
+    this.form.role = this.data.role[0]
   }
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close();
   }
 
   updatePersonnel() {
-    this.personnelService.updatePersonnel(this.data.id, this.form).subscribe(
+    const form = {
+      first_name: this.form.first_name,
+      middle_name: this.form.middle_name,
+      last_name: this.form.last_name,
+      ext_name: this.form.ext_name,
+      password: this.form.password,
+      role: JSON.stringify([this.form.role])
+    }
+
+    this.personnelService.updatePersonnel(this.data.id, form).subscribe(
       response => {
-        if(response.message) {
-          this.ref.close('Closed using function');
-          Swal.fire({
-            title: "Update successful!",
-            text: "The changes have been saved.",
-            icon: "success",
-            confirmButtonText: 'Close',
-            confirmButtonColor: "#777777",
-          });
-          return
-        }
-        else {
-          Swal.fire({
-            title: "error!",
-            text: "Invalid input.",
-            icon: "error",
-          });
-        }
+        this.ref.close(response);
+        Swal.fire({
+          title: "Update successful!",
+          text: "The changes have been saved.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
       },
       error => {
         console.error(error)
+        Swal.fire({
+          title: "error!",
+          text: "Invalid input.",
+          icon: "error",
+        });
       }
     )
   }
@@ -115,31 +119,6 @@ export class EditUserComponent {
     });
   }
 
-  // SWEETALERT ARCHIVE POPUP
-  archiveBox(){
-    Swal.fire({
-      title: "Archive User",
-      text: "Are you sure want to archive this user?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.ref.close('Closed using function');
-        Swal.fire({
-          title: "Archiving complete!",
-          text: "Project has been safely archived.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
-      }
-    });
-  }
-
   // CANCEL EDITING POPUP
   cancelBox(){
     Swal.fire({
@@ -153,7 +132,7 @@ export class EditUserComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
+          this.ref.close();
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

@@ -4,6 +4,7 @@ import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
 import { PersonnelService } from '@app/services/personnel.service';
 import Swal from 'sweetalert2';
+import { error } from 'console';
 
 @Component({
   selector: 'app-personnelsetup',
@@ -26,7 +27,7 @@ export class PersonnelSetupComponent implements OnInit {
     this.personnelService.getPersonnels().subscribe(
       personnels => {
         this.personnels = personnels.users
-        console.log(personnels)
+        console.log(this.personnels)
       },
       error => {
         console.error(error)
@@ -114,18 +115,55 @@ export class PersonnelSetupComponent implements OnInit {
         modal.afterClosed().subscribe(
           result => { 
             this.isModalOpen = false
+            if(result) {
+              this.personnels = this.personnels.map(
+                (personnel: any) => {
+                  if(personnel.id === result.data.id) {
+                    return {...personnel, ...result.data}
+                  }
+                  return personnel
+                }
+              )
+            }
           }
         )
       },
       error => {
         console.error(error);
+        this.isModalOpen = false
       }
     );
   }
 
+  deletePersonnel(id: number) {
+    this.personnelService.deletePersonnel(id).subscribe(
+      success => {
+        this.personnels = this.personnels.filter((personnel: any) => personnel.id !== id)
+        Swal.fire({
+          title: "Success!",
+          text: "Personnel has been deleted.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+      },
+      error => {
+        Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
+        });
+
+      }
+    )
+
+  }
+
   onArchiveBtnClick(id: number) {
     Swal.fire({
-      title: "Delete Project",
+      title: "Delete personnel?",
       text: "Are you sure want to delete this personnel?",
       icon: "warning",
       showCancelButton: true,
@@ -135,13 +173,7 @@ export class PersonnelSetupComponent implements OnInit {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleting complete!",
-          text: "Personnel has been deleted.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
-        });
+        this.deletePersonnel(id)
       }
     });
   }

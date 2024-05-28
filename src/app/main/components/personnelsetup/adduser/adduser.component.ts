@@ -58,11 +58,19 @@ export class AddUserComponent {
   }
 
   addUser() {
+    const form = {
+      first_name: this.form.first_name,
+      middle_name: this.form.middle_name,
+      last_name: this.form.last_name,
+      ext_name: this.form.ext_name,
+      username: this.form.username,  
+      password: this.form.password,
+      role: JSON.stringify([this.form.role])
+    }
+
     console.log(this.form)
     if(this.form.username.includes('@')) {
-      let role = [this.form.role];
-      this.form.role = JSON.stringify(role)
-      this.personnelService.createPersonnel(this.form).subscribe(
+      this.personnelService.createPersonnel(form).subscribe(
         response => {
           if(response.success) {
             this.ref.close(response);
