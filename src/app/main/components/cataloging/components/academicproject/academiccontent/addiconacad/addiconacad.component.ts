@@ -72,17 +72,16 @@ export class AddiconacadComponent implements OnInit{
     this.catalogingService.addPrograms(form).subscribe(
       (response: any) => {
         this.closepopup()
-        console.log('Program added successfully', response);
         Swal.fire({
-          title: "Add successful!",
-          text: "The changes have been saved.",
+          title: "Success!",
+          text: "Program has been added.",
           icon: "success",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",
         });
       },
       (error: any) => {
-        console.error('Error adding program', error);
+        console.error(error);
         if(error.status === 400) {
           Swal.fire({
             title: "Error!",
@@ -107,7 +106,7 @@ export class AddiconacadComponent implements OnInit{
   }
   addBox() {
     Swal.fire({
-      title: "Add Program",
+      title: "Add program?",
       text: "Are you sure you want to add this program?",
       icon: "warning",
       showCancelButton: true,

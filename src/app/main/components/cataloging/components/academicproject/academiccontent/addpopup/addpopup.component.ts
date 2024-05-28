@@ -49,8 +49,8 @@ export class AddPopupComponent {
     this.catalogingService.addDepartments(payload).subscribe(
       response => {
         Swal.fire({
-          title: 'College Added!',
-          text: 'The changes have been saved.',
+          title: 'Success!',
+          text: 'College has been added.',
           icon: 'success',
           confirmButtonText: 'Close',
           confirmButtonColor: '#777777',
@@ -83,7 +83,7 @@ export class AddPopupComponent {
 
   updateBox() {
     Swal.fire({
-      title: 'Add College',
+      title: 'Add College?',
       text: 'Are you sure you want to add this College?',
       icon: 'warning',
       showCancelButton: true,

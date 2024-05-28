@@ -92,8 +92,8 @@ export class AnnouncementComponent implements OnInit{
   
   onArchiveBtnClick(id:number){
     Swal.fire({
-      title: "Delete Project",
-      text: "Are you sure want to delete this project?",
+      title: "Delete?",
+      text: "Are you sure want to delete this announcement?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -111,8 +111,8 @@ export class AnnouncementComponent implements OnInit{
     this.announcementService.archiveAnnouncement(id).subscribe(
       response => {
         Swal.fire({
-          title: "Deleting complete!",
-          text: "Project has been  deleted.",
+          title: "Success!",
+          text: "Announcement has been deleted.",
           icon: "success",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",

@@ -101,7 +101,7 @@ export class EditAnnouncePopupComponent {
   // SWEETALERT UPDATE POPUP
   updateBox(){
     Swal.fire({
-      title: "Update Announcement",
+      title: "Update?",
       text: "Are you sure you want to update this announcement?",
       icon: "warning",
       showCancelButton: true,

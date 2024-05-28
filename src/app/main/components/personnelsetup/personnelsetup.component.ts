@@ -89,8 +89,9 @@ export class PersonnelSetupComponent implements OnInit {
     let modal = this.dialogRef.open(AddUserComponent, {});
     modal.afterClosed().subscribe(
       result => {
+        this.isModalOpen = false
+        
         if(result) {
-          this.isModalOpen = false
           this.personnels.push(result.success)
         }
       }
