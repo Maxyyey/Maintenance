@@ -67,30 +67,29 @@ export class AddComponent {
     
     this.announcementService.createAnnouncement(formData).subscribe(
       success => {
-        if(success.error) {
+        Swal.fire({
+          title: "Success!",
+          text: "Announcement has been successfully created.",
+          icon: "success",
+        });
+        this.ref.close(success); 
+      },
+      error => {
+        console.error(error)
+        if(error.status = 400) {
           Swal.fire({
             title: "error!",
-            text: "Your inputs are invalid.",
+            text: "Invalid input.",
             icon: "error",
           });
         }
         else {
           Swal.fire({
-            title: "Success!",
-            text: "Announcement has been successfully created.",
-            icon: "success",
+            title: "error!",
+            text: "Something went wrong, please try again later.",
+            icon: "error",
           });
-          this.ref.close(success); 
         }
-      },
-      error => {
-        console.error(error)
-        Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
-        });
-        this.ref.close('Closed using function'); 
       }
     )
   }
