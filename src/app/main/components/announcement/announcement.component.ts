@@ -86,6 +86,12 @@ export class AnnouncementComponent implements OnInit{
       },
       error => {
         console.error(error)
+        this.isModalOpen = false
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     )
     }

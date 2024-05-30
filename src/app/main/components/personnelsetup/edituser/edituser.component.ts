@@ -92,11 +92,20 @@ export class EditUserComponent {
       },
       error => {
         console.error(error)
-        Swal.fire({
-          title: "error!",
-          text: "Invalid input.",
-          icon: "error",
-        });
+        if(error.status === 422) {
+          Swal.fire({
+            title: "error!",
+            text: "Invalid input.",
+            icon: "error",
+          });
+        }
+        else {
+          Swal.fire({
+            title: "error!",
+            text: "Something went wrong, please try again later.",
+            icon: "error",
+          });
+        }
       }
     )
   }

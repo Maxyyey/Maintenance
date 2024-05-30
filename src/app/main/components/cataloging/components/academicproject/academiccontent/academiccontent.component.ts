@@ -5,7 +5,8 @@ import { AddiconacadComponent } from './addiconacad/addiconacad.component';
 import { ViewComponent } from './departmentModal/view.component';
 import { AddPopupComponent } from './addpopup/addpopup.component';
 import { CatalogingService } from '@app/services/cataloging.service';
-import { error } from 'console';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
@@ -74,6 +75,12 @@ export class AcademiccontentComponent implements OnInit {
       },
       error => {
         console.error(error)
+        this.isModalOpen = false
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     )
   }
@@ -99,6 +106,12 @@ export class AcademiccontentComponent implements OnInit {
       },
       error => {
         console.error(error)
+        this.isModalOpen = false
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     )
   }

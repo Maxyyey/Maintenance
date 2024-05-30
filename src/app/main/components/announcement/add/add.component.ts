@@ -76,7 +76,7 @@ export class AddComponent {
       },
       error => {
         console.error(error)
-        if(error.status = 400) {
+        if(error.status == 422) {
           Swal.fire({
             title: "error!",
             text: "Invalid input.",

@@ -59,7 +59,7 @@ export class AddPopupComponent {
         });
     }, error => {
       console.error('Error adding college:', error);
-      if(error.status === 400) {
+      if(error.status === 422) {
         Swal.fire({
           title: 'Error!',
           text: 'Invalid input.',
@@ -71,7 +71,7 @@ export class AddPopupComponent {
       else {
         Swal.fire({
           title: 'Error!',
-          text: 'There was an error adding the college.',
+          text: 'Something went wrong. Please try again later.',
           icon: 'error',
           confirmButtonText: 'Close',
           confirmButtonColor: '#777777',

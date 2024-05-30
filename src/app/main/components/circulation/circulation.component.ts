@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from './edit/edit.component';
 import { PatronService } from '@app/services/patron.service';
 import { response } from 'express';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-circulation',
@@ -64,6 +65,12 @@ export class CirculationComponent implements OnInit{
       },
       error => {
         console.error(error)
+        this.isModalOpen = false
+        Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+        });
       }
 
     )

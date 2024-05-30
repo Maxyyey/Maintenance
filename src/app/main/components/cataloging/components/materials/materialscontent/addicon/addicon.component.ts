@@ -59,11 +59,20 @@ export class AddiconComponent {
       },
       error => {
         console.error(error)
-        Swal.fire({
-          title: "Error!",
-          text: "Invalid input!",
-          icon: "error",
-        });
+        if(error.status === 422) {
+          Swal.fire({
+            title: "Error!",
+            text: "Invalid input!",
+            icon: "error",
+          });
+        }
+        else {
+          Swal.fire({
+            title: "Error!",
+            text: "Something went wrong. Please try again later!",
+            icon: "error",
+          });
+        }
       }
     )
   }

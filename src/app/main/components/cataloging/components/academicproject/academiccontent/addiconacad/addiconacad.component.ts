@@ -82,7 +82,7 @@ export class AddiconacadComponent implements OnInit{
       },
       (error: any) => {
         console.error(error);
-        if(error.status === 400) {
+        if(error.status === 422) {
           Swal.fire({
             title: "Error!",
             text: "Invalid input.",

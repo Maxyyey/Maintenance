@@ -72,31 +72,31 @@ export class AddUserComponent {
     if(this.form.username.includes('@')) {
       this.personnelService.createPersonnel(form).subscribe(
         response => {
-          if(response.success) {
-            this.ref.close(response);
-            Swal.fire({
-              title: "Add successful!",
-              text: "The changes have been saved.",
-              icon: "success",
-              confirmButtonText: 'Close',
-              confirmButtonColor: "#777777",
-            });
-          }
-          else {
+          this.ref.close(response);
+          Swal.fire({
+            title: "Add successful!",
+            text: "The changes have been saved.",
+            icon: "success",
+            confirmButtonText: 'Close',
+            confirmButtonColor: "#777777",
+          });
+        },
+        error => {
+          console.error(error)
+          if(error.status === 422) {
             Swal.fire({
               title: "error!",
               text: "Invalid input.",
               icon: "error",
             });
+          } 
+          else {
+            Swal.fire({
+              title: "error!",
+              text: "Something went wrong, please try again later.",
+              icon: "error",
+            });
           }
-        },
-        error => {
-          console.error(error)
-          Swal.fire({
-            title: "error!",
-            text: "Invalid input.",
-            icon: "error",
-          });
         }
       )
     } else {

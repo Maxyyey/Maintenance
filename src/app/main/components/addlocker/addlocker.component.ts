@@ -79,7 +79,13 @@ export class AddLockerComponent implements OnInit {
           text: "You must delete the latest locker first.",
           icon: "error",
         })
-
+      }
+      else {
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     }
   )
@@ -105,8 +111,13 @@ export class AddLockerComponent implements OnInit {
         )
       },
       error => {
-        console.log(error)
+        console.error(error)
         this.isModalOpen = false
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     )
   }
@@ -134,6 +145,15 @@ export class AddLockerComponent implements OnInit {
             }
           }
         )
+      },
+      error => {
+        console.error(error)
+        this.isModalOpen = false
+        Swal.fire({
+          title: "error!",
+          text: "Something went wrong, please try again later.",
+          icon: "error",
+        });
       }
     )
   }
@@ -169,6 +189,11 @@ export class AddLockerComponent implements OnInit {
       error => {
         console.error(error)
         this.isModalOpen = false
+        Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again later",
+          icon: "error",
+        })
       }
     )
   }
