@@ -29,4 +29,3 @@ export class PersonnelService {
     return this.http.delete(`${apiUrl}/personnels/${id}`)
   }
 }
-//up

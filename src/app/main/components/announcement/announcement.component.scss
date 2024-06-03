@@ -109,7 +109,17 @@ p {
 .textbox{
   margin-bottom: 10px;
   margin-left: 10px;;
+  
 }
+
+.textbox > p:nth-child(3){
+ 
+ width: 70%;
+ max-height: 15px;
+ overflow: hidden;
+  
+}
+
 .card h2 {
   font-size: medium; /* Larger title text */
   font-weight: bold;
@@ -158,6 +168,15 @@ p {
     .textbox {
       padding: 20px;
     }
+
+    .textbox > p:nth-child(3){
+      
+      width: 70%;
+      max-height: 275px;
+      overflow: auto;
+       
+     }
+
     img {
       float: left;
       width: 30%; /* or any specific width */

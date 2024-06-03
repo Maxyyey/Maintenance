@@ -52,7 +52,7 @@
                     <!-- *ngIf="paginatedInventories().length > 0; else noItems" -->
                     <tbody>
                         <tr *ngFor="let inventory of paginatedInventories()">
-                            <td>{{inventory.call_number}}</td>
+                            <td>{{inventory.id}}</td>
                             <td>{{inventory.location.location}}</td>
                             <td>{{inventory.title}}</td>
                             <td>

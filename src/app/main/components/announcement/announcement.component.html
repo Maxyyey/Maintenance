@@ -15,8 +15,8 @@
                 <div class="textbox">
                     <!-- replace nalang to si h2 tsaka si p kasi static lang -->
                     <h2>{{announcement.title}}</h2>
+                    <p>{{announcement.created_at | date:'MM/dd/yyyy' }}</p>
                     <p>{{announcement.text}}</p>
-                    <p>{{ announcement.created_at | date:'MM/dd/yyyy' }}</p>
                 </div>
                 <div class="card-buttons">
                     <button class="edit-btn" type="button"(click)="onEditBtnClick(announcement.id)"> <i class="fa-solid fa-edit"> </i></button>
