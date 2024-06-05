@@ -1,5 +1,7 @@
 :root {
     font-size: 100%;
+    //new header green #376448;
+    //new sidenav green #4f6f52;
     --primary-color: #FFFFFF;
     --secondary-color: #EEEEEE;
     --main-green: #31A463;
@@ -16,12 +18,12 @@ body {
 .header {
     position: fixed;
     z-index: 1;
-    background-color: var(--primary-color);
+    background-color: #376448;
     height: 70px;
     width: 100%;
     border-bottom: 2px solid var(--border-color);
     margin-left: 220px;
-    color: #31A463;
+    color: #f4f4f4;
     font-size: 14px;
     text-indent: 30px;
     
@@ -46,14 +48,16 @@ body {
 .systemname h1 {
     text-align: center;
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .systemname h2 {
     text-align: center;
     font-size: 12px;
-    font-weight: 200;
-    color: #6a6767;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 50%;
 }
 
 .logo-title {
@@ -64,7 +68,7 @@ body {
 
 .sidebar-content {
     position: relative;
-    background-color: var(--primary-color);
+    background-color: #4f6f52;
     width: 220px;
     position: fixed;
     top: 0;
@@ -72,7 +76,7 @@ body {
     height: 100%;
     padding: 30px 15px;
     z-index: 100;
-    border-right: 2px solid var(--border-color);
+    //border-right: 2px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
@@ -81,7 +85,7 @@ body {
 }
 
 .sidebar-content a {
-    color: var(--black);
+    color: var(--primary-color);
 }
 
 .sidebar-content-tabs {
@@ -95,7 +99,7 @@ body {
 
 .admin-tab a {
     display: flex;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     padding: 10px 10px 10px 10px;
     text-decoration: none;
@@ -105,12 +109,14 @@ body {
 }
 
 .admin-tab a:hover {
-    color: var(--main-green);
-}
+    color: #ffffff;
+    background-color: #376448;;
+} 
 
 .admin-tab a.active-link {
     font-weight: 700;
-    color: var(--main-green);
+    color: #ffffff;
+    background-color: #376448;
 }
 
 .tab-link .tab-link-name {
@@ -146,6 +152,7 @@ ul ul {
     width: 220px;
     cursor: pointer;
     transition: all 0.5s ease;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 768px) {
@@ -186,4 +193,8 @@ ul ul {
     overflow-x: hidden;
     padding-left: 240px;
     padding-top: 90px;
+}
+
+.content {
+    background-color: #F5EFE6;
 }

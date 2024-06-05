@@ -5,7 +5,7 @@
 
 //HEADER//
 .container-header {
-    background-color: #31A463;
+    background-color: #376448;
     color: white;
     border-radius: 10px;
     margin-right: 25px;
@@ -92,7 +92,7 @@ td {
 }
 
 th {
-    background-color: #31A463;
+    background-color: #376448;
     font-weight: bold;
     color: #ddd;
 }
@@ -133,7 +133,7 @@ th {
     button {
         padding: 8px 16px;
         border: 1px solid #ccc;
-        background-color: #31A463;
+        background-color: #4f6f52;
         color: #333;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
@@ -143,7 +143,7 @@ th {
         color: white;
 
         &:hover {
-            background-color: #298f55;
+            background-color: #376448;
             color: #fff;
         }
 
