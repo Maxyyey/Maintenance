@@ -38,6 +38,14 @@
         <div class="sidebar-tabs">
             <ul class="admin-tabs">
                 <li class="admin-tab">
+                    <a class="tab-link" routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                        <span class="material-symbols-outlined">
+                            dashboard
+                            </span>
+                    <span class="tab-link-name">Dashboard </span>
+                    </a>
+                </li>
+                <li class="admin-tab">
                     <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
                     <span class="tab-link-icon"><i class="fa-solid fa-user-gear"></i></span>
                     <span class="tab-link-name"> Personnel Setup </span>
@@ -47,7 +55,7 @@
                 <li class="admin-tab">
                     <a class="tab-link" routerLink="circulation" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
                     <span class="tab-link-icon">  <i class="fa-solid fa-arrows-spin"></i> </span>
-                    <span class="tab-link-name"> Circulation </span>
+                    <span class="tab-link-name">Circulation </span>
                     </a>
                 </li>
 

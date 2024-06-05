@@ -13,6 +13,7 @@ import { EnterbarcodeComponent } from './components/inventory/enterbarcode/enter
 import { ClearhistoryComponent } from './components/inventory/clearhistory/clearhistory.component';
 import { HistoryComponent } from './components/addlocker/components/history/history.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     ScanbarcodeComponent,
     EnterbarcodeComponent,
     ClearhistoryComponent,
-    HistoryComponent
+    HistoryComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
