@@ -7,8 +7,8 @@
 //HEADER
 
 .container-header {
-    background-color: #376448;
-    color: white;
+  //  background-color: #376448;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
     margin-right: 25px;
     margin-top: 25px;
@@ -18,7 +18,12 @@
 
 h1 {
     text-align: left;
-    // margin-left: 20px;
+    margin-left: -10px;
+    margin-top: -40px;
+    margin-bottom: 25px;
+    font-size: 48px;
+    color: #000000;
+    opacity: 70%;
 }
 
 //BODY
@@ -34,7 +39,7 @@ body {
 //TABLE
 
 .container {
-    padding: 20px 0px;
+    padding: 0px 0px 10px 0px;
     background-color: #ffffff;
     border-radius: 0px;
 
