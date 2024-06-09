@@ -5,18 +5,16 @@
 }
 
 //HEADER
-.container-header{
-    background-color: #31A463;
-    color: white;
-    border-radius: 10px;
-    margin-right: 25px;
-    margin-top: 25px;
-    padding: 10px;
-    width: 100%;
-}
+
 
 h1 {
     text-align: left;
+    margin-left: -5px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    font-size: 48px;
+    color: #000000;
+    opacity: 70%;
     // margin-left: 20px;
 }
 
@@ -55,7 +53,7 @@ a {
 	align-items: stretch;
 	list-style: none;
     width: 100%; /*changed*/
-	color: #31A463;
+	color: #4f6f52;
 }
 
 .tab {
@@ -78,7 +76,7 @@ a {
 }
 .tab:hover label {
     color: #ffffff;
-	background-color: #31A463; 
+	background-color: #4f6f52; 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
@@ -92,7 +90,7 @@ a {
 ul{
     list-style: none;
     background: transparent;
-    border: #31A463;
+    border: #4f6f52;
 
 }
 ul li{
@@ -107,10 +105,10 @@ ul li{
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label {
-	border-bottom-color: #31A463;
+	border-bottom-color: #4f6f52;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-	background: #31A463;
+	background: #4f6f52;
 	color: #ffffff;
 }
 
@@ -125,9 +123,9 @@ ul li{
  /*button tab1*/
 // .row{
 //     background-color: transparent;
-//     border-color: #31A463;
+//     border-color: #4f6f52;
 //     display: flex; 
-
+            
 
     
 // }
