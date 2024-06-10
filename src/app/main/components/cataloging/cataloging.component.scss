@@ -21,7 +21,7 @@ h1 {
 //BODY
 .page-content {
 	max-width: 100%;  
-	background: #ffffff;
+//	background: #ffffff;
 }
 a {
 	color: #21D4FD; 
@@ -30,7 +30,7 @@ a {
 
 .tabbed {
 	overflow-x: hidden; 
-	padding-bottom: 10px;
+//	padding-bottom: 10px;
 	
 }
 
@@ -62,6 +62,8 @@ a {
     
 }
 .tab > label {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     color: #000000;
 	display: block;
     font-size: 17px; 
