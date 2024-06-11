@@ -23,12 +23,14 @@ import { AuthInterceptor } from './interceptors/auth';
 
 import { DatePipe } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
+   
   ],
   
   imports: [
@@ -47,5 +49,5 @@ import { DatePipe } from '@angular/common';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 export class FormFieldOverviewExample {}

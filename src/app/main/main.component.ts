@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class MainComponent {
   showPopup: boolean = false;
+  dropdownOpen: boolean | undefined;
+  projectDropdownOpen: boolean | undefined;
 
   constructor(
     private router: Router, 
@@ -23,6 +25,16 @@ export class MainComponent {
 
   closePopup() {
     this.showPopup = this.showPopup;
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+    this.projectDropdownOpen = false
+  }
+
+  toggleUserDropdown() {
+    this.projectDropdownOpen = !this.projectDropdownOpen;
+    this.dropdownOpen = false
   }
 
   redirectToLoginPage() {
