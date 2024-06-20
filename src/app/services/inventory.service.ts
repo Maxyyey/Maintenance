@@ -13,11 +13,11 @@ export class InventoryService {
     return this.http.get<any>(`${apiUrl}/inventory`)
   }
 
-  getBookInventories(filter: string = 'available'){
+  getBookInventories(filter: number = 0){
     return this.http.get<any>(`${apiUrl}/inventory/books/${filter}`)
   }
 
-  searchBookInventories(filter: string = 'available', search: string){
+  searchBookInventories(filter: number = 0, search: string){
     return this.http.get<any>(`${apiUrl}/inventory/books/search/${filter}?search=${search}`)
   }
 

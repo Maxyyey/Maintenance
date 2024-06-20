@@ -28,8 +28,8 @@ interface MyOption {
 export class AddiconComponent {
   currentDate: string;
   form: {
-    location: string,
-    full_location: string
+    location_short: string,
+    location_full: string
   }
   
   constructor(
@@ -39,8 +39,8 @@ export class AddiconComponent {
       this.currentDate = today.toISOString().split('T')[0];
 
       this.form = {
-        location: '',
-        full_location: '',
+        location_short: '',
+        location_full: '',
       }
   }
 

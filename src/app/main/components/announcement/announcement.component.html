@@ -13,7 +13,7 @@
     <div class="container">
         <div class="card-container" *ngFor="let announcement of announcements"> 
             <div class="card"> 
-                <img [src]="announcement.image ? announcement.image : '/assets/images/GCLIBRARY.png'">
+                <img [src]="announcement.image_url ? announcement.image_url : '/assets/images/GCLIBRARY.png'">
                 <div class="textbox">
                     <!-- replace nalang to si h2 tsaka si p kasi static lang -->
                     <h2>{{announcement.title}}</h2>

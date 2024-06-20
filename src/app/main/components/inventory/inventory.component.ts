@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class InventoryComponent implements OnInit {
   inventories: any = [];
-  filter: string = 'available'
+  filter: number = 0
   currentPage = 1;
   itemsPerPage = 10;
   search: string = ''
@@ -73,7 +73,7 @@ export class InventoryComponent implements OnInit {
 
   onFilterChange(event: Event) {
     const element = event.target as HTMLSelectElement;
-    this.filter = element.value;
+    this.filter = parseInt(element.value);
     this.getInventories()
     this.currentPage = 1
     console.log('changing...')
@@ -81,7 +81,7 @@ export class InventoryComponent implements OnInit {
 
   onStatusChange(event: Event, id:number) {
     const element = event.target as HTMLSelectElement;
-    let form = { status: element.value }
+    let form = { inventory_status: element.value }
     
     this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
       response => {
@@ -156,6 +156,7 @@ export class InventoryComponent implements OnInit {
         this.getInventories()
       },
       error => {
+        console.error(error)
         Swal.fire({
           title: "Error!",
           text: "Something went wrong. Please try again later",

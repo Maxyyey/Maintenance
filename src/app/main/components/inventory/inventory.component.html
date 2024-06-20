@@ -17,13 +17,13 @@
             <div class="txt_field">
                 <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
                     <!-- <option value="English"> All  </option> -->
-                    <option value="available"> Available </option>
-                    <option value="unreturned"> Unreturned </option>
-                    <option value="missing"> Missing </option>
-                    <option value="unlabeled"> Unlabeled </option>
-                    <option value="damaged"> Damaged </option>
+                    <option value="0"> Available </option>
+                    <option value="1"> Unreturned </option>
+                    <option value="2"> Missing </option>
+                    <option value="3"> Unlabeled </option>
+                    <option value="4"> Damaged </option>
                 </select>
-            
+                
             </div>
             </div>
         <!-- <h2>
@@ -53,8 +53,8 @@
                     <!-- *ngIf="paginatedInventories().length > 0; else noItems" -->
                     <tbody>
                         <tr *ngFor="let inventory of paginatedInventories()">
-                            <td>{{inventory.id}}</td>
-                            <td>{{inventory.location.location}}</td>
+                            <td>{{inventory.accession}}</td>
+                            <td>{{inventory.location}}</td>
                             <td>{{inventory.title}}</td>
                             <td>
                                 <div *ngFor="let author of inventory.authors; let last = last">
@@ -62,12 +62,12 @@
                                 </div>
                             <td>
                                 <div class="dropdown">
-                                    <select class="inputtxt"  value="{{inventory.status}}" (change)="onStatusChange($event, inventory.id)"required>
-                                        <option value="available"> Available </option>
-                                        <option value="unreturned"> Unreturned </option>
-                                        <option value="missing"> Missing </option>
-                                        <option value="unlabeled"> Unlabeled </option>
-                                        <option value="damaged"> Damaged </option>
+                                    <select class="inputtxt"  value="{{inventory.inventory_status}}" (change)="onStatusChange($event, inventory.accession)"required>
+                                        <option value="0"> Available </option>
+                                        <option value="1"> Unreturned </option>
+                                        <option value="2"> Missing </option>
+                                        <option value="3"> Unlabeled </option>
+                                        <option value="4"> Damaged </option>
                                     </select>
                                 </div>
                             </td>

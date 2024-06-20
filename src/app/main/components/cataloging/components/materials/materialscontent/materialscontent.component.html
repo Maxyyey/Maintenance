@@ -28,8 +28,8 @@
         <tbody>
             <!-- paginatedLocations -->
             <tr *ngFor="let location of locations"> 
-                <td> {{ location.location }} </td>
-                <td> {{ location.full_location }} </td>
+                <td> {{ location.location_short }} </td>
+                <td> {{ location.location_full }} </td>
                 <td> {{ location.created_at | date:'MM/dd/yyyy' }} </td>
             <!--      <td>Books</td>
                 <td>Fil</td>
