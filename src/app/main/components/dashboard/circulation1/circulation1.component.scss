@@ -24,64 +24,42 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.icon-case1 img {
-    height: 70px;
-    width: 75px;
-    margin-top: 10px;
-    margin-left: 5px;
-}
 
-.icon-case2 img {
-    height: 70px;
-    width: 75px;
-    margin-top: 10px;
-    margin-left: 5px;
-}
 
-.icon-case3 img {
-    height: 70px;
-    width: 75px;
-    margin-top: 10px;
-    margin-left: 5px;
-}
-.cards .card .box1 h1 {
-    margin-left: 48px;
-    font-size: 30px;
-}
 
-.cards .card h1 {
-    margin-left: 58px;
-    font-size: 30px;
-}
+
+.card .icon-case {
  
-.cards .card h3 {
+    margin-top: 10px;
     margin-left: 40px;
-    font-size: 15px;
-    font-weight: 500;
+    margin-right: 60px;
+    font-size: 50px;
+    font-weight: 700;
 }
 
-.cards .card .box1 h1 {
-    margin-left: 50px;
-    font-size: 30px;
-}
 
-.cards .card .box2 h1 {
-    margin-left: 75px;
-    font-size: 30px;
-}
+// .cards .card h1 {
+//     margin-left: 58px;
+//     font-size: 30px;
+// }
  
-.cards .card h3 {
-    margin-left: 35px;
+// .cards .card h3 {
+//     margin-left: 40px;
+//     font-size: 15px;
+//     font-weight: 500;
+// }
+
+.cards .card .box {
+    float: right;
     font-size: 15px;
     font-weight: 500;
-}
-.cards .card .box1 h3 {
-    margin-left: 25px;
-    font-size: 15px;
-    font-weight: 500;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }

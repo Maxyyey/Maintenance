@@ -215,6 +215,7 @@ ul ul {
 .gc-library {
     flex-grow: 1;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 
@@ -237,11 +238,13 @@ ul ul {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: #333; 
+    // color: #333; 
     padding: 12px 16px; 
     text-decoration: none; 
     display: block; 
-    transition: background-color 0.3s; 
+    font-weight: 500;
+    font-size: 14px;
+    // transition: background-color 0.3s; 
 }
 
 

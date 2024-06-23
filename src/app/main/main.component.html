@@ -37,14 +37,17 @@
         <!-- SIDEBAR TABS -->
         <div class="sidebar-tabs">
             <ul class="admin-tabs">
+                
                 <li class="admin-tab">
                     <div class="dropdown" >
-                        <span class="gc-library" (click)="toggleDropdown()">
-                            <a class="tab-link" routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:false}">
-                                <span class="tab-link-icon"> <i class='bx bx-book-alt'></i> </span>
-                                <span class="tab-link-name"> Dashboard </span>
-                            </a>
-                        </span>
+                    <span class="gc-library" (click)="toggleDropdown()">
+                        <a class="tab-link" routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:false}">
+                            <span class="tab-link-icon"><i class="fa-solid fa-house"></i></span>
+                            <span class="tab-link-name"> Dashboard </span>
+                        </a>
+                    
+                    
+                        
                         <button class="dropbtn" (click)="toggleDropdown()"> 
                             <span class="dropdown-icon" [ngClass]="{'active': dropdownOpen}"> 
                                 <i class="bx" [ngClass]="{'bx-caret-left': true}"></i>
@@ -65,8 +68,13 @@
                                 <span class="tab-link-name1"> OPAC </span>
                             </a>
                         </div>
-                    </div>
+                    
+                    
+                </span>
+            </div>
                 </li>
+            
+                
                 <li class="admin-tab">
                     <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
                     <span class="tab-link-icon"><i class="fa-solid fa-user-gear"></i></span>
