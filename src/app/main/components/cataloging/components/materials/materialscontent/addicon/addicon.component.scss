@@ -60,7 +60,7 @@
     padding: 20px 30px 30px;
     position: fixed;
     width: 900px;
-    background-color: var(--main-green);
+    background-color: #376448;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     z-index: 1;
@@ -127,7 +127,7 @@
     
     .update-btn {
      
-      background-color: #179733;
+      background-color: #4f6f52;
       color: white;
       float: right;
       margin-top: 50px;
@@ -152,7 +152,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background: #31A463;
+      background: #4f6f52;
       transition: .3s;
     }
     
@@ -174,7 +174,7 @@
     .txt_field1 .date:focus ~ .labelline1 {
       top: 17px;
       font-size: 12px;
-      color: #31A463;
+      color: #376448;
       letter-spacing: 0.5px;
     }
     form .txt_field{
@@ -218,7 +218,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background: #31A463;
+      background: #4f6f52;
       transition: .3s;
     }
     
@@ -240,7 +240,7 @@
     .txt_field .inputtxt:focus ~ .labelline {
       top: 17px;
       font-size: 12px;
-      color: #31A463;
+      color: #376448;
       letter-spacing: 0.5px;
     }
     
@@ -296,7 +296,7 @@
       background-color: #F6F6F6;
       border-radius: 5px; /* Rounded border */
       outline: none; /* Remove default outline */
-      color: #31A463;
+      color: #4f6f52;
     
     }
 
