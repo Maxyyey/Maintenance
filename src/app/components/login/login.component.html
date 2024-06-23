@@ -1,79 +1,51 @@
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+<body class="login-container" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
 
-<main>
-
-    <div class="spit-screen">
-
-        <!-- LEFT SCREEN -->
-        <div class="left">
-                <div class="circles">
-                    <img src="assets/images/GCLIBRARY.png" class="gclibrary-logo2">
-                    <div class="circle1"> </div>
-                    <div class="circle2"> </div>
-                </div>
-                <div class="LOGIN-PHOTO">
-                    <img src="assets/images/LOGIN-PHOTO.png">
-                </div>
-
-            <div class="logos">
-                <img src="assets/images/GC.png" class="gclogo">
-                <img src="assets/images/GC-LIBRARY.png" class="gclibrary">
-                
-
+    <div class="container">
+  
+      <div class="forms-container">
+        <div class="signin-signup">
+          <!-- FORM FIELD -->
+          <form class="sign-in-form"action="">
+            
+            <!-- SYSTEM AND SUBSYSTEM NAME -->
+            <h2 class="title">
+              <img src="../assets/images/GCLMS.PNG" alt="Gordon College Logo" class="logo" /><br />
+              <span class="upper-text">Gordon College</span><br />
+              <span class="lower-text">Library Management System</span><br />
+              <span class="subsystemname">Maintenance</span>
+            </h2>
+            
+            <!-- INPUT FIELD -->
+            <div class="input-field">
+              <i class='bx bxs-user'></i> 
+              <input id="email" name="email" type="email" placeholder="Username" [(ngModel)]="email">
             </div>
-
-        </div>
-      
-        <!-- RIGHT SCREEN -->
-        <div class="right">
-          <form action="">
-
-            <div class="gclims-logo">
-
-                
-                <div class="logo">
-                    <img src="assets/images/GCLMS.PNG">
-                </div>
-                
-
-                <div class="systemname">
-                    <h1> Gordon College </h1>
-                    <h1> Library Management System </h1>
-                </div>
+            <div class="input-field">
+              <i class='bx bxs-lock-alt'></i>
+              <input id="password" name="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password">
             </div>
-
-            <section class="subsystemname">
-              <h2> MAINTENANCE </h2> 
-            </section>
-      
-            <!-- LOG IN FORM -->
-            <div class="input-container email">
-                <i class='bx bxs-user'></i>
-                <input id="email" name="email" type="email" placeholder="Username" [(ngModel)]="email">
+  
+            <!-- LOGIN BUTTON -->
+            <div id="login-button" class="btn">
+                <a id="login-button" class="btn" (click)="login()"> LogIn </a>
             </div>
-            <div class="input-container password">
-                <i class='bx bxs-lock' ></i>
-                <input id="password" name="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password">
-                <i (click)="toggleShow()" class="fa-solid fa-eye" *ngIf="!showpassword"></i>
-                <i (click)="toggleShow()" class="fa-solid fa-eye-slash" *ngIf="showpassword"></i>
-            </div>
-
-
-      
-            <!-- LOG IN BUTTON -->
-            <div class="loginbtn">
-                <a class="login-btn" (click)="login()"> LogIn </a>
-            </div>
-
-            <div class="gclims">
-                <h3> GCLIMS v0.1 </h3>
-            </div>
-      
+  
+            <p class="social-text">GCLMS v0.1</p>
           </form>
         </div>
-      
       </div>
-      
-      
-
-</main>
+  
+      <!-- LEFT CONTENT -->
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+          </div>
+          <img src="../assets/images/vector.png" class="image" alt="" />
+        </div>
+      </div>
+  
+    </div>
+  </body>
+    

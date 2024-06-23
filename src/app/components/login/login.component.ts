@@ -13,6 +13,8 @@ export class LoginComponent {
   password: string = '';
   isLoggingin: boolean = false
 
+  backgroundImageUrl = 'path/to/image.jpg'; // Add the background image URL here
+
   showpassword = false;
 
   constructor(
