@@ -62,3 +62,101 @@
     text-align: center;
     margin-left: 30px;
 }
+.cards .card .box {
+    float: right;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    margin-left: 30px;
+}
+// FIRST CARD
+.container {
+    display: inline-flex;
+    align-items: center;
+    margin: 10px;
+    height: 450px;
+    width: 80%;
+    border: solid 1px var(--main-green);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cards .graph1{
+    display: flex;
+    justify-content: center;
+}
+// TOTAL
+.text{
+    width: 25%;
+}
+.text .analytic{
+    margin: 10px 20px 20px 20px;
+    font-weight: 700;
+
+}
+
+.analytic p{
+    font-size: 20px;
+}
+
+.analytic h1{
+    font-size: 60px;
+    color: var(--main-green);
+}
+.analytic1 h2{
+    font-size: 21px;
+    margin-bottom: 350px;
+    margin-left: 15px;
+    
+}
+.visual{
+    width: 79%;
+    display: inline-block;
+    align-content: center;
+}
+//VISUAL
+
+//CHART
+ .visual .chart{
+   
+    margin: 65px 10px 10px -80px;
+    height: 310px;
+    width: 96%;
+    border: solid 1px var(--main-green);
+    border-radius: 10px;
+    
+    
+}
+
+
+// FILTER
+.visual .filter{
+    margin: 10px 20px 20px 20px;
+    display: flex;
+    float:right;
+}
+.filter .inputtxt{
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: var(--main-green);
+    color: #ffff;
+    text-decoration: none;
+    border: none;
+
+
+    cursor: pointer;
+  
+      
+  }
+
+.filter option{
+    background-color: #fff;  // Option background color
+    border: solid 2px  var(--main-green);
+    color: #333;  // Option text color
+    font-weight: 400;  // Option font weight
+    padding: 15px;  // Option padding
+    font-size: 20px;  // Option font size
+    border-radius: 6px;
+}
