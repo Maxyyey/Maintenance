@@ -39,14 +39,14 @@
             <ul class="admin-tabs">
                 
                 <li class="admin-tab">
-                    <div class="dropdown" >
+                   
                     <span class="gc-library" (click)="toggleDropdown()">
                         <a class="tab-link" routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:false}">
                             <span class="tab-link-icon"><i class="fa-solid fa-house"></i></span>
                             <span class="tab-link-name"> Dashboard </span>
                         </a>
-                    
-                    
+                    </span>
+                        <div class="dropdown" >
                         
                         <button class="dropbtn" (click)="toggleDropdown()"> 
                             <span class="dropdown-icon" [ngClass]="{'active': dropdownOpen}"> 
@@ -69,9 +69,9 @@
                             </a>
                         </div>
                     
-                    
-                </span>
-            </div>
+                    </div>
+             
+
                 </li>
             
                 
