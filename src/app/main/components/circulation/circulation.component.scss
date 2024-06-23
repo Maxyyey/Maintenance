@@ -14,9 +14,32 @@
     margin-top: 25px;
     padding: 10px;
     width: 100%;
+    margin-bottom: 30px;
 }
 
-h1 {
+.container-historylogsButton {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+    
+
+
+}
+
+.container-onhistorylogsBtnClick:hover {
+    background-color: green($color: #000000);
+    color: rgb(46, 44, 44);
+}
+
+h2 {
     text-align: left;
     margin-left: -10px;
     margin-top: -40px;

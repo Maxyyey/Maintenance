@@ -137,5 +137,13 @@ export class AnnouncementComponent implements OnInit{
   }
   // Component logic here
 
+  onhistorylogsBtnClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
+  }
 }
 

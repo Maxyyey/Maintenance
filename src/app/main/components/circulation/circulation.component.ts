@@ -76,5 +76,12 @@ export class CirculationComponent implements OnInit{
     )
   }
   
+  onhistorylogsBtnClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
 
+  }
 }

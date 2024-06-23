@@ -182,4 +182,23 @@ export class PersonnelSetupComponent implements OnInit {
       }
     });
   }
+
+  onhistorylogsBtnClick() {
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
+    let modal = this.dialogRef.open(AddUserComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = false
+
+        if(result) {
+          this.personnels.push(result.success)
+        }
+      }
+    )
+  }
 }

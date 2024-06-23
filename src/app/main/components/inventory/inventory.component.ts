@@ -16,7 +16,8 @@ export class InventoryComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
   search: string = ''
-  default: boolean = true; //dont mind this
+  default: boolean = true; //dont mind this//ok
+  isModalOpen: boolean = false
 
   constructor(
     private dialogRef: MatDialog,
@@ -182,5 +183,15 @@ export class InventoryComponent implements OnInit {
         this.clearInventoryStatus()
       }
     });
+}
+
+onhistorylogsBtnClick() {
+  if(this.isModalOpen) {
+    return
+  }
+  
+  this.isModalOpen = true
+
+  
 }
 }
