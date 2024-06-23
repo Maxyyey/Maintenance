@@ -43,12 +43,12 @@ body {
 
 h2 {
     text-align: left;
-    margin-left: -10px;
-    margin-top: -40px;
-    margin-bottom: 10px;
-    font-size: 48px;
+    margin-left: -19px;
+  margin-top: -35px;
+  margin-bottom: 10px;
+  font-size: 34px;
     color: #000000;
-    opacity: 70%;
+  //  opacity: 70%;
 }
 
 h1 {
@@ -70,7 +70,7 @@ th, td {
 }
 
 th {
-    background-color: #376448;
+    background-color: #31A463;
     font-weight: bold;
     color: #ddd;
 }
@@ -80,7 +80,7 @@ th {
     margin-right: 5px;
     cursor: pointer;
     border: none;
-    background-color: #4f6f52;
+    background-color: #31A463;
     color: #fff;
     border-radius: 3px;
 }
@@ -114,7 +114,7 @@ th {
     button {
         padding: 8px 16px;
         border: 1px solid #ccc;
-        background-color: #4f6f52;
+        background-color: #31A463;
         color: #333;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
