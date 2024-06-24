@@ -13,7 +13,7 @@ import { Locker1Component } from './components/dashboard/locker1/locker1.compone
 import { OPAC1Component } from './components/dashboard/opac1/opac1.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'personnelsetup', pathMatch: 'full' },
+  { path: '', redirectTo: 'circulation1', pathMatch: 'full' },
   { path: 'addlocker', component: AddLockerComponent, 
  
   },

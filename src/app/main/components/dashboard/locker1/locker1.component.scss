@@ -1,3 +1,14 @@
+.header h1 {
+    font-size: 50px;
+    font-weight: 900;
+
+}
+
+.template {
+    margin: 10px 20px 10px 0;
+}
+
+
 .input-row {
     display: flex;
     padding: 0;
@@ -34,7 +45,7 @@
 
 
 .card .icon-case {
- 
+
     // margin-top: 10px;
     margin-left: 30px;
     margin-right: 50px;
@@ -47,7 +58,7 @@
 //     margin-left: 58px;
 //     font-size: 30px;
 // }
- 
+
 // .cards .card h3 {
 //     margin-left: 40px;
 //     font-size: 15px;
@@ -62,6 +73,7 @@
     text-align: center;
     margin-left: 30px;
 }
+
 .cards .card .box {
     float: right;
     font-size: 15px;
@@ -70,93 +82,121 @@
     text-align: center;
     margin-left: 30px;
 }
+
 // FIRST CARD
-.container {
+.container1 {
     display: inline-flex;
     align-items: center;
-    margin: 10px;
-    height: 450px;
-    width: 80%;
-    border: solid 1px #31A463;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.cards .graph1{
-    display: flex;
     justify-content: center;
-}
-// TOTAL
-.text{
-    width: 25%;
-}
-.text .analytic{
-    margin: 10px 20px 20px 20px;
-    font-weight: 700;
-
-}
-
-.analytic p{
-    font-size: 20px;
-}
-
-.analytic h1{
-    font-size: 60px;
-    color: #31A463;
-}
-.analytic1 h2{
-    font-size: 21px;
-    margin-bottom: 350px;
-    margin-left: 15px;
     
+    margin: 10px;
+    height: 500px;
+    width: 48%;
+    border: solid 1px var(--main-green);
+    border-radius: 10px;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.visual{
-    width: 79%;
+.cards .graph1 {
+    display: inline-flex;
+    width: 100%;
+}
+
+// TOTAL
+.text {
+    width: 100%;
+    margin: 10px;
+
     display: inline-block;
-    align-content: center;
 }
+
+.text .head {
+    color: #383838;
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.text .analytic1 {
+    margin: 15px;
+    display: inline-flex;
+    background-color: #bbbaba;
+    border-radius: 6px;
+    padding: 10px;
+    width: 96%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 5px;
+    align-items: center;
+
+}
+
+.analytic1 p {
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: #000;
+}
+
+.analytic1 h1 {
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+    color: #000;
+}
+
+.materialname .bordercolor {
+    background-color: blue;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname1 .bordercolor1 {
+    background-color: yellow;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname2 .bordercolor2 {
+
+    background-color: red;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname3 .bordercolor3 {
+
+    background-color: orange;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname4 .bordercolor4 {
+
+    background-color: pink;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.visual1 {
+    width: 100%;
+    display: inline-block;
+}
+
 //VISUAL
 
 //CHART
- .visual .chart{
-   
-    margin: 65px 10px 10px -80px;
-    height: 310px;
+.visual1 .chart1 {
+
+    margin: 0 15px;
+    height: 330px;
     width: 96%;
-    border: solid 1px #31A463;
+    border: solid 1px var(--main-green);
     border-radius: 10px;
-    
-    
-}
 
-
-// FILTER
-.visual .filter{
-    margin: 10px 20px 20px 20px;
-    display: flex;
-    float:right;
-}
-.filter .inputtxt{
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    background-color: #31A463;
-    color: #ffff;
-    text-decoration: none;
-    border: none;
-
-
-    cursor: pointer;
-  
-      
-  }
-
-.filter option{
-    background-color: #fff;  // Option background color
-    border: solid 2px  #31A463;
-    color: #333;  // Option text color
-    font-weight: 400;  // Option font weight
-    padding: 15px;  // Option padding
-    font-size: 20px;  // Option font size
-    border-radius: 6px;
 }
