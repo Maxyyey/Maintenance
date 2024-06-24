@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-circulation1',
   templateUrl: './circulation1.component.html',
