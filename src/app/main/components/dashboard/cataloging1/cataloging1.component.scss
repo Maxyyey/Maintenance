@@ -1,10 +1,10 @@
-.header h1{
+.header h1 {
     font-size: 50px;
     font-weight: 900;
 
 }
 
-.template{
+.template {
     margin: 10px 0 10px 0;
 }
 
@@ -45,7 +45,7 @@
 
 
 .card .icon-case {
- 
+
     // margin-top: 10px;
     margin-left: 30px;
     margin-right: 50px;
@@ -58,7 +58,7 @@
 //     margin-left: 58px;
 //     font-size: 30px;
 // }
- 
+
 // .cards .card h3 {
 //     margin-left: 40px;
 //     font-size: 15px;
@@ -73,6 +73,7 @@
     text-align: center;
     margin-left: 30px;
 }
+
 // FIRST CARD
 .container {
     display: inline-block;
@@ -84,6 +85,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .container1 {
     display: inline-flex;
     align-items: center;
@@ -94,27 +96,29 @@
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.cards .graph1{
+
+.cards .graph1 {
     display: inline-flex;
     width: 100%;
 }
+
 // TOTAL
-.text{
+.text {
     width: 100%;
     margin: 10px;
 
     display: inline-block;
 }
 
-.text .head{
+.text .head {
     color: #383838;
     margin-left: 12px;
     font-size: 13px;
     font-weight: 600;
 }
 
-.text .analytic{
-    margin:15px;
+.text .analytic {
+    margin: 15px;
     display: inline-flex;
     background-color: #bbbaba;
     border-radius: 6px;
@@ -128,84 +132,89 @@
 
 }
 
-.analytic p{
+.analytic p {
     font-weight: 600;
     font-size: 15px;
     text-align: center;
     color: #000;
 }
 
-.analytic h1{
+.analytic h1 {
     font-weight: 900;
     font-size: 25px;
     text-align: center;
     color: #000;
 }
 
-.materialname .bordercolor{
-background-color: blue;
-border-radius: 6px;
-padding: 5px;
-
-}
-.materialname1 .bordercolor1 {
-background-color: yellow;
-border-radius: 6px;
-padding: 5px;
-
-}
-
-.materialname2  .bordercolor2{
-
-  background-color: red;
+.materialname .bordercolor {
+    background-color: blue;
     border-radius: 6px;
     padding: 5px;
-    
+
 }
-.materialname3  .bordercolor3{
+
+.materialname1 .bordercolor1 {
+    background-color: yellow;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname2 .bordercolor2 {
+
+    background-color: red;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname3 .bordercolor3 {
 
     background-color: orange;
-      border-radius: 6px;
-      padding: 5px;
-      
-  }
-  .materialname4  .bordercolor4{
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.materialname4 .bordercolor4 {
 
     background-color: pink;
-      border-radius: 6px;
-      padding: 5px;
-      
-  }
-.text1{
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.text1 {
     width: 35%;
     margin-bottom: 300px;
     margin-top: 300px;
 }
 
 
-.visual{
+.visual {
     width: 100%;
     display: inline-block;
 }
+
 //VISUAL
 
 //CHART
- .visual .chart{
-   
+.visual .chart {
+
     margin: 0 15px;
     height: 330px;
     width: 94%;
     border: solid 1px var(--main-green);
     border-radius: 10px;
-    
+
 }
 
 
 
 //2ND CARD
 
-.text .analytic1{
-    margin:15px;
+.text .analytic1 {
+    margin: 15px;
     display: inline-flex;
     background-color: #bbbaba;
     border-radius: 6px;
@@ -219,33 +228,34 @@ padding: 5px;
 
 }
 
-.analytic1 p{
+.analytic1 p {
     font-weight: 600;
     font-size: 15px;
     text-align: center;
     color: #000;
 }
 
-.analytic1 h1{
+.analytic1 h1 {
     font-weight: 900;
     font-size: 25px;
     text-align: center;
     color: #000;
 }
 
-.visual1{
+.visual1 {
     width: 100%;
     display: inline-block;
 }
+
 //VISUAL
 
 //CHART
- .visual1 .chart1{
-   
+.visual1 .chart1 {
+
     margin: 0 15px;
     height: 330px;
     width: 96%;
     border: solid 1px var(--main-green);
     border-radius: 10px;
-    
+
 }
