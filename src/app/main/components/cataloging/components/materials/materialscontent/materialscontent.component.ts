@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddiconComponent } from './addicon/addicon.component';
 import { CatalogingService } from '@app/services/cataloging.service';
 import { error } from 'console';
+import { MaterialsHistoryComponent } from './materialshistory/materialshistory.component';
 
 @Component({
   selector: 'app-materialscontent',
@@ -51,13 +52,23 @@ export class MaterialscontentComponent implements OnInit{
     )
   }
   onhistorylogsBtnClick() {
-    if(this.isModalOpen) {
-      return
+    if (this.isModalOpen) {
+      return;
     }
-    
-    this.isModalOpen = true
-
-    
+  
+    this.isModalOpen = true;
+  
+    let modal = this.dialogRef.open(MaterialsHistoryComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = false;
+  
+        if (result) {
+          this.locations.push(result.success); // use the correct property
+        }
+      }
+    );
   }
+  
   
 }

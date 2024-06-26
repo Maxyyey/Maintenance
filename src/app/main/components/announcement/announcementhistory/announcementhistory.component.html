@@ -1,0 +1,97 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1> History</h1>
+                </div>
+                
+                <!-- BODY - DETAILS -->
+                <div class="detailsbody">
+                  <div class="details">
+                      <form>
+                          <div class="input_field">
+                              <div class="input-row">
+                              
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" [(ngModel)]="form.first_name" [ngModelOptions]="{standalone: true}" required>
+                              <span></span>
+                              <div class="labelline"> First Name</div>
+                            </div>
+
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" [(ngModel)]="form.middle_name" [ngModelOptions]="{standalone: true}"  required>
+                              <span></span>
+                              <div class="labelline">Middle Name</div>
+                            </div>
+
+                            <div class="txt_field">
+                              <input class="inputtxt" type="text" [(ngModel)]="form.last_name" [ngModelOptions]="{standalone: true}"  required>
+                              <span></span>
+                              <div class="labelline">Last Name</div>
+                            </div>
+
+                            <div class="txt_field2">
+                              <input class="inputtxt2" type="text" [(ngModel)]="form.ext_name" [ngModelOptions]="{standalone: true}"  required>
+                              <span></span>
+                              <div class="labelline2">Suffix</div>
+                            </div>
+
+                            <div class="txt_field3">
+                              <input class="inputtxt3" type="email" [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}"  required>
+                              <span></span>
+                              <div class="labelline3">Email</div>
+                            </div>
+
+                            <div class="txt_field3">
+                              <input class="inputtxt3" type="password" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}"  required>
+                              <span></span>
+                              <div class="labelline3">Password</div>
+                            </div>
+                            
+
+                             <div class="txt_field1">
+                                <div class="labelline1">role</div>
+                                <span></span>
+                                
+
+                                  <input type="radio" id="role" name="role" [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="circulation">
+                                  <label for="role">Circulation</label>
+                                
+                                  
+                                  <input type="radio" id="role1" name="role" [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="cataloging">
+                                  <label for="role1">Cataloging</label>
+                                
+                                  
+                                  <input type="radio" id="role2" name="role" [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="locker">
+                                  <label for="role2">Locker</label>
+                                  
+                                  
+                                  <!-- <input type="radio" id="role3" name="role" value="maintenance">
+                                  <label for="role3">Maintenance</label> -->
+
+                              </div>
+                                                            <!--<div class="txt_field">
+                                <select class="inputtxt" id="language" name="language" required>
+                                    <option value="English"> Maintenace </option>
+                                    <option value="Tagalog"> Locker </option>
+                                    <option value="Tagalog"> Cataloging </option>
+                                    <option value="Tagalog"> Circulation </option>
+                                </select>
+                                <span></span>
+                                <label class="labelline" for="language"> role </label>
+                            </div>-->
+                            </div>
+                            </div>
+                          </form>
+                        </div> 
+                        <div class="button-container">
+                            <button  (click)="cancelBox()" class="cancel-btn">Cancel</button>
+                            <button class="update-btn" (click)="addBox()"> Add </button>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+</main>

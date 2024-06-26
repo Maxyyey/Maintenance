@@ -5,12 +5,14 @@ import { EnterbarcodeComponent } from './enterbarcode/enterbarcode.component';
 import { ClearhistoryComponent } from './clearhistory/clearhistory.component';
 import { InventoryService } from '@app/services/inventory.service';
 import Swal from 'sweetalert2';
+import { InventoryHistoryComponent } from './inventoryhistory/inventoryhistory.component';
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss'],
 })
 export class InventoryComponent implements OnInit {
+  [x: string]: any;
   inventories: any = [];
   filter: number = 0
   currentPage = 1;
@@ -186,12 +188,21 @@ export class InventoryComponent implements OnInit {
 }
 
 onhistorylogsBtnClick() {
-  if(this.isModalOpen) {
-    return
+  if (this.isModalOpen) {
+    return;
   }
-  
-  this.isModalOpen = true
 
-  
+  this.isModalOpen = true;
+
+  let modal = this.dialogRef.open(InventoryHistoryComponent, {});
+  modal.afterClosed().subscribe(
+    result => {
+      this.isModalOpen = false;
+
+      if (result) {
+        this['locations'].push(result.success); // use the correct property
+      }
+    }
+  );
 }
 }

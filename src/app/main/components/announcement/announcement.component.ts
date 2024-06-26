@@ -5,6 +5,7 @@ import { AddComponent } from './add/add.component';
 import { EditAnnouncePopupComponent } from './editannouncepopup/editannouncepopup.component';
 import { AnnouncementService } from '@app/services/announcement.service';
 import Swal from 'sweetalert2';
+import { AnnouncementHistoryComponent } from './announcementhistory/announcementhistory.component';
 
 @Component({
   selector: 'app-announcement',
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
   styleUrl: './announcement.component.scss',
 })
 export class AnnouncementComponent implements OnInit{
+  [x: string]: any;
   announcements: any[] = []
   isModalOpen: boolean = false
 
@@ -138,12 +140,22 @@ export class AnnouncementComponent implements OnInit{
   // Component logic here
 
   onhistorylogsBtnClick() {
-    if(this.isModalOpen) {
-      return
+    if (this.isModalOpen) {
+      return;
     }
-    
-    this.isModalOpen = true
-
+  
+    this.isModalOpen = true;
+  
+    let modal = this.dialogRef.open(AnnouncementHistoryComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = false;
+  
+        if (result) {
+          this['locations'].push(result.success); // use the correct property
+        }
+      }
+    );
   }
 }
 

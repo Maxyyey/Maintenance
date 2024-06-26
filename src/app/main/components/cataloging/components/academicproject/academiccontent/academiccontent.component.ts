@@ -6,6 +6,7 @@ import { ViewComponent } from './departmentModal/view.component';
 import { AddPopupComponent } from './addpopup/addpopup.component';
 import { CatalogingService } from '@app/services/cataloging.service';
 import Swal from 'sweetalert2';
+import { AcademicHistoryComponent } from './academichistory/acdemichistory.component';
 
 @Component({
   selector: 'app-academiccontent',
@@ -15,6 +16,7 @@ import Swal from 'sweetalert2';
 export class AcademiccontentComponent implements OnInit {
   departments: any[] = []
   isModalOpen: boolean = false
+  locations: any;
 
   constructor(
     private dialogRef: MatDialog, 
@@ -117,12 +119,21 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   onhistorylogsBtnClick() {
-    if(this.isModalOpen) {
-      return
+    if (this.isModalOpen) {
+      return;
     }
-    
-    this.isModalOpen = true
-
-    
+  
+    this.isModalOpen = true;
+  
+    let modal = this.dialogRef.open(AcademicHistoryComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = true;
+  
+        if (result) {
+          this.locations.push(result.success); // use the correct property
+        }
+      }
+    );
   }
 }

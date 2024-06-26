@@ -5,6 +5,7 @@ import { EditComponent } from './edit/edit.component';
 import { PatronService } from '@app/services/patron.service';
 import { response } from 'express';
 import Swal from 'sweetalert2';
+import { HistoryComponent } from './history/history.component';
 
 @Component({
   selector: 'app-circulation',
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
   styleUrl: './circulation.component.scss',
 })
 export class CirculationComponent implements OnInit{
+  [x: string]: any;
   patrons: any = []
   isModalOpen: boolean = false
 
@@ -83,5 +85,15 @@ export class CirculationComponent implements OnInit{
     
     this.isModalOpen = true
 
+    let modal = this.dialogRef.open(HistoryComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = false
+
+        if(result) {
+          this['circulation'].push(result.success)
+        }
+      }
+    )
   }
 }
