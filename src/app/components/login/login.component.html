@@ -1,6 +1,6 @@
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
-<body class="login-container" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
+<main class="login-container" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
 
     <div class="container">
   
@@ -20,11 +20,11 @@
             <!-- INPUT FIELD -->
             <div class="input-field">
               <i class='bx bxs-user'></i> 
-              <input id="email" name="email" type="email" placeholder="Username" [(ngModel)]="email">
+              <input type="email" placeholder="Username" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="input-field">
               <i class='bx bxs-lock-alt'></i>
-              <input id="password" name="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password">
+              <input [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
             </div>
   
             <!-- LOGIN BUTTON -->
@@ -47,5 +47,5 @@
       </div>
   
     </div>
-  </body>
+</main>
     
