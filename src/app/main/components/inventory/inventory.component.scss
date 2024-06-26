@@ -22,8 +22,8 @@
   
   }
 .container-addUserButton1{
-    background-color: white;
-    color: black;
+    background-color: #31A463;
+    color: white;
     border-radius: 10px;
     border: 1px ;
     padding: 10px;
@@ -64,8 +64,8 @@
 }
 
 .container-historylogsButton {
-    background-color: white;
-    color: black;
+    background-color: #31A463;
+    color: white;
     border-radius: 10px;
     padding: 10px;
     border: 1px;
@@ -76,9 +76,19 @@
     float: right;
     text-align: center;
 
-
-
 }
+
+.container-addUserButton1:hover {
+    background-color: green($color: #000000);
+    color: rgb(46, 44, 44);
+}
+
+
+.container-historylogsButton:hover {
+    background-color: green($color: #000000);
+    color: rgb(46, 44, 44);
+}
+
 
 .search-bar{
     float: right;
@@ -104,8 +114,7 @@ h2{
     margin-top: -10px;
     margin-bottom: 10px;
     font-size: 50px;
-    font-weight: 900;
-
+  font-weight: 900;
     color: #000000;
    // opacity: 70%;
 }

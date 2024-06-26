@@ -27,8 +27,8 @@
       }
 
       .container-historylogsButton {
-        background-color: white;
-        color: black;
+        background-color: #31A463;
+        color: white;
         border-radius: 10px;
         padding: 10px;
         border: 1px;
@@ -42,7 +42,7 @@
     
     }
 
-      .container-onhistorylogsBtnClick:hover {
+      .container-historylogsButton:hover {
         background-color: green($color: #000000);
         color: rgb(46, 44, 44);
     }

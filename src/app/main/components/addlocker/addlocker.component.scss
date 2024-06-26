@@ -1,6 +1,6 @@
 .container-AddNewButton{
-    background-color: white;
-    color: black;
+    background-color: #31A463;
+    color: white;
     border-radius: 10px;
     border: 1px ;
     padding: 10px;
@@ -11,6 +11,12 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.container-AddNewButton:hover {
+    background-color: green($color: #000000);
+    color: rgb(46, 44, 44);
+}
+
 .main-content {
     margin: 10px 40px 10px 10px;
 }
@@ -47,8 +53,7 @@ h2 {
   margin-top: -35px;
   margin-bottom: 10px;
   font-size: 50px;
-    font-weight: 900;
-
+  font-weight: 900;
     color: #000000;
   //  opacity: 70%;
 }
