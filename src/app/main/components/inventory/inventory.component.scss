@@ -101,6 +101,7 @@
 
 .search-bar{
     float: right;
+    
 }   
 .main-content {
     margin: 10px 40px 10px 10px;
@@ -243,9 +244,9 @@ th {
   .search-bar{
     background-color: white;
     border-radius: 10px;
-    border: 1px;
+    border: 1px solid black; /* Thin border, solid style, black color */
     padding: 10px;
-    padding-right: 0px;
+    padding-right: 0;
     padding-left: 20px;
     margin-left: 10px;
     margin-right: 10px;
