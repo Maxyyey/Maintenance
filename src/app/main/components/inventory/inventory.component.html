@@ -10,8 +10,8 @@
                     <button class="container-addUserButton1" type="button" (click)="onClrHistoryBtnClick()"> Clear History</button>
                     <!-- <button class="container-addUserButton2" type="button" (click)="onAddNewBtnClick()">Scan Barcode</button> -->
                     <!-- <button class="container-addUserButton3" type="button" (click)="onAddNewBtnClick1()">Scan Barcode</button> -->
-                    <input class="search-bar" type="text" placeholder="Enter Barcode" [(ngModel)]="search" (keyup)="checkSearchInput()" (keyup.enter)="onSearch()">  
-            </h1>
+                      
+                </h1>
             
         </div>
         <div class="detailsheader">
@@ -41,6 +41,17 @@
         
 
         <div class="container">
+            <div class="table-head">
+                <div class="filters">
+        
+                </div>
+                <div class="search-container">
+                  <form>
+                    <input class="search-bar" type="text" placeholder="Enter Barcode" [(ngModel)]="search" (keyup)="checkSearchInput()" (keyup.enter)="onSearch()">
+                    <button type="submit" disabled><i class="fa-sharp fa-solid fa-barcode"></i></button>
+                  </form>
+                </div>
+              </div>
             <div class="table-content">
             <table>
                 <thead>
