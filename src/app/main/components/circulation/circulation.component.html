@@ -9,6 +9,7 @@
             </h1>
         </div>
         <div class="container">
+            <div class="table-content">
             <table>
                 <thead>
                     <tr>
@@ -35,5 +36,11 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+            <div class="pagination">
+                <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+                <span>{{ currentPage }}</span>
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+              </div>
         </div>
     </div>

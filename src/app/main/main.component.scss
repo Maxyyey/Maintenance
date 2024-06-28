@@ -4,7 +4,7 @@
     //new sidenav green #4f6f52;
     --primary-color: #FFFFFF;
     --secondary-color: #EEEEEE;
-    --main-green: #31A463;
+    --main-green: #4f6f52;
     --border-color: #DFE0E0;
     --black: #000000;
 }
@@ -17,22 +17,26 @@ body {
 
 /* HEADER */
 .header {
+    display: flex;
+    align-items: center;
     position: fixed;
     z-index: 1;
     background-color: #294b37;
     height: 70px;
     width: 100%;
-    border-bottom: 2px solid var(--border-color);
+    padding: 15px 20px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
     margin-left: 220px;
     color: #f4f4f4;
     font-size: 14px;
-    text-indent: 30px;
+  
     
 }
 
 .header h1 {
-    font-size: 37px;
-    font-weight: 900;
+    font-size: 30px;
+    font-weight: 700;
+    color:  #F5EFE6;
 }
 
 
@@ -139,11 +143,17 @@ ul ul {
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    padding: 10px 10px 10px 10px;
 }
 
-.logoutbtn .logout:hover {
-    color: var(--main-green);
+.logout i {
+    padding: 10px 10px 10px 10px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+}
+
+.logout i:hover {
+    border-radius: 5px;
+    background-color: var(--dark-green);
 }
 
 .logoutbtn {
@@ -153,7 +163,6 @@ ul ul {
     width: 220px;
     cursor: pointer;
     transition: all 0.5s ease;
-    color: #ffffff;
 }
 
 @media only screen and (max-width: 768px) {

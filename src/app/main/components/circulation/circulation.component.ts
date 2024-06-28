@@ -14,6 +14,8 @@ import { HistoryComponent } from './history/history.component';
 })
 export class CirculationComponent implements OnInit{
   [x: string]: any;
+  currentPage = 1;
+  itemsPerPage = 10;
   patrons: any = []
   isModalOpen: boolean = false
 
@@ -40,7 +42,27 @@ export class CirculationComponent implements OnInit{
       }
     )
   }
+  get totalPages(): number {
+    return Math.ceil(this.patrons.length / this.itemsPerPage);
+  }
 
+  paginatedPersonnels(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.patrons.slice(startIndex, endIndex);
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
   onEditBtnClick(id:number){
     if(this.isModalOpen) {
       return

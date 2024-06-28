@@ -2,7 +2,7 @@
     font-size: 100%;
     --primary-color: #FFFFFF;
     --secondary-color: #EEEEEE;
-    --main-green: #31A463;
+    --main-green: #4f6f52;
     --border-color: #DFE0E0;
     --black: #000000;
     --shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -61,7 +61,7 @@
     }
   
     .card button {
-      background-color: #31A463;
+      background-color: #4f6f52;
       border: 2px solid; /* Solid border */
       border-radius: 5px; /* Rounded corners */
       color: #ffffff; /* White text */
@@ -75,7 +75,7 @@
       box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
       transform: translate(0px, -2px);
       background: white;
-      color: #31A463;
+      color: #4f6f52;
       cursor: pointer;
       text-decoration: none;
     }
@@ -94,7 +94,7 @@
     
     .page-links {
       display: inline-block;
-      background: #31A463;
+      background: #4f6f52;
       border: 2px solid;
       margin: 0px 10px;
       padding: 5px 10px;
@@ -111,7 +111,7 @@
       box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
       transform: translate(0px, -2px);
       background: white;
-      color: #31A463;
+      color: #4f6f52;
       cursor: pointer;
     }
 
@@ -120,7 +120,7 @@
     //     padding: 10px 13px 10px 13px;
     //     border: none;
     //     font-weight: 600;
-    //     background-color: #31A463; 
+    //     background-color: #4f6f52; 
     //     color: #fff;
     //     text-decoration: none;
     //     border-radius: 10px;
@@ -134,34 +134,42 @@
      
     // }
 
-    .button-container{
+.button-container{
       margin-top: 15px;
-      color: #31A463;
+      color: #4f6f52;
       width: 1100px;
       display:flex;
       
-    }
-    .button-container .add-btn{
+}
+.button-container .add-btn{
       
-      border-radius: 6px;
-          padding: 7px;
-          font-size: 15px;
-          background-color: transparent;
-          color: #000;
-          text-decoration: none;
-          border: 2px solid #31A463;
-          transition: background-color 0.3s ease;
-          margin-right: 10px;
-          float: left;
-          cursor: pointer;
+  background: var(--main-green);
+  text-decoration: none;
+  color: white;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+  transition: .3s;
+  transform: translate(0px, 0px);
+  border-radius: 3px;
+  border: 1px ;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: 10px;
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
     
     
-    }
-    .button-container .add-btn:hover {
-          background-color: #31A463;
-      color: #fff;
-        }
-        .container-historylogsButton {
+}
+    
+.button-container .add-btn:hover {
+      box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+      transform: translate(0px, -2px);
+      background: var(--green-hover);
+      cursor: pointer;
+      text-decoration: none;
+}
+.container-historylogsButton {
           background: var(--main-green);
           text-decoration: none;
           color: white;
@@ -179,10 +187,13 @@
           text-align: center;
       
       
-      }
+}
   
       .container-historylogsButton:hover {
-          background-color: green($color: #000000);
-          color: rgb(46, 44, 44);
+        box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+        transform: translate(0px, -2px);
+        background: var(--green-hover);
+        cursor: pointer;
+        text-decoration: none;
       }
   

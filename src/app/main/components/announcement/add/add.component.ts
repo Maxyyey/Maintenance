@@ -108,7 +108,7 @@ export class AddComponent {
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'Cancel',
-      confirmButtonColor: "#31A463",
+      confirmButtonColor: "#4f6f52",
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {

@@ -1,11 +1,9 @@
-
 .main-content {
     margin: 10px 40px 10px 10px;
 }
 
 //HEADER//
 .container-header {
-    
     color: white;
     border-radius: 10px;
     margin-right: 25px;
@@ -14,18 +12,50 @@
     width: 100%;
 }
 
-.search-bar {
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid black; /* Thin border, solid style, black color */
-    padding: 10px;
-    padding-right: 0px;
-    padding-left: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    float: right;
-    font-weight: bold;
-    color: black;
+.table-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+// SEARCH BAR
+.table-head input[type=text] {
+    font-family: 'Montserrat';
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 250px;
+    padding: 12px 16px;
+    height: 2.3em;
+    border: none;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.table-head .search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    height: 2.5em;
+    border: 1px solid var(--table-border);
+    background-color: #FFFFFF;
+}
+
+.table-head .search-container button {
+    height: 2.5em;
+    width: 2.5em;
+    border: 1px solid var(--table-border);
+    background: var(--main-green);
+    color: #FFFFFF;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 16px;
+    cursor: default;
 }
 
 .container-addUserButton {
@@ -70,13 +100,19 @@
 }
 
 .container-addUserButton:hover {
-    background-color: green($color: #000000);
-    color: rgb(46, 44, 44);
+    box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+    transform: translate(0px, -2px);
+    background: var(--green-hover);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .container-historylogsButton:hover {
-    background-color: green($color: #000000);
-    color: rgb(46, 44, 44);
+    box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+    transform: translate(0px, -2px);
+    background: var(--green-hover);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 h1 {
@@ -112,32 +148,44 @@ body {
 }
 
 .container {
-    // margin: 20px auto;
-    padding: 0px 0px 10px 0px;
-    background-color: #ffffff;
-    border-radius: 0px;
-
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+    background: #F4F4F4;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 0.5px solid #BFBFBF;
 }
 
+.table-content {
+    border-radius: 5px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+}
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    
+    border-radius: 5px;
 }
+
+table,
 th,
 td {
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    padding: 10px;
     text-align: center;
-    position: relative;
-    width: 25%;
+    justify-content: center;
+    transition: all 0.3s ease-in;
 }
 
 th {
-    background-color: #31A463;
+    background-color: #4F6F52;
     font-weight: bold;
     color: #ddd;
 }
@@ -149,7 +197,7 @@ th {
     margin-right: 5px;
     cursor: pointer;
     border: none;
-    background-color: #31A463;
+    background-color: #4f6f52;
     color: #fff;
     border-radius: 3px;
 }
@@ -159,7 +207,6 @@ th {
 
 //DELETE
 .archive-btn {
-
     padding: 5px 17px;
     margin-right: 5px;
     cursor: pointer;
@@ -178,7 +225,7 @@ th {
     button {
         padding: 8px 16px;
         border: 1px solid #ccc;
-        background-color: #31A463;
+        background-color: #4f6f52;
         color: #333;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;

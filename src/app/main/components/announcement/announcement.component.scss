@@ -17,8 +17,11 @@
 }
 
 .container-UploadButton:hover {
-  background-color: green($color: #000000);
-    color: rgb(46, 44, 44);
+  box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+    transform: translate(0px, -2px);
+    background: var(--green-hover);
+    cursor: pointer;
+    text-decoration: none;
 }
 .container-historylogsButton {
   background: var(--main-green);
@@ -42,8 +45,11 @@
 }
 
 .container-historylogsButton:hover {
-  background-color: green($color: #000000);
-  color: rgb(46, 44, 44);
+  box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+    transform: translate(0px, -2px);
+    background: var(--green-hover);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .main-content {
@@ -184,7 +190,7 @@ p {
 .card-buttons .edit-btn {
   margin-left: 5px; /* Adjust space between buttons */
   margin-bottom: 5px;
-  background-color: #31A463; /* Set green background color */
+  background-color: #4f6f52; /* Set green background color */
   border: none;
   border-radius: 5px;
   color: white; /* Set text color to white */
