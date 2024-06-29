@@ -89,7 +89,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
+    background-color: #F5EFE6;
     margin: 10px;
     height: 500px;
     width: 48%;
@@ -200,4 +200,13 @@
     border: solid 1px var(--main-green);
     border-radius: 10px;
 
+}
+
+.table-content {
+    border-radius: 5px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+    background-color:  #ffffff;
+  
+ 
 }
