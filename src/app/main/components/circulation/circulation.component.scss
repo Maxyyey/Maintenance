@@ -23,14 +23,14 @@
     color: white;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
     transition: .3s;
-    transform: translate(0px, 0px);
+    transform: translateY(-5px);
     border-radius: 3px;
     padding: 10px;
     border: 1px;
     padding-right: 20px;
     padding-left: 20px;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: -10px;
     float: right;
     text-align: center;
     
@@ -47,14 +47,15 @@
 }
 
 h2 {
+    transform: translateY(15px);
     text-align: left;
-    margin-left: -19px;
+    margin-left: -11px;
     margin-top: -35px;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 34px;
   font-weight: 700;
     color: #000000;
-    //opacity: 70%;
+    opacity: 70%;
 }
 
 //BODY
@@ -115,7 +116,7 @@ th {
 //BUTTON
 
 .edit-btn {
-    padding: 5px 17px;
+    padding: 4px;
     margin-right: 5px;
     cursor: pointer;
     border: none;
