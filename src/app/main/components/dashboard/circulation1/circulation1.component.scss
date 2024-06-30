@@ -1,7 +1,7 @@
 .header h1 {
-    font-size: 50px;
+    font-size: 34px;
     font-weight: 700;
-
+    opacity: 70%;
 }
 
 .template {
@@ -88,6 +88,7 @@
 // FIRST CARD
 .container {
     display: inline-flex;
+    background-color: #F5EFE6;
     margin: 10px;
     height: 400px;
     width: 65%;
@@ -147,7 +148,7 @@
     font-size: 18px;
     font-weight: 700;
     background-color: #4f6f52;
-    color: #ffff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     border: none;
 
@@ -176,6 +177,7 @@
     height: 400px;
     width: 35%;
     border: solid 1px #4f6f52;
+    background-color: #F5EFE6;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -290,6 +292,7 @@
     height: 400px;
     width: 50%;
     border: solid 1px #4f6f52;
+    background-color: #F5EFE6;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -359,6 +362,7 @@
     height: 400px;
     width: 50%;
     border: solid 1px #4f6f52;
+    background-color: #F5EFE6;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -421,3 +425,14 @@
     border-radius: 10px;
 
 }
+
+
+
+.table-content {
+    border-radius: 7px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+    background-color:  #ffffff;
+    ;
+}
+
