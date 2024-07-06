@@ -11,6 +11,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 
+import {MatMenuModule} from '@angular/material/menu';
+
 
 // Insert material imports here
 const MatModules = [
@@ -26,7 +28,8 @@ const MatModules = [
   MatFormFieldModule, 
   MatCardModule,
   MatProgressSpinnerModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatMenuModule
 ]
 
 @NgModule({

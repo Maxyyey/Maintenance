@@ -14,19 +14,7 @@
                 </h1>
             
             </div>
-        <div class="detailsheader">
-            <div class="txt_field">
-                <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
-                    <!-- <option value="English"> All  </option> -->
-                    <option value="0"> Available </option>
-                    <option value="1"> Unreturned </option>
-                    <option value="2"> Missing </option>
-                    <option value="3"> Unlabeled </option>
-                    <option value="4"> Damaged </option>
-                </select>
-            
-            </div>
-            </div>
+        
         <!-- <h2>
             LIST
             <div class="dropdown">
@@ -44,14 +32,29 @@
             <div class="table-head">
                 <div class="filters">
         
+               
+                <div class="txt_field">
+                    <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
+                        
+                        <option value="0">Available</option>
+                        <option value="1">Unreturned</option>
+                        <option value="2">Missing</option>
+                        <option value="3">Unlabeled</option>
+                        <option value="4">Damaged</option>
+                    </select>
+                
                 </div>
+
+              
                 <div class="search-container">
                   <form>
+                   
                     <input class="search-bar" type="text" placeholder="Enter Barcode" [(ngModel)]="search" (keyup)="checkSearchInput()" (keyup.enter)="onSearch()">
                     <button type="submit" disabled><i class="fa-sharp fa-solid fa-barcode"></i></button>
                   </form>
                 </div>
               </div>
+               </div>
             <div class="table-content">
             <table>
                 <thead>

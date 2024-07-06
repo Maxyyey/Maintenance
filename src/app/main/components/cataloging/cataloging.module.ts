@@ -9,6 +9,8 @@ import { MaterialscontentComponent } from './components/materials/materialsconte
 import { AcademiccontentComponent } from './components/academicproject/academiccontent/academiccontent.component';
 import { AddiconComponent } from './components/materials/materialscontent/addicon/addicon.component';
 import { AddiconacadComponent } from './components/academicproject/academiccontent/addiconacad/addiconacad.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AddiconacadComponent } from './components/academicproject/academicconte
   imports: [
     CommonModule,
     CatalogingRoutingModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule, 
+    MatMenuModule
   ],
   // Other configurations...
 })

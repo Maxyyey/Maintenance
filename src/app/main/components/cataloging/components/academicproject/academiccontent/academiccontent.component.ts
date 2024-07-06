@@ -8,11 +8,13 @@ import { CatalogingService } from '@app/services/cataloging.service';
 import Swal from 'sweetalert2';
 import { AcademicHistoryComponent } from './academichistory/acdemichistory.component';
 
+
 @Component({
   selector: 'app-academiccontent',
   templateUrl: './academiccontent.component.html',
   styleUrl: './academiccontent.component.scss',
 })
+
 export class AcademiccontentComponent implements OnInit {
   departments: any[] = []
   isModalOpen: boolean = false
