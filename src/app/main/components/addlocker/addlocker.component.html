@@ -35,7 +35,7 @@
           <tbody>
             <tr *ngFor="let locker of paginatedLockers()">
               <td>{{ locker.locker_number }}</td>
-              <td>{{ locker.status }}</td>
+              <td>{{ locker.status }} <span *ngIf="locker.user">| {{ locker.user.first_name }} {{ locker.user.last_name }}</span></td>
               <td>{{ locker.updated_at | date:'MM/dd/yyyy' }}</td>
               <td>
                 <button class="edit-btn" type="button" (click)="onEditBtnClick(locker.id)">
