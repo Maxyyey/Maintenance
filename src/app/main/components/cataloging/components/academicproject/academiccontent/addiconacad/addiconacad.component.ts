@@ -13,11 +13,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class AddiconacadComponent{
   formDetails: FormGroup = this.fb.group({
-    department_short: [null, [Validators.required], Validators.max(32)],
-    department_full: [null, [Validators.required], Validators.max(32)],
-    program_short: [null, [Validators.required], Validators.max(16)],
-    category: [null, [Validators.required, Validators.max(32)]],
-    program_full: [null, [Validators.required, Validators.max(64)]],
+    department_short: [null, [Validators.required, Validators.maxLength(32)]],
+    department_full: [null, [Validators.required, Validators.maxLength(64)]],
+    program_short: [null, [Validators.required, Validators.maxLength(10)]],
+    category: [null, [Validators.required, Validators.maxLength(32)]],
+    program_full: [null, [Validators.required, Validators.maxLength(100)]],
   })
 
   constructor(
@@ -29,7 +29,12 @@ export class AddiconacadComponent{
   }
 
   ngOnInit() {
+    this.formDetails.patchValue({
+      department_short: this.data.department_short,
+      department_full: this.data.department_full
+    })
     console.log(this.data)
+    console.log(this.formDetails)
   }
 
 

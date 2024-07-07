@@ -142,6 +142,11 @@ h1 {
   .update-btn:hover {
     background-color: gray;
   }
+
+  .update-btn:disabled {
+    background-color: gray;
+    pointer-events: none;
+  }
   
   form {
     height: 350px;
