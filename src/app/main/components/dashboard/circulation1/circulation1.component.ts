@@ -86,7 +86,7 @@ export class Circulation1Component implements OnInit {
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-          label: 'Temperature',
+          label: 'Total Borrowed',
           data: [10, 12, 15, 18, 20, 22, 25],
           borderColor: 'green',
           backgroundColor: 'rgba(0, 128, 0, 0.2)',

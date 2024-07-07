@@ -142,14 +142,14 @@
     height: 40px;
     width: 100px;
     text-align: center;
+
+    &:focus {
+        border-color: #4f6f52; 
+        box-shadow: 0 0 5px#4f6f52; 
+        outline:#000000; 
+        background-color: #4f6f52;
+    }
 }
-
-#language option{
-    background-color: white;
-    color: #080000;
-
-  }
-
 
 //TAG
 
