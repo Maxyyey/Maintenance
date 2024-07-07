@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CatalogingRoutingModule } from './cataloging-routing.module'; // Import the routing module
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialscontentComponent } from './components/materials/materialscontent/materialscontent.component';
 import { AcademiccontentComponent } from './components/academicproject/academiccontent/academiccontent.component';
 import { AddiconComponent } from './components/materials/materialscontent/addicon/addicon.component';
@@ -27,6 +27,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule, 
     MatMenuModule,
     CommonModule,
+    ReactiveFormsModule
   ],
   // Other configurations...
 })

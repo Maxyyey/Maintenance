@@ -11,23 +11,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './addiconacad.component.scss',
 })
 
-export class AddiconacadComponent implements OnInit{
-  form: {
-    programAbbreviation: string;
-    projectCategory: string;
-    programName: string;
-  }
+export class AddiconacadComponent{
+  formDetails: FormGroup = this.fb.group({
+    department_short: [null, [Validators.required], Validators.max(32)],
+    department_full: [null, [Validators.required], Validators.max(32)],
+    program_short: [null, [Validators.required], Validators.max(16)],
+    category: [null, [Validators.required, Validators.max(32)]],
+    program_full: [null, [Validators.required, Validators.max(64)]],
+  })
 
   constructor(
     private ref: MatDialogRef<AddiconacadComponent>,
     private catalogingService: CatalogingService, 
+    private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
-    this.form =  {
-      programAbbreviation: '',
-      projectCategory: '',
-      programName: ''
-    }
-    
     
   }
 
@@ -41,15 +38,9 @@ export class AddiconacadComponent implements OnInit{
   }
 
   addProgram() {
-    const form = {
-      program: this.programAbbreviation,
-      category: this.projectCategory,
-      full_program: this.programName
-    };
-
-    console.log('Form data:', form);
+    console.log('Form data:', this.formDetails);
     
-    this.catalogingService.addPrograms(form).subscribe(
+    this.catalogingService.addPrograms(this.formDetails.value).subscribe(
       (response: any) => {
         this.closepopup()
         Swal.fire({
