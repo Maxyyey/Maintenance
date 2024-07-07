@@ -2,7 +2,16 @@
 
 <!-- add button -->
 <div class="button-container">
-<button class="add-btn" type="button"(click)="onAddNewBtnClick()"> ADD PROGRAM </button>
+<!-- <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> ADD PROGRAM </button> -->
+<details class="dropdown">
+    <summary class="dropdown-button">ADD PROGRAM</summary>
+    <div class="dropdown-content">
+      <button class="dropdown-item" value="1" type="button"(click)="onAddNewBtnClick()">CEAS</button>
+      <button class="dropdown-item" value="2" type="button"(click)="onAddNewBtnClick()">CBA</button>
+      <button class="dropdown-item" value="3" type="button"(click)="onAddNewBtnClick()">CCS</button>
+    </div>
+  </details>
+  
 <button class="add-btn" type="button"(click)="onAddCollegeClick()"> ADD COLLEGE </button>  
 <!--<button class="container-historylogsButton" type="button" (click)="onhistorylogsBtnClick()">History Logs</button>-->
 </div>

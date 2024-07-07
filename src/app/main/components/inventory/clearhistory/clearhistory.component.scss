@@ -78,8 +78,8 @@ h1 {
 
 // POPUP HEADER SCSS
 .detailsheader {
-  display: flex;
-  padding: 0px 0 0px 30px;
+  display: inline-flex;
+  padding: 0px 0 20px 30px;
   position: fixed;
   width: 900px;
   background-color: var(--main-green);
@@ -228,20 +228,20 @@ th {
 }
 
 .exit-button {
-    top: 0;
+    top: 10px;
     right: 0;
     background-color: transparent;
     border: none;
     font-size: 40px;
     cursor: pointer;
-    color: var(--cancel-btn);
+    color: white;
     text-align: right;
-    padding-top: 5px;
-    margin: 0 0 0 370px;
+    padding-top: 10px;
+    margin: 0 10px 0 370px;
     float:right;
 
 }
 
 .exit-button:hover {
-    color: var(--cancel-hover);
+    color: rgb(167, 164, 164);
 }

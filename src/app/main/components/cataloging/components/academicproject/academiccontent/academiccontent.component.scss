@@ -1,148 +1,146 @@
 :root {
-    font-size: 100%;
-    --primary-color: #FFFFFF;
-    --secondary-color: #EEEEEE;
-    --main-green: #4f6f52;
-    --border-color: #DFE0E0;
-    --black: #000000;
-    --shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  /* CARD CONTAINER */
-  .card-container {
-    height: calc(100% - 210px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px 0 0 0;
-    gap: 1.5em;
-    overflow-y: auto;
-   
-    margin-top: 20px;
-    
-  }
-
-  .card {
-    flex: 1;
-    flex-basis: 25%;
-    background-color: #ffffff; /* White background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
-    border: solid 2px var(--border-color);
-    margin: 10px 0 10px 0;
-    padding: 20px;
-    width: 300px; /* Fixed width*/
-    transform: scale(1);
-    transition: all .2s ease-in;
-  }
-
-  
-  /* CARD CONTENTS */
-  .card-image {
-      width: 100%; /* or any specific width */
-      height: 200px; /* or any specific height */
-      background-color: #f3f3f3; /* a light grey placeholder color */
-      border-radius: 5px; /* if you want rounded corners */
-      margin-bottom: 10px; /* space between the image and the text below */
-      object-fit: contain;
-    }
-  
-    .card h1 {
-      font-size: 30px; /* Larger title text */
-      text-align: center;
-    }
-   
-  
-   /* CARD BUTTON */
-    .view-button {
-      display: flex;
-      height: 12%;
-      flex-direction: row-reverse;
-    }
-  
-    .card button {
-      background-color: #4f6f52;
-      border: 2px solid; /* Solid border */
-      border-radius: 5px; /* Rounded corners */
-      color: #ffffff; /* White text */
-      padding: 3px 20px;
-      text-transform:none;
-      font-size: medium;
-      font-family: "Montserrat";
-      cursor: pointer;
-  } 
-    .card button:hover {
-      box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
-      transform: translate(0px, -2px);
-      background: white;
-      color: #4f6f52;
-      cursor: pointer;
-      text-decoration: none;
-    }
-  
-    .pagination-container {
-      flex: 1;
-      flex-basis: 100%;
-    }
-    
-    .pages {
-      justify-content: center;
-      display: flex;
-      flex-direction: row;
-      padding: 20px;
-    }
-    
-    .page-links {
-      display: inline-block;
-      background: #4f6f52;
-      border: 2px solid;
-      margin: 0px 10px;
-      padding: 5px 10px;
-      border-radius: 2px;
-      color: white;
-      width: 110px;
-      text-align: center;
-      text-transform: none;
-      font-size: medium;
-      font-family: "Montserrat";
-    }
-    
-    .page-links:hover {
-      box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
-      transform: translate(0px, -2px);
-      background: white;
-      color: #4f6f52;
-      cursor: pointer;
-    }
-
-    // .add-btn {
-    //     justify-content: flex-end;
-    //     padding: 10px 13px 10px 13px;
-    //     border: none;
-    //     font-weight: 600;
-    //     background-color: #4f6f52; 
-    //     color: #fff;
-    //     text-decoration: none;
-    //     border-radius: 10px;
-    //     cursor: pointer;
-    //   }
-      
-    // .button-container {
-    //   justify-content: left;
-    //   display: flex;
-    //   margin-top: 10px;
-     
-    // }
-
-.button-container{
-      margin-top: 15px;
-      color: #4f6f52;
-      width: 1100px;
-      display:flex;
-      
+  font-size: 100%;
+  --primary-color: #FFFFFF;
+  --secondary-color: #EEEEEE;
+  --main-green: #4f6f52;
+  --border-color: #DFE0E0;
+  --black: #000000;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.button-container .add-btn{
-      
+
+/* CARD CONTAINER */
+.card-container {
+  height: calc(100% - 210px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 0 0 0;
+  gap: 1.5em;
+  overflow-y: auto;
+
+  margin-top: 20px;
+
+}
+
+.card {
+  flex: 1;
+  flex-basis: 25%;
+  background-color: #ffffff;
+  /* White background */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /*Card shadow */
+  border: solid 2px var(--border-color);
+  margin: 10px 0 10px 0;
+  padding: 20px;
+  width: 300px;
+  /* Fixed width*/
+  transform: scale(1);
+  transition: all .2s ease-in;
+}
+
+
+/* CARD CONTENTS */
+.card-image {
+  width: 100%;
+  /* or any specific width */
+  height: 200px;
+  /* or any specific height */
+  background-color: #f3f3f3;
+  /* a light grey placeholder color */
+  border-radius: 5px;
+  /* if you want rounded corners */
+  margin-bottom: 10px;
+  /* space between the image and the text below */
+  object-fit: contain;
+}
+
+.card h1 {
+  font-size: 30px;
+  /* Larger title text */
+  text-align: center;
+}
+
+
+/* CARD BUTTON */
+.view-button {
+  display: flex;
+  height: 12%;
+  flex-direction: row-reverse;
+}
+
+.card button {
+  background-color: #4f6f52;
+  border: 2px solid;
+  /* Solid border */
+  border-radius: 5px;
+  /* Rounded corners */
+  color: #ffffff;
+  /* White text */
+  padding: 3px 20px;
+  text-transform: none;
+  font-size: medium;
+  font-family: "Montserrat";
+  cursor: pointer;
+}
+
+.card button:hover {
+  box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
+  transform: translate(0px, -2px);
+  background: white;
+  color: #4f6f52;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pagination-container {
+  flex: 1;
+  flex-basis: 100%;
+}
+
+.pages {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.page-links {
+  display: inline-block;
+  background: #4f6f52;
+  border: 2px solid;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  color: white;
+  width: 110px;
+  text-align: center;
+  text-transform: none;
+  font-size: medium;
+  font-family: "Montserrat";
+}
+
+.page-links:hover {
+  box-shadow: 0px 8px 15px -10px rgb(61, 61, 61);
+  transform: translate(0px, -2px);
+  background: white;
+  color: #4f6f52;
+  cursor: pointer;
+}
+
+
+
+.button-container {
+  margin-top: 15px;
+  color: #4f6f52;
+  width: 1100px;
+  display: flex;
+
+}
+
+.button-container .add-btn {
+
   background: var(--main-green);
   text-decoration: none;
   color: white;
@@ -150,7 +148,7 @@
   transition: .3s;
   transform: translate(0px, 0px);
   border-radius: 3px;
-  border: 1px ;
+  border: 1px;
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
@@ -158,42 +156,124 @@
   float: right;
   font-weight: bold;
   cursor: pointer;
-    
-    
+
+
 }
-    
+
 .button-container .add-btn:hover {
-      box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
-      transform: translate(0px, -2px);
-      background: var(--green-hover);
-      cursor: pointer;
-      text-decoration: none;
+  box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+  transform: translate(0px, -2px);
+  background: var(--green-hover);
+  cursor: pointer;
+  text-decoration: none;
 }
+
 .container-historylogsButton {
-          background: var(--main-green);
-          text-decoration: none;
-          color: white;
-          box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
-          transition: .3s;
-          transform: translate(0px, 0px);
-          border-radius: 3px;
-          padding: 10px;
-          border: 1px;
-          padding-right: 20px;
-          padding-left: 20px;
-          font-weight: bold;
-          margin-right: auto;
-          float: right;
-          text-align: center;
-      
-      
+  background: var(--main-green);
+  text-decoration: none;
+  color: white;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+  transition: .3s;
+  transform: translate(0px, 0px);
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-weight: bold;
+  margin-right: auto;
+  float: right;
+  text-align: center;
+
+
 }
-  
-      .container-historylogsButton:hover {
-        box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
-        transform: translate(0px, -2px);
-        background: var(--green-hover);
-        cursor: pointer;
-        text-decoration: none;
+
+.container-historylogsButton:hover {
+  box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+  transform: translate(0px, -2px);
+  background: var(--green-hover);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+// Add program dropdown// 
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  width: 180px;
+
+  .dropdown-button {
+    background: var(--main-green);
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    transition: .3s;
+    transform: translate(0px, 0px);
+    border-radius: 3px;
+    border: 1px;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+    box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
+  transform: translate(0px, -2px);
+  background: var(--green-hover);
+  cursor: pointer;
+  text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--green-hover);
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+      /* Hide the default arrow */
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--main-green);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 5px;
+    min-width: 160px;
+
+    .dropdown-item {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: white;
+
+      &:hover {
+        background-color: var(--green-hover);
+        ;
       }
-  
+
+      &:focus {
+        outline: none;
+        background-color: var(--green-hover);
+        ;
+      }
+    }
+  }
+
+  &[open] .dropdown-content {
+    display: block;
+  }
+}

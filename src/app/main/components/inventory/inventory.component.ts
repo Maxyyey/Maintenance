@@ -194,7 +194,7 @@ onhistorylogsBtnClick() {
 
   this.isModalOpen = true;
 
-  let modal = this.dialogRef.open(InventoryHistoryComponent, {});
+  let modal = this.dialogRef.open(ClearhistoryComponent, {});
   modal.afterClosed().subscribe(
     result => {
       this.isModalOpen = false;
