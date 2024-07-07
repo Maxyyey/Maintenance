@@ -9,7 +9,7 @@
         <!-- BODY - DETAILS -->
         <div class="detailsbody">
           <div class="details">
-            <form>
+            <form [formGroup]="formDetails">
               <div class="txtheader">
                 <h2>SELECT DEPARTMENT</h2>
               </div>
@@ -31,18 +31,18 @@
                 <h2>ADD PROGRAM</h2>
               </div>
               <div class="container2">
-                <div class="txt_field">
-                  <input class="inputtxt" type="text" required>
+                <div class="txt_field" [class.invalid]="formDetails.controls['program_short'].invalid">
+                  <input class="inputtxt" type="text" formControlName="program_short">
                   <span></span>
                   <div class="labelline">Program Abbreviation</div>
                 </div>
                 <div class="txt_field">
-                  <input class="inputtxt" type="text"  required>
+                  <input class="inputtxt" type="text" formControlName="category">
                   <span></span>
                   <div class="labelline">Project Category</div>
                 </div>
                 <div class="txt_field2">
-                  <input class="inputtxt2" type="text" required>
+                  <input class="inputtxt2" type="text" formControlName="program_full">
                   <span></span>
                   <div class="labelline2">Program</div>
                 </div>
@@ -51,7 +51,7 @@
           </div>
           <div class="button-container">
             <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
-            <button class="update-btn" (click)="addBox()"> Add </button>
+            <button class="update-btn" (click)="addBox()" [disabled]="formDetails.invalid"> Add </button>
           </div>
         </div>
       </div>

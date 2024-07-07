@@ -9,23 +9,12 @@ import { AnnouncementService } from '@app/services/announcement.service';
 
 
 import Swal from 'sweetalert2';
-
-interface MyOption {
-  value: string;
-  label: string;
-}
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrl: './add.component.scss',
-  standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule
-  ],
-  
+  selector: 'app-add-announcement',
+  templateUrl: './add-announcement.component.html',
+  styleUrl: './add-announcement.component.scss'
 })
-export class AddComponent {
+export class AddAnnouncementComponent {
   form: {
     title: string | null,
     category: string | null,
@@ -35,7 +24,7 @@ export class AddComponent {
   }
   
   constructor(
-    private ref: MatDialogRef<AddComponent>,
+    private ref: MatDialogRef<AddAnnouncementComponent>,
     private announcementService: AnnouncementService
   ) {
       const today = new Date();
@@ -149,6 +138,5 @@ export class AddComponent {
       }
     });
   }
+
 }
-
-

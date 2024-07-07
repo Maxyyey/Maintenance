@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { AddComponent } from './add/add.component';
+import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
 import { EditAnnouncePopupComponent } from './editannouncepopup/editannouncepopup.component';
 import { AnnouncementService } from '@app/services/announcement.service';
 import Swal from 'sweetalert2';
-import { AnnouncementHistoryComponent } from './announcementhistory/announcementhistory.component';
 
 @Component({
   selector: 'app-announcement',
@@ -43,7 +41,7 @@ export class AnnouncementComponent implements OnInit{
     
     this.isModalOpen = true
 
-    let modal = this.dialogRef.open(AddComponent, {});
+    let modal = this.dialogRef.open(AddAnnouncementComponent, {});
 
     modal.afterClosed().subscribe(
       result => {
@@ -136,26 +134,6 @@ export class AnnouncementComponent implements OnInit{
         });
       }
     )
-  }
-  // Component logic here
-
-  onhistorylogsBtnClick() {
-    if (this.isModalOpen) {
-      return;
-    }
-  
-    this.isModalOpen = true;
-  
-    let modal = this.dialogRef.open(AnnouncementHistoryComponent, {});
-    modal.afterClosed().subscribe(
-      result => {
-        this.isModalOpen = false;
-  
-        if (result) {
-          this['locations'].push(result.success); // use the correct property
-        }
-      }
-    );
   }
 }
 

@@ -14,6 +14,7 @@ import { ClearhistoryComponent } from './components/inventory/clearhistory/clear
 import { HistoryComponent } from './components/addlocker/components/history/history.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddAnnouncementComponent } from './components/announcement/add-announcement/add-announcement.component';
 
 
 
@@ -29,12 +30,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     EnterbarcodeComponent,
     ClearhistoryComponent,
     HistoryComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddAnnouncementComponent
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
-    FormsModule,  //di gumagana forms module sa invetory component kaya inimport ko siya dito, gumagana naman siya pag ganto
+    FormsModule,
   ]
 })
 export class MainModule { }
