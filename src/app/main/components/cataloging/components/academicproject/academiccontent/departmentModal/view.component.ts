@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ViewComponent implements OnInit {
 
   department: any = []; // Array to store programs
+  programs: any = []
 
   constructor(
     private ref: MatDialogRef<ViewComponent>, 
@@ -23,7 +24,9 @@ export class ViewComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.department = this.data
+    this.department = this.data[0]
+    let a =  (Object.values(this.data[1]))
+    this.programs = a[0]
   }
 
   closepopup() {

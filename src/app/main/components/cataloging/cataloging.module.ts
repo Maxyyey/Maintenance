@@ -15,7 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    
+    AddiconacadComponent,
     MaterialscontentComponent,
     AcademiccontentComponent,
 
@@ -25,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     CatalogingRoutingModule,
     FormsModule,
     MatButtonModule, 
-    MatMenuModule
+    MatMenuModule,
+    CommonModule,
   ],
   // Other configurations...
 })

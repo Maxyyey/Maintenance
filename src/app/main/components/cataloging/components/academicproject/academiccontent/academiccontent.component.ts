@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddiconacadComponent } from './addiconacad/addiconacad.component';
 import { ViewComponent } from './departmentModal/view.component';
 import { AddPopupComponent } from './addpopup/addpopup.component';
 import { CatalogingService } from '@app/services/cataloging.service';
 import Swal from 'sweetalert2';
-import { AcademicHistoryComponent } from './academichistory/acdemichistory.component';
-
 
 @Component({
   selector: 'app-academiccontent',
@@ -16,23 +13,36 @@ import { AcademicHistoryComponent } from './academichistory/acdemichistory.compo
 })
 
 export class AcademiccontentComponent implements OnInit {
-  departments: any[] = []
+  departments: any = []
+  departmentsOnly: any = []
   isModalOpen: boolean = false
-  locations: any;
 
   constructor(
     private dialogRef: MatDialog, 
     private catalogingService: CatalogingService) { }
 
   ngOnInit(){
-    this.getDepartments()
+    this.getDepartmentsPrograms()
+    this.getDepartmentsOnly()
   }
 
-  getDepartments() {
+  getDepartmentsPrograms() {
     this.catalogingService.getDepartments().subscribe(
       departments => {
-        this.departments = departments
-        console.log(this.departments)
+        this.departments = (Object.entries(departments))
+          console.log((Object.entries(departments)))
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+  getDepartmentsOnly() {
+    this.catalogingService.getDepartmentsOnly().subscribe(
+      departments => {
+        this.departmentsOnly = departments
+        console.log(departments)
       },
       error => {
         console.error(error)
@@ -59,83 +69,33 @@ export class AcademiccontentComponent implements OnInit {
     )
   }
 
-  onAddNewBtnClick(){
+  addPrograms(department: any){
     if(this.isModalOpen) {
       return
     }
     
-    this.isModalOpen = true
-
-    this.catalogingService.getDepartments().subscribe(
-      departments => {  //temporary lang angbagal neto
-        let modal = this.dialogRef.open(AddiconacadComponent, {
-          data: departments
-        });
-        modal.afterClosed().subscribe(
-          result => {
-            this.isModalOpen = false
-          }
-        )
-      },
-      error => {
-        console.error(error)
-        this.isModalOpen = false
-        Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
-        });
-      }
-    )
-  }
-
-  openDepartment(id: number){
-    if(this.isModalOpen) {
-      return
-    }
-    
-    this.isModalOpen = true
-    
-    console.log(id)
-    this.catalogingService.getPrograms(id).subscribe(
-      department => {
-        let modal = this.dialogRef.open(ViewComponent, {
-          data: department
-        })
-        modal.afterClosed().subscribe(
-          result => {   
-            this.isModalOpen = false
-          }
-        )
-      },
-      error => {
-        console.error(error)
-        this.isModalOpen = false
-        Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
-        });
-      }
-    )
-  }
-
-  onhistorylogsBtnClick() {
-    if (this.isModalOpen) {
-      return;
-    }
-  
-    this.isModalOpen = true;
-  
-    let modal = this.dialogRef.open(AcademicHistoryComponent, {});
+    let modal = this.dialogRef.open(AddiconacadComponent, {
+      data: department
+    }); 
     modal.afterClosed().subscribe(
       result => {
-        this.isModalOpen = true;
-  
-        if (result) {
-          this.locations.push(result.success); // use the correct property
-        }
+        this.isModalOpen = false
       }
-    );
+    )
+  }
+
+  openDepartment(department: any){
+    if(this.isModalOpen) {
+      return
+    }
+    
+    this.isModalOpen = true
+
+    let modal = this.dialogRef.open(ViewComponent, {
+      data: department
+    })
+    modal.afterClosed().subscribe(
+      result => this.isModalOpen = false
+    )
   }
 }

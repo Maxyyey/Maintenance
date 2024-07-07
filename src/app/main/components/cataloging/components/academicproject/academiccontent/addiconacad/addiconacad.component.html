@@ -14,7 +14,7 @@
                 <h2>SELECT DEPARTMENT</h2>
               </div>
               <hr>
-              <div class="checkbox-group">
+              <!-- <div class="checkbox-group">
                 <div class="txt_field1">
                   <div class="labelline1"></div>
                   <div *ngFor="let department of departments">
@@ -24,7 +24,7 @@
                     </label>      
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="txtheader2">
                 <hr>
@@ -32,17 +32,17 @@
               </div>
               <div class="container2">
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" [(ngModel)]="programAbbreviation" [ngModelOptions]="{ standalone: true }" required>
+                  <input class="inputtxt" type="text" required>
                   <span></span>
                   <div class="labelline">Program Abbreviation</div>
                 </div>
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" [(ngModel)]="projectCategory" [ngModelOptions]="{ standalone: true }" required>
+                  <input class="inputtxt" type="text"  required>
                   <span></span>
                   <div class="labelline">Project Category</div>
                 </div>
                 <div class="txt_field2">
-                  <input class="inputtxt2" type="text" [(ngModel)]="programName" [ngModelOptions]="{ standalone: true }" required>
+                  <input class="inputtxt2" type="text" required>
                   <span></span>
                   <div class="labelline2">Program</div>
                 </div>

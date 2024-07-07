@@ -1,57 +1,38 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { AddPopupComponent } from '../addpopup/addpopup.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-
-
-
 import Swal from 'sweetalert2';
 import { CatalogingService } from '@app/services/cataloging.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-interface MyOption {
-  value: string;
-  label: string;
-}
 @Component({
   selector: 'app-addiconacad',
   templateUrl: './addiconacad.component.html',
   styleUrl: './addiconacad.component.scss',
-  standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule,
-    HttpClientModule
-  ],
-  
 })
-export class AddiconacadComponent implements OnInit{
-  departments: any[] = []
 
-  selectedDepartment: string;
-  programAbbreviation: string;
-  projectCategory: string;
-  programName: string;
+export class AddiconacadComponent implements OnInit{
+  form: {
+    programAbbreviation: string;
+    projectCategory: string;
+    programName: string;
+  }
 
   constructor(
     private ref: MatDialogRef<AddiconacadComponent>,
     private catalogingService: CatalogingService, 
     @Inject(MAT_DIALOG_DATA) public data: any,) {
-    this.selectedDepartment = '';
-    this.programAbbreviation= '';
-    this.projectCategory= '';
-    this.programName= '';
+    this.form =  {
+      programAbbreviation: '',
+      projectCategory: '',
+      programName: ''
+    }
+    
     
   }
 
   ngOnInit() {
     console.log(this.data)
-    this.departments = this.data
   }
 
 
@@ -61,7 +42,6 @@ export class AddiconacadComponent implements OnInit{
 
   addProgram() {
     const form = {
-      department_id: this.selectedDepartment,
       program: this.programAbbreviation,
       category: this.projectCategory,
       full_program: this.programName

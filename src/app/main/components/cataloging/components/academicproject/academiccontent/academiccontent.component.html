@@ -6,9 +6,7 @@
 <details class="dropdown">
     <summary class="dropdown-button">ADD PROGRAM</summary>
     <div class="dropdown-content">
-      <button class="dropdown-item" value="1" type="button"(click)="onAddNewBtnClick()">CEAS</button>
-      <button class="dropdown-item" value="2" type="button"(click)="onAddNewBtnClick()">CBA</button>
-      <button class="dropdown-item" value="3" type="button"(click)="onAddNewBtnClick()">CCS</button>
+      <button class="dropdown-item" *ngFor="let department of departmentsOnly" type="button" (click)="addPrograms(department)" > {{ department.department_short }} </button>
     </div>
   </details>
   
@@ -19,10 +17,10 @@
 
 
 <div class="card-container">
-    <div class="card" *ngFor="let department of departments" (click)="openDepartment(department.id)"> 
+  <!-- (click)="openDepartment(department.id)" -->
+    <div class="card" *ngFor="let department of departments" (click)="openDepartment(department)">  
         <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image" >
-        <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-        <h1>{{ department.full_department }}</h1>                  
+        <h1>{{ department[0] }}</h1>
     </div> 
 </div>  
 

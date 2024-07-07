@@ -11,6 +11,7 @@ export class CatalogingService {
     private http: HttpClient
   ) { }
 
+  //locations
   public getLocations() {
     return this.http.get(`${apiUrl}/locations`)
   }
@@ -19,7 +20,12 @@ export class CatalogingService {
     return this.http.post(`${apiUrl}/locations`, data)
   }
 
+  //programs and colleges
   getDepartments() {
+    return this.http.get<any>(`${apiUrl}/departmentsWithPrograms`)
+  }
+
+  getDepartmentsOnly() {
     return this.http.get<any>(`${apiUrl}/departments`)
   }
 
@@ -29,9 +35,5 @@ export class CatalogingService {
 
   addPrograms(form:any){
     return this.http.post(`${apiUrl}/add-program`, form)
-  }
-
-  getPrograms(id: number) {
-    return this.http.get<any>(`${apiUrl}/view/${id}`)
   }
 }
