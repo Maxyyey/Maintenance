@@ -214,4 +214,11 @@ export class AddLockerComponent implements OnInit {
       }
     });
 }
+getPaginationSummary(): string {
+  const totalPages = this.totalPages;
+  const currentPage = this.currentPage;
+  return `${currentPage} of ${totalPages}`;
 }
+}
+
+
