@@ -15,8 +15,14 @@ export class MainComponent {
 
   constructor(
     private router: Router, 
-    private authService: AuthService) {
+    private authService: AuthService,
+  ) {
 
+  }
+
+  isDashboardActive(): boolean {
+    const activeRoutes = ['circulation1', 'cataloging1', 'locker1', 'opac1'];
+    return !this.dropdownOpen && activeRoutes.some(route => this.router.url.includes(route));
   }
 
   togglePopup() {

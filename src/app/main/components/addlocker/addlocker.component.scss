@@ -143,42 +143,21 @@ th {
     
 .pagination {
     display: flex;
-    justify-content: right;
     align-items: center;
+    justify-content: right;
+    font-weight: bolder;
+    color: #415b44;
     margin-top: 20px;
-
-    button {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background-color: #4f6f52;
-        color: #333;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        margin: 0 5px;
-        border-radius: 4px;
-        outline: none;
-        color: white;
-
-        &:hover {
-            background-color: #376448;
-            color: #fff;
-        }
-
-        &:disabled {
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
-    }
-
-    span {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background-color: #f2f2f2;
-        color: #333;
-        margin: 0 5px;
-        border-radius: 4px;
-    }
-}
+  }
+  .pagination i {
+    cursor: pointer;
+  }
+  .pagination p {
+    margin: 0 30px;
+  }
+  .pagination .kaliwa{
+    margin-right: 40px;
+  }
 .table-head {
     display: flex;
     align-items: center;

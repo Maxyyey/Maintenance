@@ -49,10 +49,12 @@
           </tbody>
         </table>
         </div>
+        <!--put the pagination here-->
         <div class="pagination">
-          <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
-          <span>{{ currentPage }}</span>
-          <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+          <p>Items per page: {{ paginatedLockers().length }}</p>
+          <p>{{ getPaginationSummary() }}</p>
+          <i class="fas fa-chevron-left kaliwa" (click)="currentPage > 1 ? previousPage() : null"></i>
+          <i class="fas fa-chevron-right" (click)="nextPage()" [hidden]="currentPage === totalPages"></i>
         </div>
       </div>
     </div>

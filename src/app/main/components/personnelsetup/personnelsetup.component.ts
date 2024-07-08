@@ -4,7 +4,6 @@ import { AddUserComponent } from './adduser/adduser.component';
 import { EditUserComponent } from './edituser/edituser.component';
 import { PersonnelService } from '@app/services/personnel.service';
 import Swal from 'sweetalert2';
-import { error } from 'console';
 
 @Component({
   selector: 'app-personnelsetup',
@@ -15,34 +14,35 @@ export class PersonnelSetupComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
   personnels: any = [];
-  isModalOpen: boolean = false
+  filteredPersonnels: any = []; // Added for filtering
+  isModalOpen: boolean = false;
 
-  constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) { }
+  constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) {}
 
   ngOnInit() {
-    this.getPersonnels()
+    this.getPersonnels();
   }
 
   getPersonnels() {
     this.personnelService.getPersonnels().subscribe(
-      personnels => {
-        this.personnels = personnels.users
-        console.log(this.personnels)
+      (personnels) => {
+        this.personnels = personnels.users;
+        this.filteredPersonnels = [...this.personnels]; // Initialize filteredPersonnels
       },
-      error => {
-        console.error(error)
+      (error) => {
+        console.error(error);
       }
-    )
+    );
   }
 
   get totalPages(): number {
-    return Math.ceil(this.personnels.length / this.itemsPerPage);
+    return Math.ceil(this.filteredPersonnels.length / this.itemsPerPage);
   }
 
   paginatedPersonnels(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.personnels.slice(startIndex, endIndex);
+    return this.filteredPersonnels.slice(startIndex, endIndex);
   }
 
   previousPage(): void {
@@ -58,83 +58,72 @@ export class PersonnelSetupComponent implements OnInit {
   }
 
   search(value: string) {
-    value = value.toUpperCase();
-    let tbody = document.getElementById("personnels");
-    if (tbody) {
-      let tr = tbody.getElementsByTagName("tr");
-      for (let i = 0; i < tr.length; i++) {
-        let td = tr[i].getElementsByTagName("td")[0];
-        let txtValue = td.textContent || td.innerText;
-
-        let td2 = tr[i].getElementsByTagName("td")[1];
-        let access = td2.textContent || td2.innerText;
-
-        let td3 = tr[i].getElementsByTagName("td")[2];
-        let email = td3.textContent || td3.innerText;
-
-        if (txtValue.toUpperCase().indexOf(value) > -1 || access.toUpperCase().indexOf(value) > -1 || email.toUpperCase().indexOf(value) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    }
+    const searchTerm = value.toUpperCase();
+    this.filteredPersonnels = this.personnels.filter((personnel: any) =>
+      personnel.full_name.toUpperCase().includes(searchTerm) ||
+      personnel.access.toUpperCase().includes(searchTerm) ||
+      personnel.email.toUpperCase().includes(searchTerm)
+    );
+    this.currentPage = 1; // Reset to first page after search
   }
 
+  getPaginationSummary(): string {
+    const totalPages = this.totalPages;
+    const currentPage = this.currentPage;
+    return `${currentPage} of ${totalPages}`;
+  }
+  
+
   onAddNewBtnClick() {
-    if(this.isModalOpen) {
-      return
+    if (this.isModalOpen) {
+      return;
     }
-    
-    this.isModalOpen = true
+
+    this.isModalOpen = true;
 
     let modal = this.dialogRef.open(AddUserComponent, {});
-    modal.afterClosed().subscribe(
-      result => {
-        this.isModalOpen = false
+    modal.afterClosed().subscribe((result) => {
+      this.isModalOpen = false;
 
-        if(result) {
-          this.personnels.push(result.success)
-        }
+      if (result) {
+        this.personnels.push(result.success);
+        this.filteredPersonnels = [...this.personnels]; // Update filteredPersonnels after adding new personnel
       }
-    )
+    });
   }
 
   onEditBtnClick(id: number) {
-    if(this.isModalOpen) {
-      return
+    if (this.isModalOpen) {
+      return;
     }
-    
-    this.isModalOpen = true
+
+    this.isModalOpen = true;
 
     this.personnelService.getPersonnel(id).subscribe(
-      personnel => {
+      (personnel) => {
         let modal = this.dialogRef.open(EditUserComponent, {
-          data: personnel
+          data: personnel,
         });
-        modal.afterClosed().subscribe(
-          result => { 
-            this.isModalOpen = false
-            if(result) {
-              this.personnels = this.personnels.map(
-                (personnel: any) => {
-                  if(personnel.id === result.data.id) {
-                    return {...personnel, ...result.data}
-                  }
-                  return personnel
-                }
-              )
-            }
+        modal.afterClosed().subscribe((result) => {
+          this.isModalOpen = false;
+          if (result) {
+            // Update personnel in both lists
+            this.personnels = this.personnels.map((p: any) => (p.id === result.data.id ? result.data : p));
+            this.filteredPersonnels = this.filteredPersonnels.map((p: any) =>
+              p.id === result.data.id ? result.data : p
+            );
           }
-        )
+        });
       },
-      error => {
+      (error) => {
         console.error(error);
-        this.isModalOpen = false
+        this.isModalOpen = false;
         Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
+          title: 'Error!',
+          text: 'Something went wrong. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'Close',
+          confirmButtonColor: '#777777',
         });
       }
     );
@@ -142,63 +131,43 @@ export class PersonnelSetupComponent implements OnInit {
 
   deletePersonnel(id: number) {
     this.personnelService.deletePersonnel(id).subscribe(
-      success => {
-        this.personnels = this.personnels.filter((personnel: any) => personnel.id !== id)
+      () => {
+        this.personnels = this.personnels.filter((personnel: any) => personnel.id !== id);
+        this.filteredPersonnels = this.filteredPersonnels.filter((personnel: any) => personnel.id !== id);
         Swal.fire({
-          title: "Success!",
-          text: "Personnel has been deleted.",
-          icon: "success",
+          title: 'Success!',
+          text: 'Personnel has been deleted.',
+          icon: 'success',
           confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+          confirmButtonColor: '#777777',
         });
       },
-      error => {
+      (error) => {
         Swal.fire({
-          title: "Error!",
-          text: "Something went wrong. Please try again later.",
-          icon: "error",
+          title: 'Error!',
+          text: 'Something went wrong. Please try again later.',
+          icon: 'error',
           confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+          confirmButtonColor: '#777777',
         });
-
       }
-    )
-
+    );
   }
 
   onArchiveBtnClick(id: number) {
     Swal.fire({
-      title: "Delete personnel?",
-      text: "Are you sure want to delete this personnel?",
-      icon: "warning",
+      title: 'Delete personnel?',
+      text: 'Are you sure want to delete this personnel?',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
+      confirmButtonColor: '#AB0E0E',
+      cancelButtonColor: '#777777',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.deletePersonnel(id)
+        this.deletePersonnel(id);
       }
     });
-  }
-
-  onhistorylogsBtnClick() {
-    if(this.isModalOpen) {
-      return
-    }
-    
-    this.isModalOpen = true
-
-    let modal = this.dialogRef.open(AddUserComponent, {});
-    modal.afterClosed().subscribe(
-      result => {
-        this.isModalOpen = false
-
-        if(result) {
-          this.personnels.push(result.success)
-        }
-      }
-    )
   }
 }
