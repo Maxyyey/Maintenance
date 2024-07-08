@@ -36,35 +36,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
-
-
-
 .card .icon-case {
-
-    // margin-top: 10px;
     margin-left: 30px;
     margin-right: 50px;
     font-size: 50px;
     font-weight: 700;
 }
 
-
-// .cards .card h1 {
-//     margin-left: 58px;
-//     font-size: 30px;
-// }
-
-// .cards .card h3 {
-//     margin-left: 40px;
-//     font-size: 15px;
-//     font-weight: 500;
-// }
 
 .cards .card .box {
     float: right;
@@ -77,172 +60,40 @@
 
 
 
-// MIDDLE CARD
+//GRAPH CONTAINER
 .graph1 {
     display: inline-flex;
     width: 100%;
+    height: 100%;
+    
 }
 
-
-
-// FIRST CARD
-.container {
-    display: inline-flex;
-    background-color: #F5EFE6;
-    margin: 10px;
-    height: 400px;
-    width: 65%;
-    border: solid 1px #4f6f52;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-// TOTAL
-.text {
-    width: 25%;
-}
-
-.text .analytic {
-    margin: 10px 20px 20px 20px;
-    font-weight: 700;
-
-}
-
-.analytic p {
-    font-size: 20px;
-}
-
-.analytic h1 {
-    font-size: 60px;
-    color: #4f6f52;
-}
-
-.visual {
-    width: 75%;
-    display: inline-block;
-}
-
-//VISUAL
-
-//CHART
-.visual .chart {
-
-    margin: 65px 10px 10px 10px;
-    height: 310px;
-    width: 96%;
-    border: solid 1px #4f6f52;
-    border-radius: 10px;
-
-}
-
-// FILTER
-.visual .filter {
-    margin: 10px 20px 20px 20px;
-    display: flex;
-    float: right;
-}
-
-.filter .inputtxt {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    background-color: #4f6f52;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border: none;
-
-
-    cursor: pointer;
-
-
-}
-
-.filter option {
-    background-color: #fff; // Option background color
-    border: solid 2px #4f6f52;
-    color: #333; // Option text color
-    font-weight: 400; // Option font weight
-    padding: 15px; // Option padding
-    font-size: 20px; // Option font size
-    border-radius: 6px;
-}
-
-
-
-//SECOND CARD
-.container2 {
+//TOP 10 BORROWER
+.top-borrower {
     display: inline-block;
     margin: 10px;
-    height: 400px;
-    width: 35%;
+    padding: 0 0 15px 0;
+
+    width: 23%;
     border: solid 1px #4f6f52;
     background-color: #F5EFE6;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.container2 .text1 {
+.top-borrower .text1 {
     display: inline-flex;
-    width: 100%;
-    margin: 10px 20px 20px 20px;
+    width: fit-content;
+    margin:10px;
+    
 
-}
-
-//TEXT 2ND CARD
-
-.text1 h3 {
-    font-size: 24px;
-}
-
-//FILTER 2ND CARD
-
-.text1 .filter1 {
-    margin: 0 20px 0 150px;
-    display: flex;
-    float: right;
-}
-
-.filter1 .inputtxt {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    background-color: #4f6f52;
-    color: #ffff;
-    text-decoration: none;
-    border: none;
-
-
-    cursor: pointer;
-
-
-}
-
-.filter1 option {
-    background-color: #fff; // Option background color
-    border: solid 2px #4f6f52;
-    color: #333; // Option text color
-    font-weight: 400; // Option font weight
-    padding: 15px; // Option padding
-    font-size: 20px; // Option font size
-    border-radius: 6px;
 }
 
 //BORROWER CARD
-.visual1 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); // Three columns
-
-    grid-template-rows: repeat(5, 1fr); // Two rows
-    max-height: 300px; // Set the max-height as needed
-    overflow-y: auto; // Enable vertical scrolling if content exceeds max-height
-}
-
 .borrower-card {
     display: inline-flex;
     margin: 3px 0 3px 14px;
-    height: 70px;
+    height: 100%;
     width: 90%;
     border-radius: 6px;
     background-color: #D9D9D9;
@@ -266,101 +117,266 @@
 }
 
 .borrower-card .board {
-    margin-top: 7px;
-    margin-left: 8px;
-    height: 55px;
-    width: 7%;
+    margin: 0 3px 0 3px;
+    width: 3%;
     background-color: #4f6f52;
+    z-index: 1;
     border-radius: 10px;
 }
 
+.visual1 {
+    margin-top: 13px;
+    display: block;
+    // grid-template-columns: repeat(2, 1fr); // Three columns
+
+    // grid-template-rows: repeat(5, 1fr); // Two rows
+    max-height: 100%; // Set the max-height as needed
+    overflow-y: auto; // Enable vertical scrolling if content exceeds max-height
+}
+//TEXT TOP 10 BORROWER
+
+.text1 h3 {
+    font-size: 24px;
+    margin: 0 5px 0 5px;
+}
+
+//FILTER TOP 10 BORROWER
+
+.text1 .filter1 {
+    margin: 10px;
+    display: flex;
+    float: right;
+}
+
+.filter1 .inputtxt {
+    background: #4f6f52;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    transition: .3s;
+    transform: translate(0px, 0px);
+    border-radius: 3px;
+    border: 1px ;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+#language option{
+    background-color: white;
+    color: #080000;
+
+  }
 
 
-// LOWER CARD
 
-.graph2 {
+
+//GRAPH CONTAINER
+.graph-align{
+    display: inline-block;
+}
+.container{
     display: inline-flex;
-    width: 100%;
+}
+
+
+// BORROWED CARD
+.borrowed-dept {
+    display: inline-block;
+    background-color: #F5EFE6;
+    margin: 10px;
+    height: 400px;
+    width: 450px;
+    border: solid 1px #4f6f52;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 
-// FIRST CARD
-.graph2 .container3 {
+
+// TOTAL BORROWED CARD
+ .analytic {
+    margin: 10px 20px 5px 20px;
+    font-weight: 700;
+    display: inline-block;
+
+}
+
+.analytic p {
+    font-size: 20px;
+}
+
+.analytic h1 {
+    font-size: 40px;
+    color: #4f6f52;
+}
+
+.visual {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+//VISUAL BORROWED CARD
+
+//CHART BORROWED CARD
+.visual .chart {
+
+    margin: 0 10px 20px 10px;
+    height: 320px;
+    width: 300px;
+    
+
+}
+
+
+canvas .first-graph{
+    width: 100% !important;
+    height: 100% !important;
+    
+}
+
+// FILTER BORROWED CARD 
+.filter {
+    margin: 20px 20px 10px 10px;
+    display: flex;
+    float: right;
+}
+
+.filter .inputtxt {
+    background: #4f6f52;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    transition: .3s;
+    transform: translate(0px, 0px);
+    border-radius: 3px;
+    border: 1px ;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+#language option{
+    background-color: white;
+    color: #080000;
+
+  }
+
+
+
+
+
+
+
+
+// LINE CHART
+.dept-graph {
     display: inline-block;
     margin: 10px;
     height: 400px;
-    width: 50%;
+    width: 740px;
     border: solid 1px #4f6f52;
     background-color: #F5EFE6;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-//HEAD
+//HEAD LINE CHART
 
-.text3 {
-    display: inline-flex;
+
+.dept-graph h1 {
+    color: #080000;
+        font-size: 25px;
+    
 }
 
-.text3 h1 {
-    margin: 10px 20px 20px 20px;
-    font-size: 30px;
-    color: #000000;
-}
-
-//FILTER BUTTON
-.text3 .filter3 {
-    margin: 10px 0 20px 210px;
+//FILTER BUTTON LINE CHART
+.filter3 {
+    margin: 20px 20px 10px 10px;
     display: flex;
     float: right;
 }
 
 .filter3 .inputtxt {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    background-color: #4f6f52;
-    color: #ffff;
+    background: #4f6f52;
     text-decoration: none;
-    border: none;
-
-
+    color: white;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    transition: .3s;
+    transform: translate(0px, 0px);
+    border-radius: 3px;
+    border: 1px ;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
 
+#language option{
+    background-color: white;
+    color: #080000;
+
+  }
+
+
+//LINE CHART VISUAL
+
+.visual3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.visual3 .linechart {
+
+    margin: 10px 10px 20px 10px;
+    width: 610px;
+    
 
 }
 
-.filter3 option {
-    background-color: #fff; // Option background color
-    border: solid 2px #4f6f52;
-    color: #333; // Option text color
-    font-weight: 400; // Option font weight
-    padding: 15px; // Option padding
-    font-size: 20px; // Option font size
-    border-radius: 6px;
+
+canvas .second-graph{
+    width: 100% !important;
+    height: 100% !important;
+    
 }
 
 
 
-//CHART
 
-.visual3 .chart3 {
 
-    margin: 0 5px 10px 15px;
-    height: 310px;
-    width: 96%;
-    border: solid 1px #4f6f52;
-    border-radius: 10px;
 
-}
 
-.graph2 .container4 {
+
+
+
+//BAR GRAPH
+
+.borrowbooks {
     display: inline-block;
     margin: 10px;
-    height: 400px;
-    width: 50%;
+    height: 450px;
+    width: 98%;
     border: solid 1px #4f6f52;
     background-color: #F5EFE6;
     border-radius: 10px;
@@ -370,61 +386,74 @@
 //HEAD
 
 .text4 {
-    display: inline-flex;
+    width: 100%;
 }
 
 .text4 h1 {
-    margin: 10px 20px 20px 20px;
+    margin: 10px 20px 10px 10px;
     font-size: 30px;
     color: #000000;
 }
 
 //FILTER BUTTON
-.text4 .filter4 {
-    margin: 10px 0 20px 50px;
+.filter4 {
+    margin: 20px;
     display: flex;
     float: right;
 }
 
 .filter4 .inputtxt {
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    background-color: #4f6f52;
-    color: #ffff;
+    background: #4f6f52;
     text-decoration: none;
-    border: none;
-
-
+    color: white;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
+    transition: .3s;
+    transform: translate(0px, 0px);
+    border-radius: 3px;
+    border: 1px ;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
-
-
+    height: 40px;
+    width: 100px;
+    text-align: center;
 }
 
-.filter4 option {
-    background-color: #fff; // Option background color
-    border: solid 2px #4f6f52;
-    color: #333; // Option text color
-    font-weight: 400; // Option font weight
-    padding: 15px; // Option padding
-    font-size: 20px; // Option font size
-    border-radius: 6px;
-}
+#language option{
+    background-color: white;
+    color: #080000;
 
+  }
 
 
 //CHART
 
-.visual4 .chart4 {
+.visual4 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
 
-    margin: 0 5px 10px 15px;
-    height: 310px;
-    width: 96%;
-    border: solid 1px #4f6f52;
-    border-radius: 10px;
+.visual4 .barchart {
+
+    margin: 10px 10px 20px 10px;
+    width: 95%;
+    height: 330px;
+    
 
 }
+
+
+canvas .third-graph{
+    width: 100% !important;
+    height: 100% !important;
+    
+}
+
 
 
 
@@ -435,4 +464,16 @@
     background-color:  #ffffff;
     ;
 }
+
+.card {
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 

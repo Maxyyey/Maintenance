@@ -29,7 +29,8 @@ const MatModules = [
   MatCardModule,
   MatProgressSpinnerModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+
 ]
 
 @NgModule({
