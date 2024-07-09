@@ -118,8 +118,9 @@
       background-color: #AB0E0E;
       color: white;
       float: right;
-      margin-top: 40px;
+      margin-top: 100px;
       
+    
     }
     
     .cancel-btn:hover {
@@ -131,7 +132,8 @@
       background-color: #4f6f52;
       color: white;
       float: right;
-      margin-top: 40px;
+      margin-top: 100px;
+      
       
     
     }
@@ -376,7 +378,7 @@
       background: #777777;
     }
 
-    form .txt_field2{
+    form .txt_field3{
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
@@ -384,7 +386,7 @@
       display: inline-table;
     }
     
-    .txt_field2 .inputtxt{
+    .txt_field3 .inputtxt{
       width: 100%;
       display: block;
       padding-top: 28px;
@@ -398,7 +400,7 @@
       border-top-right-radius: 5px;
       outline: none;
     }
-.txt_field2 .labelline{
+.txt_field3 .labelline{
       position: absolute;
       top: 50%;
       left: 10px;
@@ -409,7 +411,55 @@
       transition: .3s;
     }
     
-    .txt_field2 span::before{
+    .txt_field3 span::before{
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #4f6f52;
+      transition: .3s;
+    }
+
+.inputtxt:not(:focus) + span::before {
+      background: #777777;
+    }
+    
+    form .txt_field3{
+      position: relative;
+      border-bottom: 2px solid #777777;
+      margin: 30px 10px 30px 10px;
+      width: 240px;
+      display: inline-table;
+    }
+    
+    .txt_field3 .inputtxt{
+      width: 100%;
+      display: block;
+      padding-top: 28px;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 60px;
+      font-size: 15px;
+      border: none;
+      background-color: #F6F6F6;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      outline: none;
+    }
+.txt_field3 .labelline{
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      color: #777777;
+      transform: translateY(-50%);
+      font-size: 15px;
+      pointer-events: none;
+      transition: .3s;
+    }
+    
+    .txt_field3 span::before{
       content: '';
       position: absolute;
       top: 60px;
@@ -558,6 +608,11 @@
     padding-top: 5px;
   
   }
+
+  .txt_field, .txt_field1, .txt_field2, .txt_field3, .txt_field4 {
+    position: relative;
+    margin-bottom: 20px;
+}
   .add-btn {
     height: auto;
     width: 45px;
