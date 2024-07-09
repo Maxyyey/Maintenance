@@ -143,7 +143,7 @@
     }
     
     form {
-      height: 250px;
+      height: 270px;
       display: block;
     }
   
@@ -176,7 +176,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 770px;
+      width: 780px;
       display: block;
     }
     
@@ -296,7 +296,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 240px;
+      width: 190px;
       display: inline-table;
     }
     
@@ -382,7 +382,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 240px;
+      width: 190px;
       display: inline-table;
     }
     
@@ -611,7 +611,7 @@
 
   .txt_field, .txt_field1, .txt_field2, .txt_field3, .txt_field4 {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
   .add-btn {
     height: auto;
@@ -727,6 +727,23 @@
     transition: background-color 200ms;
     left: 10px;
   }
-  
   // checkbox spacing (margin-right) pakiayos
-  
+.add-btn {
+    font-size: 50px;
+    margin-top: -90px;
+    margin-right: 100px;
+    height: 60px;
+    width: 55px;
+    background-color: var(--main-green);
+    color: var(--white);
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding-top: 1px;
+    padding-right: 7px;
+
+}
+.add-btn:hover {
+  background-color: var(--green-hover);
+}
