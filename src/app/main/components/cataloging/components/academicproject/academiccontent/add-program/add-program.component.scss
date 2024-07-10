@@ -96,13 +96,15 @@
     text-align: left;
   }
     
-    .button-container {
-     
-      
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 0;
-    }
+.button-container {
+
+  display: flex;
+  justify-content:center;
+  margin-right: 0;
+  margin-top: -130px;
+  padding-bottom: 20px;
+  align-items: center;
+}
     
     button {
       font-family: 'Montserrat';
@@ -131,7 +133,7 @@
     
     .update-btn {
      
-      background-color: #179733;
+      background-color: #4f6f52;
       color: white;
       float: right;
       margin-top: 120px;
@@ -142,12 +144,7 @@
     .update-btn:hover {
       background-color: gray;
     }
-  
-    .update-btn:disabled {
-      background-color: gray;
-      pointer-events: none;
-    }
-    
+
     form {
       height: 350px;
     }
@@ -159,8 +156,18 @@
       margin: 30px 10px 30px 10px;
       width: 300px;
    //   display: block;
-      }
+    }
     
+    
+.input-row {
+  gap: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-row .txt_field {
+  flex-basis: 100%;
+}
     .txt_field1 .labelline1{
       position: absolute;
       top: 50%;
@@ -478,7 +485,8 @@
   
   
   .txtheader2 {
-    padding-top: 50px;
+    padding-top: 7px;
+   
   
   }
   .add-btn {
@@ -518,6 +526,8 @@
   
   .container2{
     display: block;
+    padding-top: 30px;
+    margin-right: 10px;
     
   }
   
@@ -526,7 +536,7 @@
     border: 0;
     height: 2px;
     background: black;
-    margin-top: 30px;
+    margin-top: 10px;
     left: auto;
     right: auto;
   }
