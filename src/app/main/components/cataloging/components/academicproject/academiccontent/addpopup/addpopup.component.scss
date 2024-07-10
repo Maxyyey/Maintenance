@@ -97,8 +97,9 @@
      
       
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       margin-right: 0;
+      padding: 25px;
     }
     
     button {
@@ -617,37 +618,19 @@
     height: auto;
     width: 45px;
     margin-left: 735px;
-    margin-top: -110px;
+    margin-top: -130px;
     padding: 5px;
     border: none;
-    background-color: #4f6f52;
-    color: #fff;
+
+    color: #4f6f52;
     text-decoration: none;
     border-radius: 3px;
     cursor: pointer;
   }
+    
+
   
-  .add-btn:hover {
-    background-color: gray;
-  }
-  
-  .add-btn2 {
-    display: inline-block;
-    height: 50px;
-    width: 100px; 
-    margin-left: 20px;
-    border: none;
-    background-color: #4f6f52;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .add-btn2:hover {
-    background-color: gray;
-  }
-  
+
   .container2{
     display: block;
     
@@ -729,21 +712,17 @@
   }
   // checkbox spacing (margin-right) pakiayos
 .add-btn {
-    font-size: 50px;
-    margin-top: -90px;
+    font-size: 40px;
+    margin-top: -80px;
     margin-right: 100px;
     height: 60px;
     width: 55px;
-    background-color: var(--main-green);
-    color: var(--white);
+    color: #4f6f52;
     outline: none;
     border: none;
-    color: white;
+    color: #4f6f52;
     cursor: pointer;
     padding-top: 1px;
     padding-right: 7px;
 
-}
-.add-btn:hover {
-  background-color: var(--green-hover);
 }
