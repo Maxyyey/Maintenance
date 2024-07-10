@@ -91,8 +91,8 @@
     display: inline-flex;
     align-items: center;
     margin: 10px;
-    height: 500px;
-    width: 48%;
+    height: 200px;
+    width: 100%;
     background-color: #F5EFE6;
     border: solid 1px var(--main-green);
     border-radius: 10px;
@@ -100,7 +100,7 @@
 }
 
 .cards .graph1 {
-    display: inline-flex;
+    display: block;
     width: 100%;
 }
 
@@ -148,42 +148,24 @@
     color: #000;
 }
 
-.materialname .bordercolor {
-    background-color: blue;
+.materialname  {
+    height: 100px;
     border-radius: 6px;
     padding: 5px;
+    display:block;
 
-}
-
-.materialname1 .bordercolor1 {
-    background-color: yellow;
-    border-radius: 6px;
-    padding: 5px;
-
-}
-
-.materialname2 .bordercolor2 {
-
-    background-color: red;
-    border-radius: 6px;
-    padding: 5px;
-
-}
-
-.materialname3 .bordercolor3 {
-
-    background-color: orange;
-    border-radius: 6px;
-    padding: 5px;
-
-}
-
-.materialname4 .bordercolor4 {
-
-    background-color: pink;
-    border-radius: 6px;
-    padding: 5px;
-
+    p {
+        font-weight: 600;
+        font-size: 17px;
+        color: #ffffff;
+        margin: 0 10px 10px 10px;
+    }
+     h1 {
+        font-weight: 900;
+        font-size: 30px;
+        color: #ffffff;
+        margin:10px 10px 0 10px;
+    }
 }
 
 .text1 {
@@ -217,32 +199,20 @@
 
 .text .analytic1 {
     margin: 15px;
-    display: inline-flex;
-    background-color: #bbbaba;
+    display: block;
+    // background-color: #bbbaba;
     border-radius: 6px;
     padding: 10px;
     width: 96%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 5px;
+    gap: 10px;
     align-items: center;
 
 }
 
-.analytic1 p {
-    font-weight: 600;
-    font-size: 15px;
-    text-align: center;
-    color: #000;
-}
 
-.analytic1 h1 {
-    font-weight: 900;
-    font-size: 25px;
-    text-align: center;
-    color: #000;
-}
 
 .visual1 {
     width: 100%;

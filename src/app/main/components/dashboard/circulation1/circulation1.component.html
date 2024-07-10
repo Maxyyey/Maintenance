@@ -50,30 +50,55 @@
 
             <!-- top 10 borrowers container -->
             <div class="top-borrower">
+                
+                    <div class="analytic">
+                        <div class="analytic-title">
+                        <p>Total Books Borrowed</p>
+                        <h1>100</h1>
+                    </div>
+                        <div class="filter">
+                            <!-- <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required> -->
+                            <select class="inputtxt" id="language" name="language">
+                                <!-- <option value="English"> All  </option> -->
+                                <option value="0"> Daily </option>
+                                <option value="1"> Weekly </option>
+                                <option value="2"> Monthly </option>
+                                <option value="3"> Semester </option>
+                                <option value="4"> Yearly </option>
+                            </select>
+    
+                        </div>
+                    </div>
+                  
+                
+                <div class="visual">
+                    
+                    <div class="chart">
+                        <canvas class="first-graph" id="myPieChart"></canvas> 
+                      </div>
+                </div>
                 <div class="text1">
                     <div class="analytic1">
                         <h3>Top 10 Borrowers</h3>
                     </div>
 
-                    <div class="filter1">
+                    <!-- <div class="filter1"> -->
                         <!-- <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required> -->
-                        <select class="inputtxt" id="language" name="language">
+                        <!-- <select class="inputtxt" id="language" name="language"> -->
                             <!-- <option value="English"> All  </option> -->
-                            <option value="0"> Daily </option>
+                            <!-- <option value="0"> Daily </option>
                             <option value="1"> Weekly </option>
                             <option value="2"> Monthly </option>
                             <option value="3"> Semester </option>
                             <option value="4"> Yearly </option>
                         </select>
 
-                    </div>
+                    </div> -->
                 </div>
                 <div class="visual1">
-                    <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
-                        <div class="borrower-info">
+                    <div class="borrower-card ">
+                        
+                        <div class="borrower-info" >
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
                             <P>DATE OR TIME</P>
@@ -81,21 +106,6 @@
 
                     </div>
                     <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
-                        <div class="borrower-info">
-                            <h1>202110238</h1>
-                            <p>HINIRAM NA LIBRO</p>
-                            <P>DATE OR TIME</P>
-                        </div>
-
-                    </div>
-
-                    <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
                         <div class="borrower-info">
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
@@ -105,9 +115,6 @@
                     </div>
 
                     <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
                         <div class="borrower-info">
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
@@ -117,9 +124,6 @@
                     </div>
 
                     <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
                         <div class="borrower-info">
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
@@ -129,45 +133,6 @@
                     </div>
 
                     <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
-                        <div class="borrower-info">
-                            <h1>202110238</h1>
-                            <p>HINIRAM NA LIBRO</p>
-                            <P>DATE OR TIME</P>
-                        </div>
-
-                    </div>
-
-                    <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
-                        <div class="borrower-info">
-                            <h1>202110238</h1>
-                            <p>HINIRAM NA LIBRO</p>
-                            <P>DATE OR TIME</P>
-                        </div>
-
-                    </div>
-
-                    <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
-                        <div class="borrower-info">
-                            <h1>202110238</h1>
-                            <p>HINIRAM NA LIBRO</p>
-                            <P>DATE OR TIME</P>
-                        </div>
-
-                    </div>
-
-                    <div class="borrower-card">
-                        <div class="board">
-
-                        </div>
                         <div class="borrower-info">
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
@@ -176,9 +141,38 @@
 
                     </div>
                     <div class="borrower-card">
-                        <div class="board">
-
+                        <div class="borrower-info">
+                            <h1>202110238</h1>
+                            <p>HINIRAM NA LIBRO</p>
+                            <P>DATE OR TIME</P>
                         </div>
+
+                    </div>
+                    <div class="borrower-card">
+                        <div class="borrower-info">
+                            <h1>202110238</h1>
+                            <p>HINIRAM NA LIBRO</p>
+                            <P>DATE OR TIME</P>
+                        </div>
+
+                    </div>
+                    <div class="borrower-card">
+                        <div class="borrower-info">
+                            <h1>202110238</h1>
+                            <p>HINIRAM NA LIBRO</p>
+                            <P>DATE OR TIME</P>
+                        </div>
+
+                    </div>
+                    <div class="borrower-card">
+                        <div class="borrower-info">
+                            <h1>202110238</h1>
+                            <p>HINIRAM NA LIBRO</p>
+                            <P>DATE OR TIME</P>
+                        </div>
+
+                    </div>
+                    <div class="borrower-card">
                         <div class="borrower-info">
                             <h1>202110238</h1>
                             <p>HINIRAM NA LIBRO</p>
@@ -225,41 +219,7 @@
 
                 <!-- Total borrowed by department card-->
 
-                <div class="borrowed-dept">
-                    <div class="analytic">
-                        <p>Total Books Borrowed</p>
-                        <h1>100</h1>
-                       
-                    </div>
-                    <div class="filter">
-                        <!-- <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required> -->
-                        <select class="inputtxt" id="language" name="language">
-                            <!-- <option value="English"> All  </option> -->
-                            <option value="0"> Daily </option>
-                            <option value="1"> Weekly </option>
-                            <option value="2"> Monthly </option>
-                            <option value="3"> Semester </option>
-                            <option value="4"> Yearly </option>
-                        </select>
-
-                    </div>
-                    <!-- <div class="analytic">
-                        <p>Unreturned</p>
-                        <h1>20</h1>
-                    </div>
-                    <div class="analytic">
-                        <p>Missing</p>
-                        <h1>1</h1>
-                    </div>  -->
-                    
-                
-                <div class="visual">
-                    
-                    <div class="chart">
-                        <canvas class="first-graph" id="myPieChart"></canvas> 
-                      </div>
-                </div>
-            </div> 
+              
             </div>  
 
              <!-- Total borrowed card-->
