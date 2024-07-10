@@ -24,9 +24,8 @@ export class ViewComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.department = this.data[0]
-    let a =  (Object.values(this.data[1]))
-    this.programs = a[0]
+    this.department = this.data.key
+    this.programs = this.data.value
   }
 
   closepopup() {

@@ -18,9 +18,9 @@
 
 <div class="card-container">
   <!-- (click)="openDepartment(department.id)" -->
-    <div class="card" *ngFor="let department of departments" (click)="openDepartment(department)">  
+    <div class="card" *ngFor="let department of departments | keyvalue" (click)="openDepartment(department)">  
         <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image" >
-        <h1>{{ department[0] }}</h1>
+        <h1>{{ department.key }}</h1>
     </div> 
 </div>  
 

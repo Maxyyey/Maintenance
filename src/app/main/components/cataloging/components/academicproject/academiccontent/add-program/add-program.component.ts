@@ -6,12 +6,12 @@ import { CatalogingService } from '@app/services/cataloging.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-addiconacad',
-  templateUrl: './addiconacad.component.html',
-  styleUrl: './addiconacad.component.scss',
+  selector: 'app-add-program',
+  templateUrl: './add-program.component.html',
+  styleUrl: './add-program.component.scss'
 })
-
-export class AddiconacadComponent{
+export class AddProgramComponent {
+  program_short: string = ''
   formDetails: FormGroup = this.fb.group({
     department_short: [null, [Validators.required, Validators.maxLength(32)]],
     department_full: [null, [Validators.required, Validators.maxLength(64)]],
@@ -21,7 +21,7 @@ export class AddiconacadComponent{
   })
 
   constructor(
-    private ref: MatDialogRef<AddiconacadComponent>,
+    private ref: MatDialogRef<AddProgramComponent>,
     private catalogingService: CatalogingService, 
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
@@ -33,21 +33,17 @@ export class AddiconacadComponent{
       department_short: this.data.department_short,
       department_full: this.data.department_full
     })
-    console.log(this.data)
-    console.log(this.formDetails)
   }
 
 
   closepopup() {
-    this.ref.close('Closed using function');
+    this.ref.close("close");
   }
 
   addProgram() {
-    console.log('Form data:', this.formDetails);
-    
     this.catalogingService.addPrograms(this.formDetails.value).subscribe(
       (response: any) => {
-        this.closepopup()
+        this.ref.close({data: this.formDetails.value});
         Swal.fire({
           title: "Success!",
           text: "Program has been added.",
@@ -131,6 +127,5 @@ export class AddiconacadComponent{
       }
     });
   }
+
 }
-
-
