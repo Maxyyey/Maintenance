@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth.service';
 import Swal from 'sweetalert2';
@@ -69,5 +69,40 @@ export class MainComponent {
         this.router.navigate(['/login'])
       }
     )
+
+  }
+  isSidebarCollapsed = false;
+  isSidebarOverlay = false;
+
+  toggleSidebar() {
+    if (window.innerWidth <= 768) {
+      if (this.isSidebarOverlay) {
+        this.isSidebarOverlay = false;
+        this.isSidebarCollapsed = true;
+      } else {
+        this.isSidebarOverlay = true;
+        this.isSidebarCollapsed = false;
+      }
+    } else {
+      this.isSidebarCollapsed = !this.isSidebarCollapsed;
+      this.isSidebarOverlay = false;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenWidth();
+  }
+
+  checkScreenWidth() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) {
+      this.isSidebarCollapsed = true;
+      this.isSidebarOverlay = false;
+    } else {
+      this.isSidebarCollapsed = screenWidth <= 1320;
+      this.isSidebarOverlay = false;
+    }
   }
 }
+
