@@ -13,9 +13,14 @@
   z-index: 1000;
 }
 
+.content{
+  height: auto;
+  width:50%;
+}
+
 .details-content {
-  width: 600px;
-  position: relative;
+  width: 100%;
+
   background: white;
   border-radius: 5px;
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
@@ -53,13 +58,13 @@
 }
 
 .detailsbody {
-  height: auto; /* Adjust the height as needed */
+   /* Adjust the height as needed */
   justify-content: center; 
 }
 
 .detailscontent1{
     width: 550px;
-    display: inline-block;
+    display: inline-flex;
 }
 .contentdetails{
   margin-top: 10px;
@@ -91,19 +96,15 @@
 }
 
 .details img{
-  margin-top: 40px;
-  margin-bottom: 10px;
-    margin-left: 157px;
+  
     max-height: 300px;
     
-    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.2117647059);
+    
 }
 
 // POPUP HEADER SCSS
 .detailsheader {
   padding: 20px 10px 20px;
-  position: fixed;
-  width: 600px;
   background-color: var(--main-green);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -113,16 +114,40 @@
 }
 
 /* EXIT BUTTON */
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+  margin-top: 20px;
+  margin-left: -10;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+.table1 {
+  max-width: 1610px;
+  background-color: #ffffff;
+  border-radius: 0px;
+
+}
+
 .exit-button {
-  position: absolute;
   background-color: transparent;
   border: none;
   font-size: 40px;
   cursor: pointer;
   color: var(--primary-color);
   float: right;
-  top: -5px;
-  right: -30px;
 }
 
 .exit-button:hover {
