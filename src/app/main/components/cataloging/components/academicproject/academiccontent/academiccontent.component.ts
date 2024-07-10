@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AddiconacadComponent } from './addiconacad/addiconacad.component';
+import { AddProgramComponent } from './add-program/add-program.component';
 import { ViewComponent } from './departmentModal/view.component';
 import { AddPopupComponent } from './addpopup/addpopup.component';
 import { CatalogingService } from '@app/services/cataloging.service';
 import Swal from 'sweetalert2';
+import { KeyValue } from '@angular/common';
+import { find } from 'rxjs';
 
 @Component({
   selector: 'app-academiccontent',
@@ -29,8 +31,7 @@ export class AcademiccontentComponent implements OnInit {
   getDepartmentsPrograms() {
     this.catalogingService.getDepartments().subscribe(
       departments => {
-        this.departments = (Object.entries(departments))
-          console.log((Object.entries(departments)))
+        this.departments = departments
       },
       error => {
         console.error(error)
@@ -42,7 +43,6 @@ export class AcademiccontentComponent implements OnInit {
     this.catalogingService.getDepartmentsOnly().subscribe(
       departments => {
         this.departmentsOnly = departments
-        console.log(departments)
       },
       error => {
         console.error(error)
@@ -74,13 +74,24 @@ export class AcademiccontentComponent implements OnInit {
       return
     }
     
-    let modal = this.dialogRef.open(AddiconacadComponent, {
+    let modal = this.dialogRef.open(AddProgramComponent, {
       data: department
     }); 
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false
-      }
+        if(result.data) {
+          // console.log(result.data)
+          const data =  result.data
+          let program = {
+            program_short: data.program_short,
+            program_full: data.program_full,
+            department_full: data.department_full,
+            department_short: data.department_short
+          } 
+          this.departments[data.department_full].push(program)
+        }
+      } 
     )
   }
 
@@ -90,6 +101,7 @@ export class AcademiccontentComponent implements OnInit {
     }
     
     this.isModalOpen = true
+    console.log(department)
 
     let modal = this.dialogRef.open(ViewComponent, {
       data: department
