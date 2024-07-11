@@ -25,11 +25,18 @@
                 <span></span>
                 <div class="labelline1">Status</div>
               </div>
-              <div class="txt_field1">
-                <div class="labelline1">Date</div>
-                <span></span>
-                <input type="date" class="date" name="date" [(ngModel)]="date" readonly>
+
+              <div class="input-row">
+
+                <div class="txt_field1">
+                  <div class="labelline1">Date</div>
+                  <span></span>
+                  <input type="date" class="date" name="date" [(ngModel)]="date" readonly>
+                </div>
+
               </div>
+
+              
               <div class="button-container">
                 <button type="button" (click)="cancelBox()" class="cancel-btn">Cancel</button>
                 <button type="button" (click)="addBox()" class="update-btn">Add</button>

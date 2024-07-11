@@ -93,12 +93,14 @@
     text-align: left;
   }
     
-    .button-container {
-      margin-top: 20px;
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 0;
-    }
+  .button-container {
+    display: flex;
+    justify-content:center;
+    margin-right: 0;
+    margin-top: -50px;
+    padding-bottom: 30px;
+    align-items: center;
+  }
     
     button {
       font-family: 'Montserrat';
@@ -142,7 +144,11 @@
     // pop up design
   
     
-    
+.input-row {
+  gap: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
 
     .txt_field1 span::before{
@@ -181,7 +187,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 240px;
+      width: 360px;
       display: inline-block;
     }
     
@@ -286,7 +292,81 @@
     
     }
     
+    form .txt_field2{
+      position: relative;
+      border-bottom: 2px solid #777777;
+      margin: 40px 0 40px 150px;
+      width: 500px;
+      display: inline-block;
+      align-items: center;
+    }
+    
+    .txt_field2 .inputtxt2{
+      width: 100%;
+      display: block;
+      padding-top: 30px;
+      padding-left: 10px;
+     // padding-right: 10px;
+      padding-bottom: 7px;
+      height: 60px;
+      font-size: 15px;
+      border: none;
+      background-color: #F6F6F6;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      outline: none;
+    }
+    
+    .txt_field2 .labelline2{
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      color: #777777;
+      transform: translateY(-50%);
+      font-size: 15px;
+      pointer-events: none;
+      transition: .3s;
+    }
   
+    .txt_field2 span::before{
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #4f6f52;
+      transition: .3s;
+    }
+    
+    .inputtxt2:not(:focus) + span::before {
+      background: #777777;
+    }
+    
+    .txt_field2 .inputtxt2:hover{
+      background-color: #ececec;
+    }
+    
+    .txt_field2 .inputtxt2:valid ~ .labelline2 {
+      top: 17px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: #777777;
+    }
+    
+    .txt_field2 .inputtxt2:focus ~ .labelline2 {
+      top: 17px;
+      font-size: 12px;
+      color: #4f6f52;
+      letter-spacing: 0.5px;
+    }
+    
+    .txt_field2 .inputtxt2:focus ~ span::before,
+    .txt_field2 .inputtxt2:valid ~ span::before{
+      width: 100%;
+    }
+
+
     .date {
       border: none; /* Blue border with increased thickness */
       width: 97%;
