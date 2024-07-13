@@ -73,3 +73,51 @@
     text-align: center;
     margin-left: 30px;
 }
+
+.table-content {
+    border-radius: 7px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+    background-color:  #ffffff;
+    ;
+}
+
+.graph{
+    display: inline-block;
+    margin: 10px;
+    padding: 0 0 1px 0;
+    height: auto;
+    width: 98.5%;
+    border: solid 1px #4f6f52;
+    background-color: #F5EFE6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+//BAR CHART VISUAL
+
+
+.visual {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.visual .barchart {
+
+    margin: 10px 10px 20px 10px;
+    width: 95%;
+    height: 400px;
+    
+
+}
+
+
+canvas .first-graph{
+    width: 100% !important;
+    height: 100% !important;
+    
+}
