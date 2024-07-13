@@ -8,18 +8,11 @@
 
 <div class="background">
 
-<div class="content">
-    <!-- HEADER -->
-    <div class="header">
-        <h1>MAINTENANCE</h1>
-    </div>
-    
-    <!-- BODY CONTENT -->
-    <div class="body-content">
-        <div class="admin-container"> <router-outlet></router-outlet> </div>
-    </div>
+    <div class="content" [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay}">
 
-    <nav class="sidebar-content">
+        <nav class="sidebar-content" [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay}">
+
+
         <!-- LOGO AND SUBSYSTEM TITLE -->
         <div class="logo-title">
             <div class="logo">
@@ -29,6 +22,9 @@
                 <h1> Marlon A. Atencio </h1>
                 <h2>ADMIN</h2>
             </div>
+            <button class="menu-icon-button" (click)="toggleSidebar()">
+                <i class='bx bx-menu' ></i>
+            </button>
         </div>
 
         <!-- SIDEBAR TABS -->
@@ -50,15 +46,19 @@
                         </button>
                         <div class="dropdown-content" *ngIf="dropdownOpen">
                             <a class="sub-tab-link" routerLink="circulation1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                                <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
                                 <span class="tab-link-name1"> Circulation </span>
                             </a>
                             <a class="sub-tab-link" routerLink="cataloging1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                                <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
                                 <span class="tab-link-name1"> Cataloging </span>
                             </a>
                             <a class="sub-tab-link" routerLink="locker1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                                <span class="material-symbols-outlined"> library_add </span>
                                 <span class="tab-link-name1"> Locker </span>
                             </a>
                             <a class="sub-tab-link" routerLink="opac1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                                <span class="tab-link-icon"> <i class="fa-solid fa-user"></i> </span>
                                 <span class="tab-link-name1"> OPAC </span>
                             </a>
                         </div>
@@ -121,4 +121,18 @@
 
 </div>
 
+</div>
+<!-- Overlay -->
+<div class="sidebar-overlay" [ngClass]="{'visible': !isSidebarCollapsed}" (click)="toggleSidebar()"></div>
+
+<div class="main-content" [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay, 'blurred': isSidebarOverlay}">
+    <!-- HEADER -->
+    <div class="header">
+        <h1> MAINTENANCE</h1>
+    </div>
+
+    <!-- BODY CONTENT -->
+    <div class="body-content">
+        <div class="admin-container"> <router-outlet></router-outlet> </div>
+    </div>
 </div>

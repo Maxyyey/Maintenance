@@ -1,3 +1,13 @@
+.content {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
 :root {
     font-size: 100%;
     //new header green #376448;
@@ -86,6 +96,20 @@ body {
     transition: all 0.3s ease;
     overflow-y: auto;
 }
+
+/* MENU */
+.menu-icon-button {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 24px;
+    padding: 5px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: white;
+}
+
 
 // SCROLLBAR //
 .sidebar-content::-webkit-scrollbar {
@@ -190,46 +214,16 @@ ul ul {
     background-color: var(--main-green);
 }
 
-@media only screen and (max-width: 768px) {
-    .sidebar-content {
-        width: 70px;
-    }
-    .sidebar-content:hover {
-        width: 220px;
-        z-index: 200;
-    }
-    .sidebar-content:hover li a span:last-child {
-        display: inline;
-    }
 
-    .logo-title {
-        display: none;
-    }
 
-    .tab-link-name {
-        display: none;
-    }
 
-    .logoutbtn {
-        bottom: 20px;
-        width: 50px;
-    }
-    
-}
-
-@media screen and (min-width: 768px) {
-    .body-content {
-        padding-left: 20px;
-        padding-top: 70px;
-    }
-}
-
+/* MAIN CONTENT */
 .body-content {
-    overflow-x: hidden;
-    padding-left: 240px;
+    margin-left: 240px;
     padding-top: 90px;
-    background-color: #F5EFE6;
-    min-height: 100vh;
+    width: calc(100% - 240px);
+    transition: all 0.3s ease;
+    
 }
 
 /* Dropdown Button */
@@ -248,7 +242,7 @@ ul ul {
 }
 
 .sub-tab-link .tab-link-name1 {
-    padding-left: 30px;
+    padding-left: 10px;
     padding-top: 2px;
     transition: 0.3s ease;
 }
@@ -292,4 +286,142 @@ ul ul {
 .dropdown i {
     margin-left: auto; 
 }
+// RESPONSIVE SIDEBAR SIZE 
+@media (max-width: 1320px) {
+    .sidebar-content.collapsed {
+        width: 80px;
+    }
+  
+    .header {
+        margin-left: 220px;
+        width: 100%;
+    }
 
+    .body-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+
+} 
+
+
+// FOR MINIMIZING SIDEBAR 
+.sidebar-content.collapsed {
+    width: 70px; 
+}
+
+.sidebar-content.collapsed .tab-link-name1 {
+    display: none;
+}
+
+.sidebar-content.collapsed .menu-icon-button {
+    position: absolute;
+    font-size: 24px;
+    padding: 5px;
+    align-self: center;
+    margin-top: 5px;
+    left: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar-content.collapsed .logo img {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar-content.collapsed .tab-link-icon {
+    padding-left: 10px;
+}
+
+.sidebar-content.collapsed .material-symbols-outlined {
+    padding-left: 10px;
+}
+
+.sidebar-content.collapsed .systemname, 
+.sidebar-content.collapsed .tab-link-name {
+    display: none;
+}
+
+.sidebar-content.collapsed .logoutbtn {
+    bottom: 20px;
+    width: 70px;
+}
+
+.main-content.collapsed .header {
+    margin-left: 70px;
+    transition: margin-left 0.3s;
+    width: calc(100% - 70px);
+}
+
+.main-content.collapsed .body-content {
+    margin-left: 100px;
+    transition: margin-left 0.3s;
+    width: calc(100% - 100px);
+}
+
+.sidebar-content.collapsed .tab-link-name,
+.sidebar-content.collapsed .systemname {
+    display: none;
+}
+
+.sidebar-content.collapsed .tab-link-icon {
+   
+    display: block;
+}
+
+/* Overlay sidebar styles */
+.sidebar-content.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    z-index: 200;
+    transform: translateX(0);
+}
+
+.main-content.overlay .header, 
+.main-content.overlay .body-content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+@media (max-width: 768px) {
+    .sidebar-content {
+    transform: translateX(-100%);
+    }
+
+    .content.collapsed .sidebar-content.collapsed {
+    transform: translateX(0);
+    width: 70px;
+    }
+
+    .sidebar-content.overlay {
+    width: 220px;
+    }
+
+    .main-content.overlay .header, 
+    .main-content.overlay .body-content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 50;
+        display: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.visible {
+        display: block;
+    }
+}

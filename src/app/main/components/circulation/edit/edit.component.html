@@ -32,17 +32,21 @@
                                 <span></span>
                                 <input type="file" accept=".jpeg, .png, .jpg" name="image_location">              
                               </div> -->
-              <div class="txt_field">
-                <input class="inputtxt" type="text" [(ngModel)]="hours_allowed" [ngModelOptions]="{standalone: true}"
+
+              <div class="input-row">
+                <div class="txt_field">
+                  <input class="inputtxt" type="text" [(ngModel)]="hours_allowed" [ngModelOptions]="{standalone: true}"
                   required>
-                <span></span>
-                <div class="labelline">No. of Days/Hours Allowed</div>
+                  <span></span>
+                  <div class="labelline">No. of Days/Hours Allowed</div>
+                </div>
+                  <div class="txt_field">
+                  <input class="inputtxt" [(ngModel)]="materials_allowed" [ngModelOptions]="{standalone: true}" readonly>
+                  <span></span>
+                   <div class="labelline1">No. of Books Allowed</div>
+                </div>
               </div>
-              <div class="txt_field">
-                <input class="inputtxt" [(ngModel)]="materials_allowed" [ngModelOptions]="{standalone: true}" readonly>
-                <span></span>
-                <div class="labelline1">No. of Books Allowed</div>
-              </div>
+              
 
               <!--<div class="txt_field">
                                 <select class="inputtxt" id="language" name="language" required>

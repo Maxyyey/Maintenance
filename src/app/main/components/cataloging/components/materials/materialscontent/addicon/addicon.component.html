@@ -10,22 +10,25 @@
         <div class="detailsbody">
           <div class="details">
             <form>
-              <div class="txt_field1">
-                <div class="labelline1">Date</div>
-                <span></span>
 
-                <input type="date" class="date" [value]="currentDate" readonly>
+              <div class="input-row">
+                <div class="txt_field1">
+                  <div class="labelline1">Date</div>
+                  <span></span>
+                  <input type="date" class="date" [value]="currentDate" readonly>
+                </div>
+                <div class="txt_field">
+                  <input class="inputtxt" type="text" [(ngModel)]="form.location_short" [ngModelOptions]="{standalone: true}" required>
+                  <span></span>
+                  <div class="labelline">Location</div>
+                </div>
               </div>
-              <div class="txt_field">
-                <input class="inputtxt" type="text" [(ngModel)]="form.location_short" [ngModelOptions]="{standalone: true}" required>
+
+      
+              <div class="txt_field2">
+                <input class="inputtxt2" type="text" [(ngModel)]="form.location_full" [ngModelOptions]="{standalone: true}" required>
                 <span></span>
-                <div class="labelline">Location</div>
-              </div>
-              
-              <div class="txt_field">
-                <input class="inputtxt" type="text" [(ngModel)]="form.location_full" [ngModelOptions]="{standalone: true}" required>
-                <span></span>
-                <div class="labelline">Full Location</div>
+                <div class="labelline2">Full Location</div>
               </div>
             </form>
           </div> 

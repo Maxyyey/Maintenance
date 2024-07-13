@@ -100,8 +100,8 @@
 
   display: flex;
   justify-content:center;
-  margin-right: 0;
-  margin-top: -130px;
+  margin-left: 5px;
+  margin-top: -150px;
   padding-bottom: 20px;
   align-items: center;
 }
@@ -160,9 +160,9 @@
     
     
 .input-row {
-  gap: 1.5rem;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .input-row .txt_field {
@@ -231,8 +231,8 @@
     form .txt_field{
       position: relative;
       border-bottom: 2px solid #777777;
-      margin: 30px 10px 30px 10px;
-      width: 375px;
+      margin: 10px 10px 30px 10px;
+      width: 773px;
       display: inline-block;
     }
     
@@ -240,7 +240,7 @@
       width: 100%;
       display: block;
       padding-top: 30px;
-      padding-left: 10px;
+      padding-left: 16px;
      // padding-right: 10px;
       padding-bottom: 7px;
       height: 60px;
@@ -307,7 +307,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 10px 10px 30px 10px;
-      width: 773px;
+      width: 768px;
       display: inline-block;
     }
     
@@ -486,6 +486,7 @@
   
   .txtheader2 {
     padding-top: 7px;
+    padding-left: 10px;
    
   
   }
@@ -537,8 +538,7 @@
     height: 2px;
     background: black;
     margin-top: 10px;
-    left: auto;
-    right: auto;
+
   }
   
   label {

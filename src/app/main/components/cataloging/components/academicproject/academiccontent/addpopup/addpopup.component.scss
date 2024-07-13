@@ -94,8 +94,7 @@
   }
     
     .button-container {
-     
-      
+      margin-top: -50px;
       display: flex;
       justify-content: center;
       margin-right: 0;
@@ -150,13 +149,18 @@
   
     // pop up design
    
-    
+    .input-row {
+      display: flex;
+      justify-content: center;
+    }
+
     form .txt_field{
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 240px;
+      width: 400px;
       display: inline-table;
+      
     }
     
     .txt_field .inputtxt{
@@ -177,7 +181,7 @@
       position: relative;
       border-bottom: 2px solid #777777;
       margin: 30px 10px 30px 10px;
-      width: 780px;
+      width: 779px;
       display: block;
     }
     
@@ -636,15 +640,7 @@
     
   }
   
-  hr {
-    width: 97%;
-    border: 0;
-    height: 2px;
-    background: black;
-    margin-top: 10px;
-    left: auto;
-    right: auto;
-  }
+
   
   label {
     padding-left: 2px;
@@ -665,6 +661,7 @@
     
     
   // }
+ 
   .txt_field .inputtxt2{
     width: 100%;
     padding: 28px 5px 0 0;

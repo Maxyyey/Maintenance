@@ -142,7 +142,10 @@ form .txt_field1{
 }
 
 .button-container {
-    margin-top: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 button {
