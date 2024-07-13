@@ -12,10 +12,14 @@ Chart.register(...registerables);
 })
 export class Circulation1Component implements OnInit {
   availableBooks: number = 0
+  unreturnedBooks: number = 0
+  MissingBooks: any;
 
   ngOnInit() {
     this.initializeChart();
     this.getAvailableBooks()
+    this.getUnreturnedBooks()
+    this.getMissingBooks()
   }
 
   constructor(
@@ -26,6 +30,28 @@ export class Circulation1Component implements OnInit {
     this.dataService.get('/analytics/available-books').subscribe(
       data => {
         this.availableBooks = data.available_books
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+  getUnreturnedBooks(){
+    this.dataService.get('/analytics/unreturned-books').subscribe(
+      data => {
+        this.unreturnedBooks = data.unreturned_books
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+  getMissingBooks(){
+    this.dataService.get('/analytics/missing-books').subscribe(
+      data => {
+        this.MissingBooks = data.missing_books
       },
       error => {
         console.error(error)
