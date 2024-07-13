@@ -55,16 +55,7 @@
 }
 
 
-// .cards .card h1 {
-//     margin-left: 58px;
-//     font-size: 30px;
-// }
 
-// .cards .card h3 {
-//     margin-left: 40px;
-//     font-size: 15px;
-//     font-weight: 500;
-// }
 
 .cards .card .box {
     float: right;
@@ -85,6 +76,15 @@
 }
 
 // FIRST CARD
+
+.table-content {
+    border-radius: 5px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+    background-color: #ffffff;
+    width: 100%;
+
+}
 .container1 {
     display: inline-flex;
     align-items: center;
@@ -92,7 +92,7 @@
     background-color: #F5EFE6;
     margin: 10px;
     height: fit-content;
-    width: 98%;
+    width: 98.5%;
     border: solid 1px var(--main-green);
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -206,7 +206,7 @@
     background-color: #F5EFE6;
     margin: 10px;
     height: 400px;
-    width: 98%;
+    width: 98.5%;
     border: solid 1px var(--main-green);
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

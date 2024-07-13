@@ -22,8 +22,8 @@ export class OPAC1Component {
         datasets: [{
           label: 'Total Visits',
           data: [10, 12, 15, 18, 20, 22, 25],
-          borderColor: 'green',
-          backgroundColor: 'rgba(0, 128, 0, 0.2)',
+          borderColor: '#1A4D2E',
+          backgroundColor: '#1A4D2E',
           borderWidth: 1,
           barThickness: 40 
         }]

@@ -26,15 +26,15 @@ export class Circulation1Component implements OnInit {
           label: 'Total',
           data: [79,20,1],
           backgroundColor: [
-            'green',
-            'orange',
-            'red',
+            '#1A4D2E',
+            '#FFC100',
+            '#C40C0C',
 
           ],
           borderColor: [
-            'green',
-            'orange',
-            'red',
+            '#1A4D2E',
+            '#FFC100',
+            '#C40C0C',
           ],
           borderWidth: 1
         }]
@@ -63,8 +63,8 @@ export class Circulation1Component implements OnInit {
         datasets: [{
           // label: 'Monthly Sales',
           data: [50, 30, 60, 70, 40],
-          backgroundColor: 'blue',
-          borderColor: 'rgba(0, 0, 255, 0.5)',
+          backgroundColor: '#1A4D2E',
+          borderColor: '#1A4D2E',
           borderWidth: 1,
           fill: false
         }]
@@ -88,8 +88,8 @@ export class Circulation1Component implements OnInit {
         datasets: [{
           label: 'Total Borrowed',
           data: [10, 12, 15, 18, 20, 22, 25],
-          borderColor: 'green',
-          backgroundColor: 'rgba(0, 128, 0, 0.2)',
+          borderColor: '#1A4D2E',
+          backgroundColor: '#1A4D2E',
           borderWidth: 1,
           barThickness: 40 
         }]

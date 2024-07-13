@@ -40,10 +40,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-
-
-
 .card .icon-case {
 
     // margin-top: 10px;
@@ -54,16 +50,6 @@
 }
 
 
-// .cards .card h1 {
-//     margin-left: 58px;
-//     font-size: 30px;
-// }
-
-// .cards .card h3 {
-//     margin-left: 40px;
-//     font-size: 15px;
-//     font-weight: 500;
-// }
 
 .cards .card .box {
     float: right;
@@ -74,42 +60,43 @@
     margin-left: 30px;
 }
 
-// FIRST CARD
-.container {
-    display: inline-block;
-    align-items: center;
-    margin: 10px;
-    height: 500px;
-    width: 48%;
-    background-color: #F5EFE6;
-    border: solid 1px var(--main-green);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// CONTAINER GRAPH
+
+.table-content {
+    border-radius: 5px;
+    border: 1px solid var(--table-border);
+    padding: 10px;
+    background-color: #ffffff;
+    width: 99%;
+
 }
 
-.container1 {
+.graph1 {
     display: inline-flex;
+    width: 100%;
+}
+
+
+//1st CARD
+
+.container1 {
+    display: block;
     align-items: center;
     margin: 10px;
-    height: 200px;
+    height: 100%;
+    width: 60%;
+}
+
+.text {
     width: 100%;
+    margin: 5px;
+
+    display: block;
     background-color: #F5EFE6;
     border: solid 1px var(--main-green);
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
-.cards .graph1 {
-    display: block;
-    width: 100%;
-}
-
-// TOTAL
-.text {
-    width: 100%;
-    margin: 10px;
-
-    display: inline-block;
 }
 
 .text .head {
@@ -119,124 +106,161 @@
     font-weight: 600;
 }
 
-.text .analytic {
-    margin: 15px;
-    display: inline-flex;
-    background-color: #bbbaba;
-    border-radius: 6px;
-    padding: 10px;
-    width: 94%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 5px;
+.visual1 {
+    width: 99%;
+    height: 350px;
+    display: flex;
     align-items: center;
-
-}
-
-.analytic p {
-    font-weight: 600;
-    font-size: 15px;
+    justify-content: center;
     text-align: center;
-    color: #000;
+
 }
 
-.analytic h1 {
-    font-weight: 900;
-    font-size: 25px;
-    text-align: center;
-    color: #000;
-}
-
-.materialname  {
-    height: 100px;
-    border-radius: 6px;
-    padding: 5px;
-    display:block;
-
-    p {
-        font-weight: 600;
-        font-size: 17px;
-        color: #ffffff;
-        margin: 0 10px 10px 10px;
-    }
-     h1 {
-        font-weight: 900;
-        font-size: 30px;
-        color: #ffffff;
-        margin:10px 10px 0 10px;
-    }
-}
-
-.text1 {
-    width: 35%;
-    margin-bottom: 300px;
-    margin-top: 300px;
-}
-
-
-.visual {
+.visual1 .chart1 {
+    margin: 10px;
+    height: 95%;
     width: 100%;
-    display: inline-block;
-}
-
-//VISUAL
-
-//CHART
-.visual .chart {
-
-    margin: 0 15px;
-    height: 330px;
-    width: 94%;
-    border: solid 1px var(--main-green);
-    border-radius: 10px;
 
 }
 
+canvas .first-graph {
+    width: 100% !important;
+    height: 100% !important;
 
+}
 
-//2ND CARD
-
-.text .analytic1 {
-    margin: 15px;
-    display: block;
-    // background-color: #bbbaba;
+.analytic1 {
+    margin: 20px 10px 10px 5px;
+    background-color: #F5EFE6;
     border-radius: 6px;
-    padding: 10px;
-    width: 96%;
+    padding: 20px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 10px;
     align-items: center;
+    border: solid 1px var(--main-green);
+    border-radius: 10px;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
+.materialname {
+    height: 60px;
+    border-radius: 6px;
+    padding: 5px;
+    display: block;
+    background-color: #D9D9D9;
+
+    p {
+        font-weight: 600;
+        font-size: 14px;
+        color: #080808;
+        margin: 0 10px 10px 10px;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 25px;
+        color: #080808;
+        margin: 3px 10px 0 10px;
+    }
+}
 
 
-.visual1 {
-    width: 100%;
+//2nd card
+
+.container {
     display: inline-block;
+    align-items: center;
+    margin: 15px 10px 10px 10px;
+    height: 100%;
+    width: 36.8%;
+    background-color: #F5EFE6;
+    border: solid 1px var(--main-green);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.text1 {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    display: block;
+
+    .head {
+        color: #383838;
+        margin-left: 12px;
+        font-size: 13px;
+        font-weight: 600;
+
+    }
+
+    .analytic {
+        margin: 10px;
+        display: inline-block;
+        background-color: #bbbaba;
+        border-radius: 6px;
+        padding: 10px;
+        width: 94%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        align-items: center;
+    }
+    .materialname1 {
+        height: 60px;
+        border-radius: 6px;
+        display: block;
+        background-color: #D9D9D9;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        p {
+            font-weight: 600;
+            font-size: 14px;
+            color: #080808;
+            margin: 0 10px 10px 10px;
+        }
+    
+        h1 {
+            font-weight: 900;
+            font-size: 25px;
+            color: #080808;
+            margin: 3px 10px 0 10px;
+        }
+    }
+}
+
+
+   
 
 //VISUAL
 
 //CHART
-.visual1 .chart1 {
 
-    margin: 0 15px;
-    height: 330px;
-    width: 96%;
-    border: solid 1px var(--main-green);
-    border-radius: 10px;
+.visual {
+    width: 99%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
 }
 
+.visual .chart {
+    margin: 10px;
+    height: 95%;
+    width: 100%;
 
-.table-content {
-    border-radius: 5px;
-    border: 1px solid var(--table-border);
-    padding: 10px;
-    background-color:  #ffffff;
-   
+}
+
+canvas .second-graph {
+    width: 100% !important;
+    height: 100% !important;
+
 }

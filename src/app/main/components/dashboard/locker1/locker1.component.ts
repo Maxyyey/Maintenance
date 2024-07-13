@@ -25,19 +25,11 @@ export class Locker1Component {
           data: [79,20, 32, 40, 40],
 
           backgroundColor: [
-            'pink',
-            'orange',
-            'blue',
-            'yellow',
-            'red',
+            '#1A4D2E',
 
           ],
           borderColor: [
-            'pink',
-            'orange',
-            'blue',
-            'yellow',
-            'red',
+            '#1A4D2E',
           ],
           borderWidth: 5,
           barThickness: 80 
