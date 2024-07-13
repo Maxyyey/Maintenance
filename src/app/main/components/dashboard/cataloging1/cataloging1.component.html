@@ -13,7 +13,7 @@
                     <i class="fa-solid fa-book"></i>
                 </div>
                 <div class="box">
-                    <h1>100</h1>
+                    <h1>{{ materials.total }}</h1>
                     <h3>Total Materials</h3>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <i class="fa-solid fa-file"></i>
                 </div>
                 <div class="box">
-                    <h1> 100</h1>
+                    <h1>{{ totalProjects }}</h1>
                     <h3>Total Projects</h3>
                 </div>
             </div>
@@ -52,30 +52,9 @@
 
 
                     <div class="analytic1">
-                        <div class="materialname" style="border-left: 10px solid pink;">
-                            <h1>100</h1>
-                            <p>CHTM</p>
-
-
-                        </div>
-
-                        <div class="materialname" style="border-left: 10px solid blue;">
-
-                            <h1>100</h1>
-                            <p>CEAS</p>
-                        </div>
-                        <div class="materialname" style="border-left: 10px solid red;">
-                            <h1>100</h1>
-                            <p>CAHS</p>
-                        </div>
-                        <div class="materialname" style="border-left: 10px solid orange;">
-
-                            <h1>100</h1>
-                            <p>CCS</p>
-                        </div>
-                        <div class="materialname" style="border-left: 10px solid yellow;">
-                            <h1>100</h1>
-                            <p>CBA</p>
+                        <div class="materialname" style="border-left: 10px solid pink;" *ngFor="let project of projects">
+                            <h1>{{ project.total }}</h1>
+                            <p>{{ project.department_short }}</p>
                         </div>
                     </div>
                 </div>
@@ -91,19 +70,24 @@
                         <div class="analytic">
                             <div class="materialname1">
 
-                                <h1>100</h1>
+                                <h1>{{ materials.books}}</h1>
                                 <p>BOOKS</p>
                             </div>
 
                             <div class="materialname1">
 
-                                <h1>100</h1>
+                                <h1>{{ materials.periodicals }}</h1>
                                 <p>PERIODICAL</p>
                             </div>
                             <div class="materialname1">
 
-                                <h1>100</h1>
+                                <h1>{{ materials.articles }}</h1>
                                 <p>ARTICLE</p>
+                            </div>
+                            <div class="materialname1">
+
+                                <h1>{{ materials.audiovisual }}</h1>
+                                <p>AUDIOVISUAL</p>
                             </div>
                         </div>
                         <div class="visual">
