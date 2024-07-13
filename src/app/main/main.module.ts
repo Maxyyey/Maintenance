@@ -10,8 +10,6 @@ import { AnnouncementComponent } from './components/announcement/announcement.co
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { ScanbarcodeComponent } from './components/inventory/scanbarcode/scanbarcode.component';
 import { EnterbarcodeComponent } from './components/inventory/enterbarcode/enterbarcode.component';
-import { ClearhistoryComponent } from './components/inventory/clearhistory/clearhistory.component';
-import { HistoryComponent } from './components/addlocker/components/history/history.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddAnnouncementComponent } from './components/announcement/add-announcement/add-announcement.component';
@@ -30,8 +28,6 @@ import { Cataloging1Component } from './components/dashboard/cataloging1/catalog
     InventoryComponent,
     ScanbarcodeComponent,
     EnterbarcodeComponent,
-    ClearhistoryComponent,
-    HistoryComponent,
     DashboardComponent,
     AddAnnouncementComponent,
     Cataloging1Component

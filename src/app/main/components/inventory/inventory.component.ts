@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ScanbarcodeComponent } from './scanbarcode/scanbarcode.component';
 import { EnterbarcodeComponent } from './enterbarcode/enterbarcode.component';
-import { ClearhistoryComponent } from './clearhistory/clearhistory.component';
 import { InventoryService } from '@app/services/inventory.service';
 import Swal from 'sweetalert2';
 import { InventoryHistoryComponent } from './inventoryhistory/inventoryhistory.component';
@@ -187,24 +186,7 @@ export class InventoryComponent implements OnInit {
     });
   }
 
-  onhistorylogsBtnClick() {
-    if (this.isModalOpen) {
-      return;
-    }
 
-    this.isModalOpen = true;
-
-    let modal = this.dialogRef.open(ClearhistoryComponent, {});
-    modal.afterClosed().subscribe(
-      result => {
-        this.isModalOpen = false;
-
-        if (result) {
-          this['locations'].push(result.success); // use the correct property
-        }
-      }
-    );
-  }
   getPaginationSummary(): string {
     const totalPages = this.totalPages;
     const currentPage = this.currentPage;

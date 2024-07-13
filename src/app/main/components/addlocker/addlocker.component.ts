@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserComponent } from './components/user/user.component';
-import { HistoryComponent } from './components/history/history.component';
 import { EditUsersComponent } from './components/editusers/editusers.component';
 import { ArchiveComponent } from './components/archives/archives.component';
 import { LockerService } from '@app/services/locker.service';
@@ -90,36 +89,6 @@ export class AddLockerComponent implements OnInit {
       }
     )
 
-  }
-
-  onHistoryBtnClick() {
-    if (this.isModalOpen) {
-      return
-    }
-
-    this.isModalOpen = true
-
-    this.lockerService.getHistory().subscribe(
-      result => {
-        let modal = this.dialogRef.open(HistoryComponent, {
-          data: result
-        })
-        modal.afterClosed().subscribe(
-          result => {
-            this.isModalOpen = false
-          }
-        )
-      },
-      error => {
-        console.error(error)
-        this.isModalOpen = false
-        Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
-        });
-      }
-    )
   }
 
   onAddNewBtnClick() {

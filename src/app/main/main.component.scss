@@ -27,19 +27,23 @@ body {
 
 /* HEADER */
 .header {
-    display: flex;
-    align-items: center;
     position: fixed;
-    z-index: 1001;
+    top: 0;
+    margin-left: 220px;
+    width: calc(100% - 220px);
     background-color: #294b37;
     height: 70px;
-    width: 100%;
-    padding: 15px 20px;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
-    margin-left: 220px;
+    padding: 15px 20px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: #f4f4f4;
-    font-size: 14px;
+    z-index: 2;
+    transition: all 0.3s ease;
+  
 }
+
 
 .header h1 {
     font-size: 30px;
@@ -84,7 +88,8 @@ body {
 
 .sidebar-content {
     position: relative;
-    background-color: #4f6f52;
+    background-color: var(--main-green);
+    color: var(--white);
     width: 220px;
     position: fixed;
     top: 0;
@@ -93,8 +98,8 @@ body {
     padding: 30px 0px;
     z-index: 100;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-    transition: all 0.3s ease;
-    overflow-y: auto;
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow-x: hidden;
 }
 
 /* MENU */
@@ -112,25 +117,45 @@ body {
 
 
 // SCROLLBAR //
-.sidebar-content::-webkit-scrollbar {
-    width: 5px;
+.sidebar-content.collapsed {
+    width: 70px; 
 }
 
-.sidebar-content::-webkit-scrollbar-thumb {
-    background-color: var(--green-hover);
-    border-radius: 5px;
+.sidebar-content.collapsed .menu-icon-button {
+    position: absolute;
+    font-size: 24px;
+    padding: 5px;
+    align-self: center;
+    margin-top: 5px;
+    left: 0;
+    cursor: pointer;
+    color: var(--white);
 }
 
-.sidebar-content::-webkit-scrollbar-track {
-    margin-top: 220px;
-    margin-bottom: 10px;
+.sidebar-content.collapsed .logo img {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.sidebar-content::-webkit-scrollbar-thumb:hover {
-    background-color: var(--dark-green);
+.sidebar-content.collapsed .tab-link-icon {
+    padding-left: 10px;
+}
+
+.sidebar-content.collapsed .systemname, 
+.sidebar-content.collapsed .tab-link-name {
+    display: none;
+}
+
+.sidebar-content.collapsed .logoutbtn {
+    bottom: 20px;
+    width: 70px;
 }
 
 // END OF SCROLLBAR //
+
+
 
 .sidebar-content a {
     color: white;
@@ -195,7 +220,7 @@ ul ul {
 .logout i {
     padding: 10px 10px 10px 10px;
     transition: all 0.3s ease;
-    color: #FFFFFF;
+
 }
 
 .logout i:hover {
@@ -205,14 +230,12 @@ ul ul {
 
 .logoutbtn {
     position: fixed;
-    bottom: 0;
+    bottom: 25px;
     left: 0;
-    padding-top: 10px;
     width: 220px;
-    height: 80px;
     cursor: pointer;
     transition: all 0.5s ease;
-    background-color: var(--main-green);
+    color: #FFFFFF;
 }
 
 
@@ -393,22 +416,22 @@ ul ul {
 
 @media (max-width: 768px) {
     .sidebar-content {
-        transform: translateX(-100%);
+    transform: translateX(-100%);
     }
 
     .content.collapsed .sidebar-content.collapsed {
-        transform: translateX(0);
-        width: 70px;
+    transform: translateX(0);
+    width: 70px;
     }
 
     .sidebar-content.overlay {
-        width: 220px;
+    width: 220px;
     }
 
-    .main-content.overlay .header,
+    .main-content.overlay .header, 
     .main-content.overlay .body-content {
-        margin-left: 70px;
-        width: calc(100% - 70px);
+    margin-left: 70px;
+    width: calc(100% - 70px);
     }
 
     .sidebar-overlay {
