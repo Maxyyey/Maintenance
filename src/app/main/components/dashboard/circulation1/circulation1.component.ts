@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '@app/services/data.service';
 import { Chart, registerables } from 'chart.js';
+import { combineLatest } from 'rxjs';
 
 Chart.register(...registerables);
 
@@ -9,12 +11,27 @@ Chart.register(...registerables);
   styleUrls: ['./circulation1.component.scss']
 })
 export class Circulation1Component implements OnInit {
-
+  availableBooks: number = 0
 
   ngOnInit() {
     this.initializeChart();
+    this.getAvailableBooks()
   }
 
+  constructor(
+    private dataService: DataService) {
+  }
+
+  getAvailableBooks() {
+    this.dataService.get('/analytics/available-books').subscribe(
+      data => {
+        this.availableBooks = data.available_books
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
   initializeChart() {
     const ctx = document.getElementById('myPieChart') as HTMLCanvasElement;
     const myPieChart = new Chart(ctx, {
