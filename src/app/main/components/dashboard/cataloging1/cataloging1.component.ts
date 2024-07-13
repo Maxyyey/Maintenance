@@ -43,11 +43,11 @@ export class Cataloging1Component {
     const myCataDoughnutChart = new Chart(ctx2, {
       type: 'doughnut',
       data: {
-        labels: ['Books', 'Article', 'Periodical'], 
-       
+        labels: ['Books', 'Article', 'Periodical'],
+
         datasets: [{
           label: 'Total',
-          data: [79,20,1],
+          data: [79, 20, 1],
           backgroundColor: [
             '#1A4D2E',
             '#FFC100',

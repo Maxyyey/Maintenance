@@ -20,10 +20,10 @@ export class AcademiccontentComponent implements OnInit {
   isModalOpen: boolean = false
 
   constructor(
-    private dialogRef: MatDialog, 
+    private dialogRef: MatDialog,
     private catalogingService: CatalogingService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getDepartmentsPrograms()
     this.getDepartmentsOnly()
   }
@@ -51,10 +51,10 @@ export class AcademiccontentComponent implements OnInit {
   }
 
   onAddCollegeClick() {
-    if(this.isModalOpen) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     let modal = this.dialogRef.open(AddPopupComponent, {});
@@ -62,44 +62,44 @@ export class AcademiccontentComponent implements OnInit {
       result => {
         this.isModalOpen = false
 
-        if(result) {
+        if (result) {
           this.departments.push(result.department)
         }
       }
     )
   }
 
-  addPrograms(department: any){
-    if(this.isModalOpen) {
+  addPrograms(department: any) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     let modal = this.dialogRef.open(AddProgramComponent, {
       data: department
-    }); 
+    });
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false
-        if(result.data) {
+        if (result.data) {
           // console.log(result.data)
-          const data =  result.data
+          const data = result.data
           let program = {
             program_short: data.program_short,
             program_full: data.program_full,
             department_full: data.department_full,
             department_short: data.department_short
-          } 
+          }
           this.departments[data.department_full].push(program)
         }
-      } 
+      }
     )
   }
 
-  openDepartment(department: any){
-    if(this.isModalOpen) {
+  openDepartment(department: any) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
     console.log(department)
 

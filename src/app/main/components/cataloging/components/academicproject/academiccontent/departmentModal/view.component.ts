@@ -19,11 +19,11 @@ export class ViewComponent implements OnInit {
   programs: any = []
 
   constructor(
-    private ref: MatDialogRef<ViewComponent>, 
+    private ref: MatDialogRef<ViewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.department = this.data.key
     this.programs = this.data.value
   }

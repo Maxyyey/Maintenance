@@ -65,7 +65,7 @@
     display: inline-flex;
     width: 100%;
     height: 100%;
-    
+
 }
 
 //TOP 10 BORROWER
@@ -84,8 +84,8 @@
 .top-borrower .text1 {
     display: inline-flex;
     width: 100%;
-    margin:10px;
-    
+    margin: 10px;
+
 
 }
 
@@ -136,6 +136,7 @@
     max-height: 343px; // Set the max-height as needed
     overflow-y: auto; // Enable vertical scrolling if content exceeds max-height
 }
+
 //TEXT TOP 10 BORROWER
 
 .text1 h3 {
@@ -159,7 +160,7 @@
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     float: right;
     font-size: 15px;
     font-weight: bold;
@@ -169,22 +170,23 @@
     text-align: center;
 
     &:focus {
-        border-color: #4f6f52; 
-        box-shadow: 0 0 05px#4f6f52; 
-        outline:#000000; 
+        border-color: #4f6f52;
+        box-shadow: 0 0 05px#4f6f52;
+        outline: #000000;
         background-color: #4f6f52;
-        
+
     }
-   
+
 }
 
 
 
 //GRAPH CONTAINER
-.graph-align{
+.graph-align {
     display: inline-block;
 }
-.container{
+
+.container {
     display: inline-flex;
 }
 
@@ -205,13 +207,13 @@
 
 
 // TOTAL BORROWED CARD
- .analytic {
-    margin: 10px ;
+.analytic {
+    margin: 10px;
     font-weight: 700;
     display: inline-flex;
 
-    .analytic-title{
-        margin-right:10pxl;
+    .analytic-title {
+        margin-right: 10pxl;
     }
 }
 
@@ -230,7 +232,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
 }
 
 //VISUAL BORROWED CARD
@@ -241,15 +243,15 @@
     margin: 0 10px 20px 10px;
     height: 320px;
     width: 300px;
-    
+
 
 }
 
 
-canvas .first-graph{
+canvas .first-graph {
     width: 100% !important;
     height: 100% !important;
-    
+
 }
 
 // FILTER BORROWED CARD 
@@ -267,7 +269,7 @@ canvas .first-graph{
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     float: right;
     font-size: 15px;
     font-weight: bold;
@@ -277,9 +279,9 @@ canvas .first-graph{
     text-align: center;
 
     &:focus {
-        border-color: #4f6f52; 
-        box-shadow: 0 0 5px#4f6f52; 
-        outline:#000000; 
+        border-color: #4f6f52;
+        box-shadow: 0 0 5px#4f6f52;
+        outline: #000000;
         background-color: #4f6f52;
     }
 }
@@ -302,8 +304,8 @@ canvas .first-graph{
 
 .dept-graph h1 {
     color: #080000;
-        font-size: 25px;
-    
+    font-size: 25px;
+
 }
 
 //FILTER BUTTON LINE CHART
@@ -321,7 +323,7 @@ canvas .first-graph{
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     float: right;
     font-size: 15px;
     font-weight: bold;
@@ -331,9 +333,9 @@ canvas .first-graph{
     text-align: center;
 
     &:focus {
-        border-color: #4f6f52; 
-        box-shadow: 0 0 5px#4f6f52; 
-        outline:#000000; 
+        border-color: #4f6f52;
+        box-shadow: 0 0 5px#4f6f52;
+        outline: #000000;
         background-color: #4f6f52;
     }
 }
@@ -348,22 +350,22 @@ canvas .first-graph{
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
 }
 
 .visual3 .linechart {
 
     margin: 10px 10px 20px 10px;
     width: 610px;
-    
+
 
 }
 
 
-canvas .second-graph{
+canvas .second-graph {
     width: 100% !important;
     height: 100% !important;
-    
+
 }
 
 
@@ -415,7 +417,7 @@ canvas .second-graph{
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     float: right;
     font-size: 15px;
     font-weight: bold;
@@ -425,9 +427,9 @@ canvas .second-graph{
     text-align: center;
 
     &:focus {
-        border-color: #4f6f52; 
-        box-shadow: 0 0 5px#4f6f52; 
-        outline:#000000; 
+        border-color: #4f6f52;
+        box-shadow: 0 0 5px#4f6f52;
+        outline: #000000;
         background-color: #4f6f52;
     }
 }
@@ -441,7 +443,7 @@ canvas .second-graph{
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
 }
 
 .visual4 .barchart {
@@ -449,15 +451,15 @@ canvas .second-graph{
     margin: 10px 10px 20px 10px;
     width: 95%;
     height: 330px;
-    
+
 
 }
 
 
-canvas .third-graph{
+canvas .third-graph {
     width: 100% !important;
     height: 100% !important;
-    
+
 }
 
 
@@ -467,7 +469,7 @@ canvas .third-graph{
     border-radius: 7px;
     border: 1px solid var(--table-border);
     padding: 10px;
-    background-color:  #ffffff;
+    background-color: #ffffff;
     ;
 }
 
@@ -480,6 +482,3 @@ canvas .third-graph{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-

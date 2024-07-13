@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrl: './logout-popup.component.scss'
 })
 export class LogoutPopupComponent {
-  
-  constructor (private as: AuthService, private router: Router) {}
+
+  constructor(private as: AuthService, private router: Router) { }
   @Output() leaveClicked = new EventEmitter<void>();
   @Output() closedPopup = new EventEmitter<void>();
 
@@ -19,9 +19,9 @@ export class LogoutPopupComponent {
   }
 
   onLeaveClick() {
-  //  this.as.logout () .subscribe ({
-  //   next: (res:any) => this.router.navigate (['login'])
-  //  })
+    //  this.as.logout () .subscribe ({
+    //   next: (res:any) => this.router.navigate (['login'])
+    //  })
     this.leaveClicked.emit();
   }
 }

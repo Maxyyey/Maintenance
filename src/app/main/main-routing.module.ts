@@ -14,23 +14,25 @@ import { OPAC1Component } from './components/dashboard/opac1/opac1.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'circulation1', pathMatch: 'full' },
-  { path: 'addlocker', component: AddLockerComponent, 
- 
+  {
+    path: 'addlocker', component: AddLockerComponent,
+
   },
   { path: 'personnelsetup', component: PersonnelSetupComponent },
-  { path: 'cataloging', component: CatalogingComponent,
-  children: [{
-    path: '',
-    loadChildren: ()=>import('./components/cataloging/cataloging.module').then((m)=>m.CatalogingModule)
-  }]
-   },
+  {
+    path: 'cataloging', component: CatalogingComponent,
+    children: [{
+      path: '',
+      loadChildren: () => import('./components/cataloging/cataloging.module').then((m) => m.CatalogingModule)
+    }]
+  },
   { path: 'circulation', component: CirculationComponent },
   { path: 'announcement', component: AnnouncementComponent },
   { path: 'inventory', component: InventoryComponent },
-  { path: 'circulation1', component: Circulation1Component},
-  { path: 'cataloging1', component: Cataloging1Component},
-  { path: 'locker1', component: Locker1Component},
-  { path: 'opac1', component: OPAC1Component},
+  { path: 'circulation1', component: Circulation1Component },
+  { path: 'cataloging1', component: Cataloging1Component },
+  { path: 'locker1', component: Locker1Component },
+  { path: 'opac1', component: OPAC1Component },
 ];
 
 

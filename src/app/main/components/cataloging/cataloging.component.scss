@@ -14,12 +14,12 @@ h2 {
     margin-top: -10px;
     margin-bottom: 10px;
     font-size: 34px;
-  font-weight: 700;
-  opacity: 70%;
-  //  font-weight: 900;
+    font-weight: 700;
+    opacity: 70%;
+    //  font-weight: 900;
 
     color: #000000;
-   // opacity: 70%;
+    // opacity: 70%;
     // margin-left: 20px;
 }
 
@@ -27,82 +27,90 @@ h2 {
 
 //BODY
 .page-content {
-	max-width: 100%;  
-//	background: #ffffff;
+    max-width: 100%;
+    //	background: #ffffff;
 }
+
 a {
-	color: #21D4FD; 
-	transition: all 0.3s;
+    color: #21D4FD;
+    transition: all 0.3s;
 }
 
 .tabbed {
-	overflow-x: hidden; 
-//	padding-bottom: 10px;
-	
+    overflow-x: hidden;
+    //	padding-bottom: 10px;
+
 }
 
 .tabbed [type="radio"] {
-	display: none;
+    display: none;
 }
 
 .tabs {
     left: 0;
     display: flex;
-	align-items: stretch;
-	list-style: none;
-    width: 100%; /*changed*/
-	border-bottom: 3.5px solid #000000;
+    align-items: stretch;
+    list-style: none;
+    width: 100%;
+    /*changed*/
+    border-bottom: 3.5px solid #000000;
     padding-top: 15px;
 }
 
 .tabs:hover {
-	display: flex;
-	align-items: stretch;
-	list-style: none;
-    width: 100%; /*changed*/
-	color: #4f6f52;
+    display: flex;
+    align-items: stretch;
+    list-style: none;
+    width: 100%;
+    /*changed*/
+    color: #4f6f52;
 }
 
 .tab {
     margin-top: 5px;
-    width: 100%; /*changed*/
-    
+    width: 100%;
+    /*changed*/
+
 }
-.tab > label {
+
+.tab>label {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     color: #000000;
-	display: block;
-    font-size: 17px; 
+    display: block;
+    font-size: 17px;
     font-weight: bold;
     line-height: 15px;
     padding: 15px 10px;
     text-align: center;
-	background: #ffffff;
-	font-weight: bold;
-	cursor: pointer;	
-	transition: all 0.3s;
+    background: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
 }
+
 .tab:hover label {
     color: #ffffff;
-	background-color: #4f6f52;
+    background-color: #4f6f52;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
 }
 
 .tab-content {
-	display: none;
-	color: #777;
-    
+    display: none;
+    color: #777;
+
 }
-ul{
+
+ul {
     list-style: none;
     background: transparent;
     border: #4f6f52;
 
 }
-ul li{
+
+ul li {
     display: inline-block;
     position: relative;
 
@@ -112,31 +120,31 @@ ul li{
     width: 100%;
 }
 
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label {
-	border-bottom-color: #4f6f52;
+.tabbed [type="radio"]:nth-of-type(1):checked~.tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked~.tabs .tab:nth-of-type(2) label {
+    border-bottom-color: #4f6f52;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-	background: #4f6f52;
-	color: #ffffff;
+    background: #4f6f52;
+    color: #ffffff;
 }
 
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2) {
-	display: block;
+.tabbed [type="radio"]:nth-of-type(1):checked~.tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked~.tab-content:nth-of-type(2) {
+    display: block;
 }
 
 
 /*Tab1 */
 
- /*button tab1*/
+/*button tab1*/
 // .row{
 //     background-color: transparent;
 //     border-color: #4f6f52;
 //     display: flex; 
-            
 
-    
+
+
 // }
 
 // .btn-icon {
@@ -151,8 +159,8 @@ ul li{
 //         float: left;
 //         margin: 10px;
 //         cursor: pointer;
-    
-    
+
+
 
 // }
 
@@ -194,7 +202,7 @@ ul li{
 // .row1{
 //     background-color: transparent;
 //     border-color: #4f6f52;
-   
+
 // }
 
 // .row1 .btn-icon {
@@ -209,7 +217,7 @@ ul li{
 //         float: left;
 //         margin: 10px;
 
-    
+
 
 // }
 
@@ -255,7 +263,3 @@ ul li{
 
 
 // tab1 table
-
-
-
-

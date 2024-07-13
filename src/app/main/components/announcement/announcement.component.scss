@@ -1,4 +1,4 @@
-.container-UploadButton{
+.container-UploadButton {
   background: var(--main-green);
   text-decoration: none;
   color: white;
@@ -6,7 +6,7 @@
   transition: .3s;
   transform: translate(0px, 0px);
   border-radius: 3px;
-  border: 1px ;
+  border: 1px;
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
@@ -18,11 +18,12 @@
 
 .container-UploadButton:hover {
   box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
-    transform: translate(0px, -2px);
-    background: var(--green-hover);
-    cursor: pointer;
-    text-decoration: none;
+  transform: translate(0px, -2px);
+  background: var(--green-hover);
+  cursor: pointer;
+  text-decoration: none;
 }
+
 .container-historylogsButton {
   background: var(--main-green);
   text-decoration: none;
@@ -46,10 +47,10 @@
 
 .container-historylogsButton:hover {
   box-shadow: 0px 8px 15px -10px rgb(125, 125, 125);
-    transform: translate(0px, -2px);
-    background: var(--green-hover);
-    cursor: pointer;
-    text-decoration: none;
+  transform: translate(0px, -2px);
+  background: var(--green-hover);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .main-content {
@@ -58,18 +59,18 @@
 
 h3 {
   transform: translateY(12px);
-    text-align: left;
-    margin-left: -11px;
-    margin-top: -35px;
-    margin-bottom: 10px;
-    font-size: 34px;
+  text-align: left;
+  margin-left: -11px;
+  margin-top: -35px;
+  margin-bottom: 10px;
+  font-size: 34px;
   font-weight: 700;
-    color: #000000;
-    opacity: 70%;
+  color: #000000;
+  opacity: 70%;
 }
 
-.container-header{
- // background-color: #376448;
+.container-header {
+  // background-color: #376448;
   color: rgb(0, 0, 0);
   border-radius: 10px;
   margin-right: 25px;
@@ -89,7 +90,7 @@ h3 {
   border-radius: 3px;
 }
 
-.delete-btn{
+.delete-btn {
 
   padding: 5px 17px;
   margin-right: 5px;
@@ -114,7 +115,8 @@ h3 {
   padding: 5px;
   display: inline-block;
   margin-right: 10px;
-  width: calc(33.33% - 10px); /* Set the width to one-third of the available space */
+  width: calc(33.33% - 10px);
+  /* Set the width to one-third of the available space */
   vertical-align: top;
   box-sizing: border-box;
   position: relative;
@@ -124,9 +126,12 @@ h3 {
   position: relative;
   height: 300px;
   flex: 1;
-  background-color: #ffffff; /* White background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
+  background-color: #ffffff;
+  /* White background */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /*Card shadow */
   border: solid 2px var(--border-color);
   margin: 7px 5px;
   display: block;
@@ -139,6 +144,7 @@ h3 {
   transform: scale(1.05);
   transition: all .2s ease-in;
 }
+
 .card .dot1 {
   position: absolute;
   height: 60px;
@@ -149,6 +155,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot2 {
   position: absolute;
   height: 70px;
@@ -159,6 +166,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot3 {
   position: absolute;
   height: 80px;
@@ -169,6 +177,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot4 {
   position: absolute;
   height: 90px;
@@ -179,6 +188,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot5 {
   position: absolute;
   height: 100px;
@@ -189,6 +199,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot6 {
   position: absolute;
   height: 110px;
@@ -199,6 +210,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot7 {
   position: absolute;
   height: 120px;
@@ -209,6 +221,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot8 {
   position: absolute;
   height: 130px;
@@ -219,6 +232,7 @@ h3 {
   margin-left: -20px;
   margin-top: -20px;
 }
+
 .card .dot9 {
   position: absolute;
   height: 140px;
@@ -232,12 +246,16 @@ h3 {
 
 /* CARD CONTENTS */
 .card img {
-  width: 100%; 
-  height: 70%; /* or any specific height */
+  width: 100%;
+  height: 70%;
+  /* or any specific height */
   padding: 3px;
-  background-color: #f3f3f3; /* a light grey placeholder color */
-  border-radius: 5px; /* if you want rounded corners */
-  margin-bottom: 3px; /* space between the image and the text below */
+  background-color: #f3f3f3;
+  /* a light grey placeholder color */
+  border-radius: 5px;
+  /* if you want rounded corners */
+  margin-bottom: 3px;
+  /* space between the image and the text below */
   object-fit: cover;
   position: relative;
   z-index: 100;
@@ -248,26 +266,28 @@ p {
 }
 
 
-.textbox{
+.textbox {
   margin-bottom: 10px;
   margin-left: 10px;
-  
+
 }
 
-.textbox > p:nth-child(3){
- 
- width: 70%;
- max-height: 15px;
- overflow: hidden;
-  
+.textbox>p:nth-child(3) {
+
+  width: 70%;
+  max-height: 15px;
+  overflow: hidden;
+
 }
 
 .card h2 {
-  font-size: medium; /* Larger title text */
+  font-size: medium;
+  /* Larger title text */
   font-weight: bold;
   margin-bottom: 5px;
   margin-left: 10px;
 }
+
 .card p {
   font-size: small;
   margin-bottom: 3px;
@@ -278,32 +298,44 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 10px; /* Adjust margin for spacing */
+  margin: 10px;
+  /* Adjust margin for spacing */
 }
 
 .card-buttons .edit-btn {
-  margin-left: 5px; /* Adjust space between buttons */
+  margin-left: 5px;
+  /* Adjust space between buttons */
   margin-bottom: 5px;
-  background-color: #4f6f52; /* Set green background color */
+  background-color: #4f6f52;
+  /* Set green background color */
   border: none;
   border-radius: 5px;
-  color: white; /* Set text color to white */
-  padding: 10px 13px; /* Add padding for better appearance */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  color: white;
+  /* Set text color to white */
+  padding: 10px 13px;
+  /* Add padding for better appearance */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
 }
 
 .card-buttons .archive-btn {
-  margin-left: 5px; /* Adjust space between buttons */
-  background-color: #AB0E0E; /* Set green background color */
+  margin-left: 5px;
+  /* Adjust space between buttons */
+  background-color: #AB0E0E;
+  /* Set green background color */
   border: none;
   border-radius: 5px;
-  color: white; /* Set text color to white */
-  padding: 10px 13px; /* Add padding for better appearance */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  color: white;
+  /* Set text color to white */
+  padding: 10px 13px;
+  /* Add padding for better appearance */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
 }
 
-.container > div:first-child {
+.container>div:first-child {
   width: 100%;
+
   .card {
     height: 400px;
     position: relative;
@@ -312,38 +344,41 @@ p {
     .textbox {
       padding: 10px 20px 20px 470px;
     }
-    .textbox h2{
+
+    .textbox h2 {
       font-size: 40px;
     }
-    .textbox p{
+
+    .textbox p {
       font-size: 20px;
     }
 
-    .textbox > p:nth-child(3){
-      
+    .textbox>p:nth-child(3) {
+
       width: 70%;
       max-height: 275px;
       overflow: auto;
-       
-     }
+
+    }
 
     img {
       float: left;
-      width: 30%; /* or any specific width */
-      height: 93%; 
+      width: 30%;
+      /* or any specific width */
+      height: 93%;
       background-color: #f3f3f3;
-      border-radius: 5px; 
-      margin: 10px; 
+      border-radius: 5px;
+      margin: 10px;
       object-fit: contain;
-      margin-left: 5px; 
+      margin-left: 5px;
       border: none;
       border-radius: 5px;
-      color: white; 
-      padding: 10px 13px; 
-      cursor: pointer; 
+      color: white;
+      padding: 10px 13px;
+      cursor: pointer;
     }
   }
-  
+
   .card:hover {
     transform: scale(1.01);
   }

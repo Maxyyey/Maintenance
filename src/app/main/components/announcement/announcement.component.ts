@@ -10,22 +10,22 @@ import Swal from 'sweetalert2';
   templateUrl: './announcement.component.html',
   styleUrl: './announcement.component.scss',
 })
-export class AnnouncementComponent implements OnInit{
+export class AnnouncementComponent implements OnInit {
   [x: string]: any;
   announcements: any[] = []
   isModalOpen: boolean = false
 
   constructor(
-    private dialogRef : MatDialog, 
+    private dialogRef: MatDialog,
     private announcementService: AnnouncementService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getAnnouncements()
   }
-  getAnnouncements(){
+  getAnnouncements() {
     this.announcementService.getAnnouncements().subscribe(
       announcements => {
-          this.announcements = announcements
+        this.announcements = announcements
       },
       error => {
         console.error(error)
@@ -33,12 +33,12 @@ export class AnnouncementComponent implements OnInit{
     )
   }
 
-  
-  onAddNewBtnClick(){
-    if(this.isModalOpen) {
+
+  onAddNewBtnClick() {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     let modal = this.dialogRef.open(AddAnnouncementComponent, {});
@@ -46,19 +46,19 @@ export class AnnouncementComponent implements OnInit{
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false
-        
-        if(result) {
+
+        if (result) {
           this.announcements.unshift(result.success)
         }
       }
     )
-    
+
   }
-  onEditBtnClick(id: number){
-    if(this.isModalOpen) {
+  onEditBtnClick(id: number) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     this.announcementService.getAnnouncement(id).subscribe(
@@ -71,11 +71,11 @@ export class AnnouncementComponent implements OnInit{
           result => {
             this.isModalOpen = false
 
-            if(result) {
+            if (result) {
               this.announcements = this.announcements.map(
                 announcement => {
-                  if(announcement.id === result.success.id) {
-                    return {...announcement, ...result.success}
+                  if (announcement.id === result.success.id) {
+                    return { ...announcement, ...result.success }
                   }
                   return announcement
                 }
@@ -94,9 +94,9 @@ export class AnnouncementComponent implements OnInit{
         });
       }
     )
-    }
-  
-  onArchiveBtnClick(id:number){
+  }
+
+  onArchiveBtnClick(id: number) {
     Swal.fire({
       title: "Delete?",
       text: "Are you sure want to delete this announcement?",
@@ -123,7 +123,7 @@ export class AnnouncementComponent implements OnInit{
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",
         });
-        this.announcements = this.announcements.filter(announcement => announcement.id !== id); 
+        this.announcements = this.announcements.filter(announcement => announcement.id !== id);
       },
       error => {
         console.error(error)

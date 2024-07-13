@@ -14,19 +14,22 @@
                         </div>
                         <form>
                             <div class="txt_field1">
-                                <input class="inputtxt" type="text" [(ngModel)]="department" name="collegeAbbreviation" required>
+                                <input class="inputtxt" type="text" [(ngModel)]="department" name="collegeAbbreviation"
+                                    required>
                                 <span></span>
                                 <div class="labelline">Name of College</div>
                             </div>
 
                             <div class="input-row">
                                 <div class="txt_field">
-                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="collegeName" required>
+                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="collegeName"
+                                        required>
                                     <span></span>
                                     <div class="labelline">College Abbreviation</div>
                                 </div>
                                 <div class="txt_field">
-                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="programAbbreviation" required>
+                                    <input class="inputtxt" type="text" [(ngModel)]="full_department"
+                                        name="programAbbreviation" required>
                                     <span></span>
                                     <div class="labelline">Program Abbreviation</div>
                                 </div>
@@ -34,21 +37,23 @@
 
                             <div class="input-row">
                                 <div class="txt_field">
-                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="programname" required>
+                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="programname"
+                                        required>
                                     <span></span>
                                     <div class="labelline">Program Full Name</div>
-                                    </div>
+                                </div>
                                 <div class="txt_field">
-                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="Project" required>
+                                    <input class="inputtxt" type="text" [(ngModel)]="full_department" name="Project"
+                                        required>
                                     <span></span>
                                     <div class="labelline">Project Category</div>
                                 </div>
                             </div>
-                            
+
                         </form>
                     </div>
                     <div class="button-container">
-                        
+
                         <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
                         <button class="update-btn" (click)="updateBox()">Add</button>
                     </div>

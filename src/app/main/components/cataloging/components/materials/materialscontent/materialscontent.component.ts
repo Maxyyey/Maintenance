@@ -11,15 +11,15 @@ import { MaterialsHistoryComponent } from './materialshistory/materialshistory.c
   templateUrl: './materialscontent.component.html',
   styleUrl: './materialscontent.component.scss'
 })
-export class MaterialscontentComponent implements OnInit{
+export class MaterialscontentComponent implements OnInit {
   locations: any = []
   isModalOpen: boolean = false
 
   constructor(
-    private dialogRef : MatDialog,
+    private dialogRef: MatDialog,
     private catalogingService: CatalogingService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getLocations()
   }
 
@@ -33,19 +33,19 @@ export class MaterialscontentComponent implements OnInit{
       }
     )
   }
-  onAddNewBtnClick(){
-    if(this.isModalOpen) {
+  onAddNewBtnClick() {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     let modal = this.dialogRef.open(AddiconComponent, {});
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false
-        
-        if(result) {
+
+        if (result) {
           this.locations.unshift(result.success)
         }
       }
@@ -55,20 +55,20 @@ export class MaterialscontentComponent implements OnInit{
     if (this.isModalOpen) {
       return;
     }
-  
+
     this.isModalOpen = true;
-  
+
     let modal = this.dialogRef.open(MaterialsHistoryComponent, {});
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false;
-  
+
         if (result) {
           this.locations.push(result.success); // use the correct property
         }
       }
     );
   }
-  
-  
+
+
 }

@@ -22,12 +22,12 @@ export class ClearhistoryComponent {
   ngOnInit(): void { }
 
   //onEditBtnClick(){
-    // Open the EditPopupComponent dialog
-    //const dialogRef = this.dialog.open(EditCahsPopupComponent, {});
-    // If you need to do something with the dialog reference, you can assign it to a class variable
-    // this.dialogRef = dialogRef;
-  
-  onClear1BtnClick(){
+  // Open the EditPopupComponent dialog
+  //const dialogRef = this.dialog.open(EditCahsPopupComponent, {});
+  // If you need to do something with the dialog reference, you can assign it to a class variable
+  // this.dialogRef = dialogRef;
+
+  onClear1BtnClick() {
     Swal.fire({
       title: "Clear History",
       text: "Are you sure want to clear history?",
@@ -48,7 +48,7 @@ export class ClearhistoryComponent {
         });
       }
     });
-}
+  }
 
 }
 

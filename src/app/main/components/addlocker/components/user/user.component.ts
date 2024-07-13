@@ -46,13 +46,13 @@ export class UserComponent {
     }
     this.lockersService.addLocker(form).subscribe(
       result => {
-        if(result.success){
+        if (result.success) {
           this.showSuccessAlert()
           this.ref.close(result)
         }
       },
       error => {
-        if(error.status == 400) {
+        if (error.status == 400) {
           this.showErrorAlert()
         }
         console.error(error)
@@ -86,12 +86,12 @@ export class UserComponent {
   }
 
   showSuccessAlert() {
-        Swal.fire({
-          title: "Success!",
-          text: "Locker has been successfully added.",
-          icon: "success",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+    Swal.fire({
+      title: "Success!",
+      text: "Locker has been successfully added.",
+      icon: "success",
+      confirmButtonText: 'Close',
+      confirmButtonColor: "#777777",
     });
   }
 
@@ -100,12 +100,12 @@ export class UserComponent {
       title: "Error!",
       text: "Failed to add locker.",
       icon: "error",
-          confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+      confirmButtonText: 'Close',
+      confirmButtonColor: "#777777",
     });
   }
 
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Cancel?",
       text: "Are you sure you want to cancel adding lockers?",
@@ -117,22 +117,22 @@ export class UserComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close(null);
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Adding lockers has been cancelled."
-          });
+        this.ref.close(null);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Adding lockers has been cancelled."
+        });
       }
     });
   }

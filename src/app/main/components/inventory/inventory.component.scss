@@ -1,12 +1,14 @@
-.detailsheader{
+.detailsheader {
     position: relative;
     margin-top: -20px;
-    color: #4f6f52;;
+    color: #4f6f52;
+    ;
     width: 1100px;
-    display:flex;
-    
-  }
-  .txt_field .inputtxt{
+    display: flex;
+
+}
+
+.txt_field .inputtxt {
     background: #4f6f52;
     text-decoration: none;
     color: white;
@@ -14,7 +16,7 @@
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     float: left;
     font-size: 17px;
     font-weight: bold;
@@ -24,62 +26,62 @@
     text-align: center;
 
     &:focus {
-      border-color: #4f6f52; 
-      box-shadow: 0 0 5px#4f6f52; 
-      outline:#000000; 
-      background-color: #4f6f52;
+        border-color: #4f6f52;
+        box-shadow: 0 0 5px#4f6f52;
+        outline: #000000;
+        background-color: #4f6f52;
     }
 }
 
-  
- 
-.container-addUserButton1{
+
+
+.container-addUserButton1 {
     background: var(--main-green);
     text-decoration: none;
     color: white;
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
-  //  margin-top: 20px;
+    //  margin-top: 20px;
     margin-right: 10px;
     margin-bottom: -5px;
-   // float: right;
+    // float: right;
     position: relative;
     font-weight: bold;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
     transition: .3s;
     transform: translate(0px, 0px);
-    
+
 }
 
-.container-addUserButton2{
+.container-addUserButton2 {
     background-color: white;
     color: black;
     border-radius: 10px;
-    border: 1px ;
+    border: 1px;
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
     margin-right: 10px;
     float: right;
     font-weight: bold;
-    
+
 }
 
-.container-addUserButton3{
-    background-color: white;    
+.container-addUserButton3 {
+    background-color: white;
     color: black;
     border-radius: 10px;
-    border: 1px ;
+    border: 1px;
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
     margin-right: 10px;
     float: right;
     font-weight: bold;
-    
+
 }
 
 .container-historylogsButton {
@@ -92,15 +94,15 @@
     padding-right: 20px;
     padding-left: 20px;
     font-weight: bold;
-   // margin-top: -15px;
+    // margin-top: -15px;
     margin-right: 10px;
     margin-bottom: -5px;
-   // float: right;
+    // float: right;
     position: relative;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.322);
     transition: .3s;
     transform: translate(0px, 0px);
-    
+
 
 }
 
@@ -121,40 +123,41 @@
     text-decoration: none;
 }
 
-  
+
 .main-content {
     margin: 10px 40px 10px 10px;
 }
 
 
-.container-header{
+.container-header {
     display: flex;
     justify-content: flex-end;
- //   background-color: #376448;
+    //   background-color: #376448;
     color: white;
-  //  border-radius: 10px;
-  transform: translateY(10px);
+    //  border-radius: 10px;
+    transform: translateY(10px);
     margin-right: -10px;
-  //  margin-top: 10px;
-  //  padding: 10px;
-  //  width: 100%;
+    //  margin-top: 10px;
+    //  padding: 10px;
+    //  width: 100%;
 }
 
-h2{
+h2 {
     transform: translateY(10px);
     text-align: left;
     margin-left: -1px;
     margin-top: -10px;
     margin-bottom: 10px;
     font-size: 34px;
-  font-weight: 700;
-  opacity: 70%;
+    font-weight: 700;
+    opacity: 70%;
 }
 
 h1 {
     text-align: left;
     // margin-left: 20px;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -166,7 +169,7 @@ body {
     border-radius: 5px;
     padding: 20px;
     padding-top: 10px;
-    
+
     margin-top: 25px;
     background: #F4F4F4;
     width: 100%;
@@ -216,14 +219,17 @@ th {
     color: #415b44;
     margin-top: 20px;
 }
+
 .pagination i {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 .pagination p {
-  margin: 0 30px;
+    margin: 0 30px;
 }
-.pagination .kaliwa{
-  margin-right: 40px;
+
+.pagination .kaliwa {
+    margin-right: 40px;
 }
 
 .table-head {
@@ -246,17 +252,19 @@ th {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     float: left;
-    
+
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
-.table-head .filters{
+
+.table-head .filters {
     width: 100%;
 }
+
 .table-head .search-container {
-    float:right;
+    float: right;
     border-radius: 7px;
     height: 2.9em;
     border: 1px solid var(--table-border);
@@ -265,7 +273,7 @@ input:focus{
 }
 
 .table-head .search-container button {
-    height:2.9em;
+    height: 2.9em;
     width: 2.5em;
     border: 1px solid var(--table-border);
     background: var(--main-green);
@@ -274,5 +282,5 @@ input:focus{
     border-bottom-right-radius: 7px;
     font-size: 16px;
     cursor: default;
-    float:right;
+    float: right;
 }

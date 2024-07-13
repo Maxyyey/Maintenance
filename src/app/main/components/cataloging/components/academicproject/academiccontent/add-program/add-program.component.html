@@ -1,17 +1,17 @@
 <main>
-    <div class="container">
-      <div class="content">
-        <div class="details-content">
-          <!-- HEADER - TITLE -->
-          <div class="detailsheader">
-            <h1> {{ data.department_full }} </h1>
-          </div>
-          <!-- BODY - DETAILS -->
-          <div class="detailsbody">
-            <div class="details">
-              <form [formGroup]="formDetails">
+  <div class="container">
+    <div class="content">
+      <div class="details-content">
+        <!-- HEADER - TITLE -->
+        <div class="detailsheader">
+          <h1> {{ data.department_full }} </h1>
+        </div>
+        <!-- BODY - DETAILS -->
+        <div class="detailsbody">
+          <div class="details">
+            <form [formGroup]="formDetails">
 
-                <!-- <div class="checkbox-group">
+              <!-- <div class="checkbox-group">
                   <div class="txt_field1">
                     <div class="labelline1"></div>
                     <div *ngFor="let department of departments">
@@ -22,40 +22,40 @@
                     </div>
                   </div>
                 </div> -->
-  
-                <div class="txtheader2">
-                  <h2>ADD PROGRAM</h2>
-                  <hr>
-                </div>
-                <div class="container2">
-                  <div class="input-row">
-                    <div class="txt_field">
-                      <input class="inputtxt" type="text" formControlName="program_short">
-                      <span></span>
-                      <div class="labelline">Program Abbreviation</div>
-                    </div>
-                      <div class="txt_field">
-                      <input class="inputtxt" type="text" formControlName="category">
-                      <span></span>
-                      <div class="labelline">Project Category</div>
-                    </div>
-                  </div>
-                  
-                  <div class="txt_field2">
-                    <input class="inputtxt2" type="text" formControlName="program_full">
+
+              <div class="txtheader2">
+                <h2>ADD PROGRAM</h2>
+                <hr>
+              </div>
+              <div class="container2">
+                <div class="input-row">
+                  <div class="txt_field">
+                    <input class="inputtxt" type="text" formControlName="program_short">
                     <span></span>
-                    <div class="labelline2">Program Full Name</div>
+                    <div class="labelline">Program Abbreviation</div>
+                  </div>
+                  <div class="txt_field">
+                    <input class="inputtxt" type="text" formControlName="category">
+                    <span></span>
+                    <div class="labelline">Project Category</div>
                   </div>
                 </div>
-              </form>
-            </div>
-            <div class="button-container">
-              <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
-              <button class="update-btn" (click)="addBox()" [disabled]="formDetails.invalid"> Add </button>
-            </div>
+
+                <div class="txt_field2">
+                  <input class="inputtxt2" type="text" formControlName="program_full">
+                  <span></span>
+                  <div class="labelline2">Program Full Name</div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="button-container">
+            <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
+            <button class="update-btn" (click)="addBox()" [disabled]="formDetails.invalid"> Add </button>
           </div>
         </div>
       </div>
     </div>
-  
-  </main>
+  </div>
+
+</main>

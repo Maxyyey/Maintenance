@@ -23,7 +23,7 @@ interface MyOption {
     FormsModule,
     CommonModule
   ],
-  
+
 })
 export class AddiconComponent {
   currentDate: string;
@@ -31,17 +31,17 @@ export class AddiconComponent {
     location_short: string,
     location_full: string
   }
-  
-  constructor(
-    private ref: MatDialogRef<AddiconComponent>, 
-    private catalogingService: CatalogingService) {
-      const today = new Date();
-      this.currentDate = today.toISOString().split('T')[0];
 
-      this.form = {
-        location_short: '',
-        location_full: '',
-      }
+  constructor(
+    private ref: MatDialogRef<AddiconComponent>,
+    private catalogingService: CatalogingService) {
+    const today = new Date();
+    this.currentDate = today.toISOString().split('T')[0];
+
+    this.form = {
+      location_short: '',
+      location_full: '',
+    }
   }
 
   createLocation() {
@@ -59,7 +59,7 @@ export class AddiconComponent {
       },
       error => {
         console.error(error)
-        if(error.status === 422) {
+        if (error.status === 422) {
           Swal.fire({
             title: "Error!",
             text: "Invalid input!",
@@ -82,7 +82,7 @@ export class AddiconComponent {
   }
 
   // SWEETALERT UPDATE POPUP
-  createBox(){
+  createBox() {
     Swal.fire({
       title: "Add Location",
       text: "Are you sure you want to add this location?",
@@ -100,7 +100,7 @@ export class AddiconComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel adding location?",
       text: "Your changes will not be saved.",
@@ -112,22 +112,22 @@ export class AddiconComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.closepopup()
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Changes not saved."
-          });
+        this.closepopup()
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Changes not saved."
+        });
       }
     });
   }

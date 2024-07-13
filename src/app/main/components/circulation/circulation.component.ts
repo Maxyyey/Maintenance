@@ -12,7 +12,7 @@ import { HistoryComponent } from './history/history.component';
   templateUrl: './circulation.component.html',
   styleUrl: './circulation.component.scss',
 })
-export class CirculationComponent implements OnInit{
+export class CirculationComponent implements OnInit {
   [x: string]: any;
   currentPage = 1;
   itemsPerPage = 10;
@@ -20,10 +20,10 @@ export class CirculationComponent implements OnInit{
   isModalOpen: boolean = false
 
   constructor(
-    private dialogRef : MatDialog,
+    private dialogRef: MatDialog,
     private patronService: PatronService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getPatrons()
   }
 
@@ -63,11 +63,11 @@ export class CirculationComponent implements OnInit{
       this.currentPage++;
     }
   }
-  onEditBtnClick(id:number){
-    if(this.isModalOpen) {
+  onEditBtnClick(id: number) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     this.patronService.getPatron(id).subscribe(
@@ -80,7 +80,7 @@ export class CirculationComponent implements OnInit{
           response => {
             this.isModalOpen = false
 
-            if(response) {
+            if (response) {
               this.getPatrons()
               console.log('updating')
             }
@@ -99,12 +99,12 @@ export class CirculationComponent implements OnInit{
 
     )
   }
-  
+
   onhistorylogsBtnClick() {
-    if(this.isModalOpen) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     let modal = this.dialogRef.open(HistoryComponent, {});
@@ -112,7 +112,7 @@ export class CirculationComponent implements OnInit{
       result => {
         this.isModalOpen = false
 
-        if(result) {
+        if (result) {
           this['circulation'].push(result.success)
         }
       }

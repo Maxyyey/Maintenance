@@ -20,11 +20,11 @@ export class Circulation1Component implements OnInit {
     const myPieChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: ['Returned', 'Unreturned', 'Missing'], 
-       
+        labels: ['Returned', 'Unreturned', 'Missing'],
+
         datasets: [{
           label: 'Total',
-          data: [79,20,1],
+          data: [79, 20, 1],
           backgroundColor: [
             '#1A4D2E',
             '#FFC100',
@@ -91,7 +91,7 @@ export class Circulation1Component implements OnInit {
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',
           borderWidth: 1,
-          barThickness: 40 
+          barThickness: 40
         }]
       },
       options: {

@@ -4,11 +4,11 @@
       <div class="details-content">
         <!-- HEADER - TITLE -->
         <div class="detailsheader">
-         
+
           <h1>{{ department }}</h1>
           <button class="exit-button" (click)="closepopup()"> &times; </button>
-      
-          </div>
+
+        </div>
         <!-- BODY - DETAILS -->
         <div class="detailsbody">
           <div class="details">
@@ -19,14 +19,15 @@
                 <div *ngFor="let program of programs">
                   <div class="table1">
                     <table>
-                        <tbody>
-                          <tr>
-                            <td style="font-weight: 700; width: 150px ; text-align: center;">{{program.program_short}}</td>
-                            <td>{{ program.program_full }}</td>
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 700; width: 150px ; text-align: center;">{{program.program_short}}
+                          </td>
+                          <td>{{ program.program_full }}</td>
                         </tr>
-                        </tbody>
+                      </tbody>
                     </table>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>

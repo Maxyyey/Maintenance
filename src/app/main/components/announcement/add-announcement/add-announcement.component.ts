@@ -22,20 +22,20 @@ export class AddAnnouncementComponent {
     date: string | null,
     file: File | null
   }
-  
+
   constructor(
     private ref: MatDialogRef<AddAnnouncementComponent>,
     private announcementService: AnnouncementService
   ) {
-      const today = new Date();
-      this.form = {
-        title: '',
-        category: '',
-        text: '',
-        date: today.toISOString().split('T')[0],
-        file: null
-      }
-}
+    const today = new Date();
+    this.form = {
+      title: '',
+      category: '',
+      text: '',
+      date: today.toISOString().split('T')[0],
+      file: null
+    }
+  }
 
   ngOnInit(): void {
   }
@@ -52,8 +52,8 @@ export class AddAnnouncementComponent {
     formData.append('text', this.form.text || '');
     formData.append('date', this.form.date || '');
     formData.append('file', this.form.file || '');
-    
-    
+
+
     this.announcementService.createAnnouncement(formData).subscribe(
       success => {
         Swal.fire({
@@ -61,11 +61,11 @@ export class AddAnnouncementComponent {
           text: "Announcement has been successfully created.",
           icon: "success",
         });
-        this.ref.close(success); 
+        this.ref.close(success);
       },
       error => {
         console.error(error)
-        if(error.status == 422) {
+        if (error.status == 422) {
           Swal.fire({
             title: "error!",
             text: "Invalid input.",
@@ -83,12 +83,12 @@ export class AddAnnouncementComponent {
     )
   }
 
-  uploadFile(event: any){
+  uploadFile(event: any) {
     this.form.file = event.target.files[0];
     console.table(this.form.file)
-   }
+  }
   // SWEETALERT UPDATE POPUP
-  create(){
+  create() {
     console.log(this.form)
     Swal.fire({
       title: "Post New Announcement",
@@ -107,7 +107,7 @@ export class AddAnnouncementComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel editing details?",
       text: "Your changes will not be saved.",
@@ -119,22 +119,22 @@ export class AddAnnouncementComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close('Closed using function');
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Changes not saved."
-          });
+        this.ref.close('Closed using function');
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Changes not saved."
+        });
       }
     });
   }

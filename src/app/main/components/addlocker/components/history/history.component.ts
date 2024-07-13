@@ -12,11 +12,11 @@ export class HistoryComponent {
   // currentPage = 1;
   // itemsPerPage = 5;
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any, 
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private ref: MatDialogRef<HistoryComponent>) {
   }
 
-  async ngOnInit(): Promise<void>  {
+  async ngOnInit(): Promise<void> {
     this.lockerLogs = this.data
     console.log(this.lockerLogs)
     // this.lockers = await this.lockerService.getLockers();

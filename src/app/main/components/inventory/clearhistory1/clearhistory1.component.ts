@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   selector: 'app-clearhistory1',
   templateUrl: './clearhistory1.component.html',
   styleUrl: './clearhistory1.component.scss',
-  
+
 })
 export class Clearhistory1Component {
 

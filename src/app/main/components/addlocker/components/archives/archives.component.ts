@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef as MyMatDialogRef} from '@angular/material/dialog';
+import { MatDialogRef as MyMatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -21,17 +21,17 @@ interface MyOption {
     FormsModule,
     CommonModule
   ],
-  
+
 })
 export class ArchiveComponent {
 
-  constructor(public dialogRef: MyMatDialogRef<ArchiveComponent>) {}
+  constructor(public dialogRef: MyMatDialogRef<ArchiveComponent>) { }
 
   closepopup() {
     this.dialogRef.close('Closed using function');
   }
 
-  archiveBox(){
+  archiveBox() {
     this.dialogRef.close('Closed using function');
     Swal.fire({
       title: "Delete Project",
@@ -54,6 +54,6 @@ export class ArchiveComponent {
         });
       }
     });
-}
+  }
 }
 

@@ -6,8 +6,8 @@ import { AcademiccontentComponent } from './components/academicproject/academicc
 
 const routes: Routes = [
   { path: '', redirectTo: 'materialscontent', pathMatch: 'full' },
-  { path: 'materialscontent', component: MaterialscontentComponent},
-  { path: 'academiccontent', component: AcademiccontentComponent},
+  { path: 'materialscontent', component: MaterialscontentComponent },
+  { path: 'academiccontent', component: AcademiccontentComponent },
 ];
 
 @NgModule({

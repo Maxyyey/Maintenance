@@ -22,10 +22,10 @@ export class AddProgramComponent {
 
   constructor(
     private ref: MatDialogRef<AddProgramComponent>,
-    private catalogingService: CatalogingService, 
+    private catalogingService: CatalogingService,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
-    
+
   }
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class AddProgramComponent {
   addProgram() {
     this.catalogingService.addPrograms(this.formDetails.value).subscribe(
       (response: any) => {
-        this.ref.close({data: this.formDetails.value});
+        this.ref.close({ data: this.formDetails.value });
         Swal.fire({
           title: "Success!",
           text: "Program has been added.",
@@ -54,7 +54,7 @@ export class AddProgramComponent {
       },
       (error: any) => {
         console.error(error);
-        if(error.status === 422) {
+        if (error.status === 422) {
           Swal.fire({
             title: "Error!",
             text: "Invalid input.",
@@ -92,11 +92,11 @@ export class AddProgramComponent {
       }
     });
 
-}
+  }
 
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel adding program?",
       text: "Your changes will not be saved.",
@@ -109,21 +109,21 @@ export class AddProgramComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.closepopup()
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Adding cancelled."
-          });
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Adding cancelled."
+        });
       }
     });
   }

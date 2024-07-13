@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './cataloging.component.html',
   styleUrl: './cataloging.component.scss',
 })
-export class CatalogingComponent  {
- 
+export class CatalogingComponent {
+
 
 }

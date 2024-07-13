@@ -2,50 +2,50 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
 <main class="login-container" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
 
-    <div class="container">
-  
-      <div class="forms-container">
-        <div class="signin-signup">
-          <!-- FORM FIELD -->
-          <form class="sign-in-form"action="">
-            
-            <!-- SYSTEM AND SUBSYSTEM NAME -->
-            <h2 class="title">
-              <img src="../assets/images/GCLMS.PNG" alt="Gordon College Logo" class="logo" /><br />
-              <span class="upper-text">Gordon College</span><br />
-              <span class="lower-text">Library Management System</span><br />
-              <span class="subsystemname">Maintenance</span>
-            </h2>
-            
-            <!-- INPUT FIELD -->
-            <div class="input-field">
-              <i class='bx bxs-user'></i> 
-              <input type="email" placeholder="Username" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
-            </div>
-            <div class="input-field">
-              <i class='bx bxs-lock-alt'></i>
-              <input [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
-            </div>
-  
-            <!-- LOGIN BUTTON -->
-            <div id="login-button" class="btn">
-                <a id="login-button" class="btn" (click)="login()"> LogIn </a>
-            </div>
-  
-            <p class="social-text">GCLMS v0.1</p>
-          </form>
-        </div>
-      </div>
-  
-      <!-- LEFT CONTENT -->
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
+  <div class="container">
+
+    <div class="forms-container">
+      <div class="signin-signup">
+        <!-- FORM FIELD -->
+        <form class="sign-in-form" action="">
+
+          <!-- SYSTEM AND SUBSYSTEM NAME -->
+          <h2 class="title">
+            <img src="../assets/images/GCLMS.PNG" alt="Gordon College Logo" class="logo" /><br />
+            <span class="upper-text">Gordon College</span><br />
+            <span class="lower-text">Library Management System</span><br />
+            <span class="subsystemname">Maintenance</span>
+          </h2>
+
+          <!-- INPUT FIELD -->
+          <div class="input-field">
+            <i class='bx bxs-user'></i>
+            <input type="email" placeholder="Username" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
           </div>
-          <img src="../assets/images/vector.png" class="image" alt="" />
-        </div>
+          <div class="input-field">
+            <i class='bx bxs-lock-alt'></i>
+            <input [type]="showpassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <div id="login-button" class="btn">
+            <a id="login-button" class="btn" (click)="login()"> LogIn </a>
+          </div>
+
+          <p class="social-text">GCLMS v0.1</p>
+        </form>
       </div>
-  
     </div>
+
+    <!-- LEFT CONTENT -->
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+        </div>
+        <img src="../assets/images/vector.png" class="image" alt="" />
+      </div>
+    </div>
+
+  </div>
 </main>
-    

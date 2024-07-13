@@ -1,38 +1,33 @@
-
-
 <!-- add button -->
 <div class="button-container">
-<!-- <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> ADD PROGRAM </button> -->
-<details class="dropdown">
+  <!-- <button class="add-btn" type="button"(click)="onAddNewBtnClick()"> ADD PROGRAM </button> -->
+  <details class="dropdown">
     <summary class="dropdown-button">ADD PROGRAM</summary>
     <div class="dropdown-content">
-      <button class="dropdown-item" *ngFor="let department of departmentsOnly" type="button" (click)="addPrograms(department)" > {{ department.department_short }} </button>
+      <button class="dropdown-item" *ngFor="let department of departmentsOnly" type="button"
+        (click)="addPrograms(department)"> {{ department.department_short }} </button>
     </div>
-</details>
-  
-<button class="add-btn" type="button"(click)="onAddCollegeClick()"> ADD COLLEGE </button>  
-<!--<button class="container-historylogsButton" type="button" (click)="onhistorylogsBtnClick()">History Logs</button>-->
+  </details>
+
+  <button class="add-btn" type="button" (click)="onAddCollegeClick()"> ADD COLLEGE </button>
+  <!--<button class="container-historylogsButton" type="button" (click)="onhistorylogsBtnClick()">History Logs</button>-->
 </div>
 
 
 
 <div class="card-container">
   <!-- (click)="openDepartment(department.id)" -->
-    <div class="card" *ngFor="let department of departments | keyvalue" (click)="openDepartment(department)">  
-      <div class="dot1"></div>
-                <div class="dot2"></div>
-                <div class="dot3"></div>
-                <div class="dot4"></div>
-                <div class="dot5"></div>
-                <div class="dot6"></div>
-                <div class="dot7"></div>
-                <div class="dot8"></div>
-                <div class="dot9"></div>  
-      <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image" >
-        <h1>{{ department.key }}</h1>
-    </div> 
-</div>  
-
-
-
-
+  <div class="card" *ngFor="let department of departments | keyvalue" (click)="openDepartment(department)">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+    <div class="dot3"></div>
+    <div class="dot4"></div>
+    <div class="dot5"></div>
+    <div class="dot6"></div>
+    <div class="dot7"></div>
+    <div class="dot8"></div>
+    <div class="dot9"></div>
+    <img [src]=" '/assets/images/GC.png'" alt="/assets/images/GC.png" class="card-image">
+    <h1>{{ department.key }}</h1>
+  </div>
+</div>

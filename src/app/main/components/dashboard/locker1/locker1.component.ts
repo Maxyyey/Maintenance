@@ -18,11 +18,11 @@ export class Locker1Component {
     const myLockerChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['CHTM', 'CCS', 'CEAS', 'CBA', 'CAHS'], 
-       
+        labels: ['CHTM', 'CCS', 'CEAS', 'CBA', 'CAHS'],
+
         datasets: [{
           label: 'Total',
-          data: [79,20, 32, 40, 40],
+          data: [79, 20, 32, 40, 40],
 
           backgroundColor: [
             '#1A4D2E',
@@ -32,7 +32,7 @@ export class Locker1Component {
             '#1A4D2E',
           ],
           borderWidth: 5,
-          barThickness: 80 
+          barThickness: 80
         }]
       },
       options: {
@@ -44,7 +44,7 @@ export class Locker1Component {
               font: {
                 size: 20 // Adjust the font size as needed
               },
-              
+
             }
           }
         }

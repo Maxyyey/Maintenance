@@ -23,10 +23,10 @@ export class AddLockerComponent implements OnInit {
 
 
   constructor(
-    private dialogRef: MatDialog, 
+    private dialogRef: MatDialog,
     private lockerService: LockerService) { }
 
- ngOnInit() {
+  ngOnInit() {
     this.getLockers();
   }
   get totalPages(): number {
@@ -54,49 +54,49 @@ export class AddLockerComponent implements OnInit {
   getLockers(): void {
     this.lockerService.getLockers().subscribe(
       (lockers) => {
-      this.lockers = lockers;
-      console.log(this.lockers)
-    });
-  }
-  
-  deleteLocker(id:number) {
-  this.lockerService.deleteLocker(id).subscribe(
-    result => {
-      Swal.fire({
-        title: "Deleting complete!",
-        text: "locker has been deleted.",
-        icon: "success",
-        confirmButtonText: 'Close',
-        confirmButtonColor: "#777777",
+        this.lockers = lockers;
+        console.log(this.lockers)
       });
-      this.lockers.pop()  //remove the last element on success
-    },
-    error => {
-      console.error(error)
-      if(error.status == 400) {
+  }
+
+  deleteLocker(id: number) {
+    this.lockerService.deleteLocker(id).subscribe(
+      result => {
         Swal.fire({
-          title: "Error!",
-          text: "You must delete the latest locker first.",
-          icon: "error",
-        })
-      }
-      else {
-        Swal.fire({
-          title: "error!",
-          text: "Something went wrong, please try again later.",
-          icon: "error",
+          title: "Deleting complete!",
+          text: "locker has been deleted.",
+          icon: "success",
+          confirmButtonText: 'Close',
+          confirmButtonColor: "#777777",
         });
+        this.lockers.pop()  //remove the last element on success
+      },
+      error => {
+        console.error(error)
+        if (error.status == 400) {
+          Swal.fire({
+            title: "Error!",
+            text: "You must delete the latest locker first.",
+            icon: "error",
+          })
+        }
+        else {
+          Swal.fire({
+            title: "error!",
+            text: "Something went wrong, please try again later.",
+            icon: "error",
+          });
+        }
       }
-    }
-  )
+    )
 
   }
 
   onHistoryBtnClick() {
-    if(this.isModalOpen) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     this.lockerService.getHistory().subscribe(
@@ -105,8 +105,8 @@ export class AddLockerComponent implements OnInit {
           data: result
         })
         modal.afterClosed().subscribe(
-          result => {  
-           this.isModalOpen = false
+          result => {
+            this.isModalOpen = false
           }
         )
       },
@@ -123,10 +123,10 @@ export class AddLockerComponent implements OnInit {
   }
 
   onAddNewBtnClick() {
-    if(this.isModalOpen) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     this.lockerService.getStartingLockerNumber().subscribe(
@@ -138,7 +138,7 @@ export class AddLockerComponent implements OnInit {
           result => {
             this.isModalOpen = false
 
-            if(result != null) {
+            if (result != null) {
               result.success.forEach((locker: any) => {
                 this.lockers.push(locker)
               });
@@ -159,15 +159,15 @@ export class AddLockerComponent implements OnInit {
   }
 
   onEditBtnClick(id: number) {
-    if(this.isModalOpen) {
+    if (this.isModalOpen) {
       return
     }
-    
+
     this.isModalOpen = true
 
     this.lockerService.getLocker(id).subscribe(
       data => {
-        let modal = this.dialogRef.open(EditUsersComponent, 
+        let modal = this.dialogRef.open(EditUsersComponent,
           { data: data }
         );
 
@@ -175,10 +175,10 @@ export class AddLockerComponent implements OnInit {
           result => {
             this.isModalOpen = false
             //update locker info
-            if(result != null) {
+            if (result != null) {
               this.lockers = this.lockers.map(locker => {
                 if (locker.id === result.success.id) {
-                    return { ...locker, status: result.success.status };
+                  return { ...locker, status: result.success.status };
                 }
                 return locker;
               });
@@ -198,7 +198,7 @@ export class AddLockerComponent implements OnInit {
     )
   }
 
-  onArchiveBtnClick(id:number){
+  onArchiveBtnClick(id: number) {
     Swal.fire({
       title: "Delete Project",
       text: "Are you sure want to delete this locker?",
@@ -213,12 +213,12 @@ export class AddLockerComponent implements OnInit {
         this.deleteLocker(id)
       }
     });
-}
-getPaginationSummary(): string {
-  const totalPages = this.totalPages;
-  const currentPage = this.currentPage;
-  return `${currentPage} of ${totalPages}`;
-}
+  }
+  getPaginationSummary(): string {
+    const totalPages = this.totalPages;
+    const currentPage = this.currentPage;
+    return `${currentPage} of ${totalPages}`;
+  }
 }
 
 

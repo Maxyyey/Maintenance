@@ -4,7 +4,7 @@
       <div class="details-content">
         <!-- HEADER - TITLE -->
         <div class="detailsheader">
-            <h1> Add Location</h1>
+          <h1> Add Location</h1>
         </div>
         <!-- BODY - DETAILS -->
         <div class="detailsbody">
@@ -18,22 +18,24 @@
                   <input type="date" class="date" [value]="currentDate" readonly>
                 </div>
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" [(ngModel)]="form.location_short" [ngModelOptions]="{standalone: true}" required>
+                  <input class="inputtxt" type="text" [(ngModel)]="form.location_short"
+                    [ngModelOptions]="{standalone: true}" required>
                   <span></span>
                   <div class="labelline">Location</div>
                 </div>
               </div>
 
-      
+
               <div class="txt_field2">
-                <input class="inputtxt2" type="text" [(ngModel)]="form.location_full" [ngModelOptions]="{standalone: true}" required>
+                <input class="inputtxt2" type="text" [(ngModel)]="form.location_full"
+                  [ngModelOptions]="{standalone: true}" required>
                 <span></span>
                 <div class="labelline2">Full Location</div>
               </div>
             </form>
-          </div> 
+          </div>
           <div class="button-container">
-            <button  (click)="cancelBox()" class="cancel-btn">Cancel</button>
+            <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
             <button class="update-btn" (click)="createBox()"> Add </button>
           </div>
         </div>

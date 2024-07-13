@@ -1,4 +1,4 @@
-.container-AddNewButton{
+.container-AddNewButton {
     background: var(--main-green);
     text-decoration: none;
     color: white;
@@ -6,7 +6,7 @@
     transition: .3s;
     transform: translate(0px, 0px);
     border-radius: 3px;
-    border: 1px ;
+    border: 1px;
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
@@ -29,8 +29,8 @@
 }
 
 
-.container-header{
-   // background-color: #4f6f52;
+.container-header {
+    // background-color: #4f6f52;
     color: white;
     border-radius: 10px;
     margin-right: 25px;
@@ -68,7 +68,7 @@ h2 {
     margin-top: -35px;
     margin-bottom: 15px;
     font-size: 34px;
-  font-weight: 700;
+    font-weight: 700;
     color: #000000;
     opacity: 70%;
 }
@@ -78,6 +78,7 @@ h1 {
     margin-right: -20px;
     margin-bottom: 25px;
 }
+
 .table-content {
     border-radius: 5px;
     border: 1px solid var(--table-border);
@@ -121,7 +122,7 @@ th {
     border-radius: 3px;
 }
 
-.archive-btn{
+.archive-btn {
 
     padding: 4px;
     margin-right: 2px;
@@ -140,7 +141,7 @@ th {
     background-color: #376448;
 }
 
-    
+
 .pagination {
     display: flex;
     align-items: center;
@@ -148,16 +149,20 @@ th {
     font-weight: bolder;
     color: #415b44;
     margin-top: 20px;
-  }
-  .pagination i {
+}
+
+.pagination i {
     cursor: pointer;
-  }
-  .pagination p {
+}
+
+.pagination p {
     margin: 0 30px;
-  }
-  .pagination .kaliwa{
+}
+
+.pagination .kaliwa {
     margin-right: 40px;
-  }
+}
+
 .table-head {
     display: flex;
     align-items: center;
@@ -179,7 +184,7 @@ th {
     border-bottom-left-radius: 7px;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 

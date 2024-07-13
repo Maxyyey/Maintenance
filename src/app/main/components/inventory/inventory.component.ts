@@ -24,7 +24,7 @@ export class InventoryComponent implements OnInit {
   constructor(
     private dialogRef: MatDialog,
     private inventoryService: InventoryService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getInventories();
@@ -53,7 +53,7 @@ export class InventoryComponent implements OnInit {
     }
   }
 
-  onSearch(){
+  onSearch() {
     let search = this.search.trim()
     this.inventoryService.searchBookInventories(this.filter, search).subscribe(
       inventories => {
@@ -67,7 +67,7 @@ export class InventoryComponent implements OnInit {
   }
 
   checkSearchInput() {
-    if(this.search.trim().length > 0 || this.default) {
+    if (this.search.trim().length > 0 || this.default) {
       return
     }
     this.default = true
@@ -82,10 +82,10 @@ export class InventoryComponent implements OnInit {
     console.log('changing...')
   }
 
-  onStatusChange(event: Event, id:number) {
+  onStatusChange(event: Event, id: number) {
     const element = event.target as HTMLSelectElement;
     let form = { inventory_status: element.value }
-    
+
     this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
       response => {
         console.log(response)
@@ -185,30 +185,30 @@ export class InventoryComponent implements OnInit {
         this.clearInventoryStatus()
       }
     });
-}
-
-onhistorylogsBtnClick() {
-  if (this.isModalOpen) {
-    return;
   }
 
-  this.isModalOpen = true;
-
-  let modal = this.dialogRef.open(ClearhistoryComponent, {});
-  modal.afterClosed().subscribe(
-    result => {
-      this.isModalOpen = false;
-
-      if (result) {
-        this['locations'].push(result.success); // use the correct property
-      }
+  onhistorylogsBtnClick() {
+    if (this.isModalOpen) {
+      return;
     }
-  );
-}
-getPaginationSummary(): string {
-  const totalPages = this.totalPages;
-  const currentPage = this.currentPage;
-  return `${currentPage} of ${totalPages}`;
-}
+
+    this.isModalOpen = true;
+
+    let modal = this.dialogRef.open(ClearhistoryComponent, {});
+    modal.afterClosed().subscribe(
+      result => {
+        this.isModalOpen = false;
+
+        if (result) {
+          this['locations'].push(result.success); // use the correct property
+        }
+      }
+    );
+  }
+  getPaginationSummary(): string {
+    const totalPages = this.totalPages;
+    const currentPage = this.currentPage;
+    return `${currentPage} of ${totalPages}`;
+  }
 }
 

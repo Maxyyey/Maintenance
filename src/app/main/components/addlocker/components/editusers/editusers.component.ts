@@ -23,7 +23,7 @@ interface MyOption {
     FormsModule,
     CommonModule
   ],
-  
+
 })
 export class EditUsersComponent {
   locker_number: string = ''
@@ -67,7 +67,7 @@ export class EditUsersComponent {
       },
       error => {
         console.error(error)
-        if(error.status == 400) {
+        if (error.status == 400) {
           Swal.fire({
             title: "Error!",
             text: "Invalid input.",
@@ -82,7 +82,7 @@ export class EditUsersComponent {
   }
 
   // SWEETALERT UPDATE POPUP
-  updateBox(){
+  updateBox() {
     Swal.fire({
       title: "Update Locker",
       text: "Are you sure you want to update this locker?",
@@ -100,7 +100,7 @@ export class EditUsersComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel editing details?",
       text: "Your changes will not be saved.",
@@ -112,22 +112,22 @@ export class EditUsersComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.ref.close(null);
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Changes not saved."
-          });
+        this.ref.close(null);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Changes not saved."
+        });
       }
     });
   }

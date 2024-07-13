@@ -27,7 +27,7 @@ interface MyOption {
     FormsModule,
     CommonModule
   ],
-  
+
 })
 export class InventoryHistoryComponent {
 
@@ -43,15 +43,15 @@ export class InventoryHistoryComponent {
   constructor(
     private ref: MatDialogRef<InventoryHistoryComponent>,
     private personnelService: PersonnelService) {
-      this.form = {
-        first_name: '',
-        middle_name: '',
-        last_name: '',
-        ext_name: '',
-        username: '',  //this is email
-        password: '',
-        role: ''
-      }
+    this.form = {
+      first_name: '',
+      middle_name: '',
+      last_name: '',
+      ext_name: '',
+      username: '',  //this is email
+      password: '',
+      role: ''
+    }
   }
 
   closepopup() {
@@ -64,13 +64,13 @@ export class InventoryHistoryComponent {
       middle_name: this.form.middle_name,
       last_name: this.form.last_name,
       ext_name: this.form.ext_name,
-      username: this.form.username,  
+      username: this.form.username,
       password: this.form.password,
       role: JSON.stringify([this.form.role])
     }
 
     console.log(this.form)
-    if(this.form.username.includes('@')) {
+    if (this.form.username.includes('@')) {
       this.personnelService.createPersonnel(form).subscribe(
         response => {
           this.ref.close(response);
@@ -84,13 +84,13 @@ export class InventoryHistoryComponent {
         },
         error => {
           console.error(error)
-          if(error.status === 422) {
+          if (error.status === 422) {
             Swal.fire({
               title: "error!",
               text: "Invalid input.",
               icon: "error",
             });
-          } 
+          }
           else {
             Swal.fire({
               title: "error!",
@@ -109,11 +109,11 @@ export class InventoryHistoryComponent {
         confirmButtonColor: "#777777",
       });
     }
-    
+
   }
 
   // SWEETALERT UPDATE POPUP
-  addBox(){
+  addBox() {
     Swal.fire({
       title: "Add User",
       text: "Are you sure you want to add this user?",
@@ -130,7 +130,7 @@ export class InventoryHistoryComponent {
     });
   }
 
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel adding personnel?",
       text: "Your changes will not be saved.",

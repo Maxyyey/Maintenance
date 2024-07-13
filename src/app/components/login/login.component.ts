@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  email: string = ''; 
+  email: string = '';
   password: string = '';
   isLoggingin: boolean = false
 
@@ -18,14 +18,14 @@ export class LoginComponent {
   showpassword = false;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router) {
 
   }
 
   login() {
-    const credential = { "username" : this.email, "password": this.password}
-    
+    const credential = { "username": this.email, "password": this.password }
+
     this.authService.login(credential).subscribe(
       response => {
         this.router.navigate(['/main'])

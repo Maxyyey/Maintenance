@@ -1,8 +1,11 @@
 <!-- ICONS SOURCE -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
 
@@ -13,119 +16,132 @@
         <nav class="sidebar-content" [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay}">
 
 
-        <!-- LOGO AND SUBSYSTEM TITLE -->
-        <div class="logo-title">
-            <div class="logo">
-                <img src="assets/images/GCLMS.PNG">
+            <!-- LOGO AND SUBSYSTEM TITLE -->
+            <div class="logo-title">
+                <div class="logo">
+                    <img src="assets/images/GCLMS.PNG">
+                </div>
+                <div class="systemname">
+                    <h1> Marlon A. Atencio </h1>
+                    <h2>ADMIN</h2>
+                </div>
+                <button class="menu-icon-button" (click)="toggleSidebar()">
+                    <i class='bx bx-menu'></i>
+                </button>
             </div>
-            <div class="systemname">
-                <h1> Marlon A. Atencio </h1>
-                <h2>ADMIN</h2>
-            </div>
-            <button class="menu-icon-button" (click)="toggleSidebar()">
-                <i class='bx bx-menu' ></i>
-            </button>
-        </div>
 
-        <!-- SIDEBAR TABS -->
-        <div class="sidebar-tabs">
-            <ul class="admin-tabs">
-                
-                <li class="admin-tab">
-                    <span class="gc-library" (click)="toggleDropdown()">
-                        <a class="tab-link" routerLink="circulation1" [ngClass]="{'active-link': isDashboardActive()}">
-                            <span class="tab-link-icon"> <i class="fa-solid fa-house"></i> </span>
-                            <span class="tab-link-name"> Dashboard </span>
-                        </a>
-                    </span>
-                    <div class="dropdown" >
-                        <button class="dropbtn" (click)="toggleDropdown()"> 
-                            <span class="dropdown-icon" [ngClass]="{'active': dropdownOpen}"> 
-                                <i class="bx" [ngClass]="{'bx-caret-left': true}"></i>
-                            </span>
-                        </button>
-                        <div class="dropdown-content" *ngIf="dropdownOpen">
-                            <a class="sub-tab-link" routerLink="circulation1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
-                                <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
-                                <span class="tab-link-name1"> Circulation </span>
+            <!-- SIDEBAR TABS -->
+            <div class="sidebar-tabs">
+                <ul class="admin-tabs">
+
+                    <li class="admin-tab">
+                        <span class="gc-library" (click)="toggleDropdown()">
+                            <a class="tab-link" routerLink="circulation1"
+                                [ngClass]="{'active-link': isDashboardActive()}">
+                                <span class="tab-link-icon"> <i class="fa-solid fa-house"></i> </span>
+                                <span class="tab-link-name"> Dashboard </span>
                             </a>
-                            <a class="sub-tab-link" routerLink="cataloging1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
-                                <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
-                                <span class="tab-link-name1"> Cataloging </span>
-                            </a>
-                            <a class="sub-tab-link" routerLink="locker1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px;" >
-                                <span class="material-symbols-outlined"> library_add </span>
-                                <span class="tab-link-name1"> Locker </span>
-                            </a>
-                            <a class="sub-tab-link" routerLink="opac1" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
-                                <span class="tab-link-icon"> <i class="fa-solid fa-user"></i> </span>
-                                <span class="tab-link-name1"> OPAC </span>
-                            </a>
+                        </span>
+                        <div class="dropdown">
+                            <button class="dropbtn" (click)="toggleDropdown()">
+                                <span class="dropdown-icon" [ngClass]="{'active': dropdownOpen}">
+                                    <i class="bx" [ngClass]="{'bx-caret-left': true}"></i>
+                                </span>
+                            </button>
+                            <div class="dropdown-content" *ngIf="dropdownOpen">
+                                <a class="sub-tab-link" routerLink="circulation1" routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
+                                    <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
+                                    <span class="tab-link-name1"> Circulation </span>
+                                </a>
+                                <a class="sub-tab-link" routerLink="cataloging1" routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
+                                    <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
+                                    <span class="tab-link-name1"> Cataloging </span>
+                                </a>
+                                <a class="sub-tab-link" routerLink="locker1" routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px;">
+                                    <span class="material-symbols-outlined"> library_add </span>
+                                    <span class="tab-link-name1"> Locker </span>
+                                </a>
+                                <a class="sub-tab-link" routerLink="opac1" routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
+                                    <span class="tab-link-icon"> <i class="fa-solid fa-user"></i> </span>
+                                    <span class="tab-link-name1"> OPAC </span>
+                                </a>
+                            </div>
                         </div>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:true}">
+                            <span class="tab-link-icon"> <i class="fa-solid fa-user-gear"></i> </span>
+                            <span class="tab-link-name"> Personnel Setup </span>
+                        </a>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="circulation" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:true}">
+                            <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
+                            <span class="tab-link-name">Circulation </span>
+                        </a>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="cataloging" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:false}">
+                            <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
+                            <span class="tab-link-name"> Cataloging </span>
+                        </a>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="announcement" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:true}">
+                            <span class="tab-link-icon"> <i class="fa-solid fa-bullhorn"></i> </span>
+                            <span class="tab-link-name"> Announcement </span>
+                        </a>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="inventory" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:true}">
+                            <span class="material-symbols-outlined"> inventory </span>
+                            <span class="tab-link-name"> Inventory </span>
+                        </a>
+                    </li>
+
+                    <li class="admin-tab">
+                        <a class="tab-link" routerLink="addlocker" routerLinkActive="active-link"
+                            [routerLinkActiveOptions]="{exact:true}">
+                            <span class="material-symbols-outlined"> library_add </span>
+                            <span class="tab-link-name">Lockers </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- LOGOUT BUTTON -->
+                <div class="logoutbtn">
+                    <div class="logout" (click)="togglePopup()">
+                        <span> <i class='bx bx-log-out bx-rotate-180'></i>
+                            <app-logout-popup *ngIf="showPopup" (closedPopup)="closePopup()"
+                                (leaveClicked)="redirectToLoginPage()"></app-logout-popup>
+                        </span>
                     </div>
-                </li>
-            
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="personnelsetup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class="fa-solid fa-user-gear"></i> </span>
-                    <span class="tab-link-name"> Personnel Setup </span>
-                    </a>
-                </li>
-
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="circulation" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
-                    <span class="tab-link-name">Circulation </span>
-                    </a>
-                </li>
-
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="cataloging" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:false}">
-                        <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
-                    <span class="tab-link-name"> Cataloging </span>
-                    </a>
-                </li>
-
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="announcement" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                    <span class="tab-link-icon"> <i class="fa-solid fa-bullhorn"></i> </span>
-                    <span class="tab-link-name"> Announcement </span>
-                    </a>
-                </li>
-
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="inventory" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        <span class="material-symbols-outlined"> inventory </span>
-                        <span class="tab-link-name"> Inventory </span>
-                    </a>
-                </li>
-
-                <li class="admin-tab">
-                    <a class="tab-link" routerLink="addlocker" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        <span class="material-symbols-outlined"> library_add </span>
-                    <span class="tab-link-name">Lockers </span>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- LOGOUT BUTTON -->
-            <div class="logoutbtn">
-                <div class="logout" (click)="togglePopup()" >
-                    <span> <i class='bx bx-log-out bx-rotate-180' ></i> 
-                        <app-logout-popup *ngIf="showPopup" (closedPopup)="closePopup()" (leaveClicked)="redirectToLoginPage()"></app-logout-popup>
-                    </span>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-</div>
+    </div>
 
 </div>
 <!-- Overlay -->
 <div class="sidebar-overlay" [ngClass]="{'visible': !isSidebarCollapsed}" (click)="toggleSidebar()"></div>
 
-<div class="main-content" [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay, 'blurred': isSidebarOverlay}">
+<div class="main-content"
+    [ngClass]="{'collapsed': isSidebarCollapsed, 'overlay': isSidebarOverlay, 'blurred': isSidebarOverlay}">
     <!-- HEADER -->
     <div class="header">
         <h1> MAINTENANCE</h1>

@@ -22,19 +22,18 @@ interface MyOption {
     CommonModule,
     HttpClientModule
   ],
-  
+
 })
 export class AddPopupComponent {
 
   department: string;
   full_department: string;
-  form: any 
+  form: any
 
   constructor(
-    private ref: MatDialogRef<AddPopupComponent>, 
+    private ref: MatDialogRef<AddPopupComponent>,
     private catalogingService: CatalogingService
-  ) 
-  {
+  ) {
     this.department = '';
     this.full_department = '';
   }
@@ -45,7 +44,7 @@ export class AddPopupComponent {
       full_department: this.full_department
     };
     console.log('Form data:', payload);
-    
+
     this.catalogingService.addDepartments(payload).subscribe(
       response => {
         Swal.fire({
@@ -57,27 +56,27 @@ export class AddPopupComponent {
         }).then(() => {
           this.ref.close(response);
         });
-    }, error => {
-      console.error('Error adding college:', error);
-      if(error.status === 422) {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Invalid input.',
-          icon: 'error',
-          confirmButtonText: 'Close',
-          confirmButtonColor: '#777777',
-        });
-      }
-      else {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Something went wrong. Please try again later.',
-          icon: 'error',
-          confirmButtonText: 'Close',
-          confirmButtonColor: '#777777',
-        });
-      }
-    });
+      }, error => {
+        console.error('Error adding college:', error);
+        if (error.status === 422) {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Invalid input.',
+            icon: 'error',
+            confirmButtonText: 'Close',
+            confirmButtonColor: '#777777',
+          });
+        }
+        else {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Something went wrong. Please try again later.',
+            icon: 'error',
+            confirmButtonText: 'Close',
+            confirmButtonColor: '#777777',
+          });
+        }
+      });
 
   }
 
@@ -103,7 +102,7 @@ export class AddPopupComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  cancelBox() {
     Swal.fire({
       title: "Are you sure you want to cancel adding college?",
       text: "Your changes will not be saved.",
@@ -115,29 +114,29 @@ export class AddPopupComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-          this.closepopup()
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "error",
-            title: "Adding cancelled."
-          });
+        this.closepopup()
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Adding cancelled."
+        });
       }
     });
   }
-  uploadFile(event: any){
+  uploadFile(event: any) {
     this.form.file = event.target.files[0];
     console.table(this.form.file)
-   }
+  }
 }
 
 

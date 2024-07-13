@@ -25,7 +25,7 @@ export class OPAC1Component {
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',
           borderWidth: 1,
-          barThickness: 40 
+          barThickness: 40
         }]
       },
       options: {
