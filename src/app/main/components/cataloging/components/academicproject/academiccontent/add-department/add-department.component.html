@@ -1,0 +1,64 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div class="details-content">
+                <!-- HEADER - TITLE -->
+                <div class="detailsheader">
+                    <h1>Add College</h1>
+                </div>
+                <!-- BODY - DETAILS -->
+                <div class="detailsbody">
+                    <div class="details">
+                        <div class="txtheader2">
+                            <hr>
+                        </div>
+                        <form [formGroup]="formDetails">
+
+                            <div class="input-row">
+                                <div class="txt_field">
+                                    <input class="inputtxt" type="text" formControlName="department_full">
+                                    <span></span>
+                                    <div class="labelline">Name of College</div>
+                                </div>
+                                <div class="txt_field">
+                                    <input class="inputtxt" type="text" formControlName="department_short">
+                                    <span></span>
+                                    <div class="labelline">College Abbreviation</div>
+                                </div>
+                            </div>
+                            <div formArrayName="programs">
+                                <ng-container *ngFor="let programForm of programs.controls; index as i; first as first">
+                                    <div class="input-row" [formGroupName]="i">
+                                        <div class="txt_field">
+                                            <input class="inputtxt" type="text" formControlName="program_short">
+                                            <span></span>
+                                            <div class="labelline">Program Abbreviation</div>
+                                        </div>
+                                        <div class="txt_field">
+                                            <input class="inputtxt" type="text" formControlName="program_full">
+                                            <span></span>
+                                            <div class="labelline">Full Program</div>
+                                            </div>
+                                        <div class="txt_field">
+                                            <input class="inputtxt" type="text" formControlName="category">
+                                            <span></span>
+                                            <div class="labelline">Project</div>
+                                        </div>
+                                        <p (click)="deleteProgram(i)" *ngIf="!first"> delete</p>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            
+                            <p (click)="addPrograms()">add</p>
+                        </form>
+                    </div>
+                    <div class="button-container">
+                        
+                        <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
+                        <button class="update-btn" (click)="updateBox()" [disabled]="formDetails.invalid">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs';
-import { throwError } from 'rxjs';
+import { apiUrl } from '@app/config/config';
 import { HeaderService } from './header.service';
 
 
@@ -14,15 +13,11 @@ export class DataService {
     private http: HttpClient,
     private headers: HeaderService
   ) { }
-
-  private baseurl:string = 'http://127.0.0.1:8000/api/';
-  //private baseurl:string = 'http://26.68.32.39:8000/api/';
-
-  public get(url: string) {
-    return this.http.get(this.baseurl+url);
+  public get(endpoint: string, params: string = '') {
+    return this.http.get<any>(apiUrl+endpoint+params);
   }
 
-  public post(url: string,formData: FormData) {
-    return this.http.post(this.baseurl+url, formData, { headers: this.headers.get() });
+  public post(endpoint: string, params: string, payload: FormData) {
+    return this.http.post(apiUrl+endpoint+params, payload, { headers: this.headers.get() });
   }
 }

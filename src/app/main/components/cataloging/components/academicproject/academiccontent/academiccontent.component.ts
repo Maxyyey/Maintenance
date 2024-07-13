@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddProgramComponent } from './add-program/add-program.component';
 import { ViewComponent } from './departmentModal/view.component';
-import { AddPopupComponent } from './addpopup/addpopup.component';
-import { CatalogingService } from '@app/services/cataloging.service';
-import Swal from 'sweetalert2';
-import { KeyValue } from '@angular/common';
-import { find } from 'rxjs';
+import { DataService } from '@app/services/data.service';
+import { AddDepartmentComponent } from './add-department/add-department.component';
 
 @Component({
   selector: 'app-academiccontent',
@@ -21,28 +18,18 @@ export class AcademiccontentComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialog,
-    private catalogingService: CatalogingService) { }
+    private dataService: DataService) { }
 
   ngOnInit() {
-    this.getDepartmentsPrograms()
-    this.getDepartmentsOnly()
+    this.getDepartments()
   }
 
-  getDepartmentsPrograms() {
-    this.catalogingService.getDepartments().subscribe(
+  getDepartments() {
+    this.dataService.get('/departments').subscribe(
       departments => {
-        this.departments = departments
-      },
-      error => {
-        console.error(error)
-      }
-    )
-  }
-
-  getDepartmentsOnly() {
-    this.catalogingService.getDepartmentsOnly().subscribe(
-      departments => {
-        this.departmentsOnly = departments
+        console.log(departments)
+        this.departments = departments.departments_with_programs
+        this.departmentsOnly = departments.departments_only
       },
       error => {
         console.error(error)
@@ -57,7 +44,7 @@ export class AcademiccontentComponent implements OnInit {
 
     this.isModalOpen = true
 
-    let modal = this.dialogRef.open(AddPopupComponent, {});
+    let modal = this.dialogRef.open(AddDepartmentComponent, {});
     modal.afterClosed().subscribe(
       result => {
         this.isModalOpen = false

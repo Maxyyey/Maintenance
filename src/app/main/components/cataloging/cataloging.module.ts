@@ -11,6 +11,7 @@ import { AddiconComponent } from './components/materials/materialscontent/addico
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { AddProgramComponent } from './components/academicproject/academiccontent/add-program/add-program.component';
+import { AddDepartmentComponent } from './components/academicproject/academiccontent/add-department/add-department.component';
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { AddProgramComponent } from './components/academicproject/academicconten
     MaterialscontentComponent,
     AcademiccontentComponent,
     AddProgramComponent,
+    AddDepartmentComponent,
+    AddiconComponent
 
   ],
   imports: [

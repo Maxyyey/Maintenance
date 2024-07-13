@@ -9,7 +9,7 @@
         <!-- BODY - DETAILS -->
         <div class="detailsbody">
           <div class="details">
-            <form>
+            <form [formGroup]="formDetails">
 
               <div class="input-row">
                 <div class="txt_field1">
@@ -18,8 +18,7 @@
                   <input type="date" class="date" [value]="currentDate" readonly>
                 </div>
                 <div class="txt_field">
-                  <input class="inputtxt" type="text" [(ngModel)]="form.location_short"
-                    [ngModelOptions]="{standalone: true}" required>
+                  <input class="inputtxt" type="text" formControlName="location_short">
                   <span></span>
                   <div class="labelline">Location</div>
                 </div>
@@ -27,8 +26,7 @@
 
 
               <div class="txt_field2">
-                <input class="inputtxt2" type="text" [(ngModel)]="form.location_full"
-                  [ngModelOptions]="{standalone: true}" required>
+                <input class="inputtxt2" type="text" formControlName="location_full">
                 <span></span>
                 <div class="labelline2">Full Location</div>
               </div>
@@ -36,7 +34,7 @@
           </div>
           <div class="button-container">
             <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
-            <button class="update-btn" (click)="createBox()"> Add </button>
+            <button class="update-btn" (click)="createBox()" [disabled]="formDetails.invalid"> Add </button>
           </div>
         </div>
       </div>

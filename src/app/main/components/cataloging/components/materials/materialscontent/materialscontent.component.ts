@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddiconComponent } from './addicon/addicon.component';
-import { CatalogingService } from '@app/services/cataloging.service';
 import { error } from 'console';
 import { MaterialsHistoryComponent } from './materialshistory/materialshistory.component';
+import { DataService } from '@app/services/data.service';
 
 @Component({
   selector: 'app-materialscontent',
@@ -17,14 +17,14 @@ export class MaterialscontentComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialog,
-    private catalogingService: CatalogingService) { }
+    private dataService: DataService) { }
 
   ngOnInit() {
     this.getLocations()
   }
 
   getLocations() {
-    this.catalogingService.getLocations().subscribe(
+    this.dataService.get('/locations').subscribe(
       locations => {
         this.locations = locations
       },

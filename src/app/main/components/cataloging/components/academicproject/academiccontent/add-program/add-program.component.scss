@@ -211,6 +211,16 @@ form .txt_field1 {
   transition: .3s;
 }
 
+.inputtxt.ng-dirty.ng-invalid ~ span::before,
+.inputtxt2.ng-dirty.ng-invalid ~ span::before  {
+  background-color: red;
+  width: 100%;
+}
+
+.update-btn:disabled {
+  background-color: gray;
+}
+
 .inputtxt1:not(:focus)+span::before {
   background: #777777;
 }

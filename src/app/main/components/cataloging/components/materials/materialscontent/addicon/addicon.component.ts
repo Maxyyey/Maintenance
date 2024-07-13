@@ -1,51 +1,34 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import Swal from 'sweetalert2';
-import { CatalogingService } from '@app/services/cataloging.service';
+import { DataService } from '@app/services/data.service';
 
-interface MyOption {
-  value: string;
-  label: string;
-}
 @Component({
   selector: 'app-addicon',
   templateUrl: './addicon.component.html',
   styleUrl: './addicon.component.scss',
-  standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule
-  ],
-
 })
 export class AddiconComponent {
   currentDate: string;
-  form: {
-    location_short: string,
-    location_full: string
-  }
+  formDetails: FormGroup = this.fb.group({
+    location_short: [null, [Validators.required, Validators.maxLength(10)]],
+    location_full: [null, [Validators.required, Validators.maxLength(32)]],
+  })
 
   constructor(
     private ref: MatDialogRef<AddiconComponent>,
-    private catalogingService: CatalogingService) {
+    private dataService: DataService,
+    private fb: FormBuilder) {
     const today = new Date();
     this.currentDate = today.toISOString().split('T')[0];
-
-    this.form = {
-      location_short: '',
-      location_full: '',
-    }
   }
 
   createLocation() {
-    this.catalogingService.createLocations(this.form).subscribe(
+    this.dataService.post('/locations', '', this.formDetails.value).subscribe(
       response => {
         console.log(response)
         this.ref.close(response);

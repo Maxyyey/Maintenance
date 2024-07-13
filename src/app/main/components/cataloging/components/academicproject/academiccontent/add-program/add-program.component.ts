@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
-import { CatalogingService } from '@app/services/cataloging.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '@app/services/data.service';
 
 @Component({
   selector: 'app-add-program',
@@ -22,7 +22,7 @@ export class AddProgramComponent {
 
   constructor(
     private ref: MatDialogRef<AddProgramComponent>,
-    private catalogingService: CatalogingService,
+    private dataService: DataService,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,) {
 
@@ -41,7 +41,7 @@ export class AddProgramComponent {
   }
 
   addProgram() {
-    this.catalogingService.addPrograms(this.formDetails.value).subscribe(
+    this.dataService.post('/add-program', '', this.formDetails.value).subscribe(
       (response: any) => {
         this.ref.close({ data: this.formDetails.value });
         Swal.fire({
