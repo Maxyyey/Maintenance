@@ -50,13 +50,14 @@
                             </div>
                             
                             <p (click)="addPrograms()">add</p>
+                            <div class="button-container">
+                        
+                                <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
+                                <button class="update-btn" (click)="updateBox()" [disabled]="formDetails.invalid">Add</button>
+                            </div>
                         </form>
                     </div>
-                    <div class="button-container">
-                        
-                        <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
-                        <button class="update-btn" (click)="updateBox()" [disabled]="formDetails.invalid">Add</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
