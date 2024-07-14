@@ -15,6 +15,7 @@ import { HistoryComponent } from './components/addlocker/components/history/hist
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddAnnouncementComponent } from './components/announcement/add-announcement/add-announcement.component';
+import { Cataloging1Component } from './components/dashboard/cataloging1/cataloging1.component';
 
 
 
@@ -32,7 +33,8 @@ import { AddAnnouncementComponent } from './components/announcement/add-announce
     ClearhistoryComponent,
     HistoryComponent,
     DashboardComponent,
-    AddAnnouncementComponent
+    AddAnnouncementComponent,
+    Cataloging1Component
   ],
   imports: [
     CommonModule,
