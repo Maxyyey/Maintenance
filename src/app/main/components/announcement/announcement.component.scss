@@ -148,100 +148,109 @@ h3 {
 .card .dot1 {
   position: absolute;
   height: 60px;
-  width: 490px;
+  width: 400px;
   background-color: #415b44;
   display: inline-block;
   z-index: 50;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot2 {
   position: absolute;
   height: 70px;
-  width: 490px;
+  width: 400px;
   background-color: #49664d;
   display: inline-block;
   z-index: 45;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot3 {
   position: absolute;
   height: 80px;
-  width: 490px;
+  width: 400px;
   background-color: #517255;
   display: inline-block;
   z-index: 40;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot4 {
   position: absolute;
   height: 90px;
-  width: 490px;
+  width: 400px;
   background-color: #5a7d5e;
   display: inline-block;
   z-index: 35;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot5 {
   position: absolute;
   height: 100px;
-  width: 490px;
+  width: 400px;
   background-color: #628966;
   display: inline-block;
   z-index: 30;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot6 {
   position: absolute;
   height: 110px;
-  width: 490px;
+  width: 400px;
   background-color: #6a946f;
   display: inline-block;
   z-index: 25;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot7 {
   position: absolute;
   height: 120px;
-  width: 490px;
+  width: 400px;
   background-color: #759d7a;
   display: inline-block;
   z-index: 20;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot8 {
   position: absolute;
   height: 130px;
-  width: 490px;
+  width: 400px;
   background-color: #81a585;
   display: inline-block;
   z-index: 15;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 .card .dot9 {
   position: absolute;
   height: 140px;
-  width: 490px;
+  width: 400px;
   background-color: #8cad90;
   display: inline-block;
   z-index: 10;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-right-radius: 3px;
 }
 
 /* CARD CONTENTS */
@@ -269,7 +278,7 @@ p {
 .textbox {
   margin-bottom: 10px;
   margin-left: 10px;
-
+  height: 90%;
 }
 
 .textbox>p:nth-child(3) {
@@ -351,14 +360,16 @@ p {
 
     .textbox p {
       font-size: 20px;
+    
     }
 
     .textbox>p:nth-child(3) {
 
-      width: 70%;
-      max-height: 275px;
-      overflow: auto;
+      width: 100%;
 
+      overflow-y: auto;
+      max-height: 500px;
+      display: flex;
     }
 
     img {

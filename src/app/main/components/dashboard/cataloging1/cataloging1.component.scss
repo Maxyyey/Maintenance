@@ -205,7 +205,7 @@ canvas .first-graph {
         padding: 10px;
         width: 94%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(1, 1fr);
         gap: 10px;
         align-items: center;
@@ -223,16 +223,16 @@ canvas .first-graph {
 
         p {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 10px;
             color: #080808;
-            margin: 0 10px 10px 10px;
+            margin: 7px 10px 10px 10px;
         }
 
         h1 {
             font-weight: 900;
-            font-size: 25px;
+            font-size: 18px;
             color: #080808;
-            margin: 3px 10px 0 10px;
+            margin: 10px 10px 0 10px;
         }
     }
 }
@@ -246,7 +246,7 @@ canvas .first-graph {
 
 .visual {
     width: 99%;
-    height: 350px;
+    height: 344px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,7 +256,7 @@ canvas .first-graph {
 
 .visual .chart {
     margin: 10px;
-    height: 95%;
+    height: 92%;
     width: 100%;
 
 }

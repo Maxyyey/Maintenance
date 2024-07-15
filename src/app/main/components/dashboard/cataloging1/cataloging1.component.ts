@@ -98,12 +98,14 @@ export class Cataloging1Component {
             '#1A4D2E',
             '#FFC100',
             '#C40C0C',
+            '219C90',
 
           ],
           borderColor: [
             '#1A4D2E',
             '#FFC100',
             '#C40C0C',
+            '219C90',
           ],
           borderWidth: 1
         }]
@@ -115,8 +117,9 @@ export class Cataloging1Component {
           legend: {
             labels: {
               font: {
-                size: 15 // Adjust the font size as needed
+                size: 12 // Adjust the font size as needed
               }
+              
 
             }
           }
