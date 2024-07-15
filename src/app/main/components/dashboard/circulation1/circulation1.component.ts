@@ -160,7 +160,7 @@ export class Circulation1Component implements OnInit {
       data: {
         labels: ['CCS', 'CBA', 'CEAS', 'CAHS', 'CHTM'],
         datasets: [{
-          // label: 'Monthly Sales',
+          label: 'Total Borrowed Books by Department',
           data: [50, 30, 60, 70, 40],
           backgroundColor: '#1A4D2E',
           borderColor: '#1A4D2E',
@@ -171,9 +171,13 @@ export class Circulation1Component implements OnInit {
       options: {
         responsive: true,
         maintainAspectRatio: true,
-        scales: {
-          y: {
-            beginAtZero: true
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 16     // Adjust the legend font size as needed
+              }
+            }
           }
         }
       }
@@ -185,7 +189,7 @@ export class Circulation1Component implements OnInit {
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-          label: 'Total Borrowed',
+          label: 'Most Borrowed Books',
           data: [10, 12, 15, 18, 20, 22, 25],
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',
@@ -196,9 +200,13 @@ export class Circulation1Component implements OnInit {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 16  // Adjust the legend font size as needed
+              }
+            }
           }
         }
       }

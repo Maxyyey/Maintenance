@@ -133,7 +133,7 @@
     // grid-template-columns: repeat(2, 1fr); // Three columns
 
     // grid-template-rows: repeat(5, 1fr); // Two rows
-    max-height: 343px; // Set the max-height as needed
+    max-height: 430px; // Set the max-height as needed
     overflow-y: auto; // Enable vertical scrolling if content exceeds max-height
 }
 
@@ -188,6 +188,7 @@
 
 .container {
     display: inline-flex;
+    width: 100%;
 }
 
 
@@ -208,12 +209,20 @@
 
 // TOTAL BORROWED CARD
 .analytic {
+    width: 98.4%;
     margin: 10px;
     font-weight: 700;
     display: inline-flex;
+    background-color: #F5EFE6;
+    padding: 15px;
+    border: solid 1px #4f6f52;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
     .analytic-title {
-        margin-right: 10pxl;
+        margin-right: 10px;
+        float: left;
     }
 }
 
@@ -240,7 +249,7 @@
 //CHART BORROWED CARD
 .visual .chart {
 
-    margin: 0 10px 20px 10px;
+    margin: 20px 10px 20px 10px;
     height: 320px;
     width: 300px;
 
@@ -292,7 +301,7 @@ canvas .first-graph {
     display: inline-block;
     margin: 10px;
     height: 400px;
-    width: 740px;
+    width: 100%;
     border: solid 1px #4f6f52;
     background-color: #F5EFE6;
     border-radius: 10px;
@@ -356,7 +365,7 @@ canvas .first-graph {
 .visual3 .linechart {
 
     margin: 10px 10px 20px 10px;
-    width: 610px;
+    width: 750px;
 
 
 }
@@ -450,7 +459,7 @@ canvas .second-graph {
 
     margin: 10px 10px 20px 10px;
     width: 95%;
-    height: 330px;
+    height: 420px;
 
 
 }
