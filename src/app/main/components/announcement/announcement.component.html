@@ -1,59 +1,50 @@
 <div class="main-content">
     <div class="sidebar-content">
-        <div class="container-header">
-            <h3>
-                ANNOUNCEMENT
-            </h3>
-            <h1>
-                <button class="container-UploadButton" (click)="onAddNewBtnClick()">Add New</button>
-                <!--<button class="container-historylogsButton" type="button" (click)="onhistorylogsBtnClick()">History Logs</button>-->
-            </h1>
-
-        </div>
+      <div class="container-header">
+        <h3>
+          ANNOUNCEMENT
+        </h3>
+        <h1>
+          <button class="container-UploadButton" (click)="onAddNewBtnClick()">Add New</button>
+        </h1>
+      </div>
     </div>
     <div class="container">
-        <div class="card-container" *ngFor="let announcement of announcements">
-            <div class="card">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-                <div class="dot3"></div>
-                <div class="dot4"></div>
-                <div class="dot5"></div>
-                <div class="dot6"></div>
-                <div class="dot7"></div>
-                <div class="dot8"></div>
-                <div class="dot9"></div>
-                <img [src]="announcement.image_url ? announcement.image_url : '/assets/images/GCLIBRARY.png'">
-                <div class="textbox">
-                    <!-- replace nalang to si h2 tsaka si p kasi static lang -->
-                    <h2>{{announcement.title}}</h2>
-                    <p>{{announcement.created_at | date:'MM/dd/yyyy' }}</p>
-                    <p>{{announcement.text}}</p>
-                </div>
-                <div class="card-buttons">
-                    <button class="edit-btn" type="button" (click)="onEditBtnClick(announcement.id)"> <i
-                            class="bx bx-edit"> </i></button>
-                    <button class="archive-btn" type="button" (click)="onArchiveBtnClick(announcement.id)"> <i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
+      <div class="card-container" *ngFor="let announcement of paginatedAnnouncements()">
+        <div class="card">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+          <div class="dot3"></div>
+          <div class="dot4"></div>
+          <div class="dot5"></div>
+          <div class="dot6"></div>
+          <div class="dot7"></div>
+          <div class="dot8"></div>
+          <div class="dot9"></div>
+          <img [src]="announcement.image_url ? announcement.image_url : '/assets/images/GCLIBRARY.png'">
+          <div class="textbox">
+            <h2>{{announcement.title}}</h2>
+            <p>{{announcement.created_at | date:'MM/dd/yyyy' }}</p>
+            <p>{{announcement.text}}</p>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-btn" type="button" (click)="onEditBtnClick(announcement.id)">
+              <i class="bx bx-edit"></i>
+            </button>
+            <button class="archive-btn" type="button" (click)="onArchiveBtnClick(announcement.id)">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
         </div>
-
-        <!-- <div class="card-container" >
-            <div class="card"> 
-                <img src= "/assets/images/GCLIBRARY.png">
-                <div class="textbox">
-                    <h2>GCLAMP Maintenance</h2>
-                    <p>Mainit</p>
-                    <p>4/26/2024</p>
-                </div>
-                <div class="card-buttons">
-                    <button class="edit-btn" type="button"(click)="onEditBtnClick()"> <i class="fa-solid fa-edit"> </i></button>
-                    <button class="archive-btn" type="button"(click)="onArchiveBtnClick()"> <i class="fa-solid fa-archive"> </i></button>
-                </div>
-            </div>
-        </div> -->
+      </div>
+  
+      <!-- Pagination -->
+      <div class="pagination">
+        <p>Items per page: {{ paginatedAnnouncements().length }}</p>
+        <p>{{ getPaginationSummary() }}</p>
+        <i class="fas fa-chevron-left kaliwa" (click)="currentPage > 1 ? previousPage() : null"></i>
+        <i class="fas fa-chevron-right" (click)="nextPage()" [hidden]="currentPage === totalPages"></i>
+      </div>
     </div>
-</div>
-<!-- <div class="AddNewButton">
-        </div> -->
+  </div>
+  

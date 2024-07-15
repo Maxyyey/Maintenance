@@ -395,6 +395,27 @@ p {
   }
 }
 
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-weight: bolder;
+  color: #415b44;
+  margin-right: 30px;
+  font-size: large;
+}
+.pagination i {
+  cursor: pointer;
+}
+.pagination p {
+  margin: 0 30px;
+}
+.pagination .kaliwa{
+  margin-right: 40px;
+}
+
+
 // width: 200px;
 // display: inline-block;
 // margin-right: 10px;

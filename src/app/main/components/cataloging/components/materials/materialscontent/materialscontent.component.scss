@@ -171,6 +171,22 @@ label {
     margin-bottom: 5px;
 }
 
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-weight: bolder;
+    color: #415b44;
+  }
+  .pagination i {
+    cursor: pointer;
+  }
+  .pagination p {
+    margin: 0 30px;
+  }
+  .pagination .kaliwa{
+    margin-right: 40px;
+  }
 // .pagination {
 //     display: flex;
 //     justify-content: left;
