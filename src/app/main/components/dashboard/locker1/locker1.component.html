@@ -11,7 +11,7 @@
             <i class="fa-solid fa-lock"></i>
           </div>
           <div class="box">
-            <h1>{{ totalLockers }}</h1>
+            <h1> {{ lockers.total }} </h1>
             <h3>Total Locker</h3>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="text">
             <div class="text1">
               <div class="filter1">
-                <select class="inputtxt" id="language" name="language">
+                <select class="inputtxt" id="language" (change)="onFilterChange($event)" name="language">
                   <option value="0"> Daily </option>
                   <option value="1"> Weekly </option>
                   <option value="2"> Monthly </option>
@@ -47,19 +47,19 @@
               <div class="borrower-card">
                 <div class="borrower-info">
                   <p>Unavailable</p>
-                  <h1>2</h1>
+                  <h1> {{ lockers.unavailable }} </h1>
                 </div>
               </div>
               <div class="borrower-card">
                 <div class="borrower-info">
                   <p>Occupied</p>
-                  <h1>2</h1>
+                  <h1> {{ lockers.occupied }} </h1>
                 </div>
               </div>
               <div class="borrower-card">
                 <div class="borrower-info">
                   <p>Available</p>
-                  <h1>2</h1>
+                  <h1> {{ lockers.available }} </h1>
                 </div>
               </div>
             </div>
