@@ -9,9 +9,9 @@
                 <!-- BODY - DETAILS -->
                 <div class="detailsbody">
                     <div class="details">
-                        <div class="txtheader2">
+                        <!-- <div class="txtheader2">
                             <hr>
-                        </div>
+                        </div> -->
                         <form [formGroup]="formDetails">
 
                             <div class="input-row">
@@ -26,30 +26,36 @@
                                     <div class="labelline">College Abbreviation</div>
                                 </div>
                             </div>
-                            <div formArrayName="programs">
+                            <div formArrayName="programs" style="align-items: center; justify-content: center; text-align: center;">
                                 <ng-container *ngFor="let programForm of programs.controls; index as i; first as first">
                                     <div class="input-row" [formGroupName]="i">
-                                        <div class="txt_field">
-                                            <input class="inputtxt" type="text" formControlName="program_short">
+                                        <div class="txt_field" style="width: 470px;">
+                                            <input class="inputtxt" type="text" formControlName="program_short" >
                                             <span></span>
-                                            <div class="labelline">Program Abbreviation</div>
+                                            <div class="labelline" >Program Abbreviation</div>
                                         </div>
                                         <div class="txt_field">
                                             <input class="inputtxt" type="text" formControlName="program_full">
                                             <span></span>
-                                            <div class="labelline">Full Program</div>
+                                            <div class="labelline"> Program Full Name</div>
                                             </div>
                                         <div class="txt_field">
                                             <input class="inputtxt" type="text" formControlName="category">
                                             <span></span>
-                                            <div class="labelline">Project</div>
+                                            <div class="labelline">Project Category</div>
                                         </div>
-                                        <p (click)="deleteProgram(i)" *ngIf="!first"> delete</p>
+                                       
                                     </div>
+                                    <i class="fa-solid fa-minus"(click)="deleteProgram(i)" *ngIf="!first" style="color:#f70b0b; border: 3px solid #f70b0b;
+                            border-radius: 20px; padding: 5px; margin: 10px;"></i>
+                                   
                                 </ng-container>
+                                <i class="fa-solid fa-plus"(click)="addPrograms()" style="color:#4f6f52; border: 3px solid #4f6f52;
+                            border-radius: 20px; padding: 5px;"></i>
                             </div>
                             
-                            <p (click)="addPrograms()">add</p>
+                           
+                            
                             <div class="button-container">
                         
                                 <button (click)="cancelBox()" class="cancel-btn">Cancel</button>
