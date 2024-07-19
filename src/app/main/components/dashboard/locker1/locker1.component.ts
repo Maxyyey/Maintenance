@@ -37,6 +37,7 @@ export class Locker1Component implements OnInit {
 
   ngOnInit() {
     this.getTotalLockers();
+    this.initializeChart()
     // this.getTotalUsers();
     this.getTotalUsersByDepartment()
   }
@@ -61,17 +62,14 @@ export class Locker1Component implements OnInit {
 
   filterUserByDepartment() {
     var data = this.rawUserByDept
-    console.log(this.rawUserByDept)
-    data = this.filterByDate(data)
 
+    data = this.filterByDate(data)
     data = this.countUserByDept(data)
 
-    this.initializeChart(data)
+    this.updateChart(data)
   } 
 
   filterByDate(data: any) {
-    console.log(this.dateFilter)
-    console.log(new Date().toLocaleString())
     var date = new Date();
 
     var today = {
@@ -79,49 +77,34 @@ export class Locker1Component implements OnInit {
       month: date.getMonth(),
       year: date.getFullYear()
     }
-    console.log(today)
 
     //time sucks.....
-    //0 - today, 1 - weekly, 2 - monthly, 3 - semestral, 4 - yearly
+    //0 - today, 1 - weekly, 2 - monthly
     switch(this.dateFilter) {
-        case 0:
-          data = data.filter((data: any) => {
-            var date = new Date(data.time_in)
-            return date.getFullYear() === today.year && 
-                  date.getMonth() === today.month &&
-                  date.getDate() === today.day
-          })
-          break
-        case 1:
-          let oneWeekBefore = new Date().getTime() - 604800000 //one week
-          data = data.filter((data: any) => {
-            var date = new Date(data.time_in)
-            console.log(date.getTime() + " " + oneWeekBefore)
-            return date.getTime() > oneWeekBefore
-          })
-          break
-        case 2:
-          data = data.filter((data: any) => {
-            var date = new Date(data.time_in)
-            return date.getMonth() === today.month &&
-                  date.getFullYear() === today.year
-          } )
-          break
-        case 3:
-          console.log(3)
-          let threeMonthBefore = new Date().getTime() - 8035200000 //three months
-          data = data.filter((data: any) => { 
-            var date = new Date(data.time_in)
-            return date.getTime() > threeMonthBefore
-          })
-          break
-        case 4:
-          data = data.filter((data: any) => new Date(data.time_in).getFullYear() === today.year)
-          break
-          
+      case 0:
+        data = data.filter((data: any) => {
+          var date = new Date(data.time_in)
+          return date.getFullYear() === today.year && 
+                date.getMonth() === today.month &&
+                date.getDate() === today.day
+        })
+        break
+      case 1:
+        let oneWeekBefore = new Date().getTime() - 604800000 //one week
+        data = data.filter((data: any) => {
+          var date = new Date(data.time_in)
+          return date.getTime() > oneWeekBefore
+        })
+        break
+      case 2:
+        data = data.filter((data: any) => {
+          var date = new Date(data.time_in)
+          return date.getMonth() === today.month &&
+                date.getFullYear() === today.year
+        } )
+        break
     }
 
-    console.log("filtered date" + data.length)
     return data
   }
 
@@ -138,6 +121,27 @@ export class Locker1Component implements OnInit {
     });
     
     return count
+  }
+
+  updateChart(data: any) {
+    if(!this.chartInstance) { 
+      return
+    }
+
+    var departments: any = Object.keys(data)
+    var total: any = Object.values(data)
+
+    if(departments.length === 0) {
+      //a placeholder per se`
+      departments = ['CHTM', 'CCS', 'CEAS', 'CBA', 'CAHS']
+      total = [0, 0, 0, 0, 0]
+    } 
+    
+    this.chartInstance.data.labels = departments;
+    this.chartInstance.data.datasets[0].data = total
+    console.log(this.chartInstance)
+    
+    this.chartInstance.update()
   }
   
   getTotalLockers() {
@@ -164,17 +168,7 @@ export class Locker1Component implements OnInit {
     );
   }
 
-  initializeChart(data: any) {
-    var departments: any = []
-    var total: any = []
-
-    data = Object.entries(data)
-
-    data.forEach((data:any) => {
-      departments.push(data[0])
-      total.push(data[1])
-    })
-
+  initializeChart() {
     const ctx = document.getElementById('myLockerChart') as HTMLCanvasElement;
 
     if (this.chartInstance) {
@@ -184,10 +178,10 @@ export class Locker1Component implements OnInit {
     this.chartInstance = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: departments,
+        labels: ['CHTM', 'CCS', 'CEAS', 'CBA', 'CAHS'],
         datasets: [{
           label: 'Total',
-          data: total,
+          data: [0, 0, 0, 0, 0],
           backgroundColor: ['#1A4D2E'],
           borderColor: ['#1A4D2E'],
           borderWidth: 5,

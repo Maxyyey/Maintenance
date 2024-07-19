@@ -49,17 +49,14 @@
             <div class="analytic">
                 <div class="analytic-title">
                   <p>Total Books Borrowed</p>
-                  <h1>{{ totalBooksBorrowed }}</h1>
+                  <h1>{{ totalBorrowedBooks }}</h1>
                 </div>
                 <div class="filter">
-                    <!-- <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required> -->
-                    <select class="inputtxt" id="language" name="language">
+                    <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
                         <!-- <option value="English"> All  </option> -->
                         <option value="0"> Daily </option>
                         <option value="1"> Weekly </option>
                         <option value="2"> Monthly </option>
-                        <option value="3"> Semester </option>
-                        <option value="4"> Yearly </option>
                     </select>
 
                 </div>
@@ -98,92 +95,12 @@
                     </div> -->
                     </div>
                     <div class="visual1">
-                        <div class="borrower-card ">
-
+                        <div class="borrower-card" *ngFor="let borrower of topBorrowers">
                             <div class="borrower-info">
-                                <h1>PANGALAN</h1>
-                                <p>DEPARTMENT</p>
-                             
+                                <h1>{{ borrower.name }} - {{ borrower.total }}</h1>
+                                <p>{{ borrower.department }}</p>
                             </div>
-
                         </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-                        <div class="borrower-card">
-                            <div class="borrower-info">
-                                <h1>202110238</h1>
-                                <p>HINIRAM NA LIBRO</p>
-                                <P>DATE OR TIME</P>
-                            </div>
-
-                        </div>
-
-
                     </div>
 
                 </div>

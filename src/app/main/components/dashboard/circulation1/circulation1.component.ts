@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '@app/services/data.service';
 import { Chart, registerables } from 'chart.js';
-import { combineLatest } from 'rxjs';
+import { combineLatest, first } from 'rxjs';
 
 Chart.register(...registerables);
 
@@ -11,17 +11,26 @@ Chart.register(...registerables);
   styleUrls: ['./circulation1.component.scss']
 })
 export class Circulation1Component implements OnInit {
-  availableBooks: any;
+  availableBooks: number = 0;
   unreturnedBooks: number = 0;
-  missingBooks: any;
-  totalBooksBorrowed: any; // Initialize with default value
+  missingBooks: number = 0;
+  totalBorrowedBooks: number = 0; 
+  topBorrowers: any
+
+  borrowHistory: any
+
+  pieChartInstance: any;
+  departmentChartInstance: any;
+  topBorrowedBooksChart: any;
+
+  dateFilter: number = 0
 
   ngOnInit() {
     this.initializeChart();
+    this.getBorrowHistory()
     this.getAvailableBooks();
     this.getUnreturnedBooks();
     this.getMissingBooks();
-    this.getTotalBooksBorrowed(); // Fetch total books borrowed
   }
 
   constructor(private dataService: DataService) {}
@@ -30,6 +39,7 @@ export class Circulation1Component implements OnInit {
     this.dataService.get('/analytics/available-books').subscribe(
       data => {
         this.availableBooks = data.available_books;
+        this.updateChart()
       },
       error => {
         console.error(error);
@@ -41,6 +51,7 @@ export class Circulation1Component implements OnInit {
     this.dataService.get('/analytics/unreturned-books').subscribe(
       data => {
         this.unreturnedBooks = data.unreturned_books;
+        this.updateChart()
       },
       error => {
         console.error(error);
@@ -52,6 +63,7 @@ export class Circulation1Component implements OnInit {
     this.dataService.get('/analytics/missing-books').subscribe(
       data => {
         this.missingBooks = data.missing_books;
+        this.updateChart()
       },
       error => {
         console.error(error);
@@ -59,15 +71,22 @@ export class Circulation1Component implements OnInit {
     );
   }
 
-  getTotalBooksBorrowed() {
-    this.dataService.get('/analytics/total-borrowed').subscribe(
-      data => {
-        this.totalBooksBorrowed = data.total_borrowed;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+  updateChart() {
+    this.pieChartInstance.data.datasets[0].data = [
+      this.availableBooks,
+      this.unreturnedBooks,
+      this.missingBooks
+    ];
+    console.log(this.pieChartInstance)
+
+    this.pieChartInstance.update();
+  }
+
+  
+  onFilterChange(event: Event) {
+    const element = event.target as HTMLSelectElement;
+    this.dateFilter = parseInt(element.value);
+    this.processData()
   }
 
   initializeChart() {
@@ -77,7 +96,7 @@ export class Circulation1Component implements OnInit {
     const ctx = document.getElementById('myPieChart') as HTMLCanvasElement;
 
     // Initialize Chart.js instance with doughnut type
-    const myPieChart = new Chart(ctx, {
+    this.pieChartInstance = new Chart(ctx, {
       type: 'doughnut',
       data: {
         // Labels for the chart segments
@@ -126,42 +145,18 @@ export class Circulation1Component implements OnInit {
       }
     });
 
-    // Fetch data and update the chart once data is available
-    combineLatest([
-      this.dataService.get('/analytics/available-books'),
-      this.dataService.get('/analytics/unreturned-books'),
-      this.dataService.get('/analytics/missing-books')
-    ]).subscribe(
-      ([availableBooksData, unreturnedBooksData, missingBooksData]) => {
-        // Update chart data
-        myPieChart.data.datasets[0].data = [
-          availableBooksData.available_books,
-          unreturnedBooksData.unreturned_books,
-          missingBooksData.missing_books
-        ];
-
-        // Update the chart
-        myPieChart.update();
-      },
-      error => {
-        console.error('Error fetching data:', error);
-      }
-    );
-  
-  
-  
     // Optionally, you can store the myPieChart instance if you need to update it dynamically
     // this.myPieChart = myPieChart;
   
 
     const ctx2 = document.getElementById('myLineChart') as HTMLCanvasElement;
-    const myLineChart = new Chart(ctx2, {
+    this.departmentChartInstance = new Chart(ctx2, {
       type: 'line',
       data: {
         labels: ['CCS', 'CBA', 'CEAS', 'CAHS', 'CHTM'],
         datasets: [{
-          label: 'Total Borrowed Books by Department',
-          data: [50, 30, 60, 70, 40],
+          label: 'Department',
+          data: [0, 0, 0, 0, 0],
           backgroundColor: '#1A4D2E',
           borderColor: '#1A4D2E',
           borderWidth: 1,
@@ -171,26 +166,22 @@ export class Circulation1Component implements OnInit {
       options: {
         responsive: true,
         maintainAspectRatio: true,
-        plugins: {
-          legend: {
-            labels: {
-              font: {
-                size: 16     // Adjust the legend font size as needed
-              }
-            }
+        scales: {
+          y: {
+            beginAtZero: true
           }
         }
       }
     });
 
     const ctx3 = document.getElementById('myBarChart') as HTMLCanvasElement;
-    const myBarChart = new Chart(ctx3, {
+    this.topBorrowedBooksChart = new Chart(ctx3, {
       type: 'bar',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['book1', 'book2', 'book3', 'book4', 'book5'],
         datasets: [{
-          label: 'Most Borrowed Books',
-          data: [10, 12, 15, 18, 20, 22, 25],
+          label: 'Total Borrowed',
+          data: [0, 0, 0, 0, 0],
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',
           borderWidth: 1,
@@ -200,16 +191,163 @@ export class Circulation1Component implements OnInit {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              font: {
-                size: 16  // Adjust the legend font size as needed
-              }
-            }
+        scales: {
+          y: {
+            beginAtZero: true
           }
         }
       }
     });
+  }
+  getBorrowHistory() {
+    this.dataService.get('/analytics/borrow-history').subscribe(
+      data => {
+        console.log(data)
+        this.borrowHistory = data
+        this.processData();
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+  
+  processData() {
+    let data = this.borrowHistory
+
+    data = this.filterByDate(data)
+
+    if(data.length === 0) {
+      this.defaultChartValue()
+      return
+    }
+
+    this.getBorrowByDepartment(data)
+    this.getTopBorrowedBooks(data)
+    this.getTopBorrowers(data)
+
+    this.totalBorrowedBooks = data.length
+  }
+
+  
+  defaultChartValue() {
+    this.departmentChartInstance.data.labels = ['CCS', 'CBA', 'CEAS', 'CAHS', 'CHTM']
+    this.departmentChartInstance.data.datasets[0].data = [0, 0, 0, 0, 0]
+
+    this.departmentChartInstance.update()
+
+    this.topBorrowedBooksChart.data.labels = ['book1', 'book2', 'book3', 'book4', 'book5'] //ibahin niyo nalang yung default value para di masakit sa mata
+    this.topBorrowedBooksChart.data.datasets[0].data = [0, 0, 0, 0, 0]
+
+    this.topBorrowedBooksChart.update()
+    this.topBorrowers = []
+  }
+
+  filterByDate(data: any) {
+    var date = new Date();
+
+    var today = {
+      day: date.getDate(),
+      month: date.getMonth(),
+      year: date.getFullYear()
+    }
+
+    //time sucks.....
+    //0 - today, 1 - weekly, 2 - monthly
+    switch(this.dateFilter) {
+      case 0:
+        data = data.filter((data: any) => {
+          var date = new Date(data.borrow_date)
+          return date.getFullYear() === today.year && 
+                date.getMonth() === today.month &&
+                date.getDate() === today.day
+        })
+        break
+      case 1:
+        let oneWeekBefore = new Date().getTime() - 604800000 //one week
+        data = data.filter((data: any) => {
+          var date = new Date(data.borrow_date)
+          return date.getTime() > oneWeekBefore
+        })
+        break
+      case 2:
+        data = data.filter((data: any) => {
+          var date = new Date(data.borrow_date)
+          return date.getMonth() === today.month &&
+                date.getFullYear() === today.year
+        } )
+        break
+    }
+
+    return data
+  }
+
+  getBorrowByDepartment(data: any) {
+    data = data.reduce(
+      (acc: any, borrower: any) => {
+        acc[borrower.department_short] = (acc[borrower.department_short] || 0) + 1;
+        return acc;
+      }, {}
+    );
+
+    var topBorrower: any = {
+      departments: Object.keys(data),
+      total: Object.values(data)
+    }
+
+
+    this.departmentChartInstance.data.labels = topBorrower.departments
+    this.departmentChartInstance.data.datasets[0].data = topBorrower.total
+
+    this.departmentChartInstance.update()
+  }
+
+
+  getTopBorrowers(data: any) {
+    data = data.reduce(
+      (acc: any, book: any) => {
+        acc[book.id] = (acc[book.id] || 0) + 1;
+        return acc;
+      }, {}
+    );
+
+    this.topBorrowers = Object.entries(data)
+                .map(([id, total]) => ({ id, total }))
+                .sort((a: any, b: any)=> (a.total <  b.total ? 1 : -1 ))
+                .slice(0, 10)
+                .map((top) => {
+                  var borrower = this.borrowHistory.find((history: any) => history.id == top.id)
+              
+                  return { 
+                    name: borrower.first_name + " " + borrower.last_name,
+                    department: borrower.department_short,
+                    total: top.total
+                  }
+                })
+  }
+
+  getTopBorrowedBooks(data: any) {
+    data = data.reduce(
+      (acc: any, book: any) => {
+        acc[book.title] = (acc[book.title] || 0) + 1;
+        return acc;
+      }, {}
+    );
+
+    data = Object.entries(data)
+                .map(([title, total]) => ({ title, total }))
+                .sort((a: any, b: any) => b.total - a.total)
+                .slice(0, 7);
+
+    const topSevenBooks: any = {
+      title: data.map((book: any) => book.title),
+      total: data.map((book: any) => book.total)
+    };
+
+    this.topBorrowedBooksChart.data.labels = topSevenBooks.title
+    this.topBorrowedBooksChart.data.datasets[0].data = topSevenBooks.total
+
+    this.topBorrowedBooksChart.update()     
+
   }
 }
