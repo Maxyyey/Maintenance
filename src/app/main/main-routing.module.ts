@@ -10,7 +10,6 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { Circulation1Component } from './components/dashboard/circulation1/circulation1.component';
 import { Cataloging1Component } from './components/dashboard/cataloging1/cataloging1.component';
 import { Locker1Component } from './components/dashboard/locker1/locker1.component';
-import { OPAC1Component } from './components/dashboard/opac1/opac1.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'circulation1', pathMatch: 'full' },
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'circulation1', component: Circulation1Component },
   { path: 'cataloging1', component: Cataloging1Component },
   { path: 'locker1', component: Locker1Component },
-  { path: 'opac1', component: OPAC1Component },
 ];
 
 

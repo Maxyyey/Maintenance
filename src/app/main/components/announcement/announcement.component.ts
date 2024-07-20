@@ -144,7 +144,7 @@ export class AnnouncementComponent implements OnInit {
 
   onArchiveBtnClick(id: number) {
     Swal.fire({
-      title: 'Delete?',
+      title: 'Delete Announcement?',
       text: 'Are you sure you want to delete this announcement?',
       icon: 'warning',
       showCancelButton: true,
