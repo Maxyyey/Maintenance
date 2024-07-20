@@ -65,9 +65,6 @@ export class EditUserComponent {
     this.form.role = this.data.role[0]
   }
 
-  closepopup() {
-    this.ref.close();
-  }
 
   updatePersonnel() {
     const form = {
@@ -129,7 +126,7 @@ export class EditUserComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox(){
+  closepopup(){
     Swal.fire({
       title: "Are you sure you want to cancel editing details?",
       text: "Your changes will not be saved.",

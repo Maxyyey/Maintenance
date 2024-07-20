@@ -40,10 +40,6 @@ export class AddAnnouncementComponent {
   ngOnInit(): void {
   }
 
-  closepopup() {
-    console.log(this.form)
-    this.ref.close();
-  }
 
   createAnnouncements() {
     const formData = new FormData();      //bruhhh like file is not working in ng model
@@ -107,9 +103,9 @@ export class AddAnnouncementComponent {
   }
 
   // CANCEL EDITING POPUP
-  cancelBox() {
+  closepopup() {
     Swal.fire({
-      title: "Are you sure you want to cancel editing details?",
+      title: "Are you sure you want to cancel?",
       text: "Your changes will not be saved.",
       icon: "question",
       showCancelButton: true,
