@@ -1,4 +1,4 @@
-<div class="main-content">
+  <div class="main-content">
   <h2>INVENTORY</h2>
   <div class="sidebar-content">
     <div class="container-header">
@@ -8,15 +8,19 @@
       </h1>
     </div>
 
+    <!-- 0 -> borrowed
+        1 -> available
+        2 ewan ko pa pero meron din reserved  
+    -->
     <div class="container">
       <div class="table-head">
         <div class="filters">
           <div class="txt_field">
             <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
-              <option value="0">Available</option>
-              <option value="1">Unreturned</option>
-              <option value="2">Missing</option>
-              <option value="3">Unlabeled</option>
+              <option value="0">Unreturned</option>
+              <option value="1">Available</option>
+              <option value="3">Missing</option>
+              <!-- <option value="3">Unlabeled</option> -->
               <option value="4">Damaged</option>
             </select>
           </div>
@@ -54,12 +58,12 @@
               </td>
               <td>
                 <div class="dropdown">
-                  <select class="inputtxt" [value]="inventory.inventory_status"
+                  <select class="inputtxt" [value]="inventory.status"
                     (change)="onStatusChange($event, inventory.accession)" required>
-                    <option value="0">Available</option>
-                    <option value="1">Unreturned</option>
-                    <option value="2">Missing</option>
-                    <option value="3">Unlabeled</option>
+                    <option value="1">Available</option>
+                    <option value="0">Unreturned</option>
+                    <option value="3">Missing</option>
+                    <!-- <option value="3">Unlabeled</option> -->
                     <option value="4">Damaged</option>
                   </select>
                 </div>
