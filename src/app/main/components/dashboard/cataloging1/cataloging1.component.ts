@@ -98,14 +98,14 @@ export class Cataloging1Component {
             '#1A4D2E',
             '#FFC100',
             '#C40C0C',
-            '219C90',
+            '#219C90',
 
           ],
           borderColor: [
             '#1A4D2E',
             '#FFC100',
             '#C40C0C',
-            '219C90',
+            '#219C90',
           ],
           borderWidth: 1
         }]

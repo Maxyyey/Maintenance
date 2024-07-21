@@ -155,7 +155,7 @@ export class Circulation1Component implements OnInit {
       data: {
         labels: ['CCS', 'CBA', 'CEAS', 'CAHS', 'CHTM'],
         datasets: [{
-          label: 'Department',
+          label: ' Total Borrowed by Department',
           data: [0, 0, 0, 0, 0],
           backgroundColor: '#1A4D2E',
           borderColor: '#1A4D2E',
@@ -180,7 +180,7 @@ export class Circulation1Component implements OnInit {
       data: {
         labels: ['book1', 'book2', 'book3', 'book4', 'book5'],
         datasets: [{
-          label: 'Total Borrowed',
+          label: 'Most Borrowed Books',
           data: [0, 0, 0, 0, 0],
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',

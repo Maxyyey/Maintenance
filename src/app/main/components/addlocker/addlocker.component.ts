@@ -169,7 +169,7 @@ export class AddLockerComponent implements OnInit {
 
   onArchiveBtnClick(id: number) {
     Swal.fire({
-      title: "Delete Project",
+      title: "Delete Locker",
       text: "Are you sure want to delete this locker?",
       icon: "warning",
       showCancelButton: true,

@@ -34,8 +34,8 @@ export class ArchiveComponent {
   archiveBox() {
     this.dialogRef.close('Closed using function');
     Swal.fire({
-      title: "Delete Project",
-      text: "Are you sure want to delete this project?",
+      title: "Delete Locker",
+      text: "Are you sure want to delete this locker?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -47,7 +47,7 @@ export class ArchiveComponent {
         this.dialogRef.close('Closed using function');
         Swal.fire({
           title: "Deleting complete!",
-          text: "Project has been deleted.",
+          text: "Locker has been deleted.",
           icon: "success",
           confirmButtonText: 'Close',
           confirmButtonColor: "#777777",

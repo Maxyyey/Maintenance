@@ -38,6 +38,7 @@
   /* Fixed width*/
   transform: scale(1);
   transition: all .2s ease-in;
+  cursor: pointer;
 }
 
 .card .dot1 {
@@ -49,6 +50,8 @@
   z-index: 50;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot2 {
@@ -60,6 +63,8 @@
   z-index: 45;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot3 {
@@ -71,6 +76,8 @@
   z-index: 40;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot4 {
@@ -82,6 +89,8 @@
   z-index: 35;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot5 {
@@ -93,6 +102,8 @@
   z-index: 30;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot6 {
@@ -104,6 +115,8 @@
   z-index: 25;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot7 {
@@ -115,6 +128,8 @@
   z-index: 20;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot8 {
@@ -126,6 +141,8 @@
   z-index: 15;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card .dot9 {
@@ -137,6 +154,8 @@
   z-index: 10;
   margin-left: -20px;
   margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 /* CARD CONTENTS */

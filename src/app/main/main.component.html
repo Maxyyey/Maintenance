@@ -38,7 +38,9 @@
                         <span class="gc-library" (click)="toggleDropdown()">
                             <a class="tab-link" routerLink="circulation1"
                                 [ngClass]="{'active-link': isDashboardActive()}">
-                                <span class="tab-link-icon"> <i class="fa-solid fa-house"></i> </span>
+                                <span class="material-symbols-outlined">
+                                    dashboard
+                                    </span>
                                 <span class="tab-link-name"> Dashboard </span>
                             </a>
                         </span>
@@ -50,24 +52,19 @@
                             </button>
                             <div class="dropdown-content" *ngIf="dropdownOpen">
                                 <a class="sub-tab-link" routerLink="circulation1" routerLinkActive="active-link"
-                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 20px; ">
                                     <span class="tab-link-icon"> <i class="fa-solid fa-arrows-spin"></i> </span>
                                     <span class="tab-link-name1"> Circulation </span>
                                 </a>
                                 <a class="sub-tab-link" routerLink="cataloging1" routerLinkActive="active-link"
-                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 20px; ">
                                     <span class="tab-link-icon"> <i class="fa-solid fa-list-ul"></i> </span>
                                     <span class="tab-link-name1"> Cataloging </span>
                                 </a>
                                 <a class="sub-tab-link" routerLink="locker1" routerLinkActive="active-link"
-                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px;">
+                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 20px;">
                                     <span class="material-symbols-outlined"> library_add </span>
                                     <span class="tab-link-name1"> Locker </span>
-                                </a>
-                                <a class="sub-tab-link" routerLink="opac1" routerLinkActive="active-link"
-                                    [routerLinkActiveOptions]="{exact:true}" style="padding-left: 30px; ">
-                                    <span class="tab-link-icon"> <i class="fa-solid fa-user"></i> </span>
-                                    <span class="tab-link-name1"> OPAC </span>
                                 </a>
                             </div>
                         </div>

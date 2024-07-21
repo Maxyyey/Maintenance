@@ -83,7 +83,7 @@ export class InventoryComponent implements OnInit {
 
   onStatusChange(event: Event, id: number) {
     const element = event.target as HTMLSelectElement;
-    let form = { inventory_status: element.value }
+    let form = { status: element.value }
 
     this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
       response => {
