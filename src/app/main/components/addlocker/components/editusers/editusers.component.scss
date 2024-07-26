@@ -96,10 +96,12 @@ h1 {
 }
 
 .button-container {
-  margin-top: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-right: 0;
+  margin-top: -30px;
+  padding-bottom: 40px;
+  align-items: center;
 }
 
 button {
@@ -129,7 +131,7 @@ button {
 
 .update-btn {
 
-  background-color: #179733;
+  background-color: #4f6f52;
   color: white;
   float: right;
   margin-top: 50px;
@@ -139,6 +141,7 @@ button {
 .update-btn:hover {
   background-color: gray;
 }
+
 
 
 // pop up design
