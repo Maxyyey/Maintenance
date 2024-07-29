@@ -58,11 +58,15 @@ export class PersonnelSetupComponent implements OnInit {
   }
 
   search(value: string) {
-    const searchTerm = value.toUpperCase();
+    const searchTerm = value.toLowerCase();
     this.filteredPersonnels = this.personnels.filter((personnel: any) =>
-      personnel.full_name.toUpperCase().includes(searchTerm) ||
-      personnel.access.toUpperCase().includes(searchTerm) ||
-      personnel.email.toUpperCase().includes(searchTerm)
+      {
+        let fullname = personnel.first_name.toLowerCase() + " " + personnel.last_name.toLowerCase()
+        return  fullname.includes(searchTerm) ||
+                personnel.role.some( (role: any) => role.toLowerCase().includes(searchTerm)) ||
+                personnel.username.toLowerCase().includes(searchTerm)
+        
+      }
     );
     this.currentPage = 1; // Reset to first page after search
   }

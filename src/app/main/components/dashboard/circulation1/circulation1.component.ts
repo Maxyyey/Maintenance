@@ -30,7 +30,7 @@ export class Circulation1Component implements OnInit {
     this.getBorrowHistory()
     this.getAvailableBooks();
     this.getUnreturnedBooks();
-    this.getMissingBooks();
+    // this.getMissingBooks();
   }
 
   constructor(private dataService: DataService) {}
@@ -59,17 +59,17 @@ export class Circulation1Component implements OnInit {
     );
   }
 
-  getMissingBooks() {
-    this.dataService.get('/analytics/missing-books').subscribe(
-      data => {
-        this.missingBooks = data.missing_books;
-        this.updateChart()
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
+  // getMissingBooks() {
+  //   this.dataService.get('/analytics/missing-books').subscribe(
+  //     data => {
+  //       this.missingBooks = data.missing_books;
+  //       this.updateChart()
+  //     },
+  //     error => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   updateChart() {
     this.pieChartInstance.data.datasets[0].data = [
