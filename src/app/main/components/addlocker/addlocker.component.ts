@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 export class AddLockerComponent implements OnInit {
 
   lockers: any[] = [];
+  filteredLocker: any = []
   isModalOpen: boolean = false
   currentPage = 1;
   itemsPerPage = 10;
@@ -29,13 +30,25 @@ export class AddLockerComponent implements OnInit {
     this.getLockers();
   }
   get totalPages(): number {
-    return Math.ceil(this.lockers.length / this.itemsPerPage);
+    return Math.ceil(this.filteredLocker.length / this.itemsPerPage);
   }
 
   paginatedLockers(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.lockers.slice(startIndex, endIndex);
+    return this.filteredLocker.slice(startIndex, endIndex);
+  }
+
+  search(value: string) {
+    const searchTerm = value.toLowerCase();
+    this.filteredLocker = this.lockers.filter((locker: any) =>
+      {
+        return  parseInt(locker.locker_number).toString().includes(searchTerm) ||
+                locker.status.toLowerCase().includes(searchTerm) 
+        
+      }
+    );
+    this.currentPage = 1; // Reset to first page after search
   }
 
   previousPage(): void {
@@ -54,6 +67,7 @@ export class AddLockerComponent implements OnInit {
     this.lockerService.getLockers().subscribe(
       (lockers) => {
         this.lockers = lockers;
+        this.filteredLocker = lockers
         console.log(this.lockers)
       });
   }
