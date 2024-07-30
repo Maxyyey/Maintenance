@@ -25,16 +25,14 @@
             </select>
           </div>
 
-          <div class="search-container">
-            <form>
-              <input class="search-bar" type="text" placeholder="Enter Barcode" [(ngModel)]="search"
-                (keyup)="onSearch()">
-              <button type="submit" disabled><i class="fa-sharp fa-solid fa-barcode"></i></button>
-            </form>
-          </div>
+        </div>
+        <div class="search-container">
+          <form>
+            <input type="text" #inputstring placeholder="Search..." name="search" id="search" (keyup)="search(inputstring.value)">
+            <button type="submit" disabled><i class="fa fa-search"></i></button>
+          </form>
         </div>
       </div>
-
       <div class="table-content">
         <table>
           <thead>
