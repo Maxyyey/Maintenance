@@ -450,3 +450,12 @@ ul ul {
         display: block;
     }
 }
+
+*::-webkit-scrollbar {
+    width: .4rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(49, 164, 99, .3);
+    border-radius: 10px;
+}
