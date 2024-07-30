@@ -16,7 +16,7 @@
         </div>
         <div class="search-container">
           <form>
-            <input type="text" #inputstring placeholder="Search..." name="search" id="search">
+            <input type="text" #inputstring placeholder="Search..." name="search" id="search" (keyup)="search(inputstring.value)">
             <button type="submit" disabled><i class="fa fa-search"></i></button>
           </form>
         </div>

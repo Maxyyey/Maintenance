@@ -4,40 +4,64 @@ import { ScanbarcodeComponent } from './scanbarcode/scanbarcode.component';
 import { EnterbarcodeComponent } from './enterbarcode/enterbarcode.component';
 import { InventoryService } from '@app/services/inventory.service';
 import Swal from 'sweetalert2';
-import { InventoryHistoryComponent } from './inventoryhistory/inventoryhistory.component';
+
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss'],
 })
 export class InventoryComponent implements OnInit {
-  [x: string]: any;
-  inventories: any = [];
-  filter: number = 0
+  inventories: any[] = [];
+  filter: number = 0;
   currentPage = 1;
   itemsPerPage = 10;
-  search: string = ''
-  default: boolean = true; //dont mind this//ok
-  isModalOpen: boolean = false
+  filteredInventories: any[] = [];
 
   constructor(
     private dialogRef: MatDialog,
     private inventoryService: InventoryService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getInventories();
-    // this.inventories = await this.inventoryService.getInventories();
   }
 
   get totalPages(): number {
-    return Math.ceil(this.inventories.length / this.itemsPerPage);
+    return Math.ceil(this.filteredInventories.length / this.itemsPerPage);
   }
 
   paginatedInventories(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.inventories.slice(startIndex, endIndex);
+    return this.filteredInventories.slice(startIndex, endIndex);
+  }
+
+  search(value: string) {
+    const searchTerm = value.toLowerCase();
+    console.log('Search term:', searchTerm); // Debugging line
+
+    this.filteredInventories = this.inventories.filter((inventory: any) => {
+      const accession = inventory.accession?.toString().toLowerCase() || '';
+      const location = inventory.location?.toLowerCase() || '';
+      const title = inventory.title?.toLowerCase() || '';
+      const authors = inventory.authors?.map((author: string) => author.toLowerCase()) || [];
+      
+      // Convert status to string and handle non-string values
+      const status = inventory.status ? inventory.status.toString().toLowerCase() : '';
+
+      const authorMatch = authors.some((author: string) => author.includes(searchTerm));
+
+      return (
+        accession.includes(searchTerm) ||
+        location.includes(searchTerm) ||
+        title.includes(searchTerm) ||
+        authorMatch ||
+        status.includes(searchTerm)
+      );
+    });
+
+    this.currentPage = 1; // Reset to first page after search
+    console.log('Filtered inventories:', this.filteredInventories); // Debugging line
   }
 
   previousPage(): void {
@@ -52,42 +76,21 @@ export class InventoryComponent implements OnInit {
     }
   }
 
-  onSearch() {
-    let search = this.search.trim()
-    this.inventoryService.searchBookInventories(this.filter, search).subscribe(
-      inventories => {
-        this.inventories = inventories
-        this.default = false
-      },
-      error => {
-        console.error(error)
-      }
-    )
-  }
-
-  checkSearchInput() {
-    if (this.search.trim().length > 0 || this.default) {
-      return
-    }
-    this.default = true
-    this.getInventories()
-  }
-
   onFilterChange(event: Event) {
     const element = event.target as HTMLSelectElement;
-    this.filter = parseInt(element.value);
-    this.getInventories()
-    this.currentPage = 1
-    console.log('changing...')
+    this.filter = parseInt(element.value, 10);
+    this.getInventories();
+    this.currentPage = 1;
+    console.log('Filter changed to:', this.filter); // Debugging line
   }
 
   onStatusChange(event: Event, id: number) {
     const element = event.target as HTMLSelectElement;
-    let form = { status: element.value }
+    let form = { status: element.value };
 
     this.inventoryService.updateBookInventoryStatus(form, id).subscribe(
-      response => {
-        console.log(response)
+      (response) => {
+        console.log('Status update response:', response); // Debugging line
         Swal.fire({
           title: 'Update Successful',
           icon: 'success',
@@ -99,15 +102,15 @@ export class InventoryComponent implements OnInit {
           customClass: {
             popup: 'sweetalert-custom-popup',
             title: 'sweetalert-custom-title',
-            icon: 'sweetalert-custom-icon-success'
+            icon: 'sweetalert-custom-icon-success',
           },
           background: '#ffffff',
         });
       },
-      error => {
-        console.log(error)
+      (error) => {
+        console.log('Status update error:', error); // Debugging line
         Swal.fire({
-          title: 'Something went wrong. please try again later',
+          title: 'Something went wrong. Please try again later',
           icon: 'error',
           timer: 3000,
           timerProgressBar: true,
@@ -117,22 +120,23 @@ export class InventoryComponent implements OnInit {
           customClass: {
             popup: 'sweetalert-custom-popup',
             title: 'sweetalert-custom-title',
-            icon: 'sweetalert-custom-icon-success'
+            icon: 'sweetalert-custom-icon-success',
           },
           background: '#ffffff',
         });
       }
-    )
+    );
   }
 
   getInventories() {
     this.inventoryService.getBookInventories(this.filter).subscribe(
-      inventories => {
+      (inventories) => {
         this.inventories = inventories || [];
-        console.log(this.inventories);
+        this.filteredInventories = [...this.inventories]; // Initialize filtered inventories
+        console.log('Fetched inventories:', this.inventories); // Debugging line
       },
-      error => {
-        console.error(error);
+      (error) => {
+        console.error('Error fetching inventories:', error); // Debugging line
       }
     );
   }
@@ -147,45 +151,45 @@ export class InventoryComponent implements OnInit {
 
   clearInventoryStatus() {
     this.inventoryService.clearBookInventoryStatus().subscribe(
-      result => {
+      (result) => {
         Swal.fire({
-          title: "Clearing complete!",
-          text: "History has been cleared.",
-          icon: "success",
+          title: 'Clearing complete!',
+          text: 'History has been cleared.',
+          icon: 'success',
           confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+          confirmButtonColor: '#777777',
         });
-        this.getInventories()
+        this.getInventories();
       },
-      error => {
-        console.error(error)
+      (error) => {
+        console.error('Error clearing inventory status:', error); // Debugging line
         Swal.fire({
-          title: "Error!",
-          text: "Something went wrong. Please try again later",
-          icon: "error",
+          title: 'Error!',
+          text: 'Something went wrong. Please try again later',
+          icon: 'error',
           confirmButtonText: 'Close',
-          confirmButtonColor: "#777777",
+          confirmButtonColor: '#777777',
         });
       }
-    )
+    );
   }
+
   onClrHistoryBtnClick() {
     Swal.fire({
-      title: "Clear History",
-      text: "Are you sure want to clear history?",
-      icon: "warning",
+      title: 'Clear History',
+      text: 'Are you sure want to clear history?',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'Cancel',
-      confirmButtonColor: "#AB0E0E",
-      cancelButtonColor: "#777777",
+      confirmButtonColor: '#AB0E0E',
+      cancelButtonColor: '#777777',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.clearInventoryStatus()
+        this.clearInventoryStatus();
       }
     });
   }
-
 
   getPaginationSummary(): string {
     const totalPages = this.totalPages;
@@ -193,4 +197,3 @@ export class InventoryComponent implements OnInit {
     return `${currentPage} of ${totalPages}`;
   }
 }
-
