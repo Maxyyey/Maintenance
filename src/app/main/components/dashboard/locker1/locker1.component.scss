@@ -36,26 +36,17 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-
-
-
 .card .icon-case {
-
     // margin-top: 10px;
     margin-left: 30px;
     margin-right: 50px;
     font-size: 50px;
     font-weight: 700;
 }
-
-
-
 
 .cards .card .box {
     float: right;
@@ -77,21 +68,11 @@
 
 // FIRST CARD
 
-.table-content {
-    border-radius: 5px;
-    border: 1px solid var(--table-border);
-    padding: 10px;
-    background-color: #ffffff;
-    width: 100%;
-    
-
-}
-
 .container1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     margin: 10px;
     height: fit-content;
     width: 25%;
@@ -114,16 +95,12 @@
 .text1 {
     display: inline-block;
     width: fit-content;
-
-
-
 }
 
 .analytic1 {
     margin: 10px 10px 5px 10px;
     font-weight: 700;
     font-size: 20px;
-
 }
 
 .filter1 {
@@ -164,7 +141,6 @@
     width: 100%;
     display: inline-block;
     margin: 5px 0 15px 0;
-
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -215,7 +191,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     margin: 10px;
     height: 100%;
     width: 75%;
@@ -235,14 +211,11 @@
 }
 
 .visual .chart {
-
     margin: 0 15px;
     height: 100%;
     width: 96%;
 
 }
-
-
 
 canvas .first-graph {
     width: 100% !important;

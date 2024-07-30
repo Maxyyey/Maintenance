@@ -18,6 +18,9 @@ export interface lockers {
   styleUrls: ['./locker1.component.scss']
 })
 export class Locker1Component implements OnInit {
+search(arg0: string) {
+throw new Error('Method not implemented.');
+}
   lockers: lockers = {
     available: 0, 
     unavailable: 0, 

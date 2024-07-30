@@ -1,11 +1,22 @@
 .content {
     display: flex;
     transition: all 0.3s ease;
+   
 }
 
 .main-content {
     width: 100%;
     transition: all 0.3s ease;
+    overflow-y: hidden;
+}
+
+*::-webkit-scrollbar {
+    width: .4rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(49, 164, 99, .3);
+    border-radius: 10px;
 }
 
 :root {
@@ -39,7 +50,7 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     color: #f4f4f4;
-    z-index: 999;
+    z-index: 1001;
     transition: all 0.3s ease;
   
 }
@@ -247,6 +258,7 @@ ul ul {
     padding-top: 90px;
     width: calc(100% - 240px);
     transition: all 0.3s ease;
+    overflow: hidden;
 
 }
 

@@ -100,7 +100,7 @@ export class Circulation1Component implements OnInit {
       type: 'doughnut',
       data: {
         // Labels for the chart segments
-        labels: ['Available', 'Unreturned', 'Missing'],
+        labels: ['Available', 'Unreturned'],
 
         datasets: [{
           // Label for the dataset
@@ -113,14 +113,14 @@ export class Circulation1Component implements OnInit {
           backgroundColor: [
             '#1A4D2E',   // Available segment color
             '#FFC100',   // Unreturned segment color
-            '#C40C0C',   // Missing segment color
+             // Missing segment color
           ],
 
           // Border colors for each segment
           borderColor: [
             '#1A4D2E',   // Available segment border color
             '#FFC100',   // Unreturned segment border color
-            '#C40C0C',   // Missing segment border color
+              // Missing segment border color
           ],
 
           // Border width for each segment
@@ -178,14 +178,14 @@ export class Circulation1Component implements OnInit {
     this.topBorrowedBooksChart = new Chart(ctx3, {
       type: 'bar',
       data: {
-        labels: ['book1', 'book2', 'book3', 'book4', 'book5'],
+        // labels: ['book1', 'book2', 'book3', 'book4', 'book5'],
         datasets: [{
           label: 'Most Borrowed Books',
           data: [0, 0, 0, 0, 0],
           borderColor: '#1A4D2E',
           backgroundColor: '#1A4D2E',
-          borderWidth: 1,
-          barThickness: 40
+          borderWidth: 0.1,
+          barThickness: 10
         }]
       },
       options: {
@@ -193,8 +193,9 @@ export class Circulation1Component implements OnInit {
         maintainAspectRatio: false,
         scales: {
           y: {
-            beginAtZero: true
-          }
+            beginAtZero: true,
+          },
+          
         }
       }
     });

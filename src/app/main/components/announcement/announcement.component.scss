@@ -267,7 +267,7 @@ h3 {
   /* space between the image and the text below */
   object-fit: cover;
   position: relative;
-  z-index: 100;
+  z-index: 50;
 }
 
 p {
@@ -286,6 +286,7 @@ p {
   width: 70%;
   max-height: 15px;
   overflow: hidden;
+  
 
 }
 
@@ -370,9 +371,10 @@ p {
       overflow-wrap: break-word;
       overflow: auto;
       max-height:  200px;
-      &::-webkit-scrollbar {
-        width: 2px;}
+      
     }
+    &::-webkit-scrollbar {
+      width: 19px;}
 
     img {
       float: left;

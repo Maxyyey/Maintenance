@@ -62,14 +62,6 @@
 
 // CONTAINER GRAPH
 
-.table-content {
-    border-radius: 5px;
-    border: 1px solid var(--table-border);
-    padding: 10px;
-    background-color: #ffffff;
-    width: 99%;
-
-}
 
 .graph1 {
     display: inline-flex;
@@ -90,9 +82,8 @@
 .text {
     width: 100%;
     margin: 5px;
-
     display: block;
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     border: solid 1px var(--main-green);
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -101,7 +92,8 @@
 
 .text .head {
     color: #383838;
-    margin-left: 12px;
+    margin-top: 18px;
+    margin-left: 18px;
     font-size: 13px;
     font-weight: 600;
 }
@@ -131,7 +123,7 @@ canvas .first-graph {
 
 .analytic1 {
     margin: 20px 10px 10px 5px;
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     border-radius: 6px;
     padding: 20px;
     width: 100%;
@@ -177,7 +169,7 @@ canvas .first-graph {
     margin: 15px 10px 10px 10px;
     height: 100%;
     width: 36.8%;
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     border: solid 1px var(--main-green);
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -266,3 +258,4 @@ canvas .second-graph {
     height: 100% !important;
 
 }
+

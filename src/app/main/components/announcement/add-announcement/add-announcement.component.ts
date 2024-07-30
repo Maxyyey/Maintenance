@@ -115,7 +115,7 @@ export class AddAnnouncementComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ref.close('Closed using function');
+        this.ref.close('');
         const Toast = Swal.mixin({
           toast: true,
           position: "top-end",

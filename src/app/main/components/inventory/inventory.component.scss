@@ -200,8 +200,17 @@ td {
     text-align: center;
     justify-content: center;
     transition: all 0.3s ease-in;
+    
 }
 
+td{
+    overflow-x: auto;
+    max-width: 250px;
+    &::-webkit-scrollbar {
+        height: 10px;}
+    
+}
+    
 th {
     background-color: #4F6F52;
     font-weight: bold;
