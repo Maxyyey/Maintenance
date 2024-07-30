@@ -12,8 +12,11 @@
         1 -> available
         2 ewan ko pa pero meron din reserved  
     -->
+
+
     <div class="container">
-      <div class="table-head">
+      
+      <div class="table-head" >
         <div class="filters">
           <div class="txt_field">
             <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
@@ -33,7 +36,10 @@
           </form>
         </div>
       </div>
-      <div class="table-content">
+      <div class="loading"  *ngIf="isLoading">
+        <app-loading></app-loading>
+     </div>
+      <div class="table-content" *ngIf="!isLoading">
         <table>
           <thead>
             <tr>

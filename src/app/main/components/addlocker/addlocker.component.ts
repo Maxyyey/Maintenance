@@ -20,6 +20,7 @@ export class AddLockerComponent implements OnInit {
   isModalOpen: boolean = false
   currentPage = 1;
   itemsPerPage = 10;
+  isLoading = true;
 
 
   constructor(
@@ -64,11 +65,13 @@ export class AddLockerComponent implements OnInit {
   }
 
   getLockers(): void {
+    this.isLoading=true
     this.lockerService.getLockers().subscribe(
       (lockers) => {
         this.lockers = lockers;
         this.filteredLocker = lockers
         console.log(this.lockers)
+        this.isLoading=false
       });
   }
 

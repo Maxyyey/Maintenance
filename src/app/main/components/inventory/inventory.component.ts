@@ -16,6 +16,7 @@ export class InventoryComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
   filteredInventories: any[] = [];
+  isLoading=true;
 
   constructor(
     private dialogRef: MatDialog,
@@ -129,11 +130,13 @@ export class InventoryComponent implements OnInit {
   }
 
   getInventories() {
+    this.isLoading=true;
     this.inventoryService.getBookInventories(this.filter).subscribe(
       (inventories) => {
         this.inventories = inventories || [];
         this.filteredInventories = [...this.inventories]; // Initialize filtered inventories
         console.log('Fetched inventories:', this.inventories); // Debugging line
+        this.isLoading=false;
       },
       (error) => {
         console.error('Error fetching inventories:', error); // Debugging line

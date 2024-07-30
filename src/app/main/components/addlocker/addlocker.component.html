@@ -21,7 +21,11 @@
           </form>
         </div>
       </div>
-      <div class="table-content">
+
+      <div class="loading"  *ngIf="isLoading">
+        <app-loading></app-loading>
+     </div>
+      <div class="table-content" *ngIf="!isLoading">
         <table>
           <thead>
             <tr>

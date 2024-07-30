@@ -175,30 +175,49 @@ export class Circulation1Component implements OnInit {
     });
 
     const ctx3 = document.getElementById('myBarChart') as HTMLCanvasElement;
-    this.topBorrowedBooksChart = new Chart(ctx3, {
-      type: 'bar',
-      data: {
-        // labels: ['book1', 'book2', 'book3', 'book4', 'book5'],
-        datasets: [{
-          label: 'Most Borrowed Books',
-          data: [0, 0, 0, 0, 0],
-          borderColor: '#1A4D2E',
-          backgroundColor: '#1A4D2E',
-          borderWidth: 0.1,
-          barThickness: 10
-        }]
+this.topBorrowedBooksChart = new Chart(ctx3, {
+  type: 'bar',
+  data: {
+    labels: ['book1', 'book2', 'book3'],  // Define labels here if you want to show them
+    datasets: [{
+      label: 'Most Borrowed Books',
+      data: [0, 0, 0],
+      borderColor: '#1A4D2E',
+      backgroundColor: '#1A4D2E',
+      borderWidth: 0.1,
+      barThickness: 30
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 18  // Adjust this value to your preferred font size
+          }
+        }
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-          
+      x: {
+        ticks: {
+          display: false,  // Hide the x-axis labels
+          font: {
+            size: 14  // Adjust this value to your preferred font size if you decide to show them
+          }
         }
       }
-    });
+    },
+    plugins: {
+      legend: {
+        display: true,  // Hide the legend (data name)
+      }
+    }
+  }
+});
+
+    
   }
   getBorrowHistory() {
     this.dataService.get('/analytics/borrow-history').subscribe(

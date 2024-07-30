@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddAnnouncementComponent } from './components/announcement/add-announcement/add-announcement.component';
 import { Cataloging1Component } from './components/dashboard/cataloging1/cataloging1.component';
 import { Circulation1Component } from './components/dashboard/circulation1/circulation1.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
@@ -32,12 +33,15 @@ import { Circulation1Component } from './components/dashboard/circulation1/circu
     DashboardComponent,
     AddAnnouncementComponent,
     Cataloging1Component,
-    Circulation1Component
+    Circulation1Component,
+
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
     FormsModule,
+    LoadingComponent
+
   ]
 })
 export class MainModule { }
