@@ -12,8 +12,8 @@ import { DataService } from '@app/services/data.service';
 export class MaterialscontentComponent implements OnInit {
   locations: any[] = [];
   isModalOpen: boolean = false;
-  currentPage: number = 1; // Assuming you manage pagination in your DataService
-  itemsPerPage: number = 10; // Example items per page
+  currentPage = 1; // Assuming you manage pagination in your DataService
+  itemsPerPage = 10; // Example items per page
   totalPages: number = 0; // Example total pages
 
   constructor(
@@ -78,18 +78,18 @@ export class MaterialscontentComponent implements OnInit {
   }
 
   getPaginationSummary(): string {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage + 1;
-    const endIndex = Math.min(startIndex + this.itemsPerPage - 1, this.locations.length);
-    return `Showing ${startIndex} to ${endIndex} of ${this.locations.length} items`;
+    const totalPages = this.totalPages;
+    const currentPage = this.currentPage;
+    return `${currentPage} of ${totalPages}`;
   }
 
-  previousPage() {
+  previousPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
   }
 
-  nextPage() {
+  nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
     }
