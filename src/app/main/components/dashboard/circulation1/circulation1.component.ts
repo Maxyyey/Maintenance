@@ -196,7 +196,7 @@ this.topBorrowedBooksChart = new Chart(ctx3, {
         beginAtZero: true,
         ticks: {
           font: {
-            size: 18  // Adjust this value to your preferred font size
+            size: 12  // Adjust this value to your preferred font size
           }
         }
       },

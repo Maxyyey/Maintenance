@@ -15,6 +15,7 @@ export class MaterialscontentComponent implements OnInit {
   currentPage = 1; // Assuming you manage pagination in your DataService
   itemsPerPage = 10; // Example items per page
   totalPages: number = 0; // Example total pages
+  isLoading = true;
 
   constructor(
     private dialogRef: MatDialog,
@@ -26,11 +27,13 @@ export class MaterialscontentComponent implements OnInit {
   }
 
   getLocations() {
+    this.isLoading = true;
     this.dataService.get('/locations').subscribe(
       (locations: any[]) => {
         this.locations = locations;
         // Update pagination info based on actual data length
         this.totalPages = Math.ceil(this.locations.length / this.itemsPerPage);
+        this.isLoading = false;
       },
       error => {
         console.error('Error fetching locations:', error);

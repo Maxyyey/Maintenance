@@ -74,8 +74,8 @@ a {
 }
 
 .tab>label {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     color: #000000;
     display: block;
     font-size: 17px;
@@ -92,8 +92,8 @@ a {
 .tab:hover label {
     color: #ffffff;
     background-color: #4f6f52;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
 }
 
@@ -123,8 +123,8 @@ ul li {
 .tabbed [type="radio"]:nth-of-type(1):checked~.tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked~.tabs .tab:nth-of-type(2) label {
     border-bottom-color: #4f6f52;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     background: #4f6f52;
     color: #ffffff;
 }

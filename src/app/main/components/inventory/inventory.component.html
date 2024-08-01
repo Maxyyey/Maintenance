@@ -20,8 +20,9 @@
         <div class="filters">
           <div class="txt_field">
             <select class="inputtxt" id="language" name="language" (change)="onFilterChange($event)" required>
-              <option value="0">Unreturned</option>
-              <option value="1">Available</option>
+              
+              <option value="0">Available</option>
+              <option value="1">Unreturned</option>
               <option value="3">Missing</option>
               <!-- <option value="3">Unlabeled</option> -->
               <option value="4">Damaged</option>
@@ -64,8 +65,8 @@
                 <div class="dropdown">
                   <select class="inputtxt" [value]="inventory.status"
                     (change)="onStatusChange($event, inventory.accession)" required>
-                    <option value="1">Available</option>
-                    <option value="0">Unreturned</option>
+                    <option value="0">Available</option>
+                    <option value="1">Unreturned</option>
                     <option value="3">Missing</option>
                     <!-- <option value="3">Unlabeled</option> -->
                     <option value="4">Damaged</option>

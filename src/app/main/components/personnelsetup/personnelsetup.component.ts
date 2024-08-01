@@ -16,6 +16,7 @@ export class PersonnelSetupComponent implements OnInit {
   personnels: any = [];
   filteredPersonnels: any = []; // Added for filtering
   isModalOpen: boolean = false;
+  isLoading = true;
 
   constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) {}
 
@@ -24,10 +25,12 @@ export class PersonnelSetupComponent implements OnInit {
   }
 
   getPersonnels() {
+    this.isLoading = true;
     this.personnelService.getPersonnels().subscribe(
       (personnels) => {
         this.personnels = personnels.users;
         this.filteredPersonnels = [...this.personnels]; // Initialize filteredPersonnels
+        this.isLoading = false;
       },
       (error) => {
         console.error(error);

@@ -16,6 +16,7 @@ export class AnnouncementComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 7; // Set to 5 cards per page
   isModalOpen: boolean = false;
+  isLoading = true;
 
   constructor(
     private dialogRef: MatDialog,
@@ -27,10 +28,12 @@ export class AnnouncementComponent implements OnInit {
   }
 
   getAnnouncements() {
+    this.isLoading = true;
     this.announcementService.getAnnouncements().subscribe(
       (announcements) => {
         this.announcements = announcements;
         this.filteredAnnouncements = [...this.announcements]; // Initialize filteredAnnouncements
+        this.isLoading = false;
       },
       (error) => {
         console.error(error);

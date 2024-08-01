@@ -7,6 +7,10 @@
       </h1>
     </div>
     <div class="container">
+
+      <div class="loading"  *ngIf="isLoading">
+        <app-loading></app-loading>
+     </div>
       <div class="table-head">
         <div class="filters">
           <!-- Filters can be added here if needed -->
@@ -17,7 +21,7 @@
         </div>
       </div>
 
-      <div class="table-content">
+      <div class="table-content" *ngIf="!isLoading">
         <table>
           <thead>
             <tr>
