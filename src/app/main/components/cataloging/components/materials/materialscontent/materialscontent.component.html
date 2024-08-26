@@ -1,4 +1,4 @@
-<div class="tab-content">
+<div class="table-content">
     <div class="materialcontainer">
         <!-- button -->
         <div class="row">
@@ -24,6 +24,7 @@
                     <th>Location</th>
                     <th>Full Location</th>
                     <th>Date Added</th>
+                    <th>Actions</th> <!-- New column for actions -->
                 </tr>
             </thead>
             <tbody>
@@ -32,14 +33,26 @@
                     <td>{{ location.location_short }}</td>
                     <td>{{ location.location_full }}</td>
                     <td>{{ location.created_at | date:'MM/dd/yyyy' }}</td>
+                    <td>
+                        <button class="edit-btn" type="button" (click)="onUpdateLocation(location)">
+                          <i class="bx bx-edit" aria-label="Edit"></i>
+                        </button>
+                        <button class="archive-btn" type="button" (click)="onDeleteLocation(location.location_short)">
+                          <i class="fa-regular fa-trash-can" aria-label="Delete"></i>
+                        </button>
+                      </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    
+    <!-- Removed the extra closing </div> tag here -->
+    
     <div class="pagination">
         <p>Items per page: {{ paginatedLocations().length }}</p>
         <p>{{ getPaginationSummary() }}</p>
         <i class="fas fa-chevron-left kaliwa" (click)="currentPage > 1 ? previousPage() : null"></i>
         <i class="fas fa-chevron-right" (click)="nextPage()" [hidden]="currentPage === totalPages"></i>
     </div>
+    
 </div>

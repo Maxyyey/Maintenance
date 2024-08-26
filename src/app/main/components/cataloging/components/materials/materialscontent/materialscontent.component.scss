@@ -188,6 +188,34 @@ label {
   .pagination .kaliwa{
     margin-right: 40px;
   }
+  .edit-btn {
+    padding: 4px;
+    margin-right: 2px;
+    cursor: pointer;
+    border: none;
+    background-color: #4f6f52;
+    color: #fff;
+    border-radius: 3px;
+  }
+  
+  .archive-btn {
+    padding: 4px;
+    margin-right: 2px;
+    cursor: pointer;
+    border: none;
+    background-color: #AB0E0E;
+    color: #fff;
+    border-radius: 3px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #376448;
+  }
+  
+  .archive-btn:hover {
+    background-color: #900C0C;
+  }
+  
 // .pagination {
 //     display: flex;
 //     justify-content: left;

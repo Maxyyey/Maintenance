@@ -22,12 +22,14 @@ import { AuthInterceptor } from './interceptors/auth';
 
 import { DatePipe } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutPopupComponent,
     MainComponent,
+
   ],
   
   imports: [
