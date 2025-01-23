@@ -99,40 +99,24 @@ export class Circulation1Component implements OnInit {
     this.pieChartInstance = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        // Labels for the chart segments
         labels: ['Available', 'Unreturned'],
-
         datasets: [{
-          // Label for the dataset
           label: 'Total',
-
-          // Initial data placeholders (you can update this later)
-          data: [0, 0, 0],
-
-          // Background colors for each segment
+          data: [0, 0, 0],  // Your data goes here
           backgroundColor: [
-            '#1A4D2E',   // Available segment color
-            '#FFC100',   // Unreturned segment color
-             // Missing segment color
+            '#1A4D2E',  // Available segment color
+            '#FFC100'   // Unreturned segment color
           ],
-
-          // Border colors for each segment
           borderColor: [
-            '#1A4D2E',   // Available segment border color
-            '#FFC100',   // Unreturned segment border color
-              // Missing segment border color
+            '#1A4D2E',  // Available segment border color
+            '#FFC100'   // Unreturned segment border color
           ],
-
-          // Border width for each segment
           borderWidth: 1
         }]
       },
       options: {
-        // Chart responsiveness settings
         responsive: true,
         maintainAspectRatio: true,
-
-        // Plugin options, e.g., for legend styling
         plugins: {
           legend: {
             labels: {
@@ -141,9 +125,11 @@ export class Circulation1Component implements OnInit {
               }
             }
           }
-        }
+        },
+        cutout: '80%',  // Adjust this value to make the doughnut thinner or thicker
       }
     });
+    
 
     // Optionally, you can store the myPieChart instance if you need to update it dynamically
     // this.myPieChart = myPieChart;

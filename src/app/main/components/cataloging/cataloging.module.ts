@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { AddProgramComponent } from './components/academicproject/academiccontent/add-program/add-program.component';
 import { AddDepartmentComponent } from './components/academicproject/academiccontent/add-department/add-department.component';
+import { EditiconComponent } from './components/materials/materialscontent/editicon/editicon.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddDepartmentComponent } from './components/academicproject/academiccon
     AcademiccontentComponent,
     AddProgramComponent,
     AddDepartmentComponent,
-    AddiconComponent
+    AddiconComponent,
+    EditiconComponent
 
   ],
   imports: [

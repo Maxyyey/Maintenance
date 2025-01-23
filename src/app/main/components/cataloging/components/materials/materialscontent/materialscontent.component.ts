@@ -5,6 +5,7 @@ import { MaterialsHistoryComponent } from './materialshistory/materialshistory.c
 import { DataService } from '@app/services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
+import { EditiconComponent } from './editicon/editicon.component';
 
 
 @Component({
@@ -90,7 +91,7 @@ export class MaterialscontentComponent implements OnInit {
 
     this.isModalOpen = true;
 
-    const modal = this.dialogRef.open(AddiconComponent, {
+    const modal = this.dialogRef.open(EditiconComponent, {
       data: { location } // Pass the existing location to the modal
     });
 
@@ -115,7 +116,7 @@ export class MaterialscontentComponent implements OnInit {
       text: "Are you sure you want to delete this location?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes',
       cancelButtonText: 'Cancel',
       confirmButtonColor: "#AB0E0E",
       cancelButtonColor: "#777777",

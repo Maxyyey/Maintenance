@@ -85,47 +85,46 @@ export class Cataloging1Component {
   }
 
   initializeMaterialsChart() {
-    const ctx2 = document.getElementById('myCataDoughnutChart') as HTMLCanvasElement;
-    const myCataDoughnutChart = new Chart(ctx2, {
-      type: 'doughnut',
-      data: {
-        labels: ['Books', 'Article', 'Periodical', 'Audiovisual'],
-
-        datasets: [{
-          label: 'Total',
-          data: [this.materials.books, this.materials.articles, this.materials.periodicals, this.materials.audiovisual],
-          backgroundColor: [
-            '#1A4D2E',
-            '#FFC100',
-            '#C40C0C',
-            '#219C90',
-
-          ],
-          borderColor: [
-            '#1A4D2E',
-            '#FFC100',
-            '#C40C0C',
-            '#219C90',
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              font: {
-                size: 12 // Adjust the font size as needed
-              }
-              
-
+  const ctx2 = document.getElementById('myCataDoughnutChart') as HTMLCanvasElement;
+  const myCataDoughnutChart = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      labels: ['Books', 'Article', 'Periodical', 'Audiovisual'],
+      datasets: [{
+        label: 'Total',
+        data: [this.materials.books, this.materials.articles, this.materials.periodicals, this.materials.audiovisual],
+        backgroundColor: [
+          '#1A4D2E',
+          '#FFC100',
+          '#C40C0C',
+          '#219C90',
+        ],
+        borderColor: [
+          '#1A4D2E',
+          '#FFC100',
+          '#C40C0C',
+          '#219C90',
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 12 // Adjust the font size as needed
             }
           }
         }
       },
-    });
+      cutout: '80%',  // Set the doughnut thickness by controlling the cutout percentage
+    }
+  });
+
+
 
   }
   initializeProjectsChart() {
