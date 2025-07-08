@@ -1,14 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { AnnouncementService } from '@app/services/announcement.service';
-
-
+import { UserService } from '@app/services/user.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-add-announcement',
   templateUrl: './add-announcement.component.html',
@@ -25,7 +20,8 @@ export class AddAnnouncementComponent {
 
   constructor(
     private ref: MatDialogRef<AddAnnouncementComponent>,
-    private announcementService: AnnouncementService
+    private announcementService: AnnouncementService,
+    private us: UserService
   ) {
     const today = new Date();
     this.form = {
@@ -42,11 +38,15 @@ export class AddAnnouncementComponent {
 
 
   createAnnouncements() {
-    const formData = new FormData();      //bruhhh like file is not working in ng model
-    formData.append('title', this.form.title || '');
-    formData.append('category', this.form.category || '');
-    formData.append('text', this.form.text || '');
-    formData.append('date', this.form.date || '');
+    const formData = new FormData(); //bruhhh like file is not working in ng model
+    const data = {
+      title:  this.form.title || '',
+      category: this.form.category || '',
+      text: this.form.text || '',
+      date: this.form.date || ''
+    }
+    
+    formData.append('ml', this.us.encryptPayload(data))
     formData.append('file', this.form.file || '');
 
 

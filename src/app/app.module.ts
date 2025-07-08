@@ -21,6 +21,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { AuthInterceptor } from './interceptors/auth';
 
 import { DatePipe } from '@angular/common';
+import { ResponseInterceptor } from './interceptors/response.interceptor';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { DatePipe } from '@angular/common';
     provideClientHydration(),
     DatePipe,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

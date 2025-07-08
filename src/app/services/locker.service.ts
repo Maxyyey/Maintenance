@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { apiUrl } from '@app/config/config';
+import { appSettings } from 'src/environments/environment';
 
 export interface Locker {
   lockerNumber: number;
@@ -16,35 +16,36 @@ export interface Locker {
   
 })
 export class LockerService {
+  apiUrl = appSettings.apiUrl
   private lockers: Locker[] = [];
 
   constructor(private http: HttpClient) { }
 
   getLockers(): Observable<any> {
-    return this.http.get(`${apiUrl}/maintenance/lockers/`);
+    return this.http.get(`${this.apiUrl}/maintenance/lockers/`);
   }
 
   getStartingLockerNumber() {
-    return this.http.get(`${apiUrl}/maintenance/lockers/latest`);
+    return this.http.get(`${this.apiUrl}/maintenance/lockers/latest`);
   }
 
   addLocker(numberOfLockers: any): Observable<any> {
-    return this.http.post(`${apiUrl}/maintenance/lockers/`, numberOfLockers);
+    return this.http.post(`${this.apiUrl}/maintenance/lockers/`, numberOfLockers);
   }
 
   getLocker(id:number): Observable<any> {
-    return this.http.get(`${apiUrl}/maintenance/lockers/${id}`);
+    return this.http.get(`${this.apiUrl}/maintenance/lockers/${id}`);
   }
 
   updateLocker(data: any, id:number): Observable<any> {
-    return this.http.post(`${apiUrl}/maintenance/lockers/${id}`, data);
+    return this.http.post(`${this.apiUrl}/maintenance/lockers/${id}`, data);
   }
   
   deleteLocker(id: number): Observable<any> {
-    return this.http.post(`${apiUrl}/maintenance/lockers/delete/${id}`, {});
+    return this.http.post(`${this.apiUrl}/maintenance/lockers/delete/${id}`, {});
   }
 
   getHistory() {
-    return this.http.get(`${apiUrl}/maintenance/lockers/logs`);
+    return this.http.get(`${this.apiUrl}/maintenance/lockers/logs`);
   }
 }
