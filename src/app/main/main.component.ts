@@ -44,7 +44,6 @@ export class MainComponent {
   }
 
   redirectToLoginPage() {
-    console.log(sessionStorage.getItem ("token"))
     this.authService.logout().subscribe(
       response => {
         Swal.fire({

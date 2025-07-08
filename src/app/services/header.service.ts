@@ -1,20 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core"
+import { HttpHeaders } from "@angular/common/http"
+import { UserService } from "./user.service"
 
 @Injectable({
-  providedIn: 'root'
+     providedIn: "root",
 })
 export class HeaderService {
+     constructor(private us: UserService) {}
 
-  constructor() { }
+     public get() {
+          const headers = new HttpHeaders({
+               Accept: "application/json",
+               Authorization: "Bearer " + this.us.getToken(),
+          })
 
-  public get() {
-    const headers = new HttpHeaders({
-      'Accept': 'application/json',
-      'Authorization': 'Bearer ' + sessionStorage.getItem('token')
-    });
-
-    return headers;
-  }
-
+          return headers
+     }
 }

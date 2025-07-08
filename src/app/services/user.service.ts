@@ -6,10 +6,29 @@ import { appSettings } from "src/environments/environment"
      providedIn: "root",
 })
 export class UserService {
+     private token: string = btoa("token")
+
      constructor() {}
+
+     private setData(label: string, data: any) {
+          console.log(data)
+          sessionStorage.setItem(label, this.encryptPayload(data))
+     }
+
+     private extractData(label: string) {
+          return this.decryptPayload(sessionStorage.getItem(label))
+     }
 
      private genRanHex(size: number): string {
           return Array.from({ length: size }, () => Math.floor(Math.random() * 16).toString(16)).join("")
+     }
+
+     setToken(data: string) {
+          this.setData(this.token, data)
+     }
+
+     getToken() {
+          return this.extractData(this.token)
      }
 
      encryptPayload(data: object): string {
@@ -29,6 +48,36 @@ export class UserService {
           const payload = prefix + iv.toString(CryptoJS.enc.Hex) + key.toString(CryptoJS.enc.Hex) + encrypted.ciphertext.toString(CryptoJS.enc.Hex)
 
           return btoa(payload)
+     }
+
+     decryptPayload(encrypted: any): any {
+          if (!encrypted) {
+               return ""
+          }
+
+          const hexPayload = atob(encrypted)
+
+          const prefixLength = 12
+          const ivHex = hexPayload.slice(prefixLength, prefixLength + 32)
+          const keyHex = hexPayload.slice(prefixLength + 32, prefixLength + 96)
+          const cipherTextHex = hexPayload.slice(prefixLength + 96)
+
+          const iv = CryptoJS.enc.Hex.parse(ivHex)
+          const key = CryptoJS.enc.Hex.parse(keyHex)
+
+          const cipherParams = CryptoJS.lib.CipherParams.create({
+               ciphertext: CryptoJS.enc.Hex.parse(cipherTextHex),
+          })
+
+          const decrypted = CryptoJS.AES.decrypt(cipherParams, key, {
+               iv,
+               mode: CryptoJS.mode.CBC,
+               padding: CryptoJS.pad.Pkcs7,
+          })
+
+          const decryptedStr = decrypted.toString(CryptoJS.enc.Utf8)
+
+          return JSON.parse(decryptedStr)
      }
 
      recover(data: any) {

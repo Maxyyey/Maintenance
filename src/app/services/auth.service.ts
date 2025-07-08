@@ -19,7 +19,7 @@ export class AuthService {
           return this.http.post<any>(`${this.apiUrl}/login/maintenance`, { ml: this.us.encryptPayload(credentials) }).pipe(
                tap((response) => {
                     if (response.token) {
-                         sessionStorage.setItem("token", response.token)
+                         this.us.setToken(response.token)
                     }
                })
           )
@@ -32,9 +32,5 @@ export class AuthService {
                     this.router.navigate(["/login"])
                })
           )
-     }
-
-     getToken(): string | null {
-          return sessionStorage.getItem("token")
      }
 }

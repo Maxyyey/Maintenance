@@ -1,6 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanActivateChildFn, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
+import { UserService } from '@app/services/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,8 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanActivateChild
 export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private us: UserService
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -27,7 +29,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         return false
     }
 
-    token = sessionStorage.getItem('token') 
+    token = this.us.getToken()
     if(token){
         return true
     }  
