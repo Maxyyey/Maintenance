@@ -39,14 +39,10 @@ export class AddAnnouncementComponent {
 
   createAnnouncements() {
     const formData = new FormData(); //bruhhh like file is not working in ng model
-    const data = {
-      title:  this.form.title || '',
-      category: this.form.category || '',
-      text: this.form.text || '',
-      date: this.form.date || ''
-    }
-    
-    formData.append('ml', this.us.encryptPayload(data))
+    formData.append('title', this.form.title || '');
+    formData.append('category', this.form.category || '');
+    formData.append('text', this.form.text || '');
+    formData.append('date', this.form.date || '');
     formData.append('file', this.form.file || '');
 
 

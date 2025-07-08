@@ -1,24 +1,25 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { appSettings } from 'src/environments/environment';
+import { HttpClient } from "@angular/common/http"
+import { Injectable } from "@angular/core"
+import { appSettings } from "src/environments/environment"
+import { DataService } from "./data.service"
 
 @Injectable({
-  providedIn: 'root'
+     providedIn: "root",
 })
 export class PatronService {
-  apiUrl = appSettings.apiUrl
+     apiUrl = appSettings.apiUrl
 
-  constructor(private http: HttpClient,) { }
+     constructor(private http: HttpClient, private ds: DataService) {}
 
-  getPatrons() {
-    return this.http.get<any>(`${this.apiUrl}/patrons`);
-  }
+     getPatrons() {
+          return this.http.get<any>(`${this.apiUrl}/patrons`)
+     }
 
-  getPatron(id:number) {
-    return this.http.get(`${this.apiUrl}/patrons/${id}`);
-  }
+     getPatron(id: number) {
+          return this.http.get(`${this.apiUrl}/patrons/${id}`)
+     }
 
-  updatePatron(id:number, data: any) {
-    return this.http.post(`${this.apiUrl}/patrons/${id}`, data);
-  }
+     updatePatron(id: number, data: any) {
+          return this.ds.post(`/patrons/${id}`, "", data)
+     }
 }

@@ -64,12 +64,9 @@ export class EditAnnouncePopupComponent {
 
      updateAnnouncement() {
           const formData = new FormData() //bruhhh like file is not working in ng model
-          const data = {
-               title: this.form.title || "",
-               category: this.form.category || "",
-               text: this.form.text || "",
-          }
-          formData.append("ml", this.us.encryptPayload(data))
+          formData.append("title", this.form.title)
+          formData.append("category", this.form.category)
+          formData.append("text", this.form.text)
           formData.append("file", this.form.file || "")
 
           // console.log(formData)
