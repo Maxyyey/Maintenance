@@ -3,6 +3,6 @@ export const environment = {
 }
 
 export const appSettings = {
-     apiUrl: "http://26.68.32.39:8000/api",
+     apiUrl: "https://gordoncollege.edu.ph/ccsprojects/sialibrary/be/public/api",
      note: "base64:3hxx+aHdyAd6ymC4KB6Q0z9SPHR4bOfhOx/wJv932hA=",
 }

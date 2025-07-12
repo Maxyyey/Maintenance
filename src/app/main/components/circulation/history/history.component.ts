@@ -58,59 +58,59 @@ export class HistoryComponent {
     this.ref.close();
   }
 
-  addUser() {
-    const form = {
-      first_name: this.form.first_name,
-      middle_name: this.form.middle_name,
-      last_name: this.form.last_name,
-      ext_name: this.form.ext_name,
-      username: this.form.username,
-      password: this.form.password,
-      role: JSON.stringify([this.form.role])
-    }
+  // addUser() {
+  //   const form = {
+  //     first_name: this.form.first_name,
+  //     middle_name: this.form.middle_name,
+  //     last_name: this.form.last_name,
+  //     ext_name: this.form.ext_name,
+  //     username: this.form.username,
+  //     password: this.form.password,
+  //     role: JSON.stringify([this.form.role])
+  //   }
 
-    console.log(this.form)
-    if (this.form.username.includes('@')) {
-      this.personnelService.createPersonnel(form).subscribe(
-        response => {
-          this.ref.close(response);
-          Swal.fire({
-            title: "Add successful!",
-            text: "The changes have been saved.",
-            icon: "success",
-            confirmButtonText: 'Close',
-            confirmButtonColor: "#777777",
-          });
-        },
-        error => {
-          console.error(error)
-          if (error.status === 422) {
-            Swal.fire({
-              title: "error!",
-              text: "Invalid input.",
-              icon: "error",
-            });
-          }
-          else {
-            Swal.fire({
-              title: "error!",
-              text: "Something went wrong, please try again later.",
-              icon: "error",
-            });
-          }
-        }
-      )
-    } else {
-      Swal.fire({
-        title: "Invalid Email Address!",
-        text: "Personnel not saved.",
-        icon: "error",
-        confirmButtonText: 'Close',
-        confirmButtonColor: "#777777",
-      });
-    }
+  //   console.log(this.form)
+  //   if (this.form.username.includes('@')) {
+  //     this.personnelService.createPersonnel(form).subscribe(
+  //       response => {
+  //         this.ref.close(response);
+  //         Swal.fire({
+  //           title: "Add successful!",
+  //           text: "The changes have been saved.",
+  //           icon: "success",
+  //           confirmButtonText: 'Close',
+  //           confirmButtonColor: "#777777",
+  //         });
+  //       },
+  //       error => {
+  //         console.error(error)
+  //         if (error.status === 422) {
+  //           Swal.fire({
+  //             title: "error!",
+  //             text: "Invalid input.",
+  //             icon: "error",
+  //           });
+  //         }
+  //         else {
+  //           Swal.fire({
+  //             title: "error!",
+  //             text: "Something went wrong, please try again later.",
+  //             icon: "error",
+  //           });
+  //         }
+  //       }
+  //     )
+  //   } else {
+  //     Swal.fire({
+  //       title: "Invalid Email Address!",
+  //       text: "Personnel not saved.",
+  //       icon: "error",
+  //       confirmButtonText: 'Close',
+  //       confirmButtonColor: "#777777",
+  //     });
+  //   }
 
-  }
+  // }
 
   // SWEETALERT UPDATE POPUP
   addBox() {
@@ -125,7 +125,7 @@ export class HistoryComponent {
       cancelButtonColor: "#777777",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.addUser()
+        // this.addUser()
       }
     });
   }

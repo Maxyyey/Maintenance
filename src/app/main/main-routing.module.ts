@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddLockerComponent } from './components/addlocker/addlocker.component';
-import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
+import { PersonnelSetupComponent } from './components/personnelsetup/personnel-setup.component';
 import { CatalogingComponent } from './components/cataloging/cataloging.component';
 import { CirculationComponent } from './components/circulation/circulation.component';
 import { AnnouncementComponent } from './components/announcement/announcement.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'addlocker', component: AddLockerComponent,
 
   },
-  { path: 'personnelsetup', component: PersonnelSetupComponent },
+  { path: 'personnel-setup', component: PersonnelSetupComponent},
   {
     path: 'cataloging', component: CatalogingComponent,
     children: [{

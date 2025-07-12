@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { AddLockerComponent } from './components/addlocker/addlocker.component';
-import { PersonnelSetupComponent } from './components/personnelsetup/personnelsetup.component';
+PersonnelSetupComponent
 import { CatalogingComponent } from './components/cataloging/cataloging.component';
 import { CirculationComponent } from './components/circulation/circulation.component';
 import { AnnouncementComponent } from './components/announcement/announcement.component';
@@ -16,6 +16,8 @@ import { AddAnnouncementComponent } from './components/announcement/add-announce
 import { Cataloging1Component } from './components/dashboard/cataloging1/cataloging1.component';
 import { Circulation1Component } from './components/dashboard/circulation1/circulation1.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { PersonnelSetupComponent } from './components/personnelsetup/personnel-setup.component';
+import { PersonnelSetupModule } from './components/personnelsetup/personnel-setup.module';
 
 
 
@@ -40,7 +42,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     CommonModule,
     MainRoutingModule,
     FormsModule,
-    LoadingComponent
+    LoadingComponent,
+    PersonnelSetupModule
 
   ]
 })

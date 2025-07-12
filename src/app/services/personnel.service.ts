@@ -19,9 +19,9 @@ export class PersonnelService {
           return this.http.get<any>(`${this.apiUrl}/personnels/${id}`)
      }
 
-     createPersonnel(data: any) {
-          return this.ds.post("/personnels", "", data)
-     }
+     // createPersonnel(data: any) {
+     //      return this.ds.post("/personnels", "", data)
+     // }
 
      updatePersonnel(id: number, data: any) {
           return this.ds.post(`/personnels/${id}`, "", data)

@@ -1,83 +1,91 @@
 <main>
-  <div class="container">
-      <div class="content">
-          <div class="details-content">
-              <!-- HEADER - TITLE -->
-              <div class="detailsheader">
-                  <h1> Edit User</h1>
-              </div>
-              
-              <!-- BODY - DETAILS -->
-              <div class="detailsbody">
-                <div class="details">
-                    <form>
-                        <div class="input_field">
-                            <div class="input-row">
-                            
-                          <div class="txt_field">
-                            <input class="inputtxt" type="text" [(ngModel)]="form.first_name" [ngModelOptions]="{standalone: true}" required>
-                            <span></span>
-                            <div class="labelline"> First Name</div>
-                          </div>
+     <div class="container">
+          <div class="content">
+               <div class="details-content">
+                    <!-- HEADER - TITLE -->
+                    <div class="detailsheader">
+                         <h1>Edit User</h1>
+                    </div>
 
-                          <div class="txt_field">
-                            <input class="inputtxt" type="text" [(ngModel)]="form.middle_name" [ngModelOptions]="{standalone: true}" required>
-                            <span></span>
-                            <div class="labelline">Middle Name</div>
-                          </div>
+                    <!-- BODY - DETAILS -->
+                    <div class="detailsbody">
+                         <div class="details">
+                              <form>
+                                   <div class="input_field">
+                                        <div class="input-row">
+                                             <div class="txt_field">
+                                                  <input class="inputtxt" type="text" [(ngModel)]="form.first_name" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline">First Name</div>
+                                             </div>
 
-                          <div class="txt_field">
-                            <input class="inputtxt" type="text" [(ngModel)]="form.last_name" [ngModelOptions]="{standalone: true}"  required>
-                            <span></span>
-                            <div class="labelline">Last Name</div>
-                          </div>
+                                             <div class="txt_field">
+                                                  <input class="inputtxt" type="text" [(ngModel)]="form.middle_name" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline">Middle Name</div>
+                                             </div>
 
-                          <div class="txt_field2">
-                            <input class="inputtxt2" type="text" [(ngModel)]="form.ext_name" [ngModelOptions]="{standalone: true}"  required>
-                            <span></span>
-                            <div class="labelline2">Suffix</div>
-                          </div>
+                                             <div class="txt_field">
+                                                  <input class="inputtxt" type="text" [(ngModel)]="form.last_name" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline">Last Name</div>
+                                             </div>
 
-                          <div class="txt_field3">
-                            <input class="inputtxt3" type="text" [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}"  required>
-                            <span></span>
-                            <div class="labelline3">Username</div>
-                          </div>
+                                             <div class="txt_field2">
+                                                  <input class="inputtxt2" type="text" [(ngModel)]="form.ext_name" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline2">Suffix</div>
+                                             </div>
 
-                          <!-- <div class="txt_field3">
+                                             <div class="txt_field3">
+                                                  <input class="inputtxt3" type="text" [(ngModel)]="form.username" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline3">Username</div>
+                                             </div>
+
+                                             <!-- <div class="txt_field3">
                             <input class="inputtxt3" type="text" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}" required>
                             <span></span>
                             <div class="labelline3">Password</div>
                           </div> -->
-                          
-                           <div class="txt_field3">
-                            <input class="inputtxt3" type="text" [(ngModel)]="form.position" [ngModelOptions]="{standalone: true}" required>
-                            <span></span>
-                            <div class="labelline3">Position</div>
-                          </div>
 
-                           <div class="txt_field1">
-                              <div class="labelline1">Access</div>
-                              <span></span>
-                              
+                                             <div class="txt_field3">
+                                                  <input class="inputtxt3" type="text" [(ngModel)]="form.position" [ngModelOptions]="{ standalone: true }" required />
+                                                  <span></span>
+                                                  <div class="labelline3">Position</div>
+                                             </div>
 
-                                <input type="radio" id="access" name="access"  [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="circulation">
-                                <label for="access">Circulation</label>
-                              
-                                
-                                <input type="radio" id="access1" name="access"  [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="cataloging">
-                                <label for="access1">Cataloging</label>
-                              
-                                
-                                <input type="radio" id="access2" name="access"  [(ngModel)]="form.role" [ngModelOptions]="{standalone: true}"  value="locker">
-                                <label for="access2">Locker</label>
-                                
-                                
-                                <!-- <input type="radio" id="access3" name="access" value="maintenance">
+                                             <div class="txt_field1">
+                                                  <div class="labelline1">Access</div>
+                                                  <span></span>
+
+                                                  <input
+                                                       type="radio"
+                                                       id="access"
+                                                       name="access"
+                                                       [(ngModel)]="form.role"
+                                                       [ngModelOptions]="{ standalone: true }"
+                                                       value="circulation"
+                                                  />
+                                                  <label for="access">Circulation</label>
+
+                                                  <input
+                                                       type="radio"
+                                                       id="access1"
+                                                       name="access"
+                                                       [(ngModel)]="form.role"
+                                                       [ngModelOptions]="{ standalone: true }"
+                                                       value="cataloging"
+                                                  />
+                                                  <label for="access1">Cataloging</label>
+
+                                                  <input type="radio" id="access2" name="access" [(ngModel)]="form.role" [ngModelOptions]="{ standalone: true }" value="locker" />
+                                                  <label for="access2">Locker</label>
+
+                                                  <!-- <input type="radio" id="access3" name="access" value="maintenance">
                                 <label for="access3">Maintenance</label> -->
-
-                            </div>
-                                                          <!--<div class="txt_field">
+                                             </div>
+                                             <!--<div class="txt_field">
                               <select class="inputtxt" id="language" name="language" required>
                                   <option value="English"> Maintenace </option>
                                   <option value="Tagalog"> Locker </option>
@@ -87,18 +95,16 @@
                               <span></span>
                               <label class="labelline" for="language"> Access </label>
                           </div>-->
-                          </div>
-                          </div>
-                        </form>
-                      </div> 
-                      <div class="button-container">
-                         
-                          <button  (click)="closepopup()" class="cancel-btn">Cancel</button>
-                          <button class="update-btn" (click)="updateBox()"> Update </button>
-                          
-                        </div>
+                                        </div>
+                                   </div>
+                              </form>
+                         </div>
+                         <div class="button-container">
+                              <button (click)="closepopup()" class="cancel-btn">Cancel</button>
+                              <button class="update-btn" (click)="updateBox()">Update</button>
+                         </div>
                     </div>
-                  </div>
-                </div>
+               </div>
           </div>
+     </div>
 </main>

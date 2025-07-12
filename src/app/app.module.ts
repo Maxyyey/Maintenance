@@ -22,6 +22,7 @@ import { AuthInterceptor } from './interceptors/auth';
 
 import { DatePipe } from '@angular/common';
 import { ResponseInterceptor } from './interceptors/response.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ResponseInterceptor } from './interceptors/response.interceptor';
     DatePipe,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
