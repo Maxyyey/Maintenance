@@ -1,9 +1,11 @@
 import { Component, OnInit } from "@angular/core"
 import { MatDialog } from "@angular/material/dialog"
 import { AddPersonnelComponent } from "./add-personnel/add-personnel.component"
-import { EditUserComponent } from "./edituser/edituser.component"
+import { EditPersonnelComponent } from "./edit-personnel/edit-personnel.component"
 import { PersonnelService } from "@app/services/personnel.service"
 import Swal from "sweetalert2"
+import { GlobalMethods } from "@app/shared/global.shared"
+import { DataService } from "@app/services/data.service"
 
 @Component({
      selector: "app-personnel-setup",
@@ -18,7 +20,7 @@ export class PersonnelSetupComponent {
      isModalOpen: boolean = false
      isLoading = true
 
-     constructor(private dialogRef: MatDialog, private personnelService: PersonnelService) {}
+     constructor(private dialogRef: MatDialog, private personnelService: PersonnelService, private gb: GlobalMethods, private ds: DataService) {}
 
      ngOnInit() {
           this.getPersonnels()
@@ -79,25 +81,17 @@ export class PersonnelSetupComponent {
           return `${currentPage} of ${totalPages}`
      }
 
-     onAddNewBtnClick() {
-          if (this.isModalOpen) {
-               return
-          }
-
-          this.isModalOpen = true
-
+     addPersonnel() {
           let modal = this.dialogRef.open(AddPersonnelComponent, {})
           modal.afterClosed().subscribe((result) => {
-               this.isModalOpen = false
-
                if (result) {
                     this.personnels.push(result.success)
-                    this.filteredPersonnels = [...this.personnels] // Update filteredPersonnels after adding new personnel
+                    this.filteredPersonnels = [...this.personnels]
                }
           })
      }
 
-     onEditBtnClick(id: number) {
+     editPersonnel(id: number) {
           if (this.isModalOpen) {
                return
           }
@@ -106,13 +100,12 @@ export class PersonnelSetupComponent {
 
           this.personnelService.getPersonnel(id).subscribe(
                (personnel) => {
-                    let modal = this.dialogRef.open(EditUserComponent, {
+                    let modal = this.dialogRef.open(EditPersonnelComponent, {
                          data: personnel,
                     })
                     modal.afterClosed().subscribe((result) => {
                          this.isModalOpen = false
                          if (result) {
-                              // Update personnel in both lists
                               this.personnels = this.personnels.map((p: any) => (p.id === result.data.id ? result.data : p))
                               this.filteredPersonnels = this.filteredPersonnels.map((p: any) => (p.id === result.data.id ? result.data : p))
                          }
@@ -121,56 +114,25 @@ export class PersonnelSetupComponent {
                (error) => {
                     console.error(error)
                     this.isModalOpen = false
-                    Swal.fire({
-                         title: "Error!",
-                         text: "Something went wrong. Please try again later.",
-                         icon: "error",
-                         confirmButtonText: "Close",
-                         confirmButtonColor: "#777777",
-                    })
+                    this.gb.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
                }
           )
      }
 
-     deletePersonnel(id: number) {
-          this.personnelService.deletePersonnel(id).subscribe(
+     async archive(id: number) {
+          const response = await this.gb.confirmationAlert("Delete Personnel?", "Are you sure want to delete this personnel?", "warning", "Yes", "destructive")
+
+          if (!response) return
+
+          this.ds.get(`/personnels/${id}/delete`).subscribe(
                () => {
                     this.personnels = this.personnels.filter((personnel: any) => personnel.id !== id)
                     this.filteredPersonnels = this.filteredPersonnels.filter((personnel: any) => personnel.id !== id)
-                    Swal.fire({
-                         title: "Success!",
-                         text: "Personnel has been deleted.",
-                         icon: "success",
-                         confirmButtonText: "Close",
-                         confirmButtonColor: "#777777",
-                    })
+                    this.gb.showAlert("Success!", "Personnel has been deleted.", "success")
                },
                (error) => {
-                    Swal.fire({
-                         title: "Error!",
-                         text: "Something went wrong. Please try again later.",
-                         icon: "error",
-                         confirmButtonText: "Close",
-                         confirmButtonColor: "#777777",
-                    })
+                    this.gb.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
                }
           )
-     }
-
-     onArchiveBtnClick(id: number) {
-          Swal.fire({
-               title: "Delete personnel?",
-               text: "Are you sure want to delete this personnel?",
-               icon: "warning",
-               showCancelButton: true,
-               confirmButtonText: "Yes",
-               cancelButtonText: "Cancel",
-               confirmButtonColor: "#AB0E0E",
-               cancelButtonColor: "#777777",
-          }).then((result) => {
-               if (result.isConfirmed) {
-                    this.deletePersonnel(id)
-               }
-          })
      }
 }

@@ -11,4 +11,3 @@ import { MaterialModule } from "@app/modules/material/material.module"
 })
 
 export class PersonnelSetupModule {}
-//magulo masyado

@@ -1,1 +1,60 @@
-<p>edit-personnel works!</p>
+<div class="container">
+     <div class="content">
+          <div class="header">
+               <h1>Edit Personnel</h1>
+          </div>
+
+          <div class="body">
+               <form [formGroup]="personnelForm">
+                    <div class="row">
+                         <mat-form-field appearance="fill" style="flex: 2">
+                              <mat-label>First Name</mat-label>
+                              <input matInput placeholder="Ex. Juan" formControlName="first_name" />
+                         </mat-form-field>
+
+                         <mat-form-field appearance="fill" style="flex: 2">
+                              <mat-label>Middle Name</mat-label>
+                              <input matInput formControlName="middle_name" />
+                         </mat-form-field>
+
+                         <mat-form-field appearance="fill" style="flex: 2">
+                              <mat-label>Last Name</mat-label>
+                              <input matInput formControlName="last_name" />
+                         </mat-form-field>
+
+                         <mat-form-field appearance="fill" style="flex: 1">
+                              <mat-label>Suffix</mat-label>
+                              <input matInput formControlName="ext_name" />
+                         </mat-form-field>
+                    </div>
+                    <div class="row">
+                         <mat-form-field appearance="fill">
+                              <mat-label>Username</mat-label>
+                              <input matInput type="text" formControlName="username" />
+                         </mat-form-field>
+
+                         <mat-form-field appearance="fill">
+                              <mat-label>Position</mat-label>
+                              <input matInput formControlName="position" />
+                         </mat-form-field>
+                    </div>
+
+                    <div class="row">
+                         <div class="check-box-group" formGroupName="role">
+                              <label class="label">Access</label>
+
+                              <div style="display: flex; padding: 10px 20px 0; gap: 10px">
+                                   <mat-checkbox formControlName="circulation">Circulation</mat-checkbox>
+                                   <mat-checkbox formControlName="cataloging">Cataloging</mat-checkbox>
+                                   <mat-checkbox formControlName="locker">Locker</mat-checkbox>
+                              </div>
+                         </div>
+                    </div>
+               </form>
+          </div>
+          <div class="button-container">
+               <button (click)="cancel()" class="cancel-btn">Cancel</button>
+               <button class="update-btn" (click)="update()">Add</button>
+          </div>
+     </div>
+</div>

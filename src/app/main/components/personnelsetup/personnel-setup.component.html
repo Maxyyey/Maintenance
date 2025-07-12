@@ -1,63 +1,69 @@
 <div class="main-content">
-  <div class="sidebar-content">
-    <div class="container-header">
-      <h2>PERSONNEL SETUP</h2>
-      <h1>
-        <button class="container-addUserButton" type="button" (click)="onAddNewBtnClick()">Add User</button>
-      </h1>
-    </div>
-    <div class="container">
+     <div class="sidebar-content">
+          <div class="container-header">
+               <h2>PERSONNEL SETUP</h2>
+               <h1>
+                    <button class="container-addUserButton" type="button" (click)="addPersonnel()">Add User</button>
+               </h1>
+          </div>
+          <ng-container *ngIf="!isLoading; else loading">
+               <div class="container">
+                    <div class="table-head">
+                         <div class="filters">
+                              <!-- Filters can be added here if needed -->
+                         </div>
+                         <div class="search-container">
+                              <input type="text" #inputstring placeholder="Search..." name="search" id="search" (keyup)="search(inputstring.value)" />
+                              <button type="button" disabled><i class="fa fa-search"></i></button>
+                         </div>
+                    </div>
 
-      <div class="loading"  *ngIf="isLoading">
-        <app-loading></app-loading>
+                    <div class="table-content">
+                         <table>
+                              <thead>
+                                   <tr>
+                                        <th>Name</th>
+                                        <th>Access</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                   </tr>
+                              </thead>
+                              <tbody id="personnels">
+                                   <tr *ngFor="let personnel of paginatedPersonnels()">
+                                        <td>{{ personnel.first_name }} {{ personnel.last_name }}</td>
+                                        <td style="display: flex; gap: 5px">
+                                             <ng-container *ngFor="let role of personnel.role"
+                                                  ><p>{{ role | titlecase }}</p></ng-container
+                                             >
+                                        </td>
+                                        <td>{{ personnel.username }}</td>
+                                        <td>
+                                             <button class="edit-btn" type="button" (click)="editPersonnel(personnel.id)">
+                                                  <i class="bx bx-edit"></i>
+                                             </button>
+                                             <button class="archive-btn" type="button" (click)="archive(personnel.id)">
+                                                  <i class="fa-regular fa-trash-can"></i>
+                                             </button>
+                                        </td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                         <p>Items per page: {{ paginatedPersonnels().length }}</p>
+                         <p>{{ getPaginationSummary() }}</p>
+                         <i class="fas fa-chevron-left kaliwa" (click)="currentPage > 1 ? previousPage() : null"></i>
+                         <i class="fas fa-chevron-right" (click)="nextPage()" [hidden]="currentPage === totalPages"></i>
+                    </div>
+               </div>
+          </ng-container>
      </div>
-      <div class="table-head">
-        <div class="filters">
-          <!-- Filters can be added here if needed -->
-        </div>
-        <div class="search-container">
-          <input type="text" #inputstring placeholder="Search..." name="search" id="search" (keyup)="search(inputstring.value)">
-          <button type="button" disabled><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-
-      <div class="table-content" *ngIf="!isLoading">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Access</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="personnels">
-            <tr *ngFor="let personnel of paginatedPersonnels()">
-              <td>{{ personnel.first_name }} {{ personnel.last_name }}</td>
-              <td>
-                <ng-container *ngFor="let role of personnel.role">{{ role | titlecase }}</ng-container>
-              </td>
-              <td>{{ personnel.username }}</td>
-              <td>
-                <button class="edit-btn" type="button" (click)="onEditBtnClick(personnel.id)">
-                  <i class="bx bx-edit"></i>
-                </button>
-                <button class="archive-btn" type="button" (click)="onArchiveBtnClick(personnel.id)">
-                  <i class="fa-regular fa-trash-can"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination -->
-      <div class="pagination">
-        <p>Items per page: {{ paginatedPersonnels().length }}</p>
-        <p>{{ getPaginationSummary() }}</p>
-        <i class="fas fa-chevron-left kaliwa" (click)="currentPage > 1 ? previousPage() : null"></i>
-        <i class="fas fa-chevron-right" (click)="nextPage()" [hidden]="currentPage === totalPages"></i>
-      </div>
-    </div>
-  </div>
 </div>
+
+<ng-template #loading>
+     <div class="loading">
+          <app-loading></app-loading>
+     </div>
+</ng-template>

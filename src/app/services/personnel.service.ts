@@ -27,7 +27,7 @@ export class PersonnelService {
           return this.ds.post(`/personnels/${id}`, "", data)
      }
 
-     deletePersonnel(id: number) {
-          return this.http.delete(`${this.apiUrl}/personnels/${id}`)
-     }
+     // deletePersonnel(id: number) {
+     //      return this.http.delete(`${this.apiUrl}/personnels/${id}`)
+     // }
 }
