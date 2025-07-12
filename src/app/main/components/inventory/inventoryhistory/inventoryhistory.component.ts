@@ -1,19 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
 import Swal from 'sweetalert2';
-import { Settings } from 'node:http2';
-
-import { response } from 'express';
-import { error } from 'node:console';
-import { PersonnelService } from '@app/services/personnel.service';
-
 interface MyOption {
   value: string;
   label: string;
@@ -41,8 +32,7 @@ export class InventoryHistoryComponent {
     role: string
   }
   constructor(
-    private ref: MatDialogRef<InventoryHistoryComponent>,
-    private personnelService: PersonnelService) {
+    private ref: MatDialogRef<InventoryHistoryComponent>) {
     this.form = {
       first_name: '',
       middle_name: '',

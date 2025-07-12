@@ -1,9 +1,7 @@
-import { Component, OnInit } from "@angular/core"
+import { Component } from "@angular/core"
 import { MatDialog } from "@angular/material/dialog"
 import { AddPersonnelComponent } from "./add-personnel/add-personnel.component"
 import { EditPersonnelComponent } from "./edit-personnel/edit-personnel.component"
-import { PersonnelService } from "@app/services/personnel.service"
-import Swal from "sweetalert2"
 import { GlobalMethods } from "@app/shared/global.shared"
 import { DataService } from "@app/services/data.service"
 
@@ -20,7 +18,7 @@ export class PersonnelSetupComponent {
      isModalOpen: boolean = false
      isLoading = true
 
-     constructor(private dialogRef: MatDialog, private personnelService: PersonnelService, private gb: GlobalMethods, private ds: DataService) {}
+     constructor(private dialogRef: MatDialog, private gb: GlobalMethods, private ds: DataService) {}
 
      ngOnInit() {
           this.getPersonnels()
@@ -28,7 +26,7 @@ export class PersonnelSetupComponent {
 
      getPersonnels() {
           this.isLoading = true
-          this.personnelService.getPersonnels().subscribe(
+          this.ds.get("/personnels").subscribe(
                (personnels) => {
                     this.personnels = personnels.users
                     this.filteredPersonnels = [...this.personnels] // Initialize filteredPersonnels
@@ -91,14 +89,14 @@ export class PersonnelSetupComponent {
           })
      }
 
-     editPersonnel(id: number) {
+     editPersonnel(id: any) {
           if (this.isModalOpen) {
                return
           }
 
           this.isModalOpen = true
 
-          this.personnelService.getPersonnel(id).subscribe(
+          this.ds.get("/personnels/", id).subscribe(
                (personnel) => {
                     let modal = this.dialogRef.open(EditPersonnelComponent, {
                          data: personnel,

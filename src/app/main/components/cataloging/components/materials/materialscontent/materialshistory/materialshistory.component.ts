@@ -8,11 +8,6 @@ import { CommonModule } from '@angular/common';
 
 
 import Swal from 'sweetalert2';
-import { Settings } from 'node:http2';
-
-import { response } from 'express';
-import { error } from 'node:console';
-import { PersonnelService } from '@app/services/personnel.service';
 
 interface MyOption {
   value: string;
@@ -41,8 +36,7 @@ export class MaterialsHistoryComponent {
     role: string
   }
   constructor(
-    private ref: MatDialogRef<MaterialsHistoryComponent>,
-    private personnelService: PersonnelService) {
+    private ref: MatDialogRef<MaterialsHistoryComponent>) {
     this.form = {
       first_name: '',
       middle_name: '',

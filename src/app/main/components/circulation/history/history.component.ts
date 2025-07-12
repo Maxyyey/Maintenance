@@ -12,7 +12,6 @@ import { Settings } from 'node:http2';
 
 import { response } from 'express';
 import { error } from 'node:console';
-import { PersonnelService } from '@app/services/personnel.service';
 
 interface MyOption {
   value: string;
@@ -41,8 +40,7 @@ export class HistoryComponent {
     role: string
   }
   constructor(
-    private ref: MatDialogRef<HistoryComponent>,
-    private personnelService: PersonnelService) {
+    private ref: MatDialogRef<HistoryComponent>) {
     this.form = {
       first_name: '',
       middle_name: '',
