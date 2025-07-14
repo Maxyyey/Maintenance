@@ -17,7 +17,7 @@ export class EditPersonnelComponent {
           private ref: MatDialogRef<EditPersonnelComponent>,
           private ds: DataService,
           private fb: FormBuilder,
-          private gb: GlobalMethods,
+          private gm: GlobalMethods,
           @Inject(MAT_DIALOG_DATA) public data: any
      ) {
           this.personnelForm = this.fb.group({
@@ -61,11 +61,11 @@ export class EditPersonnelComponent {
           }
 
           if (roleArray.length <= 0) {
-               this.gb.showAlert("Invalid Role!", "Please select at least 1 role for the personnel.", "info")
+               this.gm.showAlert("Invalid Role!", "Please select at least 1 role for the personnel.", "info")
                return
           }
 
-          const response = await this.gb.confirmationAlert("Update?", "the information of the personnel will be updated.", "question", " Yes", "confirmation")
+          const response = await this.gm.confirmationAlert("Update?", "the information of the personnel will be updated.", "question", " Yes", "confirmation")
 
           if (!response) return
 
@@ -83,25 +83,25 @@ export class EditPersonnelComponent {
           this.ds.post("/personnels/", this.data.id, formData).subscribe(
                (response) => {
                     this.ref.close(response)
-                    this.gb.showAlert("Added!", "Personnel has been updated.", "success")
+                    this.gm.showAlert("Added!", "Personnel has been updated.", "success")
                },
                (error) => {
                     console.error(error)
                     if (error.status === 422) {
-                         this.gb.showAlert(error.error.title || "Invalid Input!", error.error.message || "Invalid Input.", "error")
+                         this.gm.showAlert(error.error.title || "Invalid Input!", error.error.message || "Invalid Input.", "error")
                     } else {
-                         this.gb.showAlert(error.error.title || "Oops!", error.error.message || "Something went wrong. Please try again later.", "error")
+                         this.gm.showAlert(error.error.title || "Oops!", error.error.message || "Something went wrong. Please try again later.", "error")
                     }
                }
           )
      }
 
      async cancel() {
-          const response = await this.gb.confirmationAlert("Cancel?", "Editing of personnel will be cancelled.", "question", " Yes", "destructive")
+          const response = await this.gm.confirmationAlert("Cancel?", "Editing of personnel will be cancelled.", "question", " Yes", "destructive")
 
           if (!response) return
 
           this.closeDialog()
-          this.gb.showToast("Changes not saved!", "error")
+          this.gm.showToast("Changes not saved!", "error")
      }
 }

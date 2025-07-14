@@ -18,7 +18,7 @@ export class PersonnelSetupComponent {
      isModalOpen: boolean = false
      isLoading = true
 
-     constructor(private dialogRef: MatDialog, private gb: GlobalMethods, private ds: DataService) {}
+     constructor(private dialogRef: MatDialog, private gm: GlobalMethods, private ds: DataService) {}
 
      ngOnInit() {
           this.getPersonnels()
@@ -112,24 +112,24 @@ export class PersonnelSetupComponent {
                (error) => {
                     console.error(error)
                     this.isModalOpen = false
-                    this.gb.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
+                    this.gm.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
                }
           )
      }
 
      async archive(id: number) {
-          const response = await this.gb.confirmationAlert("Delete Personnel?", "Are you sure want to delete this personnel?", "warning", "Yes", "destructive")
+          const response = await this.gm.confirmationAlert("Delete Personnel?", "Are you sure want to delete this personnel?", "warning", "Yes", "destructive")
 
           if (!response) return
 
-          this.ds.get(`/personnels/${id}/delete`).subscribe(
+          this.ds.post("/personnels/delete", "", { id }).subscribe(
                () => {
                     this.personnels = this.personnels.filter((personnel: any) => personnel.id !== id)
                     this.filteredPersonnels = this.filteredPersonnels.filter((personnel: any) => personnel.id !== id)
-                    this.gb.showAlert("Success!", "Personnel has been deleted.", "success")
+                    this.gm.showAlert("Success!", "Personnel has been deleted.", "success")
                },
                (error) => {
-                    this.gb.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
+                    this.gm.showAlert("Oops!", "Something went wrong. Please try again later.", "error")
                }
           )
      }

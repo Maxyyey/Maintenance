@@ -12,7 +12,7 @@ import { DataService } from "@app/services/data.service"
 export class AddPersonnelComponent {
      personnelForm: FormGroup
 
-     constructor(private ref: MatDialogRef<AddPersonnelComponent>, private ds: DataService, private fb: FormBuilder, private gb: GlobalMethods) {
+     constructor(private ref: MatDialogRef<AddPersonnelComponent>, private ds: DataService, private fb: FormBuilder, private gm: GlobalMethods) {
           this.personnelForm = this.fb.group({
                first_name: ["", [Validators.required, Validators.maxLength(30)]],
                middle_name: ["", [Validators.maxLength(30)]],
@@ -49,11 +49,11 @@ export class AddPersonnelComponent {
           }
 
           if (roleArray.length <= 0) {
-               this.gb.showAlert("Invalid Role!", "Please select at least 1 role for the personnel.", "info")
+               this.gm.showAlert("Invalid Role!", "Please select at least 1 role for the personnel.", "info")
                return
           }
 
-          const response = await this.gb.confirmationAlert("Add User?", "This personnel will be added.", "question", " Yes", "confirmation")
+          const response = await this.gm.confirmationAlert("Add User?", "This personnel will be added.", "question", " Yes", "confirmation")
 
           if (!response) return
 
@@ -72,25 +72,25 @@ export class AddPersonnelComponent {
           this.ds.post("/personnels", "", formData).subscribe(
                (response) => {
                     this.ref.close(response)
-                    this.gb.showAlert("Added!", "Personnel has been added.", "success")
+                    this.gm.showAlert("Added!", "Personnel has been added.", "success")
                },
                (error) => {
                     console.error(error)
                     if (error.status === 422) {
-                         this.gb.showAlert(error.error.title || "Invalid Input!", error.error.message || "Invalid Input.", "error")
+                         this.gm.showAlert(error.error.title || "Invalid Input!", error.error.message || "Invalid Input.", "error")
                     } else {
-                         this.gb.showAlert(error.error.title || "Oops!", error.error.message || "Something went wrong. Please try again later.", "error")
+                         this.gm.showAlert(error.error.title || "Oops!", error.error.message || "Something went wrong. Please try again later.", "error")
                     }
                }
           )
      }
 
      async cancel() {
-          const response = await this.gb.confirmationAlert("Cancel?", "Adding of personnel will be cancelled.", "question", " Yes", "destructive")
+          const response = await this.gm.confirmationAlert("Cancel?", "Adding of personnel will be cancelled.", "question", " Yes", "destructive")
 
           if (!response) return
 
           this.closeDialog()
-          this.gb.showToast("Changes not saved!", "error")
+          this.gm.showToast("Changes not saved!", "error")
      }
 }

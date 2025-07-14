@@ -16,8 +16,9 @@ export class DataService {
           return this.http.get<any>(this.apiUrl + endpoint + params)
      }
 
-     public post(endpoint: string, params: string, payload: any) {
-          return this.http.post(this.apiUrl + endpoint + params, this.processPayload(payload), { headers: this.headers.get() })
+     public post(endpoint: string, params: string = '', payload: any = null) {
+          console.log(payload)
+          return this.http.post<any>(this.apiUrl + endpoint + params, this.processPayload(payload), { headers: this.headers.get() })
      }
 
      // Add PUT method

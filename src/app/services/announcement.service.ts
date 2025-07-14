@@ -27,8 +27,4 @@ export class AnnouncementService {
      updateAnnouncement(id: string, data: any): Observable<any> {
           return this.ds.post(`/announcements/${id}`, "", data)
      }
-
-     archiveAnnouncement(id: number): Observable<any> {
-          return this.http.delete(`${this.apiUrl}/announcements/${id}`)
-     }
 }

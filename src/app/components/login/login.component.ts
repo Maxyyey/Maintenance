@@ -1,68 +1,45 @@
-import { Component } from '@angular/core';
-import { AuthService } from '@app/services/auth.service';
-import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+import { Component } from "@angular/core"
+import { AuthService } from "@app/services/auth.service"
+import { Router } from "@angular/router"
+import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { GlobalMethods } from "@app/shared/global.shared"
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+     selector: "app-login",
+     templateUrl: "./login.component.html",
+     styleUrl: "./login.component.scss",
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
-  isLoggingin: boolean = false
+     isLoggingIn: boolean = false
+     loginForm: FormGroup
+     showPassword = false
 
-  backgroundImageUrl = 'path/to/image.jpg'; // Add the background image URL here
+     constructor(private authService: AuthService, private router: Router, private fb: FormBuilder, private gm: GlobalMethods) {
+          this.loginForm = this.fb.group({
+               username: [null, Validators.required],
+               password: [null, Validators.required],
+          })
+     }
 
-  showpassword = false;
+     login() {
+          if (this.isLoggingIn) return
 
-  constructor(
-    private authService: AuthService,
-    private router: Router) {
+          this.isLoggingIn = true
 
-  }
+          this.authService.login(this.loginForm.value).subscribe(
+               (response) => {
+                    this.router.navigate(["/main"])
+                    this.gm.showToast('Login Successful', 'success', 3000)
+                    this.isLoggingIn = false
+               },
+               (error) => {
+                    this.gm.showAlert('Unauthorized User', error.error.message, 'error')
+                    this.isLoggingIn = false
+               },
+          )
+     }
 
-  login() {
-    const credential = { "username": this.email, "password": this.password }
-
-    this.authService.login(credential).subscribe(
-      response => {
-        this.router.navigate(['/main'])
-
-        Swal.fire({
-          title: 'Login Successful',
-          icon: 'success',
-          timer: 3000,
-          timerProgressBar: true,
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          customClass: {
-            popup: 'sweetalert-custom-popup',
-            title: 'sweetalert-custom-title',
-            icon: 'sweetalert-custom-icon-success'
-          },
-          background: '#ffffff',
-        });
-      },
-      error => {
-        console.error(error)
-        Swal.fire({
-          icon: "error",
-          title: "Unauthorized User",
-          text: error.error.message,
-        })
-        this.isLoggingin = false
-      },
-      () => {
-        this.isLoggingin = false
-      }
-    )
-  }
-
-
-  toggleShow() {
-    this.showpassword = !this.showpassword
-  }
+     toggleShow() {
+          this.showPassword = !this.showPassword
+     }
 }

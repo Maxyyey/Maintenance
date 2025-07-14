@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +20,7 @@ import { MaterialModule } from './modules/material/material.module';
 
 import { AuthInterceptor } from './interceptors/auth';
 
-import { DatePipe } from '@angular/common';
+import { DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ResponseInterceptor } from './interceptors/response.interceptor';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -41,6 +41,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatDialogModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),
@@ -48,6 +49,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
     provideAnimationsAsync(),
+    { provide: LocationStrategy, useClass: HashLocationStrategy, },
   ],
   bootstrap: [AppComponent]
 })

@@ -41,9 +41,9 @@ export class LockerService {
           return this.ds.post(`/maintenance/lockers/${id}`, "", data)
      }
 
-     deleteLocker(id: number): Observable<any> {
-          return this.ds.post(`/maintenance/lockers/delete/${id}`, "", {})
-     }
+     // deleteLocker(id: number): Observable<any> {
+     //      return this.ds.post(`/maintenance/lockers/delete/${id}`, "", {})
+     // }
 
      getHistory() {
           return this.http.get(`${this.apiUrl}/maintenance/lockers/logs`)
