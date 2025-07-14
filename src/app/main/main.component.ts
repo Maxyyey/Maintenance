@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth.service';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @Component({
   selector: 'app-main',
@@ -16,6 +18,7 @@ export class MainComponent {
   constructor(
     private router: Router, 
     private authService: AuthService,
+    private dialog: MatDialog
   ) {
 
   }
@@ -102,6 +105,17 @@ export class MainComponent {
       this.isSidebarCollapsed = screenWidth <= 1320;
       this.isSidebarOverlay = false;
     }
+  }
+
+  openChangePassword() {
+    const dialogRef = this.dialog.open(ChangePasswordComponent, {
+      width: '700px',
+      disableClose: true,
+    });
+
+    dialogRef.componentInstance.closed.subscribe(() => {
+      dialogRef.close();
+    });
   }
 }
 
