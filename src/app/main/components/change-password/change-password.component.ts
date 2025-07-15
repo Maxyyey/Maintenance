@@ -14,6 +14,7 @@ export class ChangePasswordComponent implements OnDestroy {
      constructor(private fb: FormBuilder, private ds: DataService, private ref: MatDialogRef<ChangePasswordComponent>, private gm: GlobalMethods) {}
      @Output() closed = new EventEmitter<void>()
 
+     isSubmitting = false
      form = this.fb.group({
           old_password: ["", [Validators.required]],
           new_password: ["", [Validators.required, Validators.minLength(8)]],
@@ -40,9 +41,14 @@ export class ChangePasswordComponent implements OnDestroy {
                this.gm.showAlert('Invalid Input!', 'Password do not match', 'error')
                return
           }
+          
+          if (this.isSubmitting) return
+          this.isSubmitting = true
+
           if (this.form.valid) {
                this.ds.post("/change-password", "", this.form.value).subscribe({
                     next: (res: any) => {
+                         this.isSubmitting = false
                          Swal.fire({
                               title: "Password Changed Successfully!",
                               text: "Your password has been updated.",
@@ -54,9 +60,10 @@ export class ChangePasswordComponent implements OnDestroy {
                          this.close()
                     },
                     error: (err) => {
+                         this.isSubmitting = false
                          Swal.fire({
                               title: "Error",
-                              text: err.message || "Failed to change password",
+                              text: err.error.message || "Failed to change password",
                               icon: "error",
                               confirmButtonText: "Close",
                               confirmButtonColor: "#777777",
