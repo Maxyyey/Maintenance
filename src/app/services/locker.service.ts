@@ -34,7 +34,7 @@ export class LockerService {
      }
 
      addLocker(numberOfLockers: any): Observable<any> {
-          return this.ds.post("/maintenance/lockers/", "", numberOfLockers)
+          return this.ds.post("/maintenance/lockers", "", numberOfLockers)
      }
 
      updateLocker(data: any, id: number): Observable<any> {
