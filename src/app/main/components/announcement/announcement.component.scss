@@ -116,7 +116,6 @@ h3 {
   display: inline-block;
   margin-right: 10px;
   width: calc(33.33% - 10px);
-  /* Set the width to one-third of the available space */
   vertical-align: top;
   box-sizing: border-box;
   position: relative;
@@ -127,11 +126,8 @@ h3 {
   height: 300px;
   flex: 1;
   background-color: #ffffff;
-  /* White background */
   border-radius: 10px;
-  /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  /*Card shadow */
   border: solid 2px var(--border-color);
   margin: 7px 5px;
   display: block;
@@ -148,7 +144,7 @@ h3 {
 .card .dot1 {
   position: absolute;
   height: 60px;
-  width: 397px;
+  width: 512px;
   background-color: #415b44;
   display: inline-block;
   z-index: 50;
@@ -160,7 +156,7 @@ h3 {
 .card .dot2 {
   position: absolute;
   height: 70px;
-  width: 397px;
+  width: 512px;
   background-color: #49664d;
   display: inline-block;
   z-index: 45;
@@ -172,7 +168,7 @@ h3 {
 .card .dot3 {
   position: absolute;
   height: 80px;
-  width: 397px;
+  width: 512px;
   background-color: #517255;
   display: inline-block;
   z-index: 40;
@@ -184,7 +180,7 @@ h3 {
 .card .dot4 {
   position: absolute;
   height: 90px;
-  width: 397px;
+  width: 512px;
   background-color: #5a7d5e;
   display: inline-block;
   z-index: 35;
@@ -196,7 +192,7 @@ h3 {
 .card .dot5 {
   position: absolute;
   height: 100px;
-  width: 397px;
+  width: 512px;
   background-color: #628966;
   display: inline-block;
   z-index: 30;
@@ -208,7 +204,7 @@ h3 {
 .card .dot6 {
   position: absolute;
   height: 110px;
-  width: 397px;
+  width: 512px;
   background-color: #6a946f;
   display: inline-block;
   z-index: 25;
@@ -220,7 +216,7 @@ h3 {
 .card .dot7 {
   position: absolute;
   height: 120px;
-  width: 397px;
+  width: 512px;
   background-color: #759d7a;
   display: inline-block;
   z-index: 20;
@@ -232,7 +228,7 @@ h3 {
 .card .dot8 {
   position: absolute;
   height: 130px;
-  width: 397px;
+  width: 512px;
   background-color: #81a585;
   display: inline-block;
   z-index: 15;
@@ -244,7 +240,7 @@ h3 {
 .card .dot9 {
   position: absolute;
   height: 140px;
-  width: 397px;
+  width: 512px;
   background-color: #8cad90;
   display: inline-block;
   z-index: 10;
@@ -257,14 +253,10 @@ h3 {
 .card img {
   width: 100%;
   height: 70%;
-  /* or any specific height */
   padding: 3px;
   background-color: #f3f3f3;
-  /* a light grey placeholder color */
   border-radius: 5px;
-  /* if you want rounded corners */
   margin-bottom: 3px;
-  /* space between the image and the text below */
   object-fit: cover;
   position: relative;
   z-index: 50;
@@ -296,7 +288,6 @@ p {
 
 .card h2 {
   font-size: medium;
-  /* Larger title text */
   font-weight: bold;
   margin-bottom: 5px;
   margin-left: 10px;
@@ -313,38 +304,27 @@ p {
   bottom: 0;
   right: 0;
   margin: 10px;
-  /* Adjust margin for spacing */
 }
 
 .card-buttons .edit-btn {
   margin-left: 5px;
-  /* Adjust space between buttons */
   margin-bottom: 5px;
   background-color: #4f6f52;
-  /* Set green background color */
   border: none;
   border-radius: 5px;
   color: white;
-  /* Set text color to white */
   padding: 10px 13px;
-  /* Add padding for better appearance */
   cursor: pointer;
-  /* Change cursor to pointer on hover */
 }
 
 .card-buttons .archive-btn {
   margin-left: 5px;
-  /* Adjust space between buttons */
   background-color: #AB0E0E;
-  /* Set green background color */
   border: none;
   border-radius: 5px;
   color: white;
-  /* Set text color to white */
   padding: 10px 13px;
-  /* Add padding for better appearance */
   cursor: pointer;
-  /* Change cursor to pointer on hover */
 }
 
 .container>div:first-child {
@@ -356,7 +336,7 @@ p {
     margin-right: 10px;
 
     .textbox {
-      padding: 10px 20px 20px 380px;
+      padding: 0 20px 20px 490px;
       height: 500px;
     }
 
@@ -383,7 +363,6 @@ p {
     img {
       float: left;
       width: 30%;
-      /* or any specific width */
       height: 93%;
       background-color: #f3f3f3;
       border-radius: 5px;
@@ -432,21 +411,3 @@ p {
   width: 100%;
  
 }
-
-// width: 200px;
-// display: inline-block;
-// margin-right: 10px;
-// width: calc(33.33% - 10px); /* Set the width to one-third of the available space */
-// vertical-align: top;
-// box-sizing: border-box;
-
-// position: relative;
-// height: 300px;
-// flex: 1;
-// background-color: #ffffff; /* White background */
-// border-radius: 10px; /* Rounded corners */
-// box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /*Card shadow */
-// border: solid 2px var(--border-color);
-// margin: 7px 5px;
-// display: block;
-// transition: all .2s ease-in;

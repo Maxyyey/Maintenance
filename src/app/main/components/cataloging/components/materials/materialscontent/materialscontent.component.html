@@ -6,8 +6,7 @@
                 <div class="col-md-5">
                     <div class="detailsheader">
                         <!-- add button -->
-                        <button class="add-btn" type="button" (click)="onAddNewBtnClick()"> ADD LOCATION </button>
-                        <!--<button class="container-historylogsButton" type="button" (click)="onhistorylogsBtnClick()">History Logs</button>-->
+                        <button class="add-btn" type="button" (click)="onAddNewBtnClick()"> Add Location </button>
                     </div>
                 </div>
             </div>
@@ -24,7 +23,7 @@
                     <th>Location</th>
                     <th>Full Location</th>
                     <th>Date Added</th>
-                    <th>Actions</th> <!-- New column for actions -->
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,9 +44,7 @@
             </tbody>
         </table>
     </div>
-    
-    <!-- Removed the extra closing </div> tag here -->
-    
+        
     <div class="pagination">
         <p>Items per page: {{ paginatedLocations().length }}</p>
         <p>{{ getPaginationSummary() }}</p>
