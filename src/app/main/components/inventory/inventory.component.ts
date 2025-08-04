@@ -17,7 +17,7 @@ export class InventoryComponent implements OnInit {
   itemsPerPage = 12;
   filteredInventories: any[] = [];
   isLoading=true;
-selectedItems: Set<number> = new Set<number>();
+
   constructor(
     private dialogRef: MatDialog,
     private inventoryService: InventoryService
@@ -199,70 +199,4 @@ selectedItems: Set<number> = new Set<number>();
     const currentPage = this.currentPage;
     return `${currentPage} of ${totalPages}`;
   }
-
-
-toggleSelection(id: number) {
-  if (this.selectedItems.has(id)) {
-    this.selectedItems.delete(id);
-  } else {
-    this.selectedItems.add(id);
-  }
 }
-
-isSelected(id: number): boolean {
-  return this.selectedItems.has(id);
-}
-
-toggleSelectAll(event: Event) {
-  const isChecked = (event.target as HTMLInputElement).checked;
-  if (isChecked) {
-    this.paginatedInventories().forEach(item => this.selectedItems.add(item.accession));
-  } else {
-    this.paginatedInventories().forEach(item => this.selectedItems.delete(item.accession));
-  }
-}
-
-isAllSelected(): boolean {
-  return this.paginatedInventories().every(item => this.selectedItems.has(item.accession));
-}
-
-
-deleteSelectedItems() {
-  if (this.selectedItems.size === 0) {
-    Swal.fire({
-      title: 'No selection',
-      text: 'Please select items to delete.',
-      icon: 'info',
-      confirmButtonText: 'OK',
-    });
-    return;
-  }
-
-  Swal.fire({
-    title: 'Delete Items',
-    text: 'Are you sure you want to delete the selected items?',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#AB0E0E',
-    cancelButtonColor: '#777777',
-    confirmButtonText: 'Yes, delete them',
-  }).then((result) => {
-    if (result.isConfirmed) {
-      const idsToDelete = Array.from(this.selectedItems);
-      this.inventoryService.archiveMultipleInventories(idsToDelete).subscribe(
-        () => {
-          Swal.fire('Deleted!', 'Selected items have been deleted.', 'success');
-          this.selectedItems.clear();
-          this.getInventories(); // Refresh list
-        },
-        (error) => {
-          console.error('Error deleting inventories:', error);
-          Swal.fire('Error', 'Failed to delete selected items.', 'error');
-        }
-      );
-    }
-  });
-}
-
-}
-

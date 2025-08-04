@@ -3,9 +3,7 @@
   <div class="sidebar-content">
     <div class="container-header">
       <h1>
-    <div class="actions">
-  <button class="delete-btn" type="button" (click)="deleteSelectedItems()">Delete Item</button>
-</div>
+    
         <button class="container-addUserButton1" type="button" (click)="onClrHistoryBtnClick()"> Clear History</button>
       </h1>
     </div>
@@ -43,48 +41,41 @@
         <app-loading></app-loading>
      </div>
       <div class="table-content" *ngIf="!isLoading">
-<table>
-  <thead>
-    <tr>
-      <th><input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" /></th>
-      <th>Accession</th>
-      <th>Location</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let inventory of paginatedInventories()">
-      <td>
-        <input
-          type="checkbox"
-          [checked]="isSelected(inventory.accession)"
-          (change)="toggleSelection(inventory.accession)"
-        />
-      </td>
-      <td>{{ inventory.accession }}</td>
-      <td>{{ inventory.location }}</td>
-      <td>{{ inventory.title }}</td>
-      <td>
-        <div *ngFor="let author of inventory.authors; let last = last">
-          <p>{{ author }} <span *ngIf="!last">,</span></p>
-        </div>
-      </td>
-      <td>
-        <div class="dropdown">
-          <select class="inputtxt" [value]="inventory.status"
-            (change)="onStatusChange($event, inventory.accession)" required>
-            <option value="0">Available</option>
-            <option value="1">Unreturned</option>
-            <option value="3">Missing</option>
-            <option value="4">Damaged</option>
-          </select>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <table>
+          <thead>
+            <tr>
+              <th>Accession</th>
+              <th>Location</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let inventory of paginatedInventories()">
+              <td>{{ inventory.accession }}</td>
+              <td>{{ inventory.location }}</td>
+              <td>{{ inventory.title }}</td>
+              <td>
+                <div *ngFor="let author of inventory.authors; let last = last">
+                  <p>{{ author }} <span *ngIf="!last">,</span></p>
+                </div>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <select class="inputtxt" [value]="inventory.status"
+                    (change)="onStatusChange($event, inventory.accession)" required>
+                    <option value="0">Available</option>
+                    <option value="1">Unreturned</option>
+                    <option value="3">Missing</option>
+                    <!-- <option value="3">Unlabeled</option> -->
+                    <option value="4">Damaged</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Pagination -->
