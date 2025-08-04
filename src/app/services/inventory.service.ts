@@ -30,4 +30,9 @@ export class InventoryService {
      clearBookInventoryStatus() {
           return this.http.get<any>(`${this.apiUrl}/inventory/books/clear`)
      }
+
+     deleteMultipleInventories(ids: number[]) {
+  return this.http.post<any>(`${this.apiUrl}/inventory/books/delete-multiple`, { ids });
+}
+
 }
