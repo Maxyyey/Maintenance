@@ -249,7 +249,7 @@ deleteSelectedItems() {
   }).then((result) => {
     if (result.isConfirmed) {
       const idsToDelete = Array.from(this.selectedItems);
-      this.inventoryService.deleteMultipleInventories(idsToDelete).subscribe(
+      this.inventoryService.archiveMultipleInventories(idsToDelete).subscribe(
         () => {
           Swal.fire('Deleted!', 'Selected items have been deleted.', 'success');
           this.selectedItems.clear();
